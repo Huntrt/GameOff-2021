@@ -1,0 +1,35 @@
+Gameplay:
+	Core:
+		▪ Formation
+			▪ Leader entity.
+			▪ Formation shape.
+			▪ Spawned follower beginn align by formation.
+			▪ Follower go with the leader while keep formation.
+			▪ Follower break formation when need to do task.
+			▪ Follower go back to formation after complete task.
+		▪ Map
+			▪ Begin section.
+			▪ Randomly created multiple section.
+			▪ Section type:
+				▪ Empty
+				▪ Enemy
+				▪ Shop
+				▪ ...
+			▪ Goal to complete an section.
+			▪ Spawn an point to go to an next map after completed section.
+			▪ Map Type Difficult:
+				▪ Underground
+				▪ Canvern
+				▪ Soild
+				▪ Surface
+				▪ Forest
+	Bugs:
+		Allies:
+			▪ Movement
+				▪ Crawler
+				▪ Flyer
+				▪ Lengther
+			▪ Attack
+				▪ Melee
+				▪ Projectile
+				▪ ...
