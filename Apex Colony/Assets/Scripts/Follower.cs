@@ -3,6 +3,7 @@ using Pathfinding;
 
 public class Follower : MonoBehaviour
 {
+	[SerializeField] Allies allies;
 	[SerializeField] AIDestinationSetter destination;
 	[SerializeField] AIPath path;
 	public int order;
@@ -17,15 +18,21 @@ public class Follower : MonoBehaviour
 		//Get the order of this follower in formaton
 		GetFollowerOrder();
 		//Begin set gooal upon it generation
-		formator.goalGenerator.generated += SetGoal;
+		formator.goalCre.generated += SetGoal;
+	}
+
+	void Update()
+	{
+		//Set the path speed
+		path.maxSpeed = allies.speed;
 	}
 
 	void SetGoal()
 	{
 		//Set the target destination as the goal that has same index as follower order
-		destination.target = formator.goalGenerator.goals[order].transform;
-		//Begin search path
-		path.SearchPath();
+		destination.target = formator.goalCre.goals[order].transform;
+		//Begin search path and no longer auto search path
+		path.SearchPath(); path.repathRate = 1000;
 	}
 
 	void GetFollowerOrder()

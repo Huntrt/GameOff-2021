@@ -2,27 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GoalGenerator : MonoBehaviour
+public class GoalsCreate : MonoBehaviour
 {
-	//Click position, offset between each goal and the size of the formation
-	[SerializeField] Vector2 clickPos, offset, size;
+	//Offset between each goal and the size of the formation
+	[SerializeField] Vector2 offset, size;
 	[SerializeField] GameObject goal; [SerializeField] Transform group;
 	public List<GameObject> goals = new List<GameObject>();
 	public event Action generated; 
 
-    void Update()
-    {
-		//If press right mouse
-        if(Input.GetMouseButtonDown(1))
-		{
-			//Getting the click position as the mouse position
-			clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			//Begin generate goals
-			GenerateGoals();
-		}
-    }
-
-	void GenerateGoals()
+	public void GenerateGoals(Vector2 clickPosition)
 	{
 		//The amount of the object has the "Allies" tag are mark as follower
 		int followers = GameObject.FindGameObjectsWithTag("Allies").Length;
@@ -74,7 +62,7 @@ public class GoalGenerator : MonoBehaviour
 			if(f == goals.Count-1) {size.y = targetPos.y;}
 		}
 		//Move the group position to the middle of click position using half size
-		group.transform.position = clickPos - (size/2);
+		group.transform.position = clickPosition - (size/2);
 		//Send event when complete goal generation
 		generated?.Invoke();
 		//* An thank for help with alignment: https://www.youtube.com/watch?v=uTBCVgrk0lY

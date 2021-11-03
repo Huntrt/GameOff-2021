@@ -2,10 +2,11 @@ Gameplay:
 	Core:
 		▪ Formation
 			✓ Create formation shape around the mouse input with goal point.
-			▪ Follower pathfinding toward the goal point in the formation.
+			✓ Follower pathfinding toward the goal point in the formation.
 			✓ The goal point will push it self out if it contact with collider.
 			▪ Follower break formation when need to do task.
 			▪ Follower go back to formation after complete task.
+			▪ Change follower formation position by changing it order
 		▪ Map
 			▪ Begin section.
 			▪ Randomly created multiple section.
