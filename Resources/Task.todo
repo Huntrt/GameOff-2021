@@ -1,35 +1,47 @@
 Gameplay:
-	Core:
-		▪ Formation
-			✓ Create formation shape around the mouse input with goal point.
-			✓ Follower pathfinding toward the goal point in the formation.
-			✓ The goal point will push it self out if it contact with collider.
-			▪ Follower break formation when need to do task.
-			▪ Follower go back to formation after complete task.
-			▪ Change follower formation position by changing it order
-		▪ Map
-			▪ Begin section.
-			▪ Randomly created multiple section.
-			▪ Section type:
-				▪ Empty
-				▪ Enemy
-				▪ Shop
-				▪ ...
-			▪ Goal to complete an section.
-			▪ Spawn an point to go to an next map after completed section.
-			▪ Map Type Difficult:
-				▪ Underground
-				▪ Canvern
-				▪ Soild
-				▪ Surface
-				▪ Forest
-	Bugs:
-		Allies:
-			▪ Movement
-				▪ Crawler
-				▪ Flyer
-				▪ Lengther
-			▪ Attack
-				▪ Melee
-				▪ Projectile
-				▪ ...
+	Formation:
+		✓ Create formation shape around the mouse input with goal point.
+		✓ Follower pathfinding toward the goal point in the formation.
+		✓ The goal point will push it self out if it contact with collider.
+		▪ Follower break formation when need to do task.
+		▪ Follower go back to formation after complete task.
+		▪ Change follower formation position by changing it order.
+	Levels:
+		▪ Begin section.
+		▪ Randomly created multiple section.
+		▪ Section type:
+			▪ Empty
+			▪ Enemy
+			▪ Shop
+			▪ ...
+		▪ Goal to complete an level.
+		▪ Spawn an point to go to an next map after completed level.
+		▪ Level Difficult:
+			▪ Nest
+			▪ Cavern
+			▪ Soil
+			▪ Surface
+			▪ Forest
+	Camera:
+		▪ Camera move using key
+		▪ Camera zoom using wheel/key
+		▪ Reset camera to formation
+		▪ Bound camera inside level @consider
+		▪ Fog of wall system
+	Allies:
+		▪ Engage
+			▪ Focus - All allies focus on an single enemy that go select
+			▪ Enclosure - Chose an group of enemy for allies to spread out equally and fight
+			▪ Provoke - Allies then been attack by an enemy will fight back
+		▪ Movement
+			▪ Crawler
+			▪ Flyer
+			▪ Lengther
+		▪ Stats
+			▪ Melee
+			▪ Projectile
+			▪ ...
+	Enemies:
+		▪ Behaviour
+			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box
+			▪ Combat - Enemy moving toward and attack nearest allies got detect by it
