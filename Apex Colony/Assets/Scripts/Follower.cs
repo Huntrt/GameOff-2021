@@ -25,6 +25,9 @@ public class Follower : MonoBehaviour
 	{
 		//Set the path speed
 		path.maxSpeed = allies.speed;
+		//Clear the current path when press key
+		//! Same key as clear trivals in Command.cs
+		if(Input.GetKeyDown(KeyCode.X)) {path.SetPath(null);}
 	}
 
 	void SetGoal()

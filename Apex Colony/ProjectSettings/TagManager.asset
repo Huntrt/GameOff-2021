@@ -11,14 +11,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Lock
   - Water
   - UI
   - Obstacle
   - Goal
   - Allies
   - Enemy
-  - 
+  - Selector
   - 
   - 
   - 

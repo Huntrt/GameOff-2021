@@ -3,11 +3,16 @@ Gameplay:
 		✓ Create formation shape around the mouse input with goal point.
 		✓ Follower pathfinding toward the goal point in the formation.
 		✓ The goal point will push it self out if it contact with collider.
-		▪ Follower break formation when need to do task.
-		▪ Follower go back to formation after complete task.
+		▪ Follower break formation when engage.
+		▪ Follower chase after the target and stop when it killed.
 		▪ Change follower formation position by changing it order.
+		▪ Remove rivals
+			✓ Remove all rival
+			✓ Remove single rival
+			▪ Rival deselector @consider
+			▪ Recalculate allies path that has no rival to an existing rival @next
 	Levels:
-		▪ Begin section.
+		▪ Begin section. @next
 		▪ Randomly created multiple section.
 		▪ Section type:
 			▪ Empty
@@ -30,9 +35,13 @@ Gameplay:
 		▪ Fog of wall system
 	Allies:
 		▪ Engage
-			▪ Focus - All allies focus on an single enemy that go select
-			▪ Enclosure - Chose an group of enemy for allies to spread out equally and fight
-			▪ Provoke - Allies then been attack by an enemy will fight back
+			▪ Selector - Chose an group of enemy for allies to spread out equally to fight
+				✓ Box selector - draw an box and attack all the enemy in that box
+				✓ Group selector - add an new enemy as an rival
+				▪ Allies spread out equally base on it amount and rival to fight @doing
+				▪ UI/UX show an indication on selected enemy and fading when complete selection
+			▪ Provoke - Allies attack enemy that got in range
+			▪ Combat - The allies are in combat and will try to kill their rival
 		▪ Movement
 			▪ Crawler
 			▪ Flyer

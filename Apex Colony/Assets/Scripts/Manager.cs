@@ -4,7 +4,7 @@ public class Manager : MonoBehaviour
 {
 	public Formator formator;
 	public GoalsCreate goals;
-	public MouseAction mouse;
+	public Command command;
 	[HideInInspector] public int enemyL;
 
 	//Turn this script into singlton
