@@ -7,21 +7,13 @@ public class EnemySelector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
 	{
-		//If enter trigger with are an new enemy
-		if(other.CompareTag("Enemy") && !formator.rivals.Contains(other.gameObject))
-		{
-			//Add the enemy enter trigger to selected enemy
-			formator.selecting.Add(other.gameObject);
-		}
+		///SELECT the enemy that enter trigger
+		if(other.CompareTag("Enemy")) {formator.selectings.Add(other.gameObject);}
 	}
 
     private void OnTriggerExit2D(Collider2D other)
 	{
-		//If exit trigger with an enemy that been select enemy
-		if(other.CompareTag("Enemy"))
-		{
-			//Add the enemy enter trigger to selected enemy
-			formator.selecting.Remove(other.gameObject);
-		}
+		///DESELECT the enemy that exit trigger
+		if(other.CompareTag("Enemy")) {formator.selectings.Remove(other.gameObject);}
 	}
 }

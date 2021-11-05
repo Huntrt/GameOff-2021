@@ -7,18 +7,18 @@ public class Follower : MonoBehaviour
 	[SerializeField] AIDestinationSetter destination;
 	[SerializeField] AIPath path;
 	public int order;
-	Manager manager;
+	Manager manager; Formator formator;
 
 	void Start()
 	{
-		//Get the manager
-		manager = Manager.i;
+		//Get the manager and the formator
+		manager = Manager.i; formator = manager.formator;
 		//Add this follower as an new follower of formation
-		manager.formator.follows.Add(gameObject);
-		//Get the order of this follower in formaton
-		GetFollowerOrder();
+		formator.followers.Add(this);
+		//Get the order of this follower in formaton upon create
+		UpdateOrder();
 		//Begin set gooal upon it generation
-		manager.goals.generated += SetGoal;
+		manager.goaling.generated += SetGoal;
 	}
 
 	void Update()
@@ -33,18 +33,11 @@ public class Follower : MonoBehaviour
 	void SetGoal()
 	{
 		//Set the target destination as the goal that has same index as follower order
-		destination.target = manager.goals.goals[order].transform;
+		destination.target = manager.goaling.goals[order].transform;
 		//Begin search path and no longer auto search path
 		path.SearchPath(); path.repathRate = 1000;
 	}
 
-	void GetFollowerOrder()
-	{
-		//Go through all the follows count in formator
-		for (int f = 0; f < manager.formator.follows.Count; f++)
-		{
-			//Get the order of this follower inside the follow list
-			if(manager.formator.follows[f] == gameObject) {order = f;}
-		}
-	}
+	//FUnction to update this follower order
+	public void UpdateOrder() {formator.GetAlliesOrder(this);}
 }

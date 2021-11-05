@@ -3,7 +3,7 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
 	public Formator formator;
-	public GoalsCreate goals;
+	public GoalsCreate goaling;
 	public Command command;
 	[HideInInspector] public int enemyL;
 

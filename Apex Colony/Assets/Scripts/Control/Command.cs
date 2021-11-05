@@ -53,15 +53,15 @@ public class Command : MonoBehaviour
 			if(mousing == Mousing.click)
 			{
 				//If click on an enemy
-				if(enMouse(clickPos) != null)
+				if(clickEnemey() != null)
 				{
-					//Set the clicked enemy as rival if haven't
-					if(HasRival(clickPos)) {formator.rivals.Add(enMouse(clickPos));}
-					//Remove the clicked enemy from rival if it already rival
-					else {formator.rivals.Remove(enMouse(clickPos));}
+					///Stop rival the click enemy if already rival
+					if(formator.HasRival(clickEnemey())) {formator.UnrivalClicked(clickEnemey());}
+					///Rival the click enemy if haven't rival
+					else {formator.RivalClicked(clickEnemey());}
 				}
 				//Generated goal at click position if not click on enemy
-				else {manager.goals.GenerateGoals(clickPos);}
+				else {manager.goaling.GenerateGoals(clickPos);}
 				//Mouse release
 				mousing = Mousing.release;
 			}
@@ -71,25 +71,19 @@ public class Command : MonoBehaviour
 				//Mouse released
 				mousing = Mousing.release;
 				//Rivaling all selected enemy
-				formator.RivalEnemy();
+				formator.RivalSelected();
 				//Deactive the enemy selector
 				enemySelector.SetActive(false);
 			}
 		}
     }
 
-	GameObject enMouse(Vector2 origin) ///The enemy under mouse
+	GameObject clickEnemey() ///The enemy click by mouse
 	{
-		//Cast an ray at origin with no direction and distance on enemy layer
-		RaycastHit2D on = Physics2D.Raycast(origin, Vector2.zero, 0 , manager.enemyL);
-		//Send the enemy on object the mouse or send null 
-		if(on) {return on.collider.gameObject;} return null;
-	}
-
-	bool HasRival(Vector2 origin) ///Check if an enemy has been rival
-	{
-		//Send true if the enemy on mouse are not null and not in the rival list
-		if(enMouse(origin) != null && !formator.rivals.Contains(enMouse(origin))) {return true;} return false;
+		//Cast an ray at click position with no direction and distance on enemy layer
+		RaycastHit2D click = Physics2D.Raycast(clickPos, Vector2.zero, 0 , manager.enemyL);
+		//Send the enemy on got click if click one else send null 
+		if(click) {return click.collider.gameObject;} return null;
 	}
 
 	void SelectorSCaling()
