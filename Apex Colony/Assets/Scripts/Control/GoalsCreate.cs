@@ -10,7 +10,7 @@ public class GoalsCreate : MonoBehaviour
 	public List<GameObject> goals = new List<GameObject>();
 	public event Action generated; 
 
-	public void GenerateGoals(Vector2 clickPosition)
+	public void Create(Vector2 clickPosition)
 	{
 		//The amount of the object has the "Allies" tag are mark as follower
 		int followers = GameObject.FindGameObjectsWithTag("Allies").Length;

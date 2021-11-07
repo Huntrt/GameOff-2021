@@ -42,7 +42,7 @@ public class Follower : MonoBehaviour
 		if(destination.target == null) 
 		{
 			//Stop path and no longer move
-			StopPath(); path.maxSpeed = 0;
+			StopPath(); path.maxSpeed = 0.1f;
 			//Will get new rival if lost rival while chasing or fighting
 			if(allies.combat != combating.none) {formator.TargetRivals();}
 			//Allies are no longer combat
@@ -66,7 +66,7 @@ public class Follower : MonoBehaviour
 		if(destination.target != null && destination.target.CompareTag("Enemy"))
 		{
 			//Enable auto search path
-			path.repathRate = 0.1f;
+			path.autoRepath.maximumInterval = 0f;
 			//Get the distance between this follower the target enemy
 			distance = Vector2.Distance(transform.position, destination.target.position);
 			//If the enemy are in the allies range
@@ -85,7 +85,7 @@ public class Follower : MonoBehaviour
 		//Set the target destination as the goal that has same index as follower order
 		destination.target = manager.goaling.goals[order].transform;
 		//Searching for path then disable auto search path
-		path.SearchPath(); path.repathRate = 1000;
+		path.SearchPath(); path.autoRepath.maximumInterval = 1000;
 		//Update allies velocity to moving speed then set the path speed as velocity
 		allies.velocity = allies.speed; path.maxSpeed = allies.velocity;
 		//Don't has velocity yet and allies no longer combat
@@ -115,6 +115,6 @@ public class Follower : MonoBehaviour
 		//Remove current path and remove target destination
 		path.SetPath(null); destination.target = null;
 		//No longer auto search path
-		path.repathRate = 1000;
+		path.autoRepath.maximumInterval = 1000;
 	}
 }

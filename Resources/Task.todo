@@ -11,28 +11,28 @@ Gameplay:
 			✓ Remove single rival
 			✓ Rival deselector
 			✓ Recalculate allies path that has no rival to an existing rival
-	Levels: @doing
-		▪ Begin section.
-		▪ Randomly created multiple section.
-		▪ Section type:
-			▪ Empty
-			▪ Enemy
-			▪ Shop
+	Maps: 
+		✓ An frame will have 4 point on each side
+		✓ Each side will has an 50% chance to create another frame
+		✓ Cast an ray that will detect if any side already has an frame
+		✓ Will has limit of an amount frame able to generate
+		✓ Special section will be chose to create at random frame
+			✓ Spawnpoint - will spawn the formation when enter map
+			✓ Shop - will able to buy upgrade or something else
 			▪ ...
-		▪ Goal to complete an level.
-		▪ Spawn an point to go to an next map after completed level.
-		▪ Level Difficult:
-			▪ Nest
-			▪ Cavern
-			▪ Soil
-			▪ Surface
-			▪ Forest
-	Camera:
+		✓ Randomly chose section variation will be create at an frame
+		✓ Block off the side that has no frame
+		▪ Path finding after complete generation
+		▪ Create more if dont reach the amount minimum @skeptical
+		? Frame: randomly generated and the position to spawn section
+		? Section: will create at frame with an randomly chose variant
+	Camera: @next
 		▪ Camera move using key
 		▪ Camera zoom using wheel/key
 		▪ Reset camera to formation
-		▪ Bound camera inside level @consider
+		▪ Bound camera inside map @consider
 		▪ Fog of wall system
+		▪ Minimap @consider
 	Allies:
 		▪ Engage
 			✓ Selector - Chose an group of enemy for allies to spread out equally to fight
@@ -54,3 +54,7 @@ Gameplay:
 		▪ Behaviour
 			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box
 			▪ Combat - Enemy moving toward and attack nearest allies got detect by it
+
+Bug:
+	▪ Map generated has an chance to fail @caution
+		a. Make an reset map button

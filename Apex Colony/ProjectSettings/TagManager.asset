@@ -19,7 +19,7 @@ TagManager:
   - Allies
   - Enemy
   - Selector
-  - 
+  - Frame
   - 
   - 
   - 
@@ -43,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Entity
+    uniqueID: 2870807645
+    locked: 0
+  - name: Object
+    uniqueID: 1353705893
     locked: 0

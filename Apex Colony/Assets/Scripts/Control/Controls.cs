@@ -51,8 +51,8 @@ public class Controls : MonoBehaviour
 					//Rival the click enemy if haven't rival
 					else {formator.RivalClicked(clickEnemey());}
 				}
-				//Generated goal at click position if not click on enemy then clear all rivals
-				else {formator.ClearRivals(); manager.goaling.GenerateGoals(clickPos);}
+				//Create goal at click position if not click on enemy then clear all rivals
+				else {formator.ClearRivals(); manager.goaling.Create(clickPos);}
 			}
 			///If release while holding mouse
 			if(mousing == Mousing.holding)

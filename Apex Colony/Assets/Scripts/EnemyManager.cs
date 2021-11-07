@@ -6,7 +6,7 @@ public class EnemyManager : MonoBehaviour
 	[HideInInspector] public int layer;
 	public List<Transform> enemies;
 
-	void Start()
+	void Awake()
 	{
 		//Get the enemy layer
 		layer = (1 << (LayerMask.NameToLayer("Enemy")));

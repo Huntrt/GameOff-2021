@@ -6,6 +6,7 @@ public class Manager : MonoBehaviour
 	public GoalsCreate goaling;
 	public Controls control;
 	public EnemyManager enemy;
+	public Maps map;
 
 	//Turn this script into singlton
 	public static Manager i; void Awake() {i = this;}
