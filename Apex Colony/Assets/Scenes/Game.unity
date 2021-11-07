@@ -551,9 +551,9 @@ MonoBehaviour:
   destination: {fileID: 247106140}
   path: {fileID: 247106138}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &247106142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,11 +570,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 247106137}
   rb: {fileID: 247106136}
 --- !u!1 &255539244
@@ -807,9 +807,9 @@ MonoBehaviour:
   destination: {fileID: 255539251}
   path: {fileID: 255539249}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &255539253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,11 +826,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 255539248}
   rb: {fileID: 255539247}
 --- !u!1 &319801596
@@ -1063,9 +1063,9 @@ MonoBehaviour:
   destination: {fileID: 319801603}
   path: {fileID: 319801601}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &319801605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,11 +1082,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 319801600}
   rb: {fileID: 319801599}
 --- !u!1 &503755818
@@ -1554,9 +1554,9 @@ MonoBehaviour:
   destination: {fileID: 545849002}
   path: {fileID: 545849000}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &545849004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,11 +1573,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 545848999}
   rb: {fileID: 545848998}
 --- !u!1 &552185638
@@ -1968,9 +1968,9 @@ MonoBehaviour:
   destination: {fileID: 798725671}
   path: {fileID: 798725669}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &798725673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,11 +1987,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 798725668}
   rb: {fileID: 798725667}
 --- !u!1 &865700367
@@ -2224,9 +2224,9 @@ MonoBehaviour:
   destination: {fileID: 865700374}
   path: {fileID: 865700372}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &865700376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,11 +2243,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 865700371}
   rb: {fileID: 865700370}
 --- !u!1 &1016513409
@@ -2905,9 +2905,9 @@ MonoBehaviour:
   destination: {fileID: 1242587405}
   path: {fileID: 1242587403}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &1242587407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2924,11 +2924,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 1242587402}
   rb: {fileID: 1242587401}
 --- !u!1 &1246407844
@@ -2976,7 +2976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAA4IexfLTMLUAIAAPMEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE2P2jAQ/SvI57JKUPjqrQWW7YEFLa32kouJJ4mFY0e2s3ys+O8dOwnJUvWEee/NzJsZO5+ES1NCYpVea842igH5PiDuTL4NOvIFzjRTcs+v0GreObO5E1GveaOWK8RDF2ZUAVbz5IfMhBMHCFaSp0oXK5bBQhlrEE6pMICUVtZFS4Q+B+SMP8O5C7ngaTR1pyue5sHghscEpAXdSVthK6tVlUwELUpgznInDmeNOqxlEptpFMFT5LIrIbhpvBB7KX2v+zIHDa5Zxim25uuHT2MEcuBZbp3RfvQ2TQ3YxpWmlyXXOKM6Lfmp6sEV1Bxrax9UVK7QJPKu6pybf+hh6OlUq+KlLRsGroTNeXJ8o5eEGtsbbB9e9pz7AZ2oONKDgPcc5Ktaa1VJhqTVlQutDIyW3d97Z4sckmOH11YfwKr8/3pcDzff/HkheHG4Tx6BvVB+3n75oHE3v9CwvxqmSYGoc/HHwG+a9e9QQzxzbSxSTZfS2TuoSjspWfmZuW4qu1Bagocb0yVIKuxlh2ns4wYfuF7ZB+aZutfSFG+49hE8hHi40wfBA7VTp/uyTK5OGzD5trKCS+hMO+IV57RQUtYXzHwlXdS+0ilNelFZxdnXm0XYLJwymEQhBCGLRvPhmM7m0WEym0bBOEnojPirxyW2ScWu9tlMB5cmu+QSr1n7DRmsNS39XWeantb8WqiePy5TtU80gNzWGdoJGdBYBJ8lWzGO89mDtVz6dZPPmAiVHIHF90Sx73R1tprGXZaYlPxDWYfEZOE/GjG5kdtfUEsDBBQAAAgIAAA4IeyiqFTlbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSioWheUqqmYlhqoFhiomRpa5pooWlSZKZhbmJgWlycqKFUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAA4IexfLTMLUAIAAPMEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAA4IeyiqFTlbQAAAHgAAAAJACQAAAAAAAAAAAAAAJ0CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAVQMAAAAA
+    dataString: UEsDBBQAAAgIAAA4IewTrZw/UAIAAPQEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE2P2jAQ/SvI57JKUPjqrQWW7YEFLa32kouJJ4mFY0e2s3ys+O8dOwnJUvWEee/NzJsZO5+ES1NCYpVea842igH5PiDuTL4NOvIFzjRTcs+v0GreObO5E1GveaOWK8RDF2ZUAVbz5IfMhBMHCFaSp0oXK5bBQhlrEE6pMICUVtZFS4Q+B+SMP8O5C7ngaTR1pyue5sHghscEpAXdSVthK6tVlUwELUpgznInDmeNOqxlEptpFMFT5LIrIbhpvBB7KX2v+zIHDa5Zxim25uuHT2MEcuBZbp3RfvQ2TQ3YxpWmlyXXOKM6Lfmp6sEV1Bxrax9UVK7QJPKu6pybf+hh6OlUq+KlLRsGroTNeXJ8o5eEGtsbbB9e9pz7AZ2oONKDgPcc5Ktaa1VJhqTVlQutDIyW3d97Z4sckmOH11YfwKr8/3pcDzff/HkheHG4Tx6BvVB+3n75oHE3v9CwvxqmSYGoc/HHwG+a9e9QQzxzbSxSTZfS2TuoSjspWfmZuW4qu1Bagocb0yVIKuxlh2ns4wYfuF7ZB+aZutfSFG+49hE8hHi40wfBA7VTp/uyTK5OGzD5trKCS+hMO+IV57RQUtYXzHwlXdS+0ilNelFZxdnXm0XYLJwymEQhBCGLRvPhmM7m0WEym0bBOEnojPirxyW2ScWu9tlMB5cmu+QSr1n7DRmsNS39XWeantb8Wqj+zrhM1T7RAHJbp2gJAxqr4LtkK8ZxQHuwlku/b/IZE6GSI7D4XjP2ra7OVtO4yxKTkn8o65CYLPxXIyY3cvsLUEsDBBQAAAgIAAA4IeyiqFTlbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSioWheUqqmYlhqoFhiomRpa5pooWlSZKZhbmJgWlycqKFUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAA4IewTrZw/UAIAAPQEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAA4IeyiqFTlbQAAAHgAAAAJACQAAAAAAAAAAAAAAJ0CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAVQMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -2989,7 +2989,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 4
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -3429,9 +3429,9 @@ MonoBehaviour:
   destination: {fileID: 1563724353}
   path: {fileID: 1563724351}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &1563724355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3448,11 +3448,11 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 1563724350}
   rb: {fileID: 1563724349}
 --- !u!1 &1674224889
@@ -3685,9 +3685,9 @@ MonoBehaviour:
   destination: {fileID: 1674224896}
   path: {fileID: 1674224894}
   order: 0
-  goal: {fileID: 0}
-  rival: {fileID: 0}
   distance: 0
+  velocity: 0
+  moving: 0
 --- !u!114 &1674224898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3704,10 +3704,10 @@ MonoBehaviour:
   heath: 0
   damage: 4
   velocity: 0
-  speed: 10
+  speed: 7
   approach: 1
   rate: 0.5
   range: 1
-  state: 0
+  combat: 0
   render: {fileID: 1674224893}
   rb: {fileID: 1674224892}

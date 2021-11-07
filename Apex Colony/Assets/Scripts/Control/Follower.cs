@@ -41,10 +41,12 @@ public class Follower : MonoBehaviour
 		//If there is no target destination
 		if(destination.target == null) 
 		{
-			//Allies are no longer combat
-			allies.combat = combating.none;
 			//Stop path and no longer move
 			StopPath(); path.maxSpeed = 0;
+			//Will get new rival if lost rival while chasing or fighting
+			if(allies.combat != combating.none) {formator.TargetRivals();}
+			//Allies are no longer combat
+			allies.combat = combating.none;
 		}
 		///If the target destination do exist OR is it not an enemy
 		if(destination.target == null || !destination.target.CompareTag("Enemy"))

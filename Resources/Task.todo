@@ -11,8 +11,8 @@ Gameplay:
 			✓ Remove single rival
 			✓ Rival deselector
 			✓ Recalculate allies path that has no rival to an existing rival
-	Levels:
-		▪ Begin section. @next
+	Levels: @doing
+		▪ Begin section.
 		▪ Randomly created multiple section.
 		▪ Section type:
 			▪ Empty
@@ -41,7 +41,7 @@ Gameplay:
 				✓ Allies spread out base on it order to fight the rival 
 				▪ UI/UX show an indication on selected enemy and fading when complete selection
 			✓ Provoke - Allies attack enemy that got in range
-			▪ The allies will engage to the position even when the rival are null
+			✓ The allies will engage to the position even when the rival are null
 		▪ Movement
 			▪ Crawler
 			▪ Flyer
