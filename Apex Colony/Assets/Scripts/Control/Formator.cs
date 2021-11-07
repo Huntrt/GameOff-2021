@@ -9,34 +9,55 @@ public class Formator : MonoBehaviour
 	public List<GameObject> rivals;
 	//List of enemy currently select
 	public List<GameObject> selectings;
-
-	public void GetAlliesOrder(Follower follower)
+	#region Allies
+	public void GetFollowerOrder(Follower follower)
 	{
 		//Go through all of the followers to get the order of the follower requested
 		for (int f = 0; f < followers.Count; f++) {if(followers[f] == follower) {follower.order = f;}}
 	}
+	#endregion
 
 	#region  Rivaling
-
 	///Check if an enemy has been rival
 	public bool HasRival(GameObject enemy) {if(!rivals.Contains(enemy)) {return false;} return true;}
 	
-	///Rival the clicked enemy if haven't 
+	///Rival the clicked enemy if haven't then target rival
 	public void RivalClicked(GameObject enemy) {if(!rivals.Contains(enemy)) {rivals.Add(enemy);}}
 
-	///Stop rivalling the clicked enemy if is it rival
+	///Stop rivalling the clicked enemy if is it then target rival
 	public void UnrivalClicked(GameObject enemy) {if(rivals.Contains(enemy)) {rivals.Remove(enemy);}}
 
 	///Turn all current select enemy to rival if haven't
 	public void RivalSelected() 
 	{
-		//Each of the enemy in selecting will be add to rival if haven't
+		//Each of the enemy in selectings will be add to rivals if haven't 
 		foreach (GameObject enemy in selectings) {if(!rivals.Contains(enemy)) {rivals.Add(enemy);}}
+	}
+
+	public void TargetRivals()
+	{
+		//Remove all the empty rival in it list
+		rivals.RemoveAll(GameObject => GameObject == null);
+		//If there is follower and rival in their own list
+		if(followers.Count > 0 && rivals.Count > 0)
+		{
+			//The time follwer has target rival
+			int assigned = 0;
+			//Go through all the followers
+			for (int f = 0; f < followers.Count; f++)
+			{
+				//Assign the follower target to be assigning rival
+				followers[f].SetRival(rivals[assigned]);
+				//Has complete 1 assign
+				assigned++;
+				//Reset ther assign count if out of rival to assign
+				if(assigned >= rivals.Count) {assigned = 0;}
+			}
+		}
 	}
 
 	///Clear all the enemy currently rival
 	public void ClearRivals() {rivals.Clear(); rivals = new List<GameObject>();}
-
 	#endregion
 	
 	//Clear all the enemy currentlu been selected
