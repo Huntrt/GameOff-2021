@@ -1,39 +1,43 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Maps : MonoBehaviour
 {
-	public bool generated;
-	public Transform frameGroup, sectionGroup;
-	[Header("Frame")]
+	[SerializeField] GameObject frameGroup, sectionGroup;
+	[HideInInspector] public Transform Fgroup, Sgroup;
+	[HideInInspector] public bool hasGenerated, hasPopulated;
+	[HideInInspector] public event Action generated, populated;
+	int generatedStatus; bool beginGeneration;
 	//Frame's layer
 	[HideInInspector] public int layer;
+	[Header("[SETTING]")]
+	[Tooltip("The min max and raw amount of section to create")]
+	public IntMinMax amount;
 	[Tooltip("The chance of each side of an frame\nable to create another frame")]
 	public float generatedRate;
-	public GameObject framePrefab;
-	public int createdFrame;
+	[Header("[FRAME]")] public GameObject framePrefab;
+	[HideInInspector] public int createdFrame;
 	//All the frame has create
 	public List<Framer> frames;
 	//All the available frame
 	List<Framer> availableFrame;
-	[Header("Section")]
+	[Header("[SECTION]")] [Tooltip("All the created section")]
+	public List<GameObject> sections;
 	[Tooltip("All the section variants")]
 	public List<GameObject> variants;
-	[Tooltip("The min max and raw amount of section to create")]
-	public IntMinMax amount;
-	[Tooltip("All the current section")]
-	public List<GameObject> sections;
-	public GameObject start, shop;
+	[Tooltip("All the special section")]
+	public List<GameObject> specials;
 	public GameObject border;
 
 	void Awake()
 	{
 		//Get the frame layer
 		layer = (1 << (LayerMask.NameToLayer("Frame")));
-		//Create the list of frame
-		frames = new List<Framer>();
-		//The amount of section to create by randomize min and max 
-		amount.raw = Random.Range(amount.min, amount.max+1);
+		//New frams list and section list
+		frames = new List<Framer>(); sections = new List<GameObject>();
+		//The amount of section to create by randomize min and max if the amount has not set
+		if(amount.raw == 0) amount.raw = UnityEngine.Random.Range(amount.min, amount.max+1);
 	}
 
 	void Start()
@@ -42,76 +46,109 @@ public class Maps : MonoBehaviour
 		StartGeneration();
 	}
 
+	void Update()
+	{
+		//If has not generate frame
+		if(!hasGenerated)
+		{
+			//If has not begin generation when stopoed generate frame but generated frame not enough
+			if(!beginGeneration && frames.Count == generatedStatus && createdFrame < amount.raw)
+			{
+				//% Print an error
+				Debug.LogError("Fail to generated frame. Restarting...");
+				//Has begin generation
+				beginGeneration = true;
+				//Start map generation again
+				StartGeneration();
+			}
+			//Update generated status
+			generatedStatus = frames.Count;
+		}
+	}
+
 	public void StartGeneration()
 	{
+		//Reset created frame counter
+		createdFrame -= createdFrame;
+		//If currently generating
+		if(beginGeneration)
+		{
+			//Destroy the section and frame group in scene
+			Destroy(Fgroup.gameObject); Destroy(Sgroup.gameObject);
+			//Reset the frames list
+			frames.Clear(); frames = new List<Framer>();
+			//Reset the sections list
+			sections.Clear(); sections = new List<GameObject>();
+		}
+		//Create the frame group in scene
+		Fgroup = Instantiate(frameGroup, transform.position, Quaternion.identity).transform;
+		//Create the section group in scene
+		Sgroup = Instantiate(sectionGroup, transform.position, Quaternion.identity).transform;
+		//Set both group as the children of map
+		Fgroup.parent = transform; Sgroup.parent = transform;
 		//Create the FIRST frame at the map position with no rotation and group it up
-		Instantiate(framePrefab, transform.position, Quaternion.identity).transform.parent = frameGroup;
+		Instantiate(framePrefab, transform.position, Quaternion.identity).transform.parent = Fgroup;
+		//No longer begin generation
+		beginGeneration = false;
 	}
 
 	public void CompleteGenerated()
 	{
-		//! For somereason need to check if has generated cause special section will run twitch if not
-		//! Casue by the frame count and createdFrame counter?
-		//If this the first time generated
-		if(!generated)
-		{
-			//All frame are now available
-			availableFrame = frames;
-			//Begin spawn special section first
-			SpawnSpecialSection();
-		}
-		//Then begin spawn section
-		SpawnSection();
-		//Blocking off section side that is empty
-		foreach (Framer frame in frames) {frame.BlockSection();}
+		//All frame are now available
+		availableFrame = frames;
 		//Has complete generation
-		generated = true;
+		hasGenerated = true; generated?.Invoke();
+		//Begin fill all the frame with section
+		PopulateFrame();
+		//Blocking off all the section side that is empty
+		foreach (Framer frame in frames) {frame.BlockSection();}
+		//Has complete population
+		hasPopulated = true; populated?.Invoke();
 	}
 
-	//? Frame that has no section will getting an random one
-	void SpawnSection()
+	public void PopulateFrame()
 	{
-		//For each of the frame
-		foreach (Framer frame in frames)
+		///Randomly chose an available frame to has special section
+		foreach (GameObject special in specials) {SpecialSections(special);}
+		///Fill the rest of the available frame with randomly chose section variant
+		VariantSections();
+	}
+
+	void VariantSections()
+	{
+		//For each of the available frame
+		foreach (Framer frame in availableFrame)
 		{
-			//If the frame has no section
-			if(frame.section == null)
-			{
-				//Random chose an section variant
-				GameObject variant = variants[Random.Range(0, variants.Count)];
-				//Create the section variant at this frame position with no rotation then group it up
-				Instantiate(variant,frame.transform.position,Quaternion.identity).transform.parent = sectionGroup;
-				//Set this frame section to be the variant
-				frame.section = variant;
-			}
+			//Randomly chose an section variant
+			GameObject variant = variants[UnityEngine.Random.Range(0, variants.Count)];
+			//Create chosed section variant at this frame position with no rotation
+			GameObject created = Instantiate(variant, frame.transform.position, Quaternion.identity);
+			//Group the section up
+			created.transform.parent = Sgroup.transform;
+			//Add this section to created list
+			sections.Add(created);
+			//Set this frame section to be the variant
+			frame.section = variant;
 		}
 	}
 
-	//? Will find an available frame to assign special section
-	void SpawnSpecialSection()
+	void SpecialSections(GameObject special)
 	{
-		//! NEED TO HAS ENOUGH FRAME FOR SPECIAL SECTION	
+		//Get index of frame that has been randomnly chose
+		int index = UnityEngine.Random.Range(0, availableFrame.Count);
 		//Save the empty quaternion
 		Quaternion q = Quaternion.identity;
-
-		///Create START SECTION
-		//The index of start frame that has been randomnly chose
-		int startFrame = Random.Range(0, availableFrame.Count);
-		//Create the start section at random available frame with no rotation then group it up
-		Instantiate(start, availableFrame[startFrame].transform.position, q).transform.parent = sectionGroup;
-		//Set that frame section to be start 
-		availableFrame[startFrame].section = start;
-		//Block this frame selection and this frame are longer available
-		availableFrame[startFrame].BlockSection(); availableFrame.RemoveAt(startFrame);
-
-		///Create SHOP SECTION
-		//The index of shop frame that has been randomnly chose
-		int shopFrame = Random.Range(0, availableFrame.Count);
-		//Create the shop section at random available frame with no rotation then group it up
-		Instantiate(shop, availableFrame[shopFrame].transform.position, q).transform.parent = sectionGroup;
-		//Set that frame section to be shop 
-		availableFrame[shopFrame].section = shop;
-		//Block this frame selection and this frame are longer available
-		availableFrame[shopFrame].BlockSection(); availableFrame.RemoveAt(shopFrame);
+		//Create the special section at the random available frame just got with no rotation
+		GameObject created = Instantiate(special, availableFrame[index].transform.position, q);
+		//Set that frame section to be spawn 
+		availableFrame[index].section = created;
+		//Block of this frame section
+		availableFrame[index].BlockSection();
+		//The frame got are now has the special section
+		availableFrame[index].section = created;
+		//Group the section up
+		created.transform.parent = Sgroup.transform;
+		//The frame got are no longer available
+		availableFrame.RemoveAt(index);
 	}
 }
