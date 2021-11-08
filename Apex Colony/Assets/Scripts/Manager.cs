@@ -7,6 +7,7 @@ public class Manager : MonoBehaviour
 	public Controls control;
 	public EnemyManager enemy;
 	public Maps map;
+	public CameraManager cam;
 
 	//Turn this script into singlton
 	public static Manager i; void Awake() {i = this;}

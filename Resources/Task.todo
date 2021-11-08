@@ -25,20 +25,24 @@
 		▪ Path finding after complete generation
 		? Frame: randomly generated and the position to spawn section
 		? Section: will create at frame with an randomly chose variant
-	Camera: @next
-		▪ Camera move using key
-		▪ Camera zoom using wheel/key
-		▪ Reset camera to formation
-		▪ Move camea by huging screen edge@consider
+	View: 
+		✓ Move camera by hover mouse at screen edge
+		✓ Camera move using key
+		▪ Camera zoom using wheel/key @doing
+		▪ Get the ceneter point of formation @next
+		▪ Reset camera back to ceneter formation
+		▪ Comare following center of formation
+		▪ Bound camera inside of map @consider
 		▪ Fog of wall system
-		▪ Minimap @consider
+		▪ UI - An button menu to reset cam and lock cam
+		▪ UI - Minimap @consider
 	Allies:
 		▪ Engage
 			✓ Selector - Chose an group of enemy for allies to spread out equally to fight
 				✓ Box selector - draw an box and attack all the enemy in that box
 				✓ Group selector - add an new enemy as an rival
 				✓ Allies spread out base on it order to fight the rival 
-				▪ UI/UX show an indication on selected enemy and fading when complete selection
+				▪ UI - show an indication on selected enemy and fading when complete selection
 			✓ Provoke - Allies attack enemy that got in range
 			✓ The allies will engage to the position even when the rival are null
 		▪ Movement
