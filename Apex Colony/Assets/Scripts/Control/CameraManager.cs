@@ -17,22 +17,42 @@ public class CameraManager : MonoBehaviour
 	{
 		//Get the screen width an height and the camera transform
 		width = Screen.width; height = Screen.height; cam = Camera.main.transform;
+		//Reset cmaera when map started
+		Manager.i.stared += ResetCamera;
+	}
+
+	void ResetCamera()
+	{
 		//Reset camera back to formation when map started
 		cam.position = Manager.i.allie.FormationCenter();
+		//Reset the camera's Z axis
+		cam.position = new Vector3(cam.position.x, cam.position.y, -10);
 	}
 
 	void Update() 
 	{
+		//Camera are not moving
+		cameraMove = false;
+		//Zoom camera
+		ZoomCamera();
+		//@ Camera are no longer follow or control by key/arrow
+		if(option == CameraOption.locked) {return;}
+		//If cmaeraoption is follow
+		if(option == CameraOption.follow)
+		{	
+			//Get the formation center
+			Vector2 center = Manager.i.allie.FormationCenter();
+			//Camera follow the formation ceneter
+			cam.position = center;
+			//Reset the camera's Z axis
+			cam.position = new Vector3(cam.position.x, cam.position.y, -10);
+			//@ Won't able mouse to camera by mouse or key
+			return;
+		}
 		//Reset the camera zoom when press key
 		if (Input.GetKey(KeyCode.T)) {Camera.main.orthographicSize = defaultZoom;}
 		//Move the camera position back to the center of formation
 		if (Input.GetKey(KeyCode.R)) {cam.position = Manager.i.allie.FormationCenter();}
-		//Zoom camera
-		ZoomCamera();
-		//Camera are not moving
-		cameraMove = false;
-		//@ Stop camera is option are not free
-		if(option != CameraOption.free) {return;}
 		//@ Move camera toward key input using speed and camera are moving
 		if (Input.GetKey(KeyCode.UpArrow)) {MoveCamera(Vector2.up, keySpeed);cameraMove = true;}
 		if (Input.GetKey(KeyCode.DownArrow)) {MoveCamera(Vector2.down, keySpeed);cameraMove = true;}
