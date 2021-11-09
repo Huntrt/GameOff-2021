@@ -65,8 +65,8 @@ public class Controls : MonoBehaviour
 			//Releasing mouse and begin targeting rivals
 			if(mousing != Mousing.release) {mousing = Mousing.release; formator.TargetRivals();}
 		}
-		//If mouse position change while still cliking
-		if(mousing == Mousing.click && mousePos != clickPos) 
+		//If mouse position change while still cliking while camera not moving
+		if(mousing == Mousing.click && mousePos != clickPos && !manager.cam.cameraMove) 
 		{
 			//Are now holding mouse
 			mousing = Mousing.holding;

@@ -16,7 +16,8 @@ public class BeginPoint : MonoBehaviour
 		{allie.transform.position = transform.position; allie.SetActive(true);}
 		//Create goal at this begin positoin
 		Manager.i.goal.Create(transform.position);
-		//! Focus camera to ceneter point of formation
+		//Allies has been spawn
+		Manager.i.SpawnedAllies();
 	}
 
 	void OnDisable()

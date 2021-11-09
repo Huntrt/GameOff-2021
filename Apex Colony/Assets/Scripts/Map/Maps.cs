@@ -184,9 +184,12 @@ public class Maps : MonoBehaviour
 			if(x > mapSize.x) {mapSize.x = x;} if(y > mapSize.y) {mapSize.y = y;}
 		}
 		///Fill the entire map with grid graph
-		//Get the node amount by get the map size divide it with section size then multiple with how many node to fill an section
+		//Get the node amount by get the map size divide it with section size then multiple 
+		//with how many node to fill an section
 		Vector2 nodes = new Vector2((mapSize.x/sectionSize) * nodeFill, (mapSize.y/sectionSize) * nodeFill);
+		//Get the amount of node need create by double? node amount with half of an srction
+		Vector2 graph = new Vector2(nodes.x*2 + nodeFill/2, nodes.y*2 + nodeFill/2);
 		//Update the grid graph amount and size
-		Manager.i.path.data.gridGraph.SetDimensions((int)nodes.x*2, (int)nodes.y*2, nodeSize);
+		Manager.i.path.data.gridGraph.SetDimensions((int)graph.x, (int)graph.y, nodeSize);
 	}
 }

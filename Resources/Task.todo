@@ -17,21 +17,23 @@
 		✓ Cast an ray that will detect if any side already has an frame
 		✓ Will has limit of an amount frame able to generate
 		✓ Special section will be chose to create at random frame
-			▪ Spawnpoint - will spawn the formation when complete populating @doing
+			✓ Spawnpoint - will spawn the formation when complete populating @skeptical
 			✓ Shop - will able to buy upgrade or something else
 			▪ ...
 		✓ Randomly chose section variation will be create at an frame
 		✓ Block off the side that has no frame
-		▪ Scan path finding after complete populating
+		✓ Scan path finding after complete populating @skeptical
 	View: 
 		✓ Move camera by hover mouse at screen edge
 		✓ Camera move using key
 		✓ Camera zoom using wheel/key
-		▪ Get the ceneter point of formation @next
-		▪ Reset camera back to ceneter formation
-		▪ Comare following center of formation
+		✓ Get the ceneter point of formation
+		✓ Reset camera back to ceneter formation
+		▪ Camera following center of formation
 		▪ Bound camera inside of map @consider
 		▪ Fog of wall system
+			a. try to study
+			b. particel system that remove when trigger with allies
 		▪ UI - An button menu to reset cam and lock cam
 		▪ UI - Minimap @consider
 	Allies:
@@ -55,6 +57,17 @@
 		▪ Behaviour
 			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box
 			▪ Combat - Enemy moving toward and attack nearest allies got detect by it
+
+Visual:
+	Entity:
+		▪ Ant
+		▪ Bettle
+		▪ Fly
+	Object:
+		▪ Egg
+		▪ Food
+			▪ Seed
+			▪ Remains
 
 Bug:
 	✓ Map generated has an chance to fail

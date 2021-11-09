@@ -8,3 +8,4 @@
 
 # Details:
 	An section has an size of 13x13 0.4 scale path nodes
+	Manager.i.path.isScanning = a* scan graph state
