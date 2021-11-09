@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-	public bool lockDrag, lockKey;
+	[SerializeField] bool lockDrag, lockKey;
 	[Tooltip("The size of the section that won't drag camera")]
 	[SerializeField] float bound;
-	[SerializeField] float dragSpeed, keySpeed;
+	[SerializeField] float dragSpeed, keySpeed, zoomSpeed, defaultZoom;
+	[SerializeField] FloatMinMax zoomLimit;
 	float width, height;
 	Transform cam;
 
@@ -14,6 +15,10 @@ public class CameraManager : MonoBehaviour
 
 	void Update() 
 	{
+		//Reset the camera zoom when press key
+		if (Input.GetKey(KeyCode.C)) {Camera.main.orthographicSize = defaultZoom;}
+		//Zoom camera
+		ZoomCam();
 		//@ Stop camera key control if it lock
 		if(lockKey) {return;}
 		//@ Move camera toward key input using speed
@@ -41,5 +46,17 @@ public class CameraManager : MonoBehaviour
 		cam.position = (Vector2)cam.position + (Vector2)(direction * (speed * Time.deltaTime));
 		//Reset the camera's Z axis
 		cam.position = new Vector3(cam.position.x, cam.position.y, -10);
+	}
+
+	bool zommed; void ZoomCam()
+	{
+		//If the mouse ae scrolling
+		if(Input.mouseScrollDelta.y != 0)
+		{
+			//Increase or decrease the orthographic size with zoom amount and speed
+			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (zoomSpeed * Time.deltaTime);
+			//Prevent the camera from zoom too far or too close
+			Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomLimit.min, zoomLimit.max);
+		}
 	}
 }

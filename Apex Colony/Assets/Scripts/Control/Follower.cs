@@ -16,12 +16,12 @@ public class Follower : MonoBehaviour
 	{
 		//Get the manager and the formator
 		manager = Manager.i; formator = manager.formator;
-		//Add this follower as an new follower of formation
-		formator.followers.Add(this);
+		//Add this follower as an new follower of formation upon it create
+		if(!formator.followers.Contains(this)) {formator.followers.Add(this);}
 		//Get the order of this follower in formaton upon create
 		UpdateOrder();
-		//Begin set gooal upon it generation
-		manager.goaling.generated += SetGoal;
+		//Begin set goal upon it creation
+		manager.goal.created += SetGoal;
 	}
 
 	void Update()
@@ -57,7 +57,7 @@ public class Follower : MonoBehaviour
 				//Cast an circle cast to detect eneny
 				RaycastHit2D detect = Physics2D.CircleCast
 				//The circle are at this object with radius of allies range stat and only on enemy layer
-				(transform.position, allies.range, Vector2.zero, 0, manager.enemy.layer);
+				(transform.position, allies.range, Vector2.zero, 0, manager.layer.enemy);
 				//Set the enemt got detected as rival
 				if(detect) {SetRival(detect.transform.gameObject);}
 			}
@@ -83,7 +83,7 @@ public class Follower : MonoBehaviour
 	void SetGoal()
 	{
 		//Set the target destination as the goal that has same index as follower order
-		destination.target = manager.goaling.goals[order].transform;
+		destination.target = manager.goal.goals[order].transform;
 		//Searching for path then disable auto search path
 		path.SearchPath(); path.autoRepath.maximumInterval = 1000;
 		//Update allies velocity to moving speed then set the path speed as velocity

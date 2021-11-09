@@ -21,7 +21,7 @@ public class Framer : MonoBehaviour
 		//Generate more frame
 		Generate();
 		//Complete generation when this is the final frame (need +1)
-		if(map.frames.Count == map.amount.raw+1) {map.CompleteGenerated();}
+		if(map.frames.Count == map.amount.raw+1) {map.CompleteGeneration();}
 	}
 
 	public void Generate()
@@ -45,7 +45,7 @@ public class Framer : MonoBehaviour
 	bool CheckFrame(Vector2 direction)
 	{
 		//Cast an ray at this frame with set direction with size as length and only on frame layer
-		RaycastHit2D[] checks = Physics2D.RaycastAll(transform.position, direction, size, map.layer);
+		RaycastHit2D[] checks = Physics2D.RaycastAll(transform.position, direction, size, Manager.i.layer.frame);
 		//If there is some frame got check by raycast
 		if(checks.Length > 0) {foreach (RaycastHit2D check in checks)
 		//If the checked frame are not this then this side already has frame
@@ -83,6 +83,7 @@ public class Framer : MonoBehaviour
 		}
 	}
 
+	//Block off empty side of section
 	public void BlockSection()
 	{
 		//Scanning again to check if there is frame nearby
@@ -91,33 +92,38 @@ public class Framer : MonoBehaviour
 		if(!sides[0]) 
 		{
 			//Get this side frame empty position by increase this side upward with half size
-			Vector2 emptySide = (Vector2)transform.position + (Vector2.up * size/2);
-			//Create the border upward that rotate 0 degree
-			Instantiate(map.border, emptySide, Quaternion.Euler(0,0,0));
+			Vector2 side = (Vector2)transform.position + (Vector2.up * size/2);
+			//Create the border upward that rotate 0 degree and group it up
+			CreateBorder(side, 0).transform.parent = map.Bgroup;
 		}
 		//If there no frame downward
 		if(!sides[1]) 
 		{
 			//Get this side frame empty position by increase this side downward with half size
-			Vector2 emptySide = (Vector2)transform.position + (Vector2.down * size/2);
-			//Create the border downward that rotate 180 degree
-			Instantiate(map.border, emptySide, Quaternion.Euler(0,0,180));
+			Vector2 side = (Vector2)transform.position + (Vector2.down * size/2);
+			//Create the border downward that rotate 180 degree and group it up
+			CreateBorder(side, 180).transform.parent = map.Bgroup;
 		}
 		//If there no frame leftward
 		if(!sides[2]) 
 		{
 			//Get this side frame empty position by increase this side leftward with half size
-			Vector2 emptySide = (Vector2)transform.position + (Vector2.left * size/2);
-			//Create the border leftward that rotate 90 degree
-			Instantiate(map.border, emptySide, Quaternion.Euler(0,0,90));
+			Vector2 side = (Vector2)transform.position + (Vector2.left * size/2);
+			//Create the border leftward that rotate 90 degree and group it up
+			CreateBorder(side, 90).transform.parent = map.Bgroup;
 		}
 		//If there no frame rightward
 		if(!sides[3])
 		{
 			//Get this side frame empty position by increase this side rightward with half size
-			Vector2 emptySide = (Vector2)transform.position + (Vector2.right * size/2);
-			//Create the border rightward that rotate -90 degree
-			Instantiate(map.border, emptySide, Quaternion.Euler(0,0,-90));
+			Vector2 side = (Vector2)transform.position + (Vector2.right * size/2);
+			//Create the border rightward that rotate -90 degree and group it up
+			CreateBorder(side, -90).transform.parent = map.Bgroup;
 		}
 	}
+
+	//Function call to create border
+	Transform CreateBorder(Vector2 emptySide, float rotation)
+	//Create an block at an empty side with set rotation and get it transfrom
+	{return Instantiate(map.border, emptySide, Quaternion.Euler(0,0,rotation)).transform;}
 }

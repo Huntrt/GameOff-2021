@@ -17,18 +17,16 @@
 		✓ Cast an ray that will detect if any side already has an frame
 		✓ Will has limit of an amount frame able to generate
 		✓ Special section will be chose to create at random frame
-			✓ Spawnpoint - will spawn the formation when enter map
+			▪ Spawnpoint - will spawn the formation when complete populating @doing
 			✓ Shop - will able to buy upgrade or something else
 			▪ ...
 		✓ Randomly chose section variation will be create at an frame
 		✓ Block off the side that has no frame
-		▪ Path finding after complete generation
-		? Frame: randomly generated and the position to spawn section
-		? Section: will create at frame with an randomly chose variant
+		▪ Scan path finding after complete populating
 	View: 
 		✓ Move camera by hover mouse at screen edge
 		✓ Camera move using key
-		▪ Camera zoom using wheel/key @doing
+		✓ Camera zoom using wheel/key
 		▪ Get the ceneter point of formation @next
 		▪ Reset camera back to ceneter formation
 		▪ Comare following center of formation

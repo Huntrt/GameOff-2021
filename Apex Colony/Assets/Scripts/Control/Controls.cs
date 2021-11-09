@@ -52,7 +52,7 @@ public class Controls : MonoBehaviour
 					else {formator.RivalClicked(clickEnemey());}
 				}
 				//Create goal at click position if not click on enemy then clear all rivals
-				else {formator.ClearRivals(); manager.goaling.Create(clickPos);}
+				else {formator.ClearRivals(); manager.goal.Create(clickPos);}
 			}
 			///If release while holding mouse
 			if(mousing == Mousing.holding)
@@ -84,7 +84,7 @@ public class Controls : MonoBehaviour
 	GameObject clickEnemey() ///The enemy go click by mouse
 	{
 		//Cast an ray at click position with no direction and distance on enemy layer
-		RaycastHit2D click = Physics2D.Raycast(clickPos, Vector2.zero, 0 , manager.enemy.layer);
+		RaycastHit2D click = Physics2D.Raycast(clickPos, Vector2.zero, 0 , manager.layer.enemy);
 		//Send the enemy on got click if click one else send null 
 		if(click) {return click.collider.gameObject;} return null;
 	}

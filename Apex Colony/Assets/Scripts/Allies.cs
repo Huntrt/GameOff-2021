@@ -12,10 +12,24 @@ public class Allies : MonoBehaviour
 	public combating combat;
 	[SerializeField] SpriteRenderer render;
 	public Rigidbody2D rb;
+	public AlliesManager allie;
 	Color baseColor; //% base color of allies
 
-	void OnEnable()
+	//! Only use disable and enable when begin spawn at the begin of map
+	//! But the allies when dead it will need to be destroy and remove from maanger
+
+	void Start()
 	{
+		//Get the allies manager
+		allie = Manager.i.allie;
+		//If the allies manger haven;t got this allies object
+		if(!allie.alliesObj.Contains(gameObject))
+		{
+			//Add this allies object into it manager list once when create
+			allie.alliesObj.Add(gameObject);
+			//Add this allies component into it manager list once when create
+			allie.alliesComp.Add(this);
+		}
 		//Reset current heath
 		heath = maxHeath;
 		//Set the velocity as moving speed

@@ -8,7 +8,7 @@ public class GoalsCreate : MonoBehaviour
 	[SerializeField] Vector2 offset, size;
 	[SerializeField] GameObject goal; [SerializeField] Transform group;
 	public List<GameObject> goals = new List<GameObject>();
-	public event Action generated; 
+	public event Action created; 
 
 	public void Create(Vector2 clickPosition)
 	{
@@ -64,7 +64,7 @@ public class GoalsCreate : MonoBehaviour
 		//Move the group position to the middle of click position using half size
 		group.transform.position = clickPosition - (size/2);
 		//Send event when complete goal generation
-		generated?.Invoke();
+		created?.Invoke();
 		//* An thank for help with alignment: https://www.youtube.com/watch?v=uTBCVgrk0lY
 	}
 }

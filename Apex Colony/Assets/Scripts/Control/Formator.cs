@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Formator : MonoBehaviour
 {
-	//List of allies followers function
+	//List of followers function
 	public List<Follower> followers;
 	//List of enemy has been mark as rival
 	public List<GameObject> rivals;
