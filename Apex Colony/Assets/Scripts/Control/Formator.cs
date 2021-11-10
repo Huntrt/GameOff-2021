@@ -9,11 +9,16 @@ public class Formator : MonoBehaviour
 	public List<GameObject> rivals;
 	//List of enemy currently select
 	public List<GameObject> selectings;
+
 	#region Allies
 	public void GetFollowerOrder(Follower follower)
 	{
-		//Go through all of the followers to get the order of the follower requested
-		for (int f = 0; f < followers.Count; f++) {if(followers[f] == follower) {follower.order = f;}}
+		//Go through all of the followers in list
+		for (int f = 0; f < followers.Count; f++) 
+		{
+			//Give the of requested follower it order
+			if(followers[f] == follower) {follower.order = f;}
+		}
 	}
 	#endregion
 
@@ -46,12 +51,16 @@ public class Formator : MonoBehaviour
 			//Go through all the followers
 			for (int f = 0; f < followers.Count; f++)
 			{
-				//Assign the follower target to be assigning rival
-				followers[f].SetRival(rivals[assigned]);
-				//Has complete 1 assign
-				assigned++;
-				//Reset ther assign count if out of rival to assign
-				if(assigned >= rivals.Count) {assigned = 0;}
+				//If current follower are not null
+				if(followers[f] != null)
+				{
+					//Assign the follower target to be assigning rival
+					followers[f].SetRival(rivals[assigned]);
+					//Has complete 1 assign
+					assigned++;
+					//Reset ther assign count if out of rival to assign
+					if(assigned >= rivals.Count) {assigned = 0;}
+				}
 			}
 		}
 	}

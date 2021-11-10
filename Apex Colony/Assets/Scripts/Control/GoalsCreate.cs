@@ -12,8 +12,8 @@ public class GoalsCreate : MonoBehaviour
 
 	public void Create(Vector2 clickPosition)
 	{
-		//The amount of the object has the "Allies" tag are mark as follower
-		int followers = GameObject.FindGameObjectsWithTag("Allies").Length;
+		//The amount of follower in the fromation
+		int followers = Manager.i.formator.followers.Count;
 		//If the goals count are not the same as followers count
 		if(goals.Count != followers)
 		{

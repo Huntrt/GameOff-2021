@@ -10,7 +10,7 @@ public class AlliesManager : MonoBehaviour
 	void Update()
 	{
 		//% If press space
-		if(Input.GetKeyDown(KeyCode.Space))
+		if(Input.GetKey(KeyCode.Space))
 		{
 			//% Create an test allies
 			Instantiate(test, (Vector2)Camera.main.transform.position, Quaternion.identity);

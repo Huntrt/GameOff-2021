@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour
 	public CameraManager cam;
 	public AlliesManager allie;
 	public AstarPath path;
+	public FogOfWar fow;
 	///When the level start
 	public event Action stared;
 	[Serializable] public class Layers {public int enemy, frame;}

@@ -65,7 +65,7 @@ public class CameraManager : MonoBehaviour
 	void LateUpdate()
 	{
 		//Only able to drag camera if camera is in free mode an drag is not lock
-		if(option == CameraOption.free || !lockDrag) {DragCamera();}
+		if(option == CameraOption.free && !lockDrag) {DragCamera();}
 		//Set the camera position
 		cam.position = new Vector3
 		(

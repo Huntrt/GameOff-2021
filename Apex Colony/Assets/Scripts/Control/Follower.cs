@@ -117,4 +117,14 @@ public class Follower : MonoBehaviour
 		//No longer auto search path
 		path.autoRepath.maximumInterval = 1000;
 	}
+	
+	void OnDestroy()
+	{
+		//No longer listen to set goal upon destroy
+		manager.goal.created -= SetGoal;
+		//Remove this follower from fromation
+		formator.followers.Remove(this);
+		//Upate order of all the follower in list
+		foreach (Follower f in formator.followers) {f.UpdateOrder();}
+	}
 }

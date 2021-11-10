@@ -5,7 +5,7 @@
 		✓ The goal point will push it self out if it contact with collider.
 		✓ Follower break formation when engage.
 		✓ Follower chase after the target and stop when it killed.
-		▪ Change follower formation position by changing it order.
+		▪ Change follower formation position by changing index in followers list.
 		▪ UI - show where is click position when move
 		✓ Remove rivals
 			✓ Remove all rival
@@ -32,9 +32,7 @@
 		✓ Reset camera back to ceneter formation
 		✓ Camera following center of formation
 		✓ Bound camera inside of map
-		▪ Fog of wall system @next
-			a. try to study
-			b. particel system that remove when trigger with allies
+		X Fog of wall system
 		▪ UI - An button menu set cam option and reset cam
 		▪ UI - Minimap @consider
 	Allies:
@@ -50,11 +48,14 @@
 		▪ Movement
 			▪ Crawler
 			▪ Flyer
-			▪ Lengther
+			▪ Lengther @skeptical
 		▪ Stats
 			▪ Melee
 			▪ Projectile
 			▪ ...
+		▪ Dies
+			✓ Remove it from followers list
+			▪ Destroy object
 		▪ UI 
 			▪ Show heath when hover overallies
 			▪ Show stats and details of allies hover over on corner
@@ -65,9 +66,9 @@
 
 Visual:
 	Entity:
-		▪ Ant
-		▪ Bettle
-		▪ Fly
+		▪ Ant @doing
+		▪ Bettle 
+		▪ Fly @next
 	Object:
 		▪ Egg
 		▪ Food
