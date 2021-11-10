@@ -663,8 +663,8 @@ MonoBehaviour:
   option: 0
   lockDrag: 1
   bound: 9
-  dragSpeed: 10
-  keySpeed: 10
+  dragSpeed: 17
+  keySpeed: 15
   zoomSpeed: 10
   defaultZoom: 5
   zoomLimit:
@@ -2021,6 +2021,8 @@ MonoBehaviour:
   hasGenerated: 0
   hasPopulated: 0
   mapSize: {x: 0, y: 0}
+  mapMin: {x: 0, y: 0}
+  mapMax: {x: 0, y: 0}
   Fgroup: {fileID: 0}
   Sgroup: {fileID: 0}
   Bgroup: {fileID: 0}

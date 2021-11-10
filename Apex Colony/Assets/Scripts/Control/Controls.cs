@@ -13,6 +13,8 @@ public class Controls : MonoBehaviour
 
 	void Update()
 	{
+		//Get the mouse position
+		mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		//When press key to stop movement 
 		if(Input.GetKeyDown(KeyCode.X)) 
 		{
@@ -21,12 +23,14 @@ public class Controls : MonoBehaviour
 			//Stop all path movement of all the followers in formator
 			foreach (Follower follower in formator.followers) {follower.StopPath();}
 		}
+		///Selecting rival when click right mouse
+		Selecting();
+		///Create goal for formation at mouse to followers move toward and clear rival when click left mouse
+		if(Input.GetMouseButton(0)) {formator.ClearRivals(); manager.goal.Create(mousePos);}
 	}
 
-    void LateUpdate()
-    {
-		//Get the mouse position
-		mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	void Selecting()
+	{
 		//If PRESS the right mouse button
 		if(Input.GetMouseButtonDown(1))
 		{
@@ -51,8 +55,6 @@ public class Controls : MonoBehaviour
 					//Rival the click enemy if haven't rival
 					else {formator.RivalClicked(clickEnemey());}
 				}
-				//Create goal at click position if not click on enemy then clear all rivals
-				else {formator.ClearRivals(); manager.goal.Create(clickPos);}
 			}
 			///If release while holding mouse
 			if(mousing == Mousing.holding)
@@ -65,8 +67,8 @@ public class Controls : MonoBehaviour
 			//Releasing mouse and begin targeting rivals
 			if(mousing != Mousing.release) {mousing = Mousing.release; formator.TargetRivals();}
 		}
-		//If mouse position change while still cliking while camera not moving
-		if(mousing == Mousing.click && mousePos != clickPos && !manager.cam.cameraMove) 
+		//If mouse position change while still clicking
+		if(mousing == Mousing.click && mousePos != clickPos) 
 		{
 			//Are now holding mouse
 			mousing = Mousing.holding;
@@ -79,7 +81,7 @@ public class Controls : MonoBehaviour
 		}
 		///While holding, expand the selector by using click and mouse position as start & end anchor 
 		if(mousing == Mousing.holding) {enemySelector.transform.localScale = mousePos - clickPos;}
-    }
+	}
 
 	GameObject clickEnemey() ///The enemy go click by mouse
 	{

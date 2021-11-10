@@ -6,6 +6,7 @@
 		✓ Follower break formation when engage.
 		✓ Follower chase after the target and stop when it killed.
 		▪ Change follower formation position by changing it order.
+		▪ UI - show where is click position when move
 		✓ Remove rivals
 			✓ Remove all rival
 			✓ Remove single rival
@@ -29,12 +30,12 @@
 		✓ Camera zoom using wheel/key
 		✓ Get the ceneter point of formation
 		✓ Reset camera back to ceneter formation
-		▪ Camera following center of formation
-		▪ Bound camera inside of map @consider
-		▪ Fog of wall system
+		✓ Camera following center of formation
+		✓ Bound camera inside of map
+		▪ Fog of wall system @next
 			a. try to study
 			b. particel system that remove when trigger with allies
-		▪ UI - An button menu to reset cam and lock cam
+		▪ UI - An button menu set cam option and reset cam
 		▪ UI - Minimap @consider
 	Allies:
 		▪ Engage
@@ -42,9 +43,10 @@
 				✓ Box selector - draw an box and attack all the enemy in that box
 				✓ Group selector - add an new enemy as an rival
 				✓ Allies spread out base on it order to fight the rival 
-				▪ UI - show an indication on selected enemy and fading when complete selection
+				▪ UI - show an rival indication on selected enemy and fading when complete selection
 			✓ Provoke - Allies attack enemy that got in range
 			✓ The allies will engage to the position even when the rival are null
+			▪ UI - show an rival fading indication when click mouse, snap to the rival if click one 
 		▪ Movement
 			▪ Crawler
 			▪ Flyer
@@ -53,6 +55,9 @@
 			▪ Melee
 			▪ Projectile
 			▪ ...
+		▪ UI 
+			▪ Show heath when hover overallies
+			▪ Show stats and details of allies hover over on corner
 	Enemies:
 		▪ Behaviour
 			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box

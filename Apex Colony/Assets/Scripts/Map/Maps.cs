@@ -37,6 +37,8 @@ public class Maps : MonoBehaviour
 	public bool hasGenerated, hasPopulated;
 	[Tooltip("The map size using the highest axis between all section")]
 	public Vector2 mapSize;
+	///The highest and lowest point of map
+	public Vector2 mapMin, mapMax;
 	[HideInInspector] public Transform Fgroup, Sgroup, Bgroup;
 	[HideInInspector] public event Action generated, populated;
 
@@ -176,12 +178,22 @@ public class Maps : MonoBehaviour
 		//For each of the section in sections list
 		foreach (GameObject section in sections)
 		{
-			//Turn this section X axis into postive
-			float x = Mathf.Abs(section.transform.position.x);
-			//Turn this section Y axis into postive
-			float y = Mathf.Abs(section.transform.position.y);
-			//Map x & y are now the highest axis if it an new record
-			if(x > mapSize.x) {mapSize.x = x;} if(y > mapSize.y) {mapSize.y = y;}
+			//The x axis of current section
+			float x = section.transform.position.x;
+			//The y axis of current section
+			float y = section.transform.position.y;
+			//Get this section position X axis if it higher than the current max axis
+			if(section.transform.position.x > mapMax.x) {mapMax.x = x;}
+			//Get this section position Y axis if it higher than the current max axis
+			if(section.transform.position.y > mapMax.y) {mapMax.y = y;}
+			//Get this section position X axis if it lower than the current min axis
+			if(section.transform.position.x < mapMin.x) {mapMin.x = x;}
+			//Get this section position Y axis if it lower than the current min axis
+			if(section.transform.position.y < mapMin.y) {mapMin.y = y;}
+			//Convert the current section X and Y to positive value
+			float pX = Mathf.Abs(x); float pY = Mathf.Abs(y);
+			//Map size x & y are now the highest axis if it an new record
+			if(pX > mapSize.x) {mapSize.x = pX;} if(pY > mapSize.y) {mapSize.y = pY;}
 		}
 		///Fill the entire map with grid graph
 		//Get the node amount by get the map size divide it with section size then multiple 

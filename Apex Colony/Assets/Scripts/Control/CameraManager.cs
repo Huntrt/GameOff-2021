@@ -46,31 +46,45 @@ public class CameraManager : MonoBehaviour
 			cam.position = center;
 			//Reset the camera's Z axis
 			cam.position = new Vector3(cam.position.x, cam.position.y, -10);
-			//@ Won't able mouse to camera by mouse or key
-			return;
 		}
-		//Reset the camera zoom when press key
-		if (Input.GetKey(KeyCode.T)) {Camera.main.orthographicSize = defaultZoom;}
-		//Move the camera position back to the center of formation
-		if (Input.GetKey(KeyCode.R)) {cam.position = Manager.i.allie.FormationCenter();}
-		//@ Move camera toward key input using speed and camera are moving
-		if (Input.GetKey(KeyCode.UpArrow)) {MoveCamera(Vector2.up, keySpeed);cameraMove = true;}
-		if (Input.GetKey(KeyCode.DownArrow)) {MoveCamera(Vector2.down, keySpeed);cameraMove = true;}
-		if (Input.GetKey(KeyCode.LeftArrow)) {MoveCamera(Vector2.left, keySpeed);cameraMove = true;}
-		if (Input.GetKey(KeyCode.RightArrow)) {MoveCamera(Vector2.right, keySpeed);cameraMove = true;}
+		//Only able to move camera if option are free
+		if(option == CameraOption.free)
+		{	
+			//Reset the camera zoom when press key
+			if (Input.GetKey(KeyCode.T)) {Camera.main.orthographicSize = defaultZoom;}
+			//Move the camera position back to the center of formation
+			if (Input.GetKey(KeyCode.R)) {cam.position = Manager.i.allie.FormationCenter();}
+			//@ Move camera toward key input using speed and camera are moving
+			if (Input.GetKey(KeyCode.UpArrow)) {MoveCamera(Vector2.up, keySpeed);}
+			if (Input.GetKey(KeyCode.DownArrow)) {MoveCamera(Vector2.down, keySpeed);}
+			if (Input.GetKey(KeyCode.LeftArrow)) {MoveCamera(Vector2.left, keySpeed);}
+			if (Input.GetKey(KeyCode.RightArrow)) {MoveCamera(Vector2.right, keySpeed);}
+		}
 	}
 	
 	void LateUpdate()
 	{
-		//@ Stop camera is option are not free
-		if(option != CameraOption.free || lockDrag) {return;}
+		//Only able to drag camera if camera is in free mode an drag is not lock
+		if(option == CameraOption.free || !lockDrag) {DragCamera();}
+		//Set the camera position
+		cam.position = new Vector3
+		(
+			//Restrict the camera X position in the map's min and max X 
+			Mathf.Clamp(cam.position.x, Manager.i.map.mapMin.x, Manager.i.map.mapMax.x),
+			//Restrict the camera Y position in the map's min and max Y 
+			Mathf.Clamp(cam.position.y, Manager.i.map.mapMin.y, Manager.i.map.mapMax.y),
+			//Reset the camera Z
+			-10
+		);
+	}
+
+	void DragCamera()
+	{
 		//If the mouse has go out of bounds on Y axis
 		if (Input.mousePosition.y > height - bound || Input.mousePosition.y < 0 + bound 
 		//or the mouse has go out of bounds on X axis
 		|| Input.mousePosition.x < 0 + bound || Input.mousePosition.x > width - bound)
 		{
-			//Camera moving
-			cameraMove = true;
 			//Get the direction from camera center to mouse
 			Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - cam.position).normalized;
 			//Move camera toward mouse using speed
@@ -80,12 +94,21 @@ public class CameraManager : MonoBehaviour
 
 	void MoveCamera(Vector2 direction, float speed)
 	{
-		//Move camera with speed toward the direction
-		cam.position = (Vector2)cam.position + (Vector2)(direction * (speed * Time.deltaTime));
-		//Reset the camera's Z axis
-		cam.position = new Vector3(cam.position.x, cam.position.y, -10);
+		//If camera are not moving
+		if(!cameraMove)
+		{
+			//Move camera with speed toward the direction
+			cam.position = (Vector2)cam.position + (Vector2)(direction * (speed * Time.deltaTime));
+		}
+		//Camera are now moving
+		cameraMove = true;
 	}
-	
+
+
+	void RestrictCamera()
+	{
+
+	}
 
 	void ZoomCamera()
 	{
