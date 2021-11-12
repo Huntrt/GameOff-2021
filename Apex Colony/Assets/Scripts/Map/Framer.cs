@@ -17,11 +17,11 @@ public class Framer : MonoBehaviour
 		//Get the map
 		map = Manager.i.map;
 		//Add this frame into map upon create
-		map.frames.Add(this);
+		map.createFrames.Add(this);
 		//Generate more frame
 		Generate();
 		//Complete generation when this is the final frame (need +1)
-		if(map.frames.Count == map.amount.raw+1) {map.CompleteGeneration();}
+		if(map.createFrames.Count == map.amount.raw+1) {map.CompleteGeneration();}
 	}
 
 	public void Generate()
@@ -125,5 +125,5 @@ public class Framer : MonoBehaviour
 	//Function call to create border
 	Transform CreateBorder(Vector2 emptySide, float rotation)
 	//Create an block at an empty side with set rotation and get it transfrom
-	{return Instantiate(map.border, emptySide, Quaternion.Euler(0,0,rotation)).transform;}
+	{return Instantiate(map.useBorder, emptySide, Quaternion.Euler(0,0,rotation)).transform;}
 }

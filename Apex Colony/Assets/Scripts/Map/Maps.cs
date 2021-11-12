@@ -17,22 +17,23 @@ public class Maps : MonoBehaviour
 	public float sectionSize;
 	[Header("[SECTION]-----------------------------------------------")] 
 	[Tooltip("All the created section")]
-	public List<GameObject> sections;
-	[Tooltip("All the section variants")]
-	public List<GameObject> variants;
-	[Tooltip("All the special section")]
-	public List<GameObject> specials;
-	public GameObject border;
+	public List<GameObject> createdSections;
+	[Tooltip("All the currently use section variants")]
+	public List<GameObject> useVariants;
+	[Tooltip("All the currently use special section")]
+	public List<GameObject> useSpecials;
+	public GameObject useBorder;
 	///
 	[Header("[FRAME]-------------------------------------------------")] 
 	public GameObject framePrefab;
 	[HideInInspector] public int createdFrame;
-	//All the frame has create
-	public List<Framer> frames;
+	[Tooltip("All the created frame")]
+	public List<Framer> createFrames;
 	//All the available frame
 	List<Framer> availableFrame;
 	int generateProgress; bool failGenerate;
 	[Header("[STATUS]------------------------------------------------")]
+	public GameObject generationLoading;
 	[SerializeField] GameObject groupPrefab;
 	public bool hasGenerated, hasPopulated;
 	[Tooltip("The map size using the highest axis between all section")]
@@ -44,16 +45,12 @@ public class Maps : MonoBehaviour
 
 	void Awake()
 	{
-		//New frams list and section list
-		frames = new List<Framer>(); sections = new List<GameObject>();
-		//The amount of section to create by randomize min and max if the amount has not set
-		if(amount.raw == 0) amount.raw = UnityEngine.Random.Range(amount.min, amount.max+1);
-	}
-
-	void Start()
-	{
-		//Start generation when begin
-		StartGeneration();
+		//New create frame list 
+		createFrames = new List<Framer>(); 
+		//New availab frame list 
+		availableFrame = new List<Framer>();
+		//New create section list 
+		createdSections = new List<GameObject>();
 	}
 
 	void Update()
@@ -61,63 +58,70 @@ public class Maps : MonoBehaviour
 		//If frame has not generate
 		if(!hasGenerated)
 		{
-			//If haven't FAIL frame generation while generate progress has stopped when generated enough frame
-			if(!failGenerate && frames.Count == generateProgress && createdFrame < amount.raw)
+			//If haven't FAIL frame loading while generate progress has stopped when generated enough frame
+			if(!failGenerate && createFrames.Count == generateProgress && createdFrame < amount.raw)
 			{
 				//% Print an error
-				//Debug.LogError("Fail to generated frame. Restarting...");
-				//Has failed frame generation
+				//% Debug.LogError("Fail to generated frame. Restarting...");
+				//Has failed frame loading
 				failGenerate = true;
-				//Start frame generation again
+				//Start frame loading again
 				StartGeneration();
 			}
 			//Update generating progress
-			generateProgress = frames.Count;
+			generateProgress = createFrames.Count;
 		}
 	}
 
-	///Begin frame generation
+	///Begin frame loading
 	public void StartGeneration()
 	{
+		//No longer generated map
+		hasGenerated = false;
+		//The amount of section to create by randomize min and max if the amount has not set
+		amount.raw = UnityEngine.Random.Range(amount.min, amount.max+1);
+		//Active the loading ui when start generating
+		generationLoading.SetActive(true);
 		//Reset created frame counter, map and node size
 		createdFrame -= createdFrame; mapSize = Vector2.zero;
-		//If has failed generating
-		if(failGenerate)
-		{
-			//Destroy the section group, frame group and border group in scene
-			Destroy(Fgroup.gameObject); Destroy(Sgroup.gameObject); Destroy(Bgroup.gameObject);
-			//Reset the frames list
-			frames.Clear(); frames = new List<Framer>();
-			//Reset the sections list
-			sections.Clear(); sections = new List<GameObject>();
-		}
-		//Create an new the frame group in scene
-		Fgroup = Instantiate(groupPrefab, transform.position, Quaternion.identity).transform;
-		//Create an new the section group in scene
-		Sgroup = Instantiate(groupPrefab, transform.position, Quaternion.identity).transform;
-		//Create an new the border group in scene
-		Bgroup = Instantiate(groupPrefab, transform.position, Quaternion.identity).transform;
+		//Grouping frame, section and border
+		#region Grouping
+		//If there already has frame, section and border group
+		if(Fgroup != null || Sgroup != null || Bgroup != null )
+		//Destroy the already exitsting frame, section and border group
+		{Destroy(Fgroup.gameObject); Destroy(Sgroup.gameObject); Destroy(Bgroup.gameObject);}
+		//Create an new frame, section and border group
+		Fgroup = CreateGroup(); Sgroup = CreateGroup(); Bgroup = CreateGroup();
 		//Set frame, section and border group as the children of map
 		Fgroup.parent = transform; Sgroup.parent = transform; Bgroup.parent = transform;
 		//Rename frame, section and border group
 		Fgroup.name = "Frame Group"; Sgroup.name = "Section Group"; Bgroup.name = "Border Group";
+		#endregion
+		//Reset the created frames list
+		createFrames.Clear(); createFrames = new List<Framer>();
+		//Reset the available frames list
+		availableFrame.Clear(); availableFrame = new List<Framer>();
+		//Reset the created section list
+		createdSections.Clear(); createdSections = new List<GameObject>();
 		//Create the FIRST frame at the map position with no rotation and group it up
 		Instantiate(framePrefab, transform.position, Quaternion.identity).transform.parent = Fgroup;
-		//Has yet to fail frane generation
+		//Has yet to fail frane loading
 		failGenerate = false;
 	}
+	//Create group when needed
+	Transform CreateGroup() {return Instantiate(groupPrefab,transform.position,Quaternion.identity).transform;}
 
-	///When frame has completed generation
+	///When frame has completed loading
 	public void CompleteGeneration()
 	{
 		//All frame are now available
-		availableFrame = frames;
-		//Has complete frame generation
+		availableFrame = new List<Framer>(createFrames);
+		//Has complete frame loading
 		hasGenerated = true; generated?.Invoke();
 		//Begin fill all the frame with section
 		PopulateFrame();
 		//Blocking off all the section side that is empty
-		foreach (Framer frame in frames) {frame.BlockSection();}
+		foreach (Framer frame in createFrames) {frame.BlockSection();}
 		//Has complete section population
 		hasPopulated = true; populated?.Invoke();
 		//Get the size of map
@@ -130,7 +134,7 @@ public class Maps : MonoBehaviour
 	public void PopulateFrame()
 	{
 		///Randomly chose an available frame to has special section
-		foreach (GameObject special in specials) {SpecialSections(special);}
+		foreach (GameObject special in useSpecials) {SpecialSections(special);}
 		///Fill the rest of the available frame with randomly chose section variant
 		VariantSections();
 	}
@@ -161,13 +165,13 @@ public class Maps : MonoBehaviour
 		foreach (Framer frame in availableFrame)
 		{
 			//Randomly chose an section variant
-			GameObject variant = variants[UnityEngine.Random.Range(0, variants.Count)];
+			GameObject variant = useVariants[UnityEngine.Random.Range(0, useVariants.Count)];
 			//Create chosed section variant at this frame position with no rotation
 			GameObject created = Instantiate(variant, frame.transform.position, Quaternion.identity);
 			//Group the section up
 			created.transform.parent = Sgroup.transform;
 			//Add this section to created list
-			sections.Add(created);
+			createdSections.Add(created);
 			//Set this frame section to be the variant
 			frame.section = variant;
 		}
@@ -176,7 +180,7 @@ public class Maps : MonoBehaviour
 	void GetMapSize()
 	{
 		//For each of the section in sections list
-		foreach (GameObject section in sections)
+		foreach (GameObject section in createdSections)
 		{
 			//The x axis of current section
 			float x = section.transform.position.x;

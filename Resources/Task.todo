@@ -5,76 +5,159 @@
 		✓ The goal point will push it self out if it contact with collider.
 		✓ Follower break formation when engage.
 		✓ Follower chase after the target and stop when it killed.
+		▪ Follower go to an interactable when needed and stop when it opened. @doing
 		▪ Change follower formation position by changing index in followers list.
-		▪ UI - show where is click position when move
-		✓ Remove rivals
-			✓ Remove all rival
-			✓ Remove single rival
-			✓ Rival deselector
-			✓ Recalculate allies path that has no rival to an existing rival
 	Maps: 
-		✓ An frame will have 4 point on each side
-		✓ Each side will has an 50% chance to create another frame
-		✓ Cast an ray that will detect if any side already has an frame
-		✓ Will has limit of an amount frame able to generate
-		✓ Special section will be chose to create at random frame
-			✓ Spawnpoint - will spawn the formation when complete populating @skeptical
-			✓ Shop - will able to buy upgrade or something else
-			▪ ...
-		✓ Randomly chose section variation will be create at an frame
-		✓ Block off the side that has no frame
-		✓ Scan path finding after complete populating @skeptical
+		✓ An frame will have 4 point on each side.
+		✓ Each side will has an 50% chance to create another frame.
+		✓ Cast an ray that will detect if any side already has an frame.
+		✓ Will has limit of an amount frame able to generate.
+		✓ Special section will be chose to create at random frame.
+		✓ Randomly chose section variation will be create at an frame.
+		✓ Block off the side that has no frame.
+		✓ Scan path finding after complete populating. @unstable
+		▪ An unquie map for bosses.
 	View: 
-		✓ Move camera by hover mouse at screen edge
-		✓ Camera move using key
-		✓ Camera zoom using wheel/key
-		✓ Get the ceneter point of formation
-		✓ Reset camera back to ceneter formation
-		✓ Camera following center of formation
-		✓ Bound camera inside of map
+		✓ Move camera by hover mouse at screen edge.
+		✓ Camera move using key.
+		✓ Camera zoom using wheel/key.
+		✓ Get the ceneter point of formation.
+		✓ Reset camera back to ceneter formation.
+		✓ Camera following center of formation.
+		✓ Bound camera inside of map.
 		X Fog of wall system
-		▪ UI - An button menu set cam option and reset cam
-		▪ UI - Minimap @consider
 	Allies:
-		▪ Engage
-			✓ Selector - Chose an group of enemy for allies to spread out equally to fight
-				✓ Box selector - draw an box and attack all the enemy in that box
-				✓ Group selector - add an new enemy as an rival
-				✓ Allies spread out base on it order to fight the rival 
-				▪ UI - show an rival indication on selected enemy and fading when complete selection
-			✓ Provoke - Allies attack enemy that got in range
-			✓ The allies will engage to the position even when the rival are null
-			▪ UI - show an rival fading indication when click mouse, snap to the rival if click one 
+		▪ Action
+			✓ Moving to formation when needed and overwrite other action.
+			▪ Picking remains and food when walk over it.
+			▪ Go toward interactable that user click and open it when in range.
+			✓ Engage with enemy than set it at rival
+				✓ Click - set or remove the clicked enemy as rival depend on if it rival or not.
+				✓ Selector - Chose an group of enemy for allies to spread out equally to fight.
+					✓ Box selector - draw an box and attack all the enemy in that box.
+					✓ Group selector - add an new enemy as an rival.
+					✓ Allies spread out base on it order to fight the rival .
+				✓ Provoke - Allies attack enemy that got in range.
+				✓ Remove rivals
+					✓ Remove all rival.
+					✓ Remove single rival.
+					✓ Rival deselector.
+					✓ Recalculate allies path that has no rival to an existing rival.
 		▪ Movement
 			▪ Crawler
 			▪ Flyer
-			▪ Lengther @skeptical
+			▪ Lengther @consider
 		▪ Stats
 			▪ Melee
 			▪ Projectile
 			▪ ...
 		▪ Dies
-			✓ Remove it from followers list
-			▪ Destroy object
+			✓ Remove it from followers list.
+			▪ Remove it from pool.
+			▪ Destroy object.
 		▪ UI 
-			▪ Show heath when hover overallies
-			▪ Show stats and details of allies hover over on corner
+			▪ Show heath when hover overallies.
+			▪ Show stats and details of allies hover over on corner.
 	Enemies:
 		▪ Behaviour
-			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box
-			▪ Combat - Enemy moving toward and attack nearest allies got detect by it
+			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box.
+			▪ Combat - Enemy moving toward and attack nearest allies got detect by it.
+		▪ Boss @consider
+	Levels:
+		Special section are for containing interactable.
+		✓ Manager
+			✓ Map and Level counter.
+			✓ List of each level content such as section variant and special.
+			✓ Assign level content into map generation base on the counter.
+		▪ Content
+			▪ Each level has 3 map.
+			▪ Complete 3 map will fight an boss to go to next level. @consider
+			▪ Has total of 5 map @next
+				▪ 1. Nest - fighting other ant, fly, ...
+				▪ 2. Cave - fighting with spider, beetle, ...
+				▪ 3. Soil - fighting worm, maggot, ... 
+				▪ 4. Grass - fighting with beetle, mosuqito, ...
+				▪ 5. Tree - bettle, bugs, ... @consider
+		▪ Interactable 
+			▪ Begin point - where the allies formation spawn when go to between map
+				✓ Spawn allies after map has complete generation
+				▪ Run an animation with particle to display it being dug from below.
+			▪ Ending point - when formation open it will wait for set time to go next map
+				▪ Display particle falling down when it being dug.
+				▪ Unable to dig when in combnat. @consider
+			▪ Eggs - feed the egg enough food will spawn an allies @doing
+				▪ Egg will spawn an random allies with species base on the current level.
+			▪ Port - trading food for upgrade
+				▪ List of random upgrade to buy.
+
+	▪ Food - the game's only currency.
 
 Visual:
 	Entity:
-		▪ Ant @doing
-		▪ Bettle 
-		▪ Fly @next
+		Crawler:
+			▪ Pavenemnt ant
+			▪ Fire ant
+			▪ Weaver ant
+			▪ Grass cutter ant
+			▪ Wood ant
+			▪ Ironclad beetle
+			▪ Dung beetles
+		Flyer:
 	Object:
-		▪ Egg
 		▪ Food
 			▪ Seed
 			▪ Remains
-
+	Levels:
+		▪ Nest
+			✓ Eggs
+			▪ Port
+			✓ Gound
+			✓ Wall
+			✓ Border
+		▪ Cave
+			✓ Eggs
+			▪ Port
+			✓ Gound
+			✓ Wall
+			✓ Border
+		▪ Soil
+			✓ Eggs
+			▪ Port
+			✓ Gound
+			✓ Wall
+			✓ Border
+		▪ Grass
+			✓ Eggs
+			▪ Port
+			✓ Gound
+			✓ Wall
+			✓ Border
+	Interface:
+		▪ Indication
+			▪ Show arrow? icon when hold "move key" down and fading when "move key" release.
+			▪ Rival
+				▪ Flash [sword]? icon on where "rival key" click.
+				▪ Flash [sword]? icon that snap to the enemy got rival.
+				▪ Flash [X-cut sword]? icon that snap to the enemy got un-rival.
+				▪ Show [sword]? icon on enemy that current selecting by rival selector box.
+				▪ Fade all [sowrd]? icon that rival selector box has when relase it.
+		▪ Hover
+			▪ Allies Heath bar
+				▪ Show when mouse hover over an allies.
+				▪ Show when in combat consider.
+			▪ Show allies stats of allies mouse hover.
+				▪ Show in the corner.
+				▪ Show next to mouse with option. @consider
+			▪ Show
+		▪ Game
+			▪ Display food
+				▪ Show when obtain food.
+				▪ Show how many food are getting obatin.
+				▪ Show when mouse hover eggs or port.
+				▪ Hide when nothing happen.
+			▪ Button to display or toggle camera option.
+			▪ Button to reset the camera position.
+			▪ Minimap. @consider
 Bug:
-	✓ Map generated has an chance to fail
+	✓ Map generated has an chance to fail @critical
 		Solution: Reset map generation if not generate enough frame

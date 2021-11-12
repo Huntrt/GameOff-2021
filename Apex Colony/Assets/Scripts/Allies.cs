@@ -10,10 +10,8 @@ public class Allies : MonoBehaviour
 	[Tooltip("Attacking speed")] public float rate; float rateCount;
 	[Tooltip("Attack range")] public float range;
 	public combating combat;
-	[SerializeField] SpriteRenderer render;
 	public Rigidbody2D rb;
 	public AlliesManager allie;
-	Color baseColor; //% base color of allies
 
 	//! Only use disable and enable when begin spawn at the begin of map
 	//! But the allies when dead it will need to be destroy and remove from maanger
@@ -34,8 +32,6 @@ public class Allies : MonoBehaviour
 		heath = maxHeath;
 		//Set the velocity as moving speed
 		velocity = speed;
-		//% Get the basic color
-		baseColor = render.color;
 	}
 
 	void Update()
@@ -48,17 +44,14 @@ public class Allies : MonoBehaviour
 			//If rate counter reach attack rate
 			if(rateCount >= rate)
 			{
-				//% Attack function (temporaray change color)
-				Invoke("Attack", 0.2f); render.color = Color.white;
+				//Begin attack
+				Attack();
 			}
 		}
 	}
 
 	void Attack()
 	{
-		//% Reset color after complete attack
-		render.color = baseColor;
-		//% Reset rate count
-		rateCount -= rateCount;
+		
 	}
 }
