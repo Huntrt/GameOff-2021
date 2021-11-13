@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.05, g: 0.05, b: 0.05, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -619,12 +619,7 @@ PrefabInstance:
     - target: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee,
         type: 3}
       propertyPath: m_Name
-      value: Ant_A
-      objectReference: {fileID: 0}
-    - target: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Pavement Ant_A
       objectReference: {fileID: 0}
     - target: {fileID: 5483240936897854155, guid: ff997988661edfe49b9aeaef968a80ee,
         type: 3}

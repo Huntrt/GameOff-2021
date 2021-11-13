@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Allies : MonoBehaviour
 {
-	[Tooltip("Max heath and current heath")] public float maxHeath, heath;
+	public Heath hp;
 	[Tooltip("Attack damage")] public float damage;
 	[HideInInspector] public float velocity;
 	[Tooltip("Moving speed to go between target")] public float speed;
@@ -11,6 +11,8 @@ public class Allies : MonoBehaviour
 	[Tooltip("Attack range")] public float range;
 	public combating combat;
 	public Rigidbody2D rb;
+	[SerializeField] Attacking attacking;
+	public Pathfinding.AIDestinationSetter destination;
 	public AlliesManager allie;
 
 	//! Only use disable and enable when begin spawn at the begin of map
@@ -28,8 +30,6 @@ public class Allies : MonoBehaviour
 			//Add this allies component into it manager list once when create
 			allie.alliesComp.Add(this);
 		}
-		//Reset current heath
-		heath = maxHeath;
 		//Set the velocity as moving speed
 		velocity = speed;
 	}
@@ -41,17 +41,16 @@ public class Allies : MonoBehaviour
 		{
 			//Begin attack rate counter
 			rateCount += Time.deltaTime;
-			//If rate counter reach attack rate
+			//Attack when rate counter reach attack rate
 			if(rateCount >= rate)
 			{
-				//Begin attack
-				Attack();
+				//If the target has destination
+				if(destination.target != null)
+				//Send event with the target enemy heath component to attack with damage
+				{attacking.Attack.Invoke(destination.target.GetComponent<Heath>(), damage);}
+				//Reset the rate count
+				rateCount -= rateCount;
 			}
 		}
-	}
-
-	void Attack()
-	{
-		
 	}
 }

@@ -55,24 +55,24 @@ public class Follower : MonoBehaviour
 			if(!moving && hasVelocity)
 			{
 				//Cast an circle cast to detect eneny
-				RaycastHit2D detect = Physics2D.CircleCast
+				RaycastHit2D inRange = Physics2D.CircleCast
 				//The circle are at this object with radius of allies range stat and only on enemy layer
 				(transform.position, allies.range, Vector2.zero, 0, manager.layer.enemy);
-				//Set the enemt got detected as rival
-				if(detect) {SetRival(detect.transform.gameObject);}
+				//Set the enemt got in range as rival
+				if(inRange) {SetRival(inRange.transform.gameObject);}
 			}
 		}
 		///If the target destination exist and it is an enemy
 		if(destination.target != null && destination.target.CompareTag("Enemy"))
 		{
 			//Enable auto search path
-			path.autoRepath.maximumInterval = 0f;
+			path.canSearch = true;
 			//Get the distance between this follower the target enemy
 			distance = Vector2.Distance(transform.position, destination.target.position);
 			//If the enemy are in the allies range
 			if(distance <= allies.range)
 			{
-				//Conver approach to decimal then apply approach slowdown to speed
+				//Convert approach to decimal then apply it slowdown to speed
 				allies.velocity = (allies.approach/100) * allies.speed;
 				//Change allies state state to fight
 				allies.combat = combating.fight;
@@ -84,8 +84,8 @@ public class Follower : MonoBehaviour
 	{
 		//Set the target destination as the goal that has same index as follower order
 		destination.target = manager.goal.goals[order].transform;
-		//Searching for path then disable auto search path
-		path.SearchPath(); path.autoRepath.maximumInterval = 1000;
+		//Enable auto search path for search rival path then disable auto search path
+		path.canSearch = true; path.SearchPath(); path.canSearch = false;
 		//Update allies velocity to moving speed then set the path speed as velocity
 		allies.velocity = allies.speed; path.maxSpeed = allies.velocity;
 		//Don't has velocity yet and allies no longer combat
@@ -100,8 +100,10 @@ public class Follower : MonoBehaviour
 		{
 			//Set the allies velocity as the movement speed
 			allies.velocity = allies.speed;
-			//Set destination target as rival receive then searching path
-			destination.target = rival.transform; path.SearchPath();
+			//Set destination target as rival receive
+			destination.target = rival.transform;
+			//Enable auto search path and begin search
+			path.canSearch = true; path.SearchPath();
 			//Begin chasing the enemy
 			allies.combat = combating.chase;
 		}
@@ -115,7 +117,7 @@ public class Follower : MonoBehaviour
 		//Remove current path and remove target destination
 		path.SetPath(null); destination.target = null;
 		//No longer auto search path
-		path.autoRepath.maximumInterval = 1000;
+		path.canSearch = false;
 	}
 	
 	void OnDestroy()

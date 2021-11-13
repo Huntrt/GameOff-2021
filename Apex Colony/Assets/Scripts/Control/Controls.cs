@@ -25,8 +25,21 @@ public class Controls : MonoBehaviour
 		}
 		///Selecting rival when click right mouse
 		Selecting();
-		///Create goal for formation at mouse to followers move toward and clear rival when click left mouse
-		if(Input.GetMouseButton(0)) {formator.ClearRivals(); manager.goal.Create(mousePos);}
+		//When click left mouse
+		if(Input.GetMouseButton(0)) 
+		{
+			//Create an raycast to click at current position only at the interactable layer
+			RaycastHit2D react = Physics2D.Raycast(mousePos, Vector2.zero, 0 ,manager.layer.inter);
+			//Clear all the rival
+			formator.ClearRivals();
+			//If click on an interactable
+			if(react) 
+			{
+				print("Interact with " + react.transform.name);
+			}
+			///Create goal for formation at mouse to followers move toward if not click on interactable
+			else {manager.goal.Create(mousePos);}
+		}
 	}
 
 	void Selecting()

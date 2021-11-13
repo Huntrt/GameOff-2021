@@ -14,17 +14,21 @@ public class Manager : MonoBehaviour
 	public AstarPath path;
 	///When the level start
 	public event Action stared;
-	[Serializable] public class Layers {public int enemy, frame;}
+	[Serializable] public class Layers {public int allies, enemy, frame, inter;}
 	//All the needed layer
 	public Layers layer;
 	public static Manager i; 
 
 	void Awake()
 	{
-		//Get the frame layer
-		layer.frame = (1 << (LayerMask.NameToLayer("Frame")));
+		//Get the allies layer
+		layer.allies = (1 << (LayerMask.NameToLayer("Allies")));
 		//Get the enemy layer
 		layer.enemy = (1 << (LayerMask.NameToLayer("Enemy")));
+		//Get the frame layer
+		layer.frame = (1 << (LayerMask.NameToLayer("Frame")));
+		//Get the interactable layer
+		layer.inter = (1 << (LayerMask.NameToLayer("Interactable")));
 		//Make this script into singleton
 		i = this;
 	}

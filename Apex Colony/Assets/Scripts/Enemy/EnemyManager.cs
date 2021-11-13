@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-	public List<Transform> enemies;
+	public List<GameObject> enemiesObj;
+	public List<Enemy> enemiesComp;
 
 	void Awake()
 	{

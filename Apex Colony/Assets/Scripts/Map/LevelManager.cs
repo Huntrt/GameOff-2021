@@ -38,6 +38,10 @@ public class LevelManager : MonoBehaviour
 
 	public void NextMap()
 	{
+		//Game over when current level reach the total level count
+		if(currentLevel == levels.Count-1) {print("Game Over"); return;}
+		//Deactive all the allies object in allies object manager
+		foreach (GameObject a in Manager.i.allie.alliesObj) {a.SetActive(false);}
 		//Go to the next map
 		currentMap++;
 		//Go the next level when complete the required amount of map
