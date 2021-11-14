@@ -13,3 +13,13 @@
 # Details:
 	An section has an size of 13x13 0.4 scale path nodes
 	Manager.i.path.isScanning = a* scan graph state
+	Buying allies in eggs:
+		> control get the [eggs]
+		> follower go toward the [eggs]
+		> follower call the [interact event] of the [eggs] when in range
+		> [eggs] will show [eggs panel] and update the panel info upon [interact event]
+		> [eggs] will listen to accecpt and decline BUTTON event of [eggs panel]
+		a. when click ACCEPT button in [eggs panel]
+			> spawning the [eggs]'s allies if has enough money
+		b. when click DECLINE button in [eggs panel] or MOVING formation
+			> close the panel and remove both the accecpt and decline event in [eggs]

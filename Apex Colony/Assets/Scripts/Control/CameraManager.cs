@@ -54,11 +54,15 @@ public class CameraManager : MonoBehaviour
 			if (Input.GetKey(KeyCode.T)) {Camera.main.orthographicSize = defaultZoom;}
 			//Move the camera position back to the center of formation
 			if (Input.GetKey(KeyCode.R)) {cam.position = Manager.i.allie.FormationCenter();}
-			//@ Move camera toward key input using speed and camera are moving
-			if (Input.GetKey(KeyCode.UpArrow)) {MoveCamera(Vector2.up, keySpeed);}
-			if (Input.GetKey(KeyCode.DownArrow)) {MoveCamera(Vector2.down, keySpeed);}
-			if (Input.GetKey(KeyCode.LeftArrow)) {MoveCamera(Vector2.left, keySpeed);}
-			if (Input.GetKey(KeyCode.RightArrow)) {MoveCamera(Vector2.right, keySpeed);}
+			//The camera moving direction
+			Vector2 moveDirection = Vector3.zero;
+			//@ Changing the camera moving direction base on key input
+			if (Input.GetKey(KeyCode.UpArrow)) {moveDirection.y = 1;}
+			if (Input.GetKey(KeyCode.DownArrow)) {moveDirection.y = -1;}
+			if (Input.GetKey(KeyCode.LeftArrow)) {moveDirection.x = -1;}
+			if (Input.GetKey(KeyCode.RightArrow)) {moveDirection.x = 1;}
+			//Moving the camera with move direction with key speed
+			MoveCamera(moveDirection.normalized, keySpeed);
 		}
 	}
 	
@@ -102,12 +106,6 @@ public class CameraManager : MonoBehaviour
 		}
 		//Camera are now moving
 		cameraMove = true;
-	}
-
-
-	void RestrictCamera()
-	{
-
 	}
 
 	void ZoomCamera()

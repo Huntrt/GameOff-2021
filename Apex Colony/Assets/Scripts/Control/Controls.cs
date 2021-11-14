@@ -1,3 +1,4 @@
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class Controls : MonoBehaviour
@@ -16,29 +17,28 @@ public class Controls : MonoBehaviour
 		//Get the mouse position
 		mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		//When press key to stop movement 
-		if(Input.GetKeyDown(KeyCode.X)) 
-		{
-			//Clear all rival in formator
-			formator.ClearRivals();
-			//Stop all path movement of all the followers in formator
-			foreach (Follower follower in formator.followers) {follower.StopPath();}
-		}
+		if(Input.GetKeyDown(KeyCode.X)) {StopFromation();}
 		///Selecting rival when click right mouse
 		Selecting();
-		//When click left mouse
+		///Moving or interact when click left mouse
 		if(Input.GetMouseButton(0)) 
 		{
 			//Create an raycast to click at current position only at the interactable layer
 			RaycastHit2D react = Physics2D.Raycast(mousePos, Vector2.zero, 0 ,manager.layer.inter);
 			//Clear all the rival
 			formator.ClearRivals();
-			//If click on an interactable
-			if(react) 
+			///Make fromation go toward the clicked interactable if click one
+			if(react) {foreach (Follower f in formator.followers) {f.SetInteract(react.transform);}}
+			///If not click on any interactable or UI
+			else if(!EventSystem.current.IsPointerOverGameObject())
 			{
-				print("Interact with " + react.transform.name);
+				//If the eggs panel are active
+				if(manager.eggsPanel.gameObject.activeInHierarchy)
+				//Click the declining button of egg panel 
+				{manager.eggsPanel.decline.onClick.Invoke();}
+				///Create formation of goal at mouse for followers move toward
+				manager.goal.Create(mousePos);
 			}
-			///Create goal for formation at mouse to followers move toward if not click on interactable
-			else {manager.goal.Create(mousePos);}
 		}
 	}
 
@@ -51,13 +51,11 @@ public class Controls : MonoBehaviour
 			clickPos = mousePos;
 			//Mouse are click
 			mousing = Mousing.click;
-			//Clear selected enemy
-			formator.ClearSelection();
 		}
 		//If RELEASE the right mouse button
 		if(Input.GetMouseButtonUp(1))
 		{
-			///If release while click mouse
+			///If release while CLICK mouse
 			if(mousing == Mousing.click)
 			{
 				//If click on an enemy
@@ -69,7 +67,7 @@ public class Controls : MonoBehaviour
 					else {formator.RivalClicked(clickEnemey());}
 				}
 			}
-			///If release while holding mouse
+			///If release while HOLDING mouse
 			if(mousing == Mousing.holding)
 			{
 				//Rivaling all selected enemy
@@ -79,8 +77,10 @@ public class Controls : MonoBehaviour
 			}
 			//Releasing mouse and begin targeting rivals
 			if(mousing != Mousing.release) {mousing = Mousing.release; formator.TargetRivals();}
+			//Clear selected enemy when release mouse
+			formator.ClearSelection();
 		}
-		//If mouse position change while still clicking
+		///If mouse position change while still clicking
 		if(mousing == Mousing.click && mousePos != clickPos) 
 		{
 			//Are now holding mouse
@@ -102,5 +102,13 @@ public class Controls : MonoBehaviour
 		RaycastHit2D click = Physics2D.Raycast(clickPos, Vector2.zero, 0 , manager.layer.enemy);
 		//Send the enemy on got click if click one else send null 
 		if(click) {return click.collider.gameObject;} return null;
+	}
+
+	public void StopFromation() ///Stop the whole formation
+	{
+		//Clear all rival in formator
+		formator.ClearRivals();
+		//Stop all path movement of all the followers in formator
+		foreach (Follower f in formator.followers) {f.StopMovement();}
 	}
 }

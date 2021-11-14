@@ -7,6 +7,8 @@ public class EnemySpawner : MonoBehaviour
     void Start()
 	{
 		//Create enemy at this point with no rotation
-		Instantiate(enemy, transform.position, Quaternion.identity);
+		GameObject e = Instantiate(enemy, transform.position, Quaternion.identity);
+		//Group the spawned enemy
+		e.transform.parent = Manager.i.map.Egroup;
 	}
 }

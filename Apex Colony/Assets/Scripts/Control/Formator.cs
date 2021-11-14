@@ -16,7 +16,7 @@ public class Formator : MonoBehaviour
 		//Go through all of the followers in list
 		for (int f = 0; f < followers.Count; f++) 
 		{
-			//Give the of requested follower it order
+			//Give the of requested follower it order in list
 			if(followers[f] == follower) {follower.order = f;}
 		}
 	}
@@ -69,7 +69,6 @@ public class Formator : MonoBehaviour
 	public void ClearRivals() {rivals.Clear(); rivals = new List<GameObject>();}
 	#endregion
 	
-	//Clear all the enemy currentlu been selected
+	//Clear all the enemy currently been selected
 	public void ClearSelection() {selectings.Clear(); selectings = new List<GameObject>();}
-
 }

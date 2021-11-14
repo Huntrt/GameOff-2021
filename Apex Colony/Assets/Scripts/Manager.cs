@@ -3,6 +3,7 @@ using System;
 
 public class Manager : MonoBehaviour
 {
+	[Header("Component")]
 	public Formator formator;
 	public GoalsCreate goal;
 	public Controls control;
@@ -12,11 +13,12 @@ public class Manager : MonoBehaviour
 	public AlliesManager allie;
 	public LevelManager lv;
 	public AstarPath path;
+	public EggsPanel eggsPanel;
+	public EggsManager eggs;
 	///When the level start
 	public event Action stared;
-	[Serializable] public class Layers {public int allies, enemy, frame, inter;}
 	//All the needed layer
-	public Layers layer;
+	[Serializable] public class Layers {public int allies, enemy, frame, inter;} public Layers layer;
 	public static Manager i; 
 
 	void Awake()

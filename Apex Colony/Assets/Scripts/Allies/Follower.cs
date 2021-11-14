@@ -9,7 +9,7 @@ public class Follower : MonoBehaviour
 	public int order;
 	public float distance, velocity;
 	public bool moving;
-	bool hasVelocity; //? to handle velocity delay during set goal
+	bool hasVelocity = true;
 	Manager manager; Formator formator;
 
 	void Start()
@@ -42,7 +42,7 @@ public class Follower : MonoBehaviour
 		if(destination.target == null) 
 		{
 			//Stop path and no longer move
-			StopPath(); path.maxSpeed = 0.1f;
+			StopMovement(); path.maxSpeed = 0.1f;
 			//Will get new rival if lost rival while chasing or fighting
 			if(allies.combat != combating.none) {formator.TargetRivals();}
 			//Allies are no longer combat
@@ -62,29 +62,44 @@ public class Follower : MonoBehaviour
 				if(inRange) {SetRival(inRange.transform.gameObject);}
 			}
 		}
-		///If the target destination exist and it is an enemy
-		if(destination.target != null && destination.target.CompareTag("Enemy"))
+		///If the target destination exist
+		if(destination.target != null)
 		{
 			//Enable auto search path
 			path.canSearch = true;
-			//Get the distance between this follower the target enemy
+			//Get the distance between this follower the target enemy or interactable
 			distance = Vector2.Distance(transform.position, destination.target.position);
-			//If the enemy are in the allies range
+			//If the enemy or interactble are in the allies range
 			if(distance <= allies.range)
 			{
-				//Convert approach to decimal then apply it slowdown to speed
-				allies.velocity = (allies.approach/100) * allies.speed;
-				//Change allies state state to fight
-				allies.combat = combating.fight;
+				//Rotate toward the destination target
+				transform.up = destination.target.position - transform.position;
+				//If the destination target are an ENEMY
+				if(destination.target.CompareTag("Enemy"))
+				{
+					//Convert approach to decimal then apply it slowdown to speed
+					allies.velocity = (allies.approach/100) * allies.speed;
+					//Change allies state state to fight
+					allies.combat = combating.fight;
+				}
+				//If the destination target are an INTERACTABLE
+				if(destination.target.CompareTag("Interactable"))
+				{
+					//Call the interact event of the interactable target when in range
+					destination.target.GetComponent<Interactable>().interact.Invoke();
+				}
 			}
 		}
 	}
 
-	void SetGoal()
+	///Set the target destination as the goal that has same index as follower order then begin moving
+	void SetGoal() {destination.target = manager.goal.goals[order].transform; Moving();}
+	///Set the target destination as interactable receive then begin moving
+	public void SetInteract(Transform react) {destination.target = react; Moving();}
+	///Moving when receving goal or interactable
+	void Moving()
 	{
-		//Set the target destination as the goal that has same index as follower order
-		destination.target = manager.goal.goals[order].transform;
-		//Enable auto search path for search rival path then disable auto search path
+		//Enable auto search path for searching path then disable auto search path
 		path.canSearch = true; path.SearchPath(); path.canSearch = false;
 		//Update allies velocity to moving speed then set the path speed as velocity
 		allies.velocity = allies.speed; path.maxSpeed = allies.velocity;
@@ -92,7 +107,7 @@ public class Follower : MonoBehaviour
 		hasVelocity = false; allies.combat = combating.none;
 	}
 
-	//Set this follower's target destination to the rival
+	///Set this follower's target destination to the rival
 	public void SetRival(GameObject rival) 
 	{
 		//If there is no target destination or the rival are an new enemny
@@ -112,7 +127,7 @@ public class Follower : MonoBehaviour
 	//Function to update this follower order
 	public void UpdateOrder() {formator.GetFollowerOrder(this);}
 	//Function to stop follower movment and remove it target
-	public void StopPath()
+	public void StopMovement()
 	{
 		//Remove current path and remove target destination
 		path.SetPath(null); destination.target = null;

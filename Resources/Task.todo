@@ -95,7 +95,7 @@
 			▪ Ending point - when formation open it will wait for set time to go next map
 				▪ Display particle falling down when it being dug.
 				▪ Unable to dig when in combnat. @consider
-			▪ Eggs - feed the egg enough food will spawn an allies @doing
+			▪ Eggs - feed the egg enough food will spawn an allies
 				▪ Egg will spawn an random allies with species base on the current level.
 			▪ Port - trading food for upgrade
 				▪ List of random upgrade to buy.
@@ -158,8 +158,12 @@ Visual:
 			▪ Show allies stats of allies mouse hover.
 				▪ Show in the corner.
 				▪ Show next to mouse with option. @consider
-			▪ Show
+			▪ Show the name of interactable when hover
 		▪ Game
+			▪ Panel Eggs
+				✓ Update the cost on info
+				✓ Close when click button or formation moving
+				▪ Panel hover the eggs click
 			▪ Display food
 				▪ Show when obtain food.
 				▪ Show how many food are getting obatin.

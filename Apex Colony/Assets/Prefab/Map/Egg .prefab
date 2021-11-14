@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 7782433604179814662}
   - component: {fileID: 107640168125071943}
   - component: {fileID: 1061660169137476003}
+  - component: {fileID: 8216278714667634781}
+  - component: {fileID: -5397106490250352078}
   m_Layer: 12
   m_Name: 'Egg '
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,3 +112,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46, y: 0.33}
   m_EdgeRadius: 0
+--- !u!114 &8216278714667634781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915952907495104006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4c1bd0b43f5ae46b80bbbe5d6360d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-5397106490250352078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915952907495104006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8da1de234ca3324fa39abf2f50f1516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 8216278714667634781}
+  cost: 5
+  allies: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
