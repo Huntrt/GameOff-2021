@@ -35,7 +35,7 @@ public class Egg : MonoBehaviour
 		if(Foods.i.Spend(cost)) 
 		{
 			//Open an egg at this egg position with no rotation
-			Instantiate(Manager.i.eggs.OpenEgg(), transform.position, Quaternion.identity);		
+			Instantiate(Manager.i.eggs.EggDrop(), transform.position, Quaternion.identity);		
 			//Closing the panel
 			Closing();
 			//Destroy the gameobject

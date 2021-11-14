@@ -60,11 +60,7 @@
 			▪ ...
 		▪ Dies
 			✓ Remove it from followers list.
-			▪ Remove it from pool.
-			▪ Destroy object.
-		▪ UI 
-			▪ Show heath when hover overallies.
-			▪ Show stats and details of allies hover over on corner.
+			✓ Destroy object.
 	Enemies:
 		▪ Behaviour
 			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box.
@@ -154,8 +150,8 @@ Visual:
 		▪ Hover
 			▪ Allies Heath bar
 				▪ Show when mouse hover over an allies.
-				▪ Show when in combat consider.
-			▪ Show allies stats of allies mouse hover.
+				▪ Show when allies in combat.
+			▪ Show stats of allies mouse hover.
 				▪ Show in the corner.
 				▪ Show next to mouse with option. @consider
 			▪ Show the name of interactable when hover

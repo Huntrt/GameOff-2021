@@ -521,7 +521,7 @@ MonoBehaviour:
   zoomSpeed: 10
   defaultZoom: 5
   zoomLimit:
-    min: 3
+    min: 1
     max: 10
     raw: 0
 --- !u!20 &519420031
@@ -534,7 +534,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 921034589}
   - component: {fileID: 921034588}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1374,11 +1374,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4483992460421448638, guid: ff997988661edfe49b9aeaef968a80ee,
-        type: 3}
-      propertyPath: damage
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee,
         type: 3}
       propertyPath: m_Name

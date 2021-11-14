@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class EggsManager : MonoBehaviour
 {
-	//Egg drop info, the allies and it ratio to drop
-    [System.Serializable] public class EggDrop {public GameObject allies; public float ratio;}
-	public List<EggDrop> eggs;
+	//Egg drop data the allies and it ratio to drop
+    [System.Serializable] public class DropData {public GameObject allies; public float ratio;}
+	public List<DropData> eggs;
 	//The total ratio value of all egg drop
 	float totalRatio;
 
-	public GameObject OpenEgg()
+	public GameObject EggDrop()
 	{
 		//Reset the total ratio
 		totalRatio -= totalRatio;
 		//Get the total ratio of all egg drop
-		foreach (EggDrop e in eggs) {totalRatio += e.ratio;}
+		foreach (DropData e in eggs) {totalRatio += e.ratio;}
 		//The chance randomly got from zero to total ratio
 		float chance = Random.Range(0, totalRatio);
 		//Go throught all the egg drop in list
