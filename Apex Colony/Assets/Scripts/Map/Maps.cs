@@ -40,7 +40,7 @@ public class Maps : MonoBehaviour
 	public Vector2 mapSize;
 	///The highest and lowest point of map
 	public Vector2 mapMin, mapMax;
-	[HideInInspector] public Transform Fgroup, Sgroup, Bgroup;
+	[HideInInspector] public Transform Fgroup, Sgroup, Bgroup, Egroup;
 	[HideInInspector] public event Action generated, populated;
 
 	void Awake()
@@ -84,25 +84,37 @@ public class Maps : MonoBehaviour
 		generationLoading.SetActive(true);
 		//Reset created frame counter, map and node size
 		createdFrame -= createdFrame; mapSize = Vector2.zero;
-		//Grouping frame, section and border
+		//Grouping frame, section, border and enemy
 		#region Grouping
-		//If there already has frame, section and border group
-		if(Fgroup != null || Sgroup != null || Bgroup != null )
-		//Destroy the already exitsting frame, section and border group
-		{Destroy(Fgroup.gameObject); Destroy(Sgroup.gameObject); Destroy(Bgroup.gameObject);}
-		//Create an new frame, section and border group
-		Fgroup = CreateGroup(); Sgroup = CreateGroup(); Bgroup = CreateGroup();
-		//Set frame, section and border group as the children of map
-		Fgroup.parent = transform; Sgroup.parent = transform; Bgroup.parent = transform;
-		//Rename frame, section and border group
-		Fgroup.name = "Frame Group"; Sgroup.name = "Section Group"; Bgroup.name = "Border Group";
+			//If the frame, section. border or enemy group already existing
+			if(Fgroup != null || Sgroup != null || Bgroup != null ||Egroup != null)
+			{
+				//Destroy frame and section group object
+				Destroy(Fgroup.gameObject);Destroy(Sgroup.gameObject);
+				//Destroy border and enemy group object
+				Destroy(Bgroup.gameObject);Destroy(Egroup.gameObject);
+			}
+			//Create an new frame and section group
+			Fgroup = CreateGroup(); Sgroup = CreateGroup();
+			//Create an new border and enemy group
+			Bgroup = CreateGroup(); Egroup = CreateGroup();
+			//Set frame and section group as the children of map
+			Fgroup.parent = transform; Sgroup.parent = transform; 
+			//Set border and enemy group as the children of map
+			Bgroup.parent = transform; Egroup.parent = transform;
+			//Rename frame and section group
+			Fgroup.name = "Frame Group"; Sgroup.name = "Section Group";
+			//Rename border and enemy group
+			Bgroup.name = "Border Group"; Egroup.name = "Enemy Group";
 		#endregion
-		//Reset the created frames list
+		//Reset the CREATED frames list
 		createFrames.Clear(); createFrames = new List<Framer>();
-		//Reset the available frames list
+		//Reset the AVAILABLE frames list
 		availableFrame.Clear(); availableFrame = new List<Framer>();
 		//Reset the created section list
 		createdSections.Clear(); createdSections = new List<GameObject>();
+		//Reset the enemy list
+		Manager.i.enemy.ResetList();
 		//Create the FIRST frame at the map position with no rotation and group it up
 		Instantiate(framePrefab, transform.position, Quaternion.identity).transform.parent = Fgroup;
 		//Has yet to fail frane loading
