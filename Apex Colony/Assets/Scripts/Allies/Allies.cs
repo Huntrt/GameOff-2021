@@ -1,3 +1,4 @@
+using Pathfinding;
 using UnityEngine;
 
 public class Allies : MonoBehaviour
@@ -12,8 +13,10 @@ public class Allies : MonoBehaviour
 	public combating combat;
 	public Rigidbody2D rb;
 	[SerializeField] Attacking attacking;
-	public Pathfinding.AIDestinationSetter destination;
-	public AlliesManager allie;
+	public AIDestinationSetter destination;
+	public AIPath path;
+	[HideInInspector] public AlliesManager allie;
+	bool isWalking;
 
 	//! Only use disable and enable when begin spawn at the begin of map
 	//! But the allies when dead it will need to be destroy and remove from maanger

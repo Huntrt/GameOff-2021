@@ -154,7 +154,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf86e38490e15524785958048a2ec65b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.34993348, g: 1, b: 0.3254717, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -604,7 +604,7 @@ Transform:
   - {fileID: 5483240936410157646}
   - {fileID: 5483240936347346922}
   m_Father: {fileID: 5483240937608357383}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5483240936589389190
 GameObject:
@@ -707,6 +707,7 @@ GameObject:
   - component: {fileID: 1237655560299246350}
   - component: {fileID: 7315997851699754601}
   - component: {fileID: 3064540338043027491}
+  - component: {fileID: 5561942365834313904}
   m_Layer: 8
   m_Name: Pavement Ant_A
   m_TagString: Allies
@@ -748,15 +749,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 100
   curHeath: 0
+  heathbar: {fileID: 6111502050576670140}
   coolOff: 4
   inCombat: 0
-  deathEffect: {fileID: 7902645849480176712}
   flashDuration: 0.2
   hurtColor: {r: 0.9, g: 0.27, b: 0.27, a: 1}
   healColor: {r: 0.2959924, g: 0.9019608, b: 0.2705882, a: 1}
-  heathbar: {fileID: 6111502050576670140}
-  renders: []
-  defaultColors: []
+  deathEffect: {fileID: 7902645849480176712}
 --- !u!114 &4483992460421448638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,6 +779,7 @@ MonoBehaviour:
   rb: {fileID: 624175007058206998}
   attacking: {fileID: 7315997851699754601}
   destination: {fileID: 3924843836034199261}
+  path: {fileID: 1237655560299246350}
   allie: {fileID: 0}
 --- !u!114 &7831250876588121014
 MonoBehaviour:
@@ -799,7 +799,8 @@ MonoBehaviour:
   order: 0
   distance: 0
   velocity: 0
-  moving: 0
+  isMoving: 0
+  ani: {fileID: 5561942365834313904}
 --- !u!61 &5483240936897854152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -956,6 +957,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 118036804389097540}
+--- !u!95 &5561942365834313904
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483240936897854153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfdf96686a065b64d8fe9bfaa7e381cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5483240936906542199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,9 +1364,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
-  - {fileID: 5483240937818023615}
-  - {fileID: 5483240937791479601}
   - {fileID: 5483240936487090965}
+  - {fileID: 5483240937791479601}
+  - {fileID: 5483240937818023615}
   m_Father: {fileID: 5483240936897854155}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1602,14 +1622,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5483240937818023612}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.029, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5483240937696888931}
   - {fileID: 5483240936344378199}
   m_Father: {fileID: 5483240937608357383}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5483240937869426543
 GameObject:
@@ -1749,7 +1769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5483240938133494334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.029, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5483240936338995880}

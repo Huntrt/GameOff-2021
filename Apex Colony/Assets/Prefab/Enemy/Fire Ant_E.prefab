@@ -5330,7 +5330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2219800304086506417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.029, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2219800305849039655}
@@ -5541,13 +5541,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2219800304377341747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.029, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2219800304524675564}
   - {fileID: 2219800305852029656}
   m_Father: {fileID: 2219800304435881864}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2219800304435881867
 GameObject:
@@ -5576,9 +5576,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
-  - {fileID: 2219800304377341744}
-  - {fileID: 2219800304277397182}
   - {fileID: 2219800305724537498}
+  - {fileID: 2219800304277397182}
+  - {fileID: 2219800304377341744}
   m_Father: {fileID: 2219800305332124484}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5962,6 +5962,7 @@ GameObject:
   - component: {fileID: 4898574053081526913}
   - component: {fileID: 7710115343373247877}
   - component: {fileID: -3179822294888078217}
+  - component: {fileID: 517022632997906058}
   m_Layer: 9
   m_Name: Fire Ant_E
   m_TagString: Enemy
@@ -6003,15 +6004,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 5
   curHeath: 0
-  coolOff: 1
+  heathbar: {fileID: 5010505209532750052}
+  coolOff: 2
   inCombat: 0
-  deathEffect: {fileID: 8476916803065962683}
   flashDuration: 0.05
   hurtColor: {r: 1, g: 1, b: 1, a: 0.7490196}
   healColor: {r: 0, g: 1, b: 0.041554213, a: 1}
-  heathbar: {fileID: 5010505209532750052}
-  renders: []
-  defaultColors: []
+  deathEffect: {fileID: 8476916803065962683}
 --- !u!114 &2219800305332124537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6027,7 +6026,7 @@ MonoBehaviour:
   hp: {fileID: 6185526005175275170}
   damage: 2
   velocity: 0
-  speed: 5
+  speed: 2
   approach: 0
   rate: 1
   detection: 5
@@ -6053,11 +6052,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 3
   repeat:
-    min: 1
-    max: 5
+    min: 0
+    max: 3
     raw: 0
   center: {x: 0, y: 0}
   enemy: {fileID: 2219800305332124537}
+  animator: {fileID: 517022632997906058}
 --- !u!61 &2219800305332124487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6214,6 +6214,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 9142368878292345445}
+--- !u!95 &517022632997906058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219800305332124486}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfdf96686a065b64d8fe9bfaa7e381cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2219800305497320457
 GameObject:
   m_ObjectHideFlags: 0
@@ -6408,7 +6427,7 @@ Transform:
   - {fileID: 2219800305651504065}
   - {fileID: 2219800305857455717}
   m_Father: {fileID: 2219800304435881864}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2219800305849039654
 GameObject:

@@ -25,13 +25,19 @@ public class Controls : MonoBehaviour
 		{
 			//Create an raycast to click at current position only at the interactable layer
 			RaycastHit2D react = Physics2D.Raycast(mousePos, Vector2.zero, 0 ,manager.layer.inter);
-			//Clear all the rival
-			formator.ClearRivals();
-			///Make fromation go toward the clicked interactable if click one
-			if(react) {foreach (Follower f in formator.followers) {f.SetInteract(react.transform);}}
+			//If click on any interactable
+			if(react) 
+			{
+				//Clear all the rival
+				formator.ClearRivals();
+				///Make fromation go toward the clicked interactable
+				foreach (Follower f in formator.followers) {f.SetInteract(react.transform);}
+			}
 			///If not click on any interactable or UI
 			else if(!EventSystem.current.IsPointerOverGameObject())
 			{
+				//Clear all the rival
+				formator.ClearRivals();
 				//If the eggs panel are active
 				if(manager.eggsPanel.gameObject.activeInHierarchy)
 				//Click the declining button of egg panel 

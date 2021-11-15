@@ -8,9 +8,13 @@ public class Follower : MonoBehaviour
 	[SerializeField] AIPath path;
 	public int order;
 	public float distance, velocity;
-	public bool moving;
-	bool hasVelocity = true;
+	public bool isMoving;
+	[SerializeField] Animator ani;
 	Manager manager; Formator formator;
+	//Since path velocity does not update as the same frame as set goal and that cause delay of velocity
+	//hasVelocity preventing that by set TRUE when path velocity change and FALSE upon set goal
+	//This provide an accurate way to detect if allies is moving or not
+	bool hasVelocity = true;
 
 	void Start()
 	{
@@ -30,29 +34,28 @@ public class Follower : MonoBehaviour
 		path.maxSpeed = allies.velocity;
 		//Get the current path velocity
 		velocity = path.velocity.magnitude;
-		//If allies are not currently combat
-		if(allies.combat == combating.none)
-		{
-			//The player are NOT moving when path velocity are zero and has velocity	
-			if(velocity == 0 && hasVelocity) {moving = false;}
-			//The player are NOW moving and has get velocity when path velocity are not zero
-			if(velocity > 0) {moving = true; hasVelocity = true;}
-		}
-		//If there is no target destination
+		//! There might bug since 4 line below only run when not combat
+		//The player are NOT moving when path velocity are zero but still has velocity
+		if(velocity == 0 && hasVelocity) {isMoving = false;}
+		//The player are NOW moving and has velocity when path velocity are not zero
+		if(velocity > 0) {isMoving = true; hasVelocity = true;}
+		//Playing the walking animation base on the path's velocity
+		if(velocity == 0) {ani.SetBool("Walk", false);}else{ani.SetBool("Walk", true);}
+		///If there is no target destination
 		if(destination.target == null) 
 		{
 			//Stop path and no longer move
-			StopMovement(); path.maxSpeed = 0.1f;
-			//Will get new rival if lost rival while chasing or fighting
+			StopMovement(); path.maxSpeed = 0;
+			//Will find an new rival if this allies rival has been kill while still in conbat
 			if(allies.combat != combating.none) {formator.TargetRivals();}
 			//Allies are no longer combat
 			allies.combat = combating.none;
 		}
-		///If the target destination do exist OR is it not an enemy
+		///If there is no target destination OR is it not an enemy
 		if(destination.target == null || !destination.target.CompareTag("Enemy"))
 		{
 			//If not moving while has velocity
-			if(!moving && hasVelocity)
+			if(!isMoving && hasVelocity)
 			{
 				//Cast an circle cast to detect eneny
 				RaycastHit2D inRange = Physics2D.CircleCast
@@ -62,7 +65,7 @@ public class Follower : MonoBehaviour
 				if(inRange) {SetRival(inRange.transform.gameObject);}
 			}
 		}
-		///If the target destination exist
+		///If there is target destination
 		if(destination.target != null)
 		{
 			//Enable auto search path
@@ -74,7 +77,7 @@ public class Follower : MonoBehaviour
 			{
 				//Rotate toward the destination target
 				transform.up = destination.target.position - transform.position;
-				//If the destination target are an ENEMY
+				///If the destination target are an ENEMY
 				if(destination.target.CompareTag("Enemy"))
 				{
 					//Convert approach to decimal then apply it slowdown to speed
@@ -82,7 +85,7 @@ public class Follower : MonoBehaviour
 					//Change allies state state to fight
 					allies.combat = combating.fight;
 				}
-				//If the destination target are an INTERACTABLE
+				///If the destination target are an INTERACTABLE
 				if(destination.target.CompareTag("Interactable"))
 				{
 					//Call the interact event of the interactable target when in range
