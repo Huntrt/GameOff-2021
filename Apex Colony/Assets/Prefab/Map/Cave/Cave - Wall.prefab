@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6899516416232006922}
   m_Layer: 6
   m_Name: Cave - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

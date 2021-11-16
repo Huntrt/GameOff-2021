@@ -49,8 +49,8 @@ public class Allies : MonoBehaviour
 			{
 				//If the target has destination
 				if(destination.target != null)
-				//Send event with the target enemy heath component to attack with damage
-				{attacking.Attack.Invoke(destination.target.GetComponent<Heath>(), damage);}
+				//Send event with the target enemy heath component to attack with damage & range
+				{attacking.Attack.Invoke(destination.target.GetComponent<Heath>(), damage, range);}
 				//Reset the rate count
 				rateCount -= rateCount;
 			}

@@ -6,10 +6,6 @@
 	Arrow key - Move camera
 	Mouse edge - drag the camera toward mouse when mouse of the edge of screen 
 
-# Content:
-	Wood ants - attack by spraying it own formic acid
-	Fire ants - attack dealing alot of damage combine with dot.
-
 # Details:
 	An section has an size of 13x13 0.4 scale path nodes
 	Manager.i.path.isScanning = a* scan graph state

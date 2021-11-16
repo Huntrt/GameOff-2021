@@ -105,8 +105,8 @@ public class Enemy : MonoBehaviour
 			//If rate counter reach attack rate
 			if(rateCount >= rate)
 			{
-				//Send event with the target allies heath component to attack with damage
-				attacking.Attack.Invoke(detected.GetComponent<Heath>(), damage);
+				//Send event with the target allies heath component to attack with damage & range
+				attacking.Attack.Invoke(detected.GetComponent<Heath>(), damage, range);
 				//Reset the rate count
 				rateCount -= rateCount;
 			}

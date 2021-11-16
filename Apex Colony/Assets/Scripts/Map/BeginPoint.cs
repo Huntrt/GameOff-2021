@@ -10,14 +10,12 @@ public class BeginPoint : MonoBehaviour
 
 	void SpawFormation()
 	{
-		//For each of the allies object in the allies object manager
-		foreach (GameObject allie in Manager.i.allie.alliesObj)
-		//Set those allie position as begin point then active those allie
-		{allie.transform.position = transform.position; allie.SetActive(true);}
 		//Create goal at this begin positoin
 		Manager.i.goal.Create(transform.position);
-		//Allies has been spawn
-		Manager.i.SpawnedAllies();
+		//For each of the allies object in the allies object manager
+		foreach (GameObject allie in Manager.i.allie.alliesObj)
+		//Set those allie position as begin point then active those allie with has velocity
+		{allie.transform.position = transform.position; allie.SetActive(true);}
 	}
 
 	void OnDisable()

@@ -35,8 +35,8 @@ public class Manager : MonoBehaviour
 		i = this;
 	}
 
-	//When allies has spawned
-	public void SpawnedAllies() 
+	//Game started when enemy spawned
+	public void StartingGame() 
 	{
 		//Gams started
 		stared?.Invoke();

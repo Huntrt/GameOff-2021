@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3544278307267659284}
   m_Layer: 6
   m_Name: Nest - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

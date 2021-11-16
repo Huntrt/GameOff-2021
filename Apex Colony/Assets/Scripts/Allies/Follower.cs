@@ -3,18 +3,18 @@ using Pathfinding;
 
 public class Follower : MonoBehaviour
 {
+	[SerializeField] bool lockOn;
 	[SerializeField] Allies allies;
 	[SerializeField] AIDestinationSetter destination;
 	[SerializeField] AIPath path;
 	public int order;
 	public float distance, velocity;
 	public bool isMoving;
-	[SerializeField] Animator ani;
-	Manager manager; Formator formator;
+	public bool hasVelocity = true;
+	[SerializeField] Animator ani;	Manager manager; Formator formator;
 	//Since path velocity does not update as the same frame as set goal and that cause delay of velocity
 	//hasVelocity preventing that by set TRUE when path velocity change and FALSE upon set goal
 	//This provide an accurate way to detect if allies is moving or not
-	bool hasVelocity = true;
 
 	void Start()
 	{
@@ -51,19 +51,15 @@ public class Follower : MonoBehaviour
 			//Allies are no longer combat
 			allies.combat = combating.none;
 		}
-		///If there is no target destination OR is it not an enemy
-		if(destination.target == null || !destination.target.CompareTag("Enemy"))
+		///If not moving while has velocity
+		if(!isMoving && hasVelocity)
 		{
-			//If not moving while has velocity
-			if(!isMoving && hasVelocity)
-			{
-				//Cast an circle cast to detect eneny
-				RaycastHit2D inRange = Physics2D.CircleCast
-				//The circle are at this object with radius of allies range stat and only on enemy layer
-				(transform.position, allies.range, Vector2.zero, 0, manager.layer.enemy);
-				//Set the enemt got in range as rival
-				if(inRange) {SetRival(inRange.transform.gameObject);}
-			}
+			//If lock on mode is enable and there no target or the target is not enemy
+			if(lockOn && (destination.target == null || !destination.target.CompareTag("Enemy")))
+			//Search in range only when the target are gone or change
+			{SearchInRange();}
+			//Search in range rapidly that priority the newest enemy?
+			if(!lockOn) {SearchInRange();}
 		}
 		///If there is target destination
 		if(destination.target != null)
@@ -93,6 +89,16 @@ public class Follower : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	void SearchInRange()
+	{
+		//Cast an circle cast to detect eneny
+		RaycastHit2D inRange = Physics2D.CircleCast
+		//The circle are at this object with radius of allies range stat and only on enemy layer
+		(transform.position, allies.range, Vector2.zero, 0, manager.layer.enemy);
+		//Set the enemt got in range as rival
+		if(inRange) {SetRival(inRange.transform.gameObject);}
 	}
 
 	///Set the target destination as the goal that has same index as follower order then begin moving

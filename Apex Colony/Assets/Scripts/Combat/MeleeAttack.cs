@@ -10,10 +10,10 @@ public class MeleeAttack : MonoBehaviour
         GetComponent<Attacking>().Attack.AddListener(Meleeing);
     }
 
-    void Meleeing(Heath inRange, float damage) 
+    void Meleeing(Heath inRange, float damage, float range) 
 	{
 		//Dealing damage to heath of the enemy in range
-		inRange.Damaging(damage);
+		if(inRange != null) {inRange.Damaging(damage);}
 		//Play the melee particle effect
 		effect.Play();
 	}

@@ -10,5 +10,7 @@ public class EnemySpawner : MonoBehaviour
 		GameObject e = Instantiate(enemy, transform.position, Quaternion.identity);
 		//Group the spawned enemy
 		e.transform.parent = Manager.i.map.Egroup;
+		//Game started
+		Manager.i.StartingGame();
 	}
 }

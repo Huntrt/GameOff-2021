@@ -104,17 +104,42 @@ Entity: @doing
 	(both feature and visual)
 	1 = bad | 2 = weak | 3 = medium | 4 = alright | 5 = great
 	Crawler:
-		▪ Pavenemnt ant
-			3 rate & damage - melee attack from it mandibles 
+		✓ Pavement ant
+			3 rate & 3 damage & 3 range 
 			3 heath and 3 speed
 			An overall balance ant
-		▪ Fire ant
-			2 rate & 5 damage - melee attack from it sting
+		✓ Fire ant
+			2 rate & 4 damage & 2 range
 			3 heath & 2 speed
 			An offensive focus ant
-		▪ Weaver ant
-		▪ Leafcutter ant
-		▪ Wood ant
+		✓ Weaver ant
+			3 rate & 4 damage & 5 range
+			1 heath & 4 speed
+			An ant attack from far away but with low heath
+		✓ Leafcutter ant
+			5 rate & 1 damage & 2 range 
+			2 heath & 5 speed
+			An fast attack and movement speed ant
+		✓ Wood ant
+			3 rate & 2 damage & 2 range 
+			4 heath & 2 speed
+			An ant that has aoe attack
+		✓ Bullet ant 
+			1 rate & 5 damage & 3 range
+			4 heath & 2 speed
+			An ant has powerful but slow sting attack
+		▪ Dracula ant
+			3 rate & 3 damage & 2 range
+			2 heath & 4 speed
+			An ant will heal full heath upon kill
+		▪ Eletric ant
+			4 rate & 1 damage & 1 range
+			2 heath & 5 speed
+			An ant focus on movement speed
+		▪ Bull ant
+			3 rate & 4 damge & 4 range
+			3 heath & 3 speed
+			An ant that has long range melee attack
 		▪ Ironclad beetle
 		▪ Dung beetles
 	Flyer:
