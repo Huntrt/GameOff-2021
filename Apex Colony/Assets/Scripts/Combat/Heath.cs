@@ -4,9 +4,8 @@ using UnityEngine;
 public class Heath : MonoBehaviour
 {
 	[SerializeField] float maxHeath;
-    [SerializeField] float curHeath;
+    [SerializeField] float _curHeath; public float curHeath {get => _curHeath;}
 	[SerializeField] Transform heathbar;
-
 	[Tooltip("How long to stop combat since the last time take damage")]
 	[SerializeField] float coolOff;
 	[HideInInspector] public bool inCombat;
@@ -18,7 +17,7 @@ public class Heath : MonoBehaviour
 	void Start()
 	{
 		//Reset heath
-		curHeath = maxHeath;
+		_curHeath = maxHeath;
 		//Go through all the sprite renderer of children
 		foreach (SpriteRenderer render in GetComponentsInChildren<SpriteRenderer>())
 		{
@@ -32,11 +31,11 @@ public class Heath : MonoBehaviour
 		//Are now in combat and will keep trying to cooloff to exit combat
 		inCombat = true; CancelInvoke("ExitCombat"); Invoke("ExitCombat", coolOff);
 		//Decrease current heath
-		curHeath -= damage;
+		_curHeath -= damage;
 		//Flash the hurt color
 		Flashing(hurtColor);
 		//If heath are zero
-		if(curHeath <= 0) 
+		if(_curHeath <= 0) 
 		{
 			//Detach the death effect from this entity
 			deathEffect.transform.parent = null;
@@ -54,11 +53,11 @@ public class Heath : MonoBehaviour
 		//Are now in combat and will keep trying to cooloff to exit combat
 		inCombat = true; CancelInvoke("ExitCombat"); Invoke("ExitCombat", coolOff);
 		//Increase heath when heal
-		curHeath += heal; 
+		_curHeath += heal; 
 		//Flash the geal color
 		Flashing(healColor);
 		//Claming current heath from max heath
-		curHeath = Mathf.Clamp(curHeath, 0, maxHeath);
+		_curHeath = Mathf.Clamp(_curHeath, 0, maxHeath);
 		//Show the hp bar
 		ShowHP();
 	}
@@ -87,7 +86,7 @@ public class Heath : MonoBehaviour
 	public void ShowHP()
 	{
 		//Display the percented of current heath from max heath by change heath bar X axis
-		heathbar.transform.localScale = new Vector3(curHeath/maxHeath,1,1);
+		heathbar.transform.localScale = new Vector3(_curHeath/maxHeath,1,1);
 		//Enable the heathbar parent
 		heathbar.parent.gameObject.SetActive(true);
 	}

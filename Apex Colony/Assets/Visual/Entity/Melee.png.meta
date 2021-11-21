@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 5970288980717055161
     second: Sickle Melee
+  - first:
+      213: 5890377819349913679
+    second: X Mark
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -149,6 +152,27 @@ TextureImporter:
       bones: []
       spriteID: 9bca11e223abad250800000000000000
       internalID: 5970288980717055161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: X Mark
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 208
+        width: 85
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40113b0b63deb150800000000000000
+      internalID: 5890377819349913679
       vertices: []
       indices: 
       edges: []

@@ -11,7 +11,7 @@ public class Manager : MonoBehaviour
 	public Maps map;
 	public CameraManager cam;
 	public AlliesManager allie;
-	public LevelManager lv;
+	public LevelManager level;
 	public AstarPath path;
 	public EggsPanel eggsPanel;
 	public EggsManager eggs;

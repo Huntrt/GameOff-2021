@@ -50,24 +50,20 @@
 					✓ Remove single rival.
 					✓ Rival deselector.
 					✓ Recalculate allies path that has no rival to an existing rival.
-		▪ Movement
-			▪ Crawler
-			▪ Flyer
-			▪ Lengther @consider
 		▪ Stats
-			▪ Melee
-			▪ Projectile
+			✓ Melee
+			✓ Projectile
 			▪ ...
 		▪ Dies
 			✓ Remove it from followers list.
 			✓ Destroy object.
 	Enemies:
-		▪ Behaviour
-			▪ Wander - Spawnpoint will has an box for enemy to move randomly inside that box.
-			▪ Combat - Enemy moving toward and attack nearest allies got detect by it.
+		✓ Behaviour
+			✓ Wander - Spawnpoint will has an box for enemy to move randomly inside that box.
+			✓ Combat - Enemy moving toward and attack nearest allies got detect by it.
 		▪ Spawning
 			✓ Manually assign enemy to spawn
-			▪ Randomize to spawn base on level difficult @consider
+			▪ Randomize to spawn base on level difficult @doing
 		▪ Boss @consider
 	Levels:
 		Special section are for containing interactable.
@@ -79,11 +75,11 @@
 			▪ Each level has 3 map.
 			▪ Complete 3 map will fight an boss to go to next level. @consider
 			▪ Has total of 5 map @next
-				▪ 1. Nest - fighting other ant, fly, ...
-				▪ 2. Cave - fighting with spider, beetle, ...
-				▪ 3. Soil - fighting worm, maggot, ... 
-				▪ 4. Grass - fighting with beetle, mosuqito, ...
-				▪ 5. Tree - bettle, bugs, ... @consider
+				▪ 1. Nest 
+				▪ 2. Cave 
+				▪ 3. Soil
+				▪ 4. Grass
+				▪ 5. Tree @consider
 		▪ Interactable 
 			▪ Begin point - where the allies formation spawn when go to between map
 				✓ Spawn allies after map has complete generation
@@ -93,6 +89,7 @@
 				▪ Unable to dig when in combnat. @consider
 			▪ Eggs - feed the egg enough food will spawn an allies
 				▪ Egg will spawn an random allies with species base on the current level.
+				▪ Effect when egg are open
 			▪ Port - trading food for upgrade
 				▪ List of random upgrade to buy.
 			▪ Seed - An pile of seed can be pick up by move over it
@@ -100,50 +97,47 @@
 
 	▪ Food - the game's only currency.
 
-Entity: @doing
-	(both feature and visual)
-	1 = bad | 2 = weak | 3 = medium | 4 = alright | 5 = great
-	Crawler:
+Entity:
+	Allies: 
 		✓ Pavement ant
-			3 rate & 3 damage & 3 range 
-			3 heath and 3 speed
 			An overall balance ant
 		✓ Fire ant
-			2 rate & 4 damage & 2 range
-			3 heath & 2 speed
 			An offensive focus ant
 		✓ Weaver ant
-			3 rate & 4 damage & 5 range
-			1 heath & 4 speed
 			An ant attack from far away but with low heath
 		✓ Leafcutter ant
-			5 rate & 1 damage & 2 range 
-			2 heath & 5 speed
 			An fast attack and movement speed ant
 		✓ Wood ant
-			3 rate & 2 damage & 2 range 
-			4 heath & 2 speed
 			An ant that has aoe attack
-		✓ Bullet ant 
-			1 rate & 5 damage & 3 range
-			4 heath & 2 speed
+		✓ Bullet ant
 			An ant has powerful but slow sting attack
 		▪ Dracula ant
-			3 rate & 3 damage & 2 range
-			2 heath & 4 speed
 			An ant will heal full heath upon kill
 		▪ Eletric ant
-			4 rate & 1 damage & 1 range
-			2 heath & 5 speed
 			An ant focus on movement speed
 		▪ Bull ant
-			3 rate & 4 damge & 4 range
-			3 heath & 3 speed
 			An ant that has long range melee attack
-		▪ Ironclad beetle
-		▪ Dung beetles
-	Flyer:
-
+	Enemies: @doing
+		(both feature and visual)
+		1 = bad | 2 = weak | 3 = medium | 4 = alright | 5 = great
+		Nest:
+			✓ Pavement ant
+				An basic enemy
+		Cave:
+			▪ Spider
+				An long range attack enemy
+			▪ Cricket
+				An tanky and fast enemy
+		Soil:
+			▪ Worm
+				An enemy that some could use range attack
+			▪ Maggot
+				An enemy spawn in large quantity (create an spawner script and it will be use as magget spawn)
+		Grass:
+			▪ Bettle
+				An overall strong enemy
+			▪ Mosquito
+				An assasin base enemy
 Visual:
 	Levels:
 		▪ Nest
@@ -192,6 +186,7 @@ Visual:
 				✓ Update the cost on info
 				✓ Close when click button or formation moving
 				▪ Panel hover the eggs click
+				▪ Show stats of the ant obtain from egg
 			▪ Display food
 				▪ Show when obtain food.
 				▪ Show how many food are getting obatin.

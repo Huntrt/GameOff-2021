@@ -124,6 +124,6 @@ public class Framer : MonoBehaviour
 
 	//Function call to create border
 	Transform CreateBorder(Vector2 emptySide, float rotation)
-	//Create an block at an empty side with set rotation and get it transfrom
-	{return Instantiate(map.useBorder, emptySide, Quaternion.Euler(0,0,rotation)).transform;}
+	//Create an block of this current level at an empty side with set rotation and get it transfrom
+	{return Instantiate(map.lvm.levels[map.lvm.lv].border, emptySide, Quaternion.Euler(0,0,rotation)).transform;}
 }

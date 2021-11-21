@@ -18,11 +18,6 @@ public class Maps : MonoBehaviour
 	[Header("[SECTION]-----------------------------------------------")] 
 	[Tooltip("All the created section")]
 	public List<GameObject> createdSections;
-	[Tooltip("All the currently use section variants")]
-	public List<GameObject> useVariants;
-	[Tooltip("All the currently use special section")]
-	public List<GameObject> useSpecials;
-	public GameObject useBorder;
 	///
 	[Header("[FRAME]-------------------------------------------------")] 
 	public GameObject framePrefab;
@@ -42,6 +37,7 @@ public class Maps : MonoBehaviour
 	public Vector2 mapMin, mapMax;
 	[HideInInspector] public Transform Fgroup, Sgroup, Bgroup, Egroup;
 	[HideInInspector] public event Action generated, populated;
+	[HideInInspector] public LevelManager lvm;
 
 	void Awake()
 	{
@@ -51,6 +47,8 @@ public class Maps : MonoBehaviour
 		availableFrame = new List<Framer>();
 		//New create section list 
 		createdSections = new List<GameObject>();
+		//Get the level manager
+		lvm = Manager.i.level;
 	}
 
 	void Update()
@@ -145,8 +143,8 @@ public class Maps : MonoBehaviour
 	///Begin fill frame with section
 	public void PopulateFrame()
 	{
-		///Randomly chose an available frame to has special section
-		foreach (GameObject special in useSpecials) {SpecialSections(special);}
+		///Randomly chose an available frame to has special section in this current level
+		foreach (GameObject special in lvm.levels[lvm.lv].specials) {SpecialSections(special);}
 		///Fill the rest of the available frame with randomly chose section variant
 		VariantSections();
 	}
@@ -173,19 +171,21 @@ public class Maps : MonoBehaviour
 
 	void VariantSections()
 	{
+		//Get the current level's variant
+		List<GameObject> vari = lvm.levels[lvm.lv].variants;
 		//For each of the available frame
 		foreach (Framer frame in availableFrame)
 		{
-			//Randomly chose an section variant
-			GameObject variant = useVariants[UnityEngine.Random.Range(0, useVariants.Count)];
+			//Randomly chose an section variant from this level
+			GameObject _variant = vari[UnityEngine.Random.Range(0, vari.Count)];
 			//Create chosed section variant at this frame position with no rotation
-			GameObject created = Instantiate(variant, frame.transform.position, Quaternion.identity);
+			GameObject created = Instantiate(_variant, frame.transform.position, Quaternion.identity);
 			//Group the section up
 			created.transform.parent = Sgroup.transform;
 			//Add this section to created list
 			createdSections.Add(created);
-			//Set this frame section to be the variant
-			frame.section = variant;
+			//Set this frame section to be the variant spawned
+			frame.section = _variant;
 		}
 	}
 

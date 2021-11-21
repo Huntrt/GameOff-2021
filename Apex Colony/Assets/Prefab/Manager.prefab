@@ -69,7 +69,7 @@ MonoBehaviour:
   - {fileID: 0}
   alliesComp:
   - {fileID: 0}
-  test: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
+  test: {fileID: 0}
 --- !u!114 &1316110397673856995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,9 +102,10 @@ MonoBehaviour:
   map: {fileID: 1316110398335215078}
   cam: {fileID: 0}
   allie: {fileID: 1316110397673856997}
-  lv: {fileID: 1316110398335215076}
+  level: {fileID: 1316110398335215076}
   path: {fileID: 1316110397974077472}
   eggsPanel: {fileID: 0}
+  eggs: {fileID: 1167855109}
   layer:
     allies: 0
     enemy: 0
@@ -273,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMap: 0
-  currentLevel: 0
+  lv: 0
   completeRequired: 1
   levels:
   - name: Nest
@@ -281,15 +282,24 @@ MonoBehaviour:
     border: {fileID: 5432542352623382349, guid: 8162765eff922e64db20806a745d423c,
       type: 3}
     variants:
-    - {fileID: 4995801302963617090, guid: 7c8afe0410bf6b9429a1e62a88ea728e, type: 3}
+    - {fileID: 3939825339524222145, guid: 2ad003d68fae3d445b0fb78be243ec78, type: 3}
     - {fileID: 8111143363794134361, guid: 44612a5c7cf202e4fa2187ff84dc64ce, type: 3}
-    - {fileID: 3904038532420204012, guid: fd3c12d7ee23df343bd931638e21479e, type: 3}
+    - {fileID: 3939825339524222145, guid: 56cb195a7cc8cfb40a47f0b7403235b8, type: 3}
+    - {fileID: 3939825339524222145, guid: 4a861b94e947a944286188c45505cb23, type: 3}
+    - {fileID: 3939825339524222145, guid: 4af225c9d8067c84dae0297e5297ebb4, type: 3}
+    - {fileID: 4995801302963617090, guid: 7c8afe0410bf6b9429a1e62a88ea728e, type: 3}
+    - {fileID: 3939825339524222145, guid: 9d8e4543d948c2e47800b5605b664bb1, type: 3}
     - {fileID: 3939825339524222145, guid: 38e0fd2914d07e44d9b947a446af2236, type: 3}
+    - {fileID: 3904038532420204012, guid: fd3c12d7ee23df343bd931638e21479e, type: 3}
+    - {fileID: 4139387854082177118, guid: c5da64e0013c5c34080a09a8ed307c65, type: 3}
     - {fileID: 8370020663110170416, guid: d86f698a3acf6d549b53e3ed26dae1e3, type: 3}
     - {fileID: 7683437917329144871, guid: 626508cc7d51df746a241baf6c87c10e, type: 3}
     - {fileID: 4139387854082177118, guid: c5da64e0013c5c34080a09a8ed307c65, type: 3}
-    - {fileID: 4139387854082177118, guid: c5da64e0013c5c34080a09a8ed307c65, type: 3}
+    - {fileID: 7683437917329144871, guid: 626508cc7d51df746a241baf6c87c10e, type: 3}
     - {fileID: 8370020663110170416, guid: d86f698a3acf6d549b53e3ed26dae1e3, type: 3}
+    - {fileID: 8370020663110170416, guid: d86f698a3acf6d549b53e3ed26dae1e3, type: 3}
+    - {fileID: 4139387854082177118, guid: c5da64e0013c5c34080a09a8ed307c65, type: 3}
+    - {fileID: 7683437917329144871, guid: 626508cc7d51df746a241baf6c87c10e, type: 3}
     - {fileID: 7683437917329144871, guid: 626508cc7d51df746a241baf6c87c10e, type: 3}
     - {fileID: 4139387854082177118, guid: c5da64e0013c5c34080a09a8ed307c65, type: 3}
     - {fileID: 8370020663110170416, guid: d86f698a3acf6d549b53e3ed26dae1e3, type: 3}
@@ -298,6 +308,13 @@ MonoBehaviour:
     - {fileID: 3776856056022195000, guid: ce54197cbaeee464399f18713febe1de, type: 3}
     - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
     - {fileID: 4749522328218771935, guid: 4af05494e693af54986c129810bda595, type: 3}
+    spawns:
+    - obj: {fileID: 2219800305332124486, guid: 264b730fecff65e47ae1fba43fca33ef, type: 3}
+      ratio: 1
+    - obj: {fileID: 751235875245644700, guid: e1343ea8b0d53ae4bb69a4aa00ff47a2, type: 3}
+      ratio: 1
+    - obj: {fileID: 8531203742272907972, guid: 3615cab48d7b88743a1071fb164cb4ac, type: 3}
+      ratio: 1
   - name: Cave
     backgroundColor: {r: 0.2, g: 0.21960784, b: 0.23529412, a: 0}
     border: {fileID: 6609907063505172988, guid: fe71d085b60306e439bdda1fdc3f1017,
@@ -308,10 +325,27 @@ MonoBehaviour:
     - {fileID: 6397688983261938018, guid: 9e22bc1afd2047140a5da2b027c5de29, type: 3}
     - {fileID: 1448972730040932927, guid: d85508290bc986f4888103787b1af373, type: 3}
     - {fileID: 1174022526947084808, guid: 51a7df8cfdab8fa44a8c1a2a28aadcdc, type: 3}
+    - {fileID: 7845196195179994855, guid: 51f5ce7ece6b0804da917a4d543619b9, type: 3}
+    - {fileID: 7845196195179994855, guid: e484c88d1a795e7408de6629deea2d4e, type: 3}
+    - {fileID: 7845196195179994855, guid: 288030473e49bff45933f211bbd9d798, type: 3}
+    - {fileID: 7845196195179994855, guid: f5da9002e975fbe418abef56e0d76248, type: 3}
+    - {fileID: 7845196195179994855, guid: 96180e4ffabade4429e892d7acd88069, type: 3}
+    - {fileID: 7845196195179994855, guid: 0d77e2a36db243b49a0e8ee79df20c0e, type: 3}
+    - {fileID: 7845196195179994855, guid: c0b0096a296c62b49a4d716401c2a6bd, type: 3}
+    - {fileID: 7845196195179994855, guid: 3955df523a0cd984a980ea68f55b6d86, type: 3}
+    - {fileID: 7845196195179994855, guid: 5e8d4e5c6aa527a4897c7eab633c545f, type: 3}
+    - {fileID: 8356293249724125547, guid: 5d3bd45884c8712478fa5c35c293c90b, type: 3}
+    - {fileID: 1856545792695181722, guid: d5b70f5f381cf944d887027675bcc210, type: 3}
+    - {fileID: 6397688983261938018, guid: 9e22bc1afd2047140a5da2b027c5de29, type: 3}
     specials:
     - {fileID: 9027626135019239215, guid: 57acd6e3733016649b63bcb6bfdedd13, type: 3}
     - {fileID: 8290229763963349422, guid: c4e3a3b218399a54fa87196ee6a9b17a, type: 3}
     - {fileID: 2984298055820036790, guid: f7204ef1aaf7dab4f8bb35dc4b8cd46f, type: 3}
+    spawns:
+    - obj: {fileID: 4765140910519287239, guid: 01a42152af3b36844b13c0766babc520, type: 3}
+      ratio: 10
+    - obj: {fileID: 7053748127443702455, guid: 7e2fd94b6f5e2664884f6dad94a36fb1, type: 3}
+      ratio: 30
   - name: Soil
     backgroundColor: {r: 0.39607844, g: 0.2509804, b: 0.19215687, a: 0}
     border: {fileID: 3782086149402872379, guid: 80b39d2a86f149941848b6286beb96dc,
@@ -320,10 +354,30 @@ MonoBehaviour:
     - {fileID: 4145457153236737582, guid: 43f4787c40a751144a649259f3f99142, type: 3}
     - {fileID: 5931782692603934389, guid: 490f32dc72c570b41a03730e01c77ef1, type: 3}
     - {fileID: 2650742742612448841, guid: a4190a52033a17248b0ddb73f2d1aa3b, type: 3}
+    - {fileID: 4145457153236737582, guid: 8959dcc5bf2df6f42b12698c355ef627, type: 3}
+    - {fileID: 4145457153236737582, guid: 7f20889902ad33249a166e9ef49a0aee, type: 3}
+    - {fileID: 4145457153236737582, guid: e73c633b09faa6b48ac11083e6aea8f3, type: 3}
+    - {fileID: 4145457153236737582, guid: f928140e94a8f344391b15c57d13e3c2, type: 3}
+    - {fileID: 4145457153236737582, guid: 6909c255680348e4dacf9413fa4484cc, type: 3}
+    - {fileID: 4145457153236737582, guid: 8c0cb5bd41554ce468ccf2e06432b4b9, type: 3}
+    - {fileID: 4145457153236737582, guid: eef39dfb1d297a3438f460c1cc328981, type: 3}
+    - {fileID: 4145457153236737582, guid: 69476f7f94e97514abab4d021be8add1, type: 3}
+    - {fileID: 4145457153236737582, guid: 4b90ba90d730ed4428171e5679de5ad3, type: 3}
+    - {fileID: 5931782692603934389, guid: 490f32dc72c570b41a03730e01c77ef1, type: 3}
+    - {fileID: 2650742742612448841, guid: a4190a52033a17248b0ddb73f2d1aa3b, type: 3}
+    - {fileID: 4145457153236737582, guid: 43f4787c40a751144a649259f3f99142, type: 3}
+    - {fileID: 5931782692603934389, guid: 490f32dc72c570b41a03730e01c77ef1, type: 3}
+    - {fileID: 2650742742612448841, guid: a4190a52033a17248b0ddb73f2d1aa3b, type: 3}
+    - {fileID: 4145457153236737582, guid: 43f4787c40a751144a649259f3f99142, type: 3}
     specials:
     - {fileID: 3366169327078381385, guid: 27f28cccc9c64c044880f5a30fc686f5, type: 3}
     - {fileID: 2720174398750066591, guid: d7d99e750a67d8a4ea0c996582531bdd, type: 3}
     - {fileID: 5702096850759533767, guid: 9205b0b544f6c654cbf2a7990823e5bb, type: 3}
+    spawns:
+    - obj: {fileID: 4257757317009553754, guid: e14cb814aee10c64b83ddcbb6fc1011b, type: 3}
+      ratio: 10
+    - obj: {fileID: 751235875245644700, guid: e1343ea8b0d53ae4bb69a4aa00ff47a2, type: 3}
+      ratio: 10
   - name: Grass
     backgroundColor: {r: 0.15419188, g: 0.3301887, b: 0.2044767, a: 0}
     border: {fileID: 3327309088603454640, guid: c542805d51e9d1c448afbbe360ba4d1a,
@@ -332,10 +386,32 @@ MonoBehaviour:
     - {fileID: 7919994139430474548, guid: 408ed534d3568a94088f51762ad64fab, type: 3}
     - {fileID: 3551202621060532355, guid: 5682348a2e66513409b243ccd04362f2, type: 3}
     - {fileID: 2214977182023813210, guid: 48478df76a6959d46bb82e28a140e6aa, type: 3}
+    - {fileID: 7919994139430474548, guid: 408ed534d3568a94088f51762ad64fab, type: 3}
+    - {fileID: 3551202621060532355, guid: 5682348a2e66513409b243ccd04362f2, type: 3}
+    - {fileID: 2214977182023813210, guid: 48478df76a6959d46bb82e28a140e6aa, type: 3}
+    - {fileID: 7919994139430474548, guid: 408ed534d3568a94088f51762ad64fab, type: 3}
+    - {fileID: 3551202621060532355, guid: 5682348a2e66513409b243ccd04362f2, type: 3}
+    - {fileID: 2214977182023813210, guid: 48478df76a6959d46bb82e28a140e6aa, type: 3}
+    - {fileID: 7919994139430474548, guid: 9d3b7c329024a7a40aff0a27b88032d6, type: 3}
+    - {fileID: 7919994139430474548, guid: 116270bafb259294f91616d07d162550, type: 3}
+    - {fileID: 7919994139430474548, guid: 333e5daa3c04e414bb5cbbab1c22e987, type: 3}
+    - {fileID: 7919994139430474548, guid: dadc396115a94174fb59fdf1b58402a3, type: 3}
+    - {fileID: 7919994139430474548, guid: c3b7eb54b1ac9d04ca15bc45fc10a0a7, type: 3}
+    - {fileID: 7919994139430474548, guid: 3ae5430d70fb05047be504780dcd4e89, type: 3}
+    - {fileID: 7919994139430474548, guid: 8de95a6aae44dac4d89027416168453d, type: 3}
+    - {fileID: 7919994139430474548, guid: b92963ee43e19f341b977624fc6a86e9, type: 3}
+    - {fileID: 7919994139430474548, guid: d13bc0b5fecafd14590c99db1b717ded, type: 3}
     specials:
     - {fileID: 2239863372267710688, guid: a67866f45b432ac4392cf753f9c9c81c, type: 3}
     - {fileID: 6988212632463547461, guid: 785333ab0ec95ff4189c021498d4065e, type: 3}
     - {fileID: 2952989065764652550, guid: a69e2b48961a8f04699564a05a6c24e3, type: 3}
+    spawns:
+    - obj: {fileID: 751235875245644700, guid: e1343ea8b0d53ae4bb69a4aa00ff47a2, type: 3}
+      ratio: 5
+    - obj: {fileID: 8531203742272907972, guid: 3615cab48d7b88743a1071fb164cb4ac, type: 3}
+      ratio: 15
+    - obj: {fileID: 3055173846314446082, guid: 146d46635385a8442966798132681f2d, type: 3}
+      ratio: 20
 --- !u!114 &1316110398335215078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,9 +433,6 @@ MonoBehaviour:
   nodeFill: 13
   sectionSize: 5
   createdSections: []
-  useVariants: []
-  useSpecials: []
-  useBorder: {fileID: 0}
   framePrefab: {fileID: 7852007849487775249, guid: 57bdb85ac934a2b4cbcb91c7d3e15518,
     type: 3}
   createdFrame: 0
@@ -375,6 +448,8 @@ MonoBehaviour:
   Fgroup: {fileID: 0}
   Sgroup: {fileID: 0}
   Bgroup: {fileID: 0}
+  Egroup: {fileID: 0}
+  lvm: {fileID: 0}
 --- !u!1 &1316110398708873388
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47540971166251923}
   - component: {fileID: 6905407336069796637}
+  - component: {fileID: 1167855109}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -622,3 +698,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: 100
+--- !u!114 &1167855109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026293561349745303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11575171904a04e41b14ea94aa18bde9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eggs: []

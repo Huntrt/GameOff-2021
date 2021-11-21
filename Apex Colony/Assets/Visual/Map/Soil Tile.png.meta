@@ -235,9 +235,9 @@ TextureImporter:
       name: Soil Wall
       rect:
         serializedVersion: 2
-        x: 118
+        x: 121
         y: 18
-        width: 100
+        width: 95
         height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
