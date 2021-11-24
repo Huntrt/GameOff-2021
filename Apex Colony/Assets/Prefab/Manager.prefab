@@ -52,9 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125b718d638d57c4e967aaa14bcb2c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMap: 0
+  mapPerLevel: 1
   lv: 0
-  completeRequired: 1
+  completed: 0
+  progressRequired: 50
+  killCount: 0
+  killNeeded: 0
   levels:
   - name: Nest
     backgroundColor: {r: 0.764151, g: 0.6005411, b: 0.46497867, a: 0}
@@ -264,6 +267,8 @@ MonoBehaviour:
       ratio: 1
     - obj: {fileID: 6560860833740313672, guid: 60a2af9b6d859e74eac33710943f023a, type: 3}
       ratio: 1
+  progressCount: {fileID: 0}
+  progressBar: {fileID: 0}
 --- !u!114 &1316110397673856993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesObj: []
   enemiesComp: []
+  enemyCount: 0
+  spawnerCount: 0
+  spawned: 1
 --- !u!114 &1316110397673856997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: 100
+  foodDisplay: {fileID: 0}
 --- !u!114 &1167855109
 MonoBehaviour:
   m_ObjectHideFlags: 0

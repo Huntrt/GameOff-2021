@@ -5,6 +5,13 @@ public class Foods : MonoBehaviour
     public int food;
 	///Make this into singelton
 	public static Foods i; void Awake() {i = this;}
+	[SerializeField] TMPro.TextMeshProUGUI foodDisplay;
+
+	void Update()
+	{
+		//Display the text
+		foodDisplay.text = "Food: " + food;
+	}
 
 	public bool Spend(int price)
 	{

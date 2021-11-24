@@ -1,23 +1,48 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
 	public List<GameObject> enemiesObj;
 	public List<Enemy> enemiesComp;
+	[HideInInspector] public float enemyCount, spawnerCount;
+	[HideInInspector] public bool spawned;
 	float totalRatio;
 	LevelManager lvm;
 
-	//Get the level manager
-	void Awake() {lvm = Manager.i.level;}
+	//Get the level manager and set enemy spawn status
+	void Awake() {lvm = Manager.i.level; spawned = true;}
 
-	public void ResetList()
+	public void ClearEnemy()
 	{
+		//Reset enemy and spawner counter
+		spawnerCount = 0; enemyCount = 0;
 		//Reset the enemy component list
 		enemiesComp.Clear(); enemiesComp = new List<Enemy>();
 		//Reset the enemy object list
 		enemiesObj.Clear(); enemiesObj = new List<GameObject>(); 
 	}
+
+	void Update()
+	{
+		//If has not spawn enemy
+		if(!spawned)
+		{
+			//If all the spawner has spawn enemy
+			if(spawnerCount == enemyCount)
+			{
+				print("state: "+ spawned + " | enemy: "+ enemyCount +" | spawner: " + spawnerCount);
+				//Starting the game
+				Manager.i.StartingGame();
+				//Has spawn enemy
+				spawned = true;
+			}
+		}
+	}
+
+	//Begin counting the enemy spawned after 1 frame delay
+	IEnumerator Spawned() {yield return null; enemyCount++;}
 
 	public GameObject EnemySpawn()
 	{

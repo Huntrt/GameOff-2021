@@ -110,8 +110,6 @@ public class Maps : MonoBehaviour
 		availableFrame.Clear(); availableFrame = new List<Framer>();
 		//Reset the created section list
 		createdSections.Clear(); createdSections = new List<GameObject>();
-		//Reset the enemy list
-		Manager.i.enemy.ResetList();
 		//Create the FIRST frame at the map position with no rotation and group it up
 		Instantiate(framePrefab, transform.position, Quaternion.identity).transform.parent = Fgroup;
 		//Has yet to fail frane loading
@@ -135,7 +133,7 @@ public class Maps : MonoBehaviour
 		hasPopulated = true; populated?.Invoke();
 		//Get the size of map
 		GetMapSize();
-		//Scan all the path after generated frame and populated it with section
+		//Scan all the graph for pathfinding
 		Manager.i.path.Scan();
 	}
 

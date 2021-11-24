@@ -16,7 +16,7 @@
 		✓ Randomly chose section variation will be create at an frame.
 		✓ Block off the side that has no frame.
 		✓ Scan path finding after complete populating. @unstable
-		▪ An unquie map for bosses. @consider
+		X An unquie map for bosses.
 	View: 
 		✓ Move camera by hover mouse at screen edge.
 		✓ Camera move using key.
@@ -30,9 +30,9 @@
 		✓ Take and recive damage
 		✓ Capped max heath
 		✓ Damaging flash
-		▪ Damage pop-up
-		▪ Dies (may use event if onDestroy fail)
-		▪ Death effect
+		✓ Damage pop-up
+		✓ Dies (may use event if onDestroy fail)
+		✓ Death effect
 	Allies:
 		▪ Action
 			✓ Moving to formation when needed and overwrite other action.
@@ -50,20 +50,19 @@
 					✓ Remove single rival.
 					✓ Rival deselector.
 					✓ Recalculate allies path that has no rival to an existing rival.
-		▪ Stats
+		✓ Stats
 			✓ Melee
 			✓ Projectile
-			▪ ...
-		▪ Dies
+		✓ Dies
 			✓ Remove it from followers list.
 			✓ Destroy object.
 	Enemies:
 		✓ Behaviour
 			✓ Wander - Spawnpoint will has an box for enemy to move randomly inside that box.
 			✓ Combat - Enemy moving toward and attack nearest allies got detect by it.
-		▪ Spawning
+		✓ Spawning
 			✓ Manually assign enemy to spawn
-			▪ Randomize to spawn base on level difficult @doing
+			✓ Randomize to spawn base on level difficult 
 		▪ Boss @consider
 	Levels:
 		Special section are for containing interactable.
@@ -72,32 +71,35 @@
 			✓ List of each level content such as section variant and special.
 			✓ Assign level content into map generation base on the counter.
 		▪ Content
-			▪ Each level has 3 map.
-			▪ Complete 3 map will fight an boss to go to next level. @consider
+			✓ Each level has 3 map.
+			X Complete 3 map will fight an boss to go to next level.
 			▪ Has total of 5 map @next
 				▪ 1. Nest 
 				▪ 2. Cave 
 				▪ 3. Soil
 				▪ 4. Grass
-				▪ 5. Tree @consider
+				X 5. Tree 
 		▪ Interactable 
 			▪ Begin point - where the allies formation spawn when go to between map
 				✓ Spawn allies after map has complete generation
 				▪ Run an animation with particle to display it being dug from below.
-			▪ Ending point - when formation open it will wait for set time to go next map
+			▪ Ending point - when formation open it will wait for set time to go next map @consider
 				▪ Display particle falling down when it being dug.
 				▪ Kill all the enemy to able to progress @consider
 				▪ Unable to dig when in combnat. @consider
-			▪ Eggs - feed the egg enough food will spawn an allies
-				▪ Egg will spawn an random allies with species base on the current level.
-				▪ Effect when egg are open
-			▪ Port - trading food for upgrade
-				▪ List of random upgrade to buy.
+			✓ Eggs - feed the egg enough food will spawn an allies
+				✓ Egg will spawn an random allies with species base on the current level.
+				▪ Particle effect when egg are open
+			✓ Port - trading food for upgrade
+				✓ List of random upgrade to buy.
+				✓ Spawn the item when buy it.
 			▪ Seed - An pile of seed can be pick up by move over it
-				▪ Change sprite depend on how many food it give
-		▪ Countinue if wanted @consider
+				▪ Change sprite depend on how many food it give.
+		▪ Progression
+			▪ Interact with the ending point. @consider
+			▪ Able to pross any time when kill enough enemy. @consider
 
-	▪ Food - the game's only currency.
+	✓ Food - the game's only currency.
 
 Entity:
 	Allies: 
@@ -184,15 +186,19 @@ Visual:
 				▪ Show next to mouse with option. @consider
 			▪ Show the name of interactable when hover
 		▪ Game
+			✓ Port Panel
+				✓ Update the port interact with item to buy
+				✓ Blank spot for item that has buy
+				✓ Hover show item info, name, cost and icon
 			▪ Panel Eggs
 				✓ Update the cost on info
 				✓ Close when click button or formation moving
 				▪ Panel hover the eggs click
 				▪ Show stats of the ant obtain from egg
-			▪ Display food
-				▪ Show when obtain food.
+			▪ Display food @next
+				▪ Show when in an corner when obtain food.
 				▪ Show how many food are getting obatin.
-				▪ Show when mouse hover eggs or port.
+				▪ Show right next to mouse when mouse hover eggs or port.
 				▪ Hide when nothing happen.
 			▪ Button to display or toggle camera option.
 			▪ Button to reset the camera position. @paused

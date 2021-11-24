@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour
 			//Add this enemy component into it manager list once when create
 			enemies.enemiesComp.Add(this);
 		}
+		//Enemy has are begining to spawn
+		enemies.StartCoroutine("Spawned"); 
 		//Set the velocity as moving speed
 		velocity = speed;
 	}
