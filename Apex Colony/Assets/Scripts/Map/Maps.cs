@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Maps : MonoBehaviour
 {
@@ -36,7 +35,7 @@ public class Maps : MonoBehaviour
 	///The highest and lowest point of map
 	public Vector2 mapMin, mapMax;
 	[HideInInspector] public Transform Fgroup, Sgroup, Bgroup, Egroup;
-	[HideInInspector] public event Action generated, populated;
+	[HideInInspector] public event System.Action generated, populated;
 	[HideInInspector] public LevelManager lvm;
 
 	void Awake()
@@ -171,21 +170,29 @@ public class Maps : MonoBehaviour
 
 	void VariantSections()
 	{
-		//Get the current level's variant
-		List<GameObject> vari = lvm.levels[lvm.lv].variants;
+		//Get the current levels from manager
+		Level lv = lvm.levels[lvm.lv];
+		//Get the current level's emtpy section
+		List<GameObject> emp = lv.empty;
+		//Get the current level's content section
+		List<GameObject> cont = lv.content;
+		//The list of section that will be use
+		List<GameObject> used = new List<GameObject>();
 		//For each of the available frame
 		foreach (Framer frame in availableFrame)
 		{
-			//Randomly chose an section variant from this level
-			GameObject _variant = vari[UnityEngine.Random.Range(0, vari.Count)];
-			//Create chosed section variant at this frame position with no rotation
-			GameObject created = Instantiate(_variant, frame.transform.position, Quaternion.identity);
+			//Use the content section if it rate HIGHER than chance, use empty section if not
+			if(lv.contentRate >= Random.Range(0f, 100f)){used = cont;} else {used = emp;}
+			//Randomly chose an section from the currently used section list
+			GameObject section = used[Random.Range(0, used.Count)];
+			//Create the chosed section at this frame position with no rotation
+			GameObject created = Instantiate(section, frame.transform.position, Quaternion.identity);
 			//Group the section up
 			created.transform.parent = Sgroup.transform;
 			//Add this section to created list
 			createdSections.Add(created);
 			//Set this frame section to be the variant spawned
-			frame.section = _variant;
+			frame.section = section;
 		}
 	}
 

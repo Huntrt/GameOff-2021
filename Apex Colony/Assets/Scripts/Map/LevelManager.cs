@@ -2,27 +2,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//Content of each level and it order
+[Serializable] public class Level 
+	{
+		public string name;
+		[Header("Map")]
+		public Color backgroundColor;
+		public GameObject border;
+		[Tooltip("The chance of how many content section will spawn (0-100)%")]
+		public float contentRate;
+		public List<GameObject> empty; 
+		public List<GameObject> content;
+		public List<GameObject> specials;
+		[Header("Enemies")]
+		[Tooltip("List of all the enemy spawn on this level")]
+		public List<DropData> spawns;
+		[Header("Allies")]
+		[Tooltip("List of all allies could spawn from egg")]
+		public List<DropData> egg;
+		[Tooltip("List of all the item could get from port")]
+		public List<DropData> item;
+	}
+
 public class LevelManager : MonoBehaviour
 {
 	// Map and level count example:
 	// [Level 0] Map 1 > 2 > 3 > [Level 1] Map 1 > 2 > 3 > [Loop].
     public int currentMap, lv;
 	[Tooltip("The amount of each map per level")] [SerializeField] int completeRequired;
-	//Content of each level and set it base on it order in list
-	[Serializable] public class Level 
-	{
-		public string name;
-		public Color backgroundColor;
-		public GameObject border;
-		public List<GameObject> variants; 
-		public List<GameObject> specials;
-		[Tooltip("List of all the enemy spawn on this level")]
-		public List<DropData> spawns;
-		[Tooltip("List of all allies could spawn from egg")]
-		public List<DropData> egg;
-		[Tooltip("List of all the item could get from port")]
-		public List<DropData> item;
-	}
 	[Tooltip("List of the all level and their content")]
 	public List<Level> levels;
 	Maps map; EnemyManager enemy;
