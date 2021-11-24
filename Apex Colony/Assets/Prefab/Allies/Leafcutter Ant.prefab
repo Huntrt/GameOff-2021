@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 100
-  curHeath: 0
+  _curHeath: 0
   heathbar: {fileID: 5856640409912600480}
   coolOff: 4
   inCombat: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   velocity: 0
   speed: 12
   approach: 0
-  rate: 0.01
+  rate: 5
   range: 0.5
   combat: 0
   rb: {fileID: 954514686401436426}
@@ -1259,7 +1259,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: 0, y: -0.09762728}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1270,7 +1270,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 3.4}
+  m_Size: {x: 3.7143044, y: 3.2952545}
   m_EdgeRadius: 0
 --- !u!50 &954514686401436426
 Rigidbody2D:

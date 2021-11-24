@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class EggsManager : MonoBehaviour
 {
-	public List<DropData> eggs;
 	//The total ratio value of all egg drop
 	float totalRatio;
 
 	public GameObject EggDrop()
 	{
+		//Get the level manager then get it current level's egg drop data
+		LevelManager lvm = Manager.i.level; List<DropData> eggs = lvm.levels[lvm.lv].egg;
 		//Reset the total ratio
 		totalRatio -= totalRatio;
 		//Get the total ratio of all egg drop

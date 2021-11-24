@@ -15,10 +15,12 @@ public class Manager : MonoBehaviour
 	public AstarPath path;
 	public EggsPanel eggsPanel;
 	public EggsManager eggs;
+	public PortsManager ports;
+	public PortsPanel portsPanel;
 	///When the level start
 	public event Action stared;
 	//All the needed layer
-	[Serializable] public class Layers {public int allies, enemy, frame, inter;} public Layers layer;
+	[Serializable] public class Layers {public int allies, enemy, frame, inter, pick;} public Layers layer;
 	public static Manager i; 
 
 	void Awake()
@@ -31,6 +33,8 @@ public class Manager : MonoBehaviour
 		layer.frame = (1 << (LayerMask.NameToLayer("Frame")));
 		//Get the interactable layer
 		layer.inter = (1 << (LayerMask.NameToLayer("Interactable")));
+		//Get the pickupable layer
+		layer.pick = (1 << (LayerMask.NameToLayer("Pickupable")));
 		//Make this script into singleton
 		i = this;
 	}

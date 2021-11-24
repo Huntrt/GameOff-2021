@@ -1,0 +1,62 @@
+using UnityEngine;
+
+public class Egg : MonoBehaviour
+{
+	public Interactable interactable;
+    public int cost;
+	EggsPanel panel;
+	bool interacted = false;
+
+	void Start()
+	{
+		//Get the eggs panel
+		panel = Manager.i.eggsPanel;
+		//Display panel upon interact with eggs
+		interactable.interact.AddListener(DisplayPanel);
+	}
+
+	void DisplayPanel()
+	{
+		//If this the first time interact
+		if(!interacted)
+		{
+			//Stop whole formation when interact
+			Manager.i.control.StopFromation();
+			//Buy allies when clicked accept on panel
+			panel.accept.onClick.AddListener(BuyAllies);
+			//Begin closing when panel decline
+			panel.decline.onClick.AddListener(Closing);
+			//Update the panel info with cost
+			panel.UpdateInfo(cost);
+			//Active the eggs panel
+			panel.gameObject.SetActive(true);
+			//Has interacted
+			interacted = true;
+		}
+	}
+
+	void BuyAllies()
+	{
+		//If able to spend food
+		if(Foods.i.Spend(cost)) 
+		{
+			//Closing the panel
+			Closing();
+			//Open an egg at this egg position with no rotation
+			Instantiate(Manager.i.eggs.EggDrop(), transform.position, Quaternion.identity);
+			//Destroy the gameobject
+			Destroy(gameObject);
+		}
+	}
+
+	void Closing()
+	{
+		//No longer interact
+		interacted = false;
+		//@ Remove the buying and closing listener upon panel close
+		panel.accept.onClick.RemoveListener(BuyAllies);
+		panel.decline.onClick.RemoveListener(Closing);
+		//Deactive the panel
+		panel.gameObject.SetActive(false);
+	}
+}

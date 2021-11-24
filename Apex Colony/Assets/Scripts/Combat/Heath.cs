@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Heath : MonoBehaviour
 {
-	[SerializeField] float maxHeath;
+	public float maxHeath;
     [SerializeField] float _curHeath; public float curHeath {get => _curHeath;}
 	[SerializeField] Transform heathbar;
 	[Tooltip("How long to stop combat since the last time take damage")]

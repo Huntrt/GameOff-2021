@@ -86,6 +86,7 @@
 				▪ Run an animation with particle to display it being dug from below.
 			▪ Ending point - when formation open it will wait for set time to go next map
 				▪ Display particle falling down when it being dug.
+				▪ Kill all the enemy to able to progress @consider
 				▪ Unable to dig when in combnat. @consider
 			▪ Eggs - feed the egg enough food will spawn an allies
 				▪ Egg will spawn an random allies with species base on the current level.
@@ -94,6 +95,7 @@
 				▪ List of random upgrade to buy.
 			▪ Seed - An pile of seed can be pick up by move over it
 				▪ Change sprite depend on how many food it give
+		▪ Countinue if wanted @consider
 
 	▪ Food - the game's only currency.
 
@@ -193,9 +195,13 @@ Visual:
 				▪ Show when mouse hover eggs or port.
 				▪ Hide when nothing happen.
 			▪ Button to display or toggle camera option.
-			▪ Button to reset the camera position.
+			▪ Button to reset the camera position. @paused
 			▪ Minimap. @consider
 
 Bug:
 	✓ Map generated has an chance to fail @critical
 		Solution: Reset map generation if not generate enough frame
+	✓ Egg will spawn more than once if the the first ratio fail to spawn @caution
+		Solution: an bool to prevent egg get interact by multiple allies at once
+	✓ An small chance for an section to spawn of side of bounds @minimal
+		Solution: +1 the total size of map

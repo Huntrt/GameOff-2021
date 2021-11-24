@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -1885921474705920775
     second: Nest End
+  - first:
+      213: 865698725408261871
+    second: Nest Port
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -290,6 +293,27 @@ TextureImporter:
       bones: []
       spriteID: 9fc6fd9296cd3d5e0800000000000000
       internalID: -1885921474705920775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nest Port
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 127
+        width: 102
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6c7727764930c00800000000000000
+      internalID: 865698725408261871
       vertices: []
       indices: 
       edges: []

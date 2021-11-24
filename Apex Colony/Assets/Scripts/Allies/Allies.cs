@@ -44,8 +44,8 @@ public class Allies : MonoBehaviour
 		{
 			//Begin attack rate counter
 			rateCount += Time.deltaTime;
-			//Attack when rate counter reach attack rate
-			if(rateCount >= rate)
+			//Attack when rate counter reach how many attack perform in 1 second
+			if(rateCount >= (1/rate))
 			{
 				//If the target has destination
 				if(destination.target != null)

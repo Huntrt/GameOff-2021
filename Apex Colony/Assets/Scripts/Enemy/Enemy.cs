@@ -102,8 +102,8 @@ public class Enemy : MonoBehaviour
 			velocity = (approach/100) * speed;
 			//Begin attack rate counter
 			rateCount += Time.deltaTime;
-			//If rate counter reach attack rate
-			if(rateCount >= rate)
+			//Attack when rate counter reach how many attack perform in 1 second
+			if(rateCount >= 1/rate)
 			{
 				//Send event with the target allies heath component to attack with damage & range
 				attacking.Attack.Invoke(detected.GetComponent<Heath>(), damage, range);

@@ -215,9 +215,9 @@ public class Maps : MonoBehaviour
 		//Get the node amount by get the map size divide it with section size then multiple 
 		//with how many node to fill an section
 		Vector2 nodes = new Vector2((mapSize.x/sectionSize) * nodeFill, (mapSize.y/sectionSize) * nodeFill);
-		//Get the amount of node need create by double? node amount with half of an srction
+		//Get the amount of node need create by double? node amount with half of an section
 		Vector2 graph = new Vector2(nodes.x*2 + nodeFill/2, nodes.y*2 + nodeFill/2);
-		//Update the grid graph amount and size
-		Manager.i.path.data.gridGraph.SetDimensions((int)graph.x, (int)graph.y, nodeSize);
+		//Update the grid graph amount and size (+1 to prevent out of bounds section)
+		Manager.i.path.data.gridGraph.SetDimensions((int)graph.x+10, (int)graph.y+10, nodeSize);
 	}
 }

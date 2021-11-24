@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 100
-  curHeath: 0
+  _curHeath: 0
   heathbar: {fileID: 6111502050576670140}
   coolOff: 4
   inCombat: 0
@@ -793,6 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1628c446a329c0a4985d19df5df20298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockOn: 1
   allies: {fileID: 4483992460421448638}
   destination: {fileID: 3924843836034199261}
   path: {fileID: 1237655560299246350}
@@ -800,8 +801,8 @@ MonoBehaviour:
   distance: 0
   velocity: 0
   isMoving: 0
+  hasVelocity: 1
   ani: {fileID: 5561942365834313904}
-  lockOn: 1
 --- !u!61 &5483240936897854152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -826,7 +827,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 3.4}
+  m_Size: {x: 3.2240858, y: 3.4}
   m_EdgeRadius: 0
 --- !u!50 &624175007058206998
 Rigidbody2D:

@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 100
-  curHeath: 0
+  _curHeath: 0
   heathbar: {fileID: 1916741563636397037}
   coolOff: 4
   inCombat: 0
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   velocity: 0
   speed: 7
   approach: 0
-  rate: 2
+  rate: 0.5
   range: 1
   combat: 0
   rb: {fileID: 5107164627625971527}
@@ -1206,7 +1206,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 3.4}
+  m_Size: {x: 3.561625, y: 4.5604305}
   m_EdgeRadius: 0
 --- !u!50 &5107164627625971527
 Rigidbody2D:

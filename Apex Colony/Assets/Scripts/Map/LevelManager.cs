@@ -18,6 +18,10 @@ public class LevelManager : MonoBehaviour
 		public List<GameObject> specials;
 		[Tooltip("List of all the enemy spawn on this level")]
 		public List<DropData> spawns;
+		[Tooltip("List of all allies could spawn from egg")]
+		public List<DropData> egg;
+		[Tooltip("List of all the item could get from port")]
+		public List<DropData> item;
 	}
 	[Tooltip("List of the all level and their content")]
 	public List<Level> levels;

@@ -10,3 +10,4 @@ using System;
 [Serializable] public class FloatMinMax {public float min; public float max; public float raw;}
 //Drop data containt the object drop and it ratio to drop
 [Serializable] public class DropData {public GameObject obj; public float ratio;}
+[Serializable] public class spriteState {public Color normal, highlight, press, select, disable;}
