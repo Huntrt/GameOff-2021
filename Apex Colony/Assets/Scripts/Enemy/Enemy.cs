@@ -114,4 +114,10 @@ public class Enemy : MonoBehaviour
 			}
 		}
 	}
+
+	void OnDestroy()
+	{
+		//Count this enemy has been kill
+		Manager.i.level.killCount++;
+	}
 }

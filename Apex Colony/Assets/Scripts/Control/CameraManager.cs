@@ -17,11 +17,9 @@ public class CameraManager : MonoBehaviour
 	{
 		//Get the screen width an height and the camera transform
 		width = Screen.width; height = Screen.height; cam = Camera.main.transform;
-		//Reset cmaera when map started
-		Manager.i.stared += ResetCamera;
 	}
 
-	void ResetCamera()
+	public void ResetCamera()
 	{
 		//Reset camera back to formation when map started
 		cam.position = Manager.i.allie.FormationCenter();

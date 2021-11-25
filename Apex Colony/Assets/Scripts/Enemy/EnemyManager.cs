@@ -26,23 +26,9 @@ public class EnemyManager : MonoBehaviour
 
 	void Update()
 	{
-		//If has not spawn enemy
-		if(!spawned)
-		{
-			//If all the spawner has spawn enemy
-			if(spawnerCount == enemyCount)
-			{
-				print("state: "+ spawned + " | enemy: "+ enemyCount +" | spawner: " + spawnerCount);
-				//Starting the game
-				Manager.i.StartingGame();
-				//Has spawn enemy
-				spawned = true;
-			}
-		}
+		///START the game when all the spawner has complete spawning their enemy
+		if(!spawned) {if(spawnerCount == enemyCount){Manager.i.StartingGame(); spawned = true;}}
 	}
-
-	//Begin counting the enemy spawned after 1 frame delay
-	IEnumerator Spawned() {yield return null; enemyCount++;}
 
 	public GameObject EnemySpawn()
 	{
@@ -65,4 +51,7 @@ public class EnemyManager : MonoBehaviour
 		//Not important
 		return null;
 	}
+
+	//Begin counting the enemy spawned after 1 frame delay
+	IEnumerator Spawned() {yield return null; enemyCount++;}
 }

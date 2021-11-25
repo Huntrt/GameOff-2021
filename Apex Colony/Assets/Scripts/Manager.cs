@@ -18,7 +18,7 @@ public class Manager : MonoBehaviour
 	public PortsManager ports;
 	public PortsPanel portsPanel;
 	///When the level start
-	public event Action stared;
+	public event Action starting; public bool started;
 	//All the needed layer
 	[Serializable] public class Layers {public int allies, enemy, frame, inter, pick;} public Layers layer;
 	public static Manager i; 
@@ -39,11 +39,17 @@ public class Manager : MonoBehaviour
 		i = this;
 	}
 
-	//Game started when enemy spawned
+	//Game started when spawner has spawn their enemy
 	public void StartingGame() 
 	{
-		//Gams started
-		stared?.Invoke();
+		//Game started
+		starting?.Invoke(); started = true;
+		//Reset the camera
+		cam.ResetCamera();
+		//Begin the current map progression
+		level.BeginProgression();
+		//Reset the kill counter
+		level.killCount = 0;
 		//Hide the generation loading when game start
 		map.generationLoading.SetActive(false);
 	}

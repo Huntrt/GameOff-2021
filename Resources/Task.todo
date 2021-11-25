@@ -63,7 +63,7 @@
 		✓ Spawning
 			✓ Manually assign enemy to spawn
 			✓ Randomize to spawn base on level difficult 
-		▪ Boss @consider
+		X Boss
 	Levels:
 		Special section are for containing interactable.
 		✓ Manager
@@ -83,21 +83,25 @@
 			▪ Begin point - where the allies formation spawn when go to between map
 				✓ Spawn allies after map has complete generation
 				▪ Run an animation with particle to display it being dug from below.
-			▪ Ending point - when formation open it will wait for set time to go next map @consider
-				▪ Display particle falling down when it being dug.
-				▪ Kill all the enemy to able to progress @consider
-				▪ Unable to dig when in combnat. @consider
+			X Ending point - when formation open it will wait for set time to go next map 
+				X Display particle falling down when it being dug.
+				X Kill all the enemy to able to progress 
+				X Unable to dig when in combnat. 
 			✓ Eggs - feed the egg enough food will spawn an allies
 				✓ Egg will spawn an random allies with species base on the current level.
 				▪ Particle effect when egg are open
 			✓ Port - trading food for upgrade
 				✓ List of random upgrade to buy.
 				✓ Spawn the item when buy it.
-			▪ Seed - An pile of seed can be pick up by move over it
+			▪ Seed - An pile of seed can be pick up by move over it @doing
 				▪ Change sprite depend on how many food it give.
 		▪ Progression
-			▪ Interact with the ending point. @consider
-			▪ Able to pross any time when kill enough enemy. @consider
+			X Interact with the ending point.
+			▪ Able to progress any time when kill enough enemy
+				✓ Kill enough enemy allow to dig up to go to the next map
+				✓ Display enemy killing progression as bar and text
+				▪ Particle effect like digging up on the first allies when dig.
+				▪ Loading bar when holding digging.
 
 	✓ Food - the game's only currency.
 
@@ -121,7 +125,7 @@ Entity:
 			An ant focus on movement speed
 		▪ Bull ant
 			An ant that has long range melee attack
-	Enemies: @doing
+	Enemies:
 		(both feature and visual)
 		1 = bad | 2 = weak | 3 = medium | 4 = alright | 5 = great
 		Nest:

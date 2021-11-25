@@ -7,16 +7,6 @@ public class AlliesManager : MonoBehaviour
 	public List<Allies> alliesComp;
 	[SerializeField] GameObject test;
 
-	void Update()
-	{
-		//% If press space
-		if(Input.GetKey(KeyCode.Space))
-		{
-			//% Create an test allies
-			Instantiate(test, (Vector2)Camera.main.transform.position, Quaternion.identity);
-		}
-	}
-
 	///For getting the center vector of all allies
 	public Vector2 FormationCenter()
 	{

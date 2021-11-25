@@ -5933,7 +5933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 5
-  curHeath: 0
+  _curHeath: 0
   heathbar: {fileID: 4225856262257357077}
   coolOff: 2
   inCombat: 0
@@ -6001,7 +6001,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: 0, y: 0.03335756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6012,7 +6012,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 3.4}
+  m_Size: {x: 1.6158409, y: 2.4292836}
   m_EdgeRadius: 0
 --- !u!50 &2689233662974052712
 Rigidbody2D:
@@ -7334,7 +7334,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 12
+        scalar: 5
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -7720,8 +7720,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7686275, g: 0.08627451, b: 0.007843138, a: 1}
-        key1: {r: 0.65882355, g: 0.07058824, b: 0.015686275, a: 0}
+        key0: {r: 0.078431375, g: 0.058823533, b: 0.043137256, a: 1}
+        key1: {r: 0.34117648, g: 0.28235295, b: 0.23529413, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -7729,7 +7729,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 40670
-        ctime1: 65535
+        ctime1: 45489
         ctime2: 0
         ctime3: 0
         ctime4: 0
