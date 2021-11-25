@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour
 {
-	public Vector2 clickPos, mousePos;
+	public Vector2 clickPos, mousePos; Vector2 prevMouse;
 	public GameObject enemySelector;
 	//An enum for state of key input
 	enum Inputing {release, press, hold} [SerializeField] Inputing input;
@@ -38,9 +38,11 @@ public class Controls : MonoBehaviour
 			{
 				//Clear all the rival and close all the panel
 				formator.ClearRivals(); ClosePanel();
-				///Create formation of goal at mouse for followers move toward
-				manager.goal.Create(mousePos);
+				///Create formation of goal at mouse for followers move toward (if mouse are updated)
+				if(prevMouse != mousePos) {manager.goal.Create(mousePos);}
 			}
+			//Update the previous mouse position
+			prevMouse = mousePos;
 		}
 	}
 

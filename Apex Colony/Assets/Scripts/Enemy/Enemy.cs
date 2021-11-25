@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+	public int foodGain;
 	public Heath hp;
 	[Tooltip("Attack damage")] public float damage;
 	[HideInInspector] public float velocity;
@@ -117,6 +118,8 @@ public class Enemy : MonoBehaviour
 
 	void OnDestroy()
 	{
+		//Gain the food of enemy
+		Foods.i.Gain(foodGain);
 		//Count this enemy has been kill
 		Manager.i.level.killCount++;
 	}

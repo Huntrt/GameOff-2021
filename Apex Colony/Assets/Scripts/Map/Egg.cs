@@ -56,6 +56,8 @@ public class Egg : MonoBehaviour
 		//@ Remove the buying and closing listener upon panel close
 		panel.accept.onClick.RemoveListener(BuyAllies);
 		panel.decline.onClick.RemoveListener(Closing);
+		//Hide the food panel
+		Foods.i.showFood = false;
 		//Deactive the panel
 		panel.gameObject.SetActive(false);
 	}

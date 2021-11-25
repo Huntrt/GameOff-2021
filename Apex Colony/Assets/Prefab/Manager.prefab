@@ -54,10 +54,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapPerLevel: 1
   lv: 0
-  completed: 0
   progressRequired: 50
   killCount: 0
   killNeeded: 0
+  completed: 0
   levels:
   - name: Nest
     backgroundColor: {r: 0.764151, g: 0.6005411, b: 0.46497867, a: 0}
@@ -267,6 +267,7 @@ MonoBehaviour:
       ratio: 1
     - obj: {fileID: 6560860833740313672, guid: 60a2af9b6d859e74eac33710943f023a, type: 3}
       ratio: 1
+  progressPanel: {fileID: 0}
   progressCount: {fileID: 0}
   progressBar: {fileID: 0}
 --- !u!114 &1316110397673856993
@@ -341,6 +342,7 @@ MonoBehaviour:
   eggs: {fileID: 1167855109}
   ports: {fileID: 1316110399212080264}
   portsPanel: {fileID: 0}
+  started: 0
   layer:
     allies: 0
     enemy: 0
@@ -784,7 +786,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: 100
+  foodPanel: {fileID: 0}
   foodDisplay: {fileID: 0}
+  displayDuration: 3
+  showFood: 0
 --- !u!114 &1167855109
 MonoBehaviour:
   m_ObjectHideFlags: 0

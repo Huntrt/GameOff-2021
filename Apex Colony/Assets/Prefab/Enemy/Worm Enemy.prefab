@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340682f3e5a5b7f40b522a4ac031a6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodGain: 6
   hp: {fileID: 4716916636848615032}
   damage: 2
   velocity: 0

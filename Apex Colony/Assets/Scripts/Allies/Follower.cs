@@ -11,20 +11,20 @@ public class Follower : MonoBehaviour
 	public float distance, velocity;
 	public bool isMoving;
 	public bool hasVelocity = true;
-	[SerializeField] Animator ani;	Manager manager; Formator formator;
+	[SerializeField] Animator ani;	Manager manager; Formator formator; GoalsCreate goal;
 	//Since path velocity does not update as the same frame as set goal and that cause delay of velocity
 	//hasVelocity preventing that by set TRUE when path velocity change and FALSE upon set goal
 	//This provide an accurate way to detect if allies is moving or not
 
 	void Start()
 	{
-		//Get the manager and the formator
-		manager = Manager.i; formator = manager.formator;
+		//Get the manager and the formator and goal
+		manager = Manager.i; formator = manager.formator; goal = manager.goal;
 		//Add this follower as an new follower of formation upon it create
 		if(!formator.followers.Contains(this)) {formator.followers.Add(this);}
 		//Get the order of this follower in formaton upon create
 		UpdateOrder();
-		//Begin set goal upon it creation
+		//Begin set goal upon it generation
 		manager.goal.created += SetGoal;
 	}
 
@@ -35,7 +35,7 @@ public class Follower : MonoBehaviour
 		//Get the current path velocity
 		velocity = path.velocity.magnitude;
 		//! There might bug since 4 line below only run when not combat
-		//The player are NOT moving when path velocity are zero but still has velocity
+		//The player are NOT moving when path velocity are zero despite having velocity
 		if(velocity == 0 && hasVelocity) {isMoving = false;}
 		//The player are NOW moving and has velocity when path velocity are not zero
 		if(velocity > 0) {isMoving = true; hasVelocity = true;}
@@ -102,7 +102,7 @@ public class Follower : MonoBehaviour
 	}
 
 	///Set the target destination as the goal that has same index as follower order then begin moving
-	void SetGoal() {destination.target = manager.goal.goals[order].transform; Moving();}
+	void SetGoal() {destination.target = goal.goals[order].transform; Moving();}
 	///Set the target destination as interactable receive then begin moving
 	public void SetInteract(Transform react) {destination.target = react; Moving();}
 	///Moving when receving goal or interactable

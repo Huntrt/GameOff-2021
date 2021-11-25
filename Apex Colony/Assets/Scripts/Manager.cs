@@ -50,6 +50,8 @@ public class Manager : MonoBehaviour
 		level.BeginProgression();
 		//Reset the kill counter
 		level.killCount = 0;
+		//Flash the food panel
+		Foods.i.Gain(0);
 		//Hide the generation loading when game start
 		map.generationLoading.SetActive(false);
 	}

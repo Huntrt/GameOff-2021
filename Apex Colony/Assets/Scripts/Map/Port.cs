@@ -107,6 +107,8 @@ public class Port : MonoBehaviour
 		}
 		//Stop listen to when panel close
 		panel.close.onClick.RemoveListener(Closing);
+		//Hide the food panel
+		Foods.i.showFood = false;
 		//Deactive the panel
 		panel.gameObject.SetActive(false);
 	}

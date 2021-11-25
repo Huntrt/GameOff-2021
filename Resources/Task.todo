@@ -214,4 +214,6 @@ Bug:
 	✓ Egg will spawn more than once if the the first ratio fail to spawn @caution
 		Solution: an bool to prevent egg get interact by multiple allies at once
 	✓ An small chance for an section to spawn of side of bounds @minimal
-		Solution: +1 the total size of map
+		Solution: +1 section to the total size of map
+	✓ Allies can't detect enemy nearby if holding move key in the same position when in already at goal @caution @unstable
+		Solution: only set goal formation to move when the mouse position are changed (record it previous position)
