@@ -2,38 +2,60 @@ using UnityEngine;
 
 public class Port : MonoBehaviour
 {
-	public bool hasData;
-	//The slot data of this object
-	public ItemData[] datas = new ItemData[3];
+	public int rollCost; public float rollInflated;
+	///The item data of this object
+	public ItemData[] datas;
+	public bool hasData = false;
 	public Interactable interactable;
+	bool interacting = false;
 	[HideInInspector] public PortsPanel panel;
 
 	void Start()
 	{
 		//Get the ports panel
 		panel = Manager.i.portsPanel;
-		//Display panel upon interact with ports
-		interactable.interact.AddListener(DisplayPanel);
+		//Get data upon interact with ports
+		interactable.interact.AddListener(GetData);
 	}
 
-	void DisplayPanel()
+	public void Rerolling() 
 	{
-		//? Remove left over listener 
-		//Remove all listener of each slot buyinhg button
-		for(int d = 0; d < panel.slots.Length; d++) {panel.slots[d].buying.onClick.RemoveAllListeners();}
-		//REMOVE all the listener of closing
-		panel.close.onClick.RemoveAllListeners();
+		//If able to spend food to reroll
+		if(Foods.i.Spend(rollCost))
+		{
+			//Display the roll cost onto it counter
+			panel.rollCount.text = rollCost.ToString();
+			//Increase the cost of roll
+			rollCost += (int)(rollCost * rollInflated);
+			//Getting new item data on this port
+			hasData = false; GetData();
+		}
+	}
+
+	public void GetData()
+	{
+		//Display the roll cost onto it counter
+		panel.rollCount.text = rollCost.ToString();
+		//This port are getting interact
+		interacting = true;
 		//Stop whole formation when interact
 		Manager.i.control.StopFromation();
-		//Begin closing when panel close
-		panel.close.onClick.AddListener(Closing);
-		///Begin getting the slot data of this port
-		//Get new data if haven't has one
+		//Go through all the slots port in panel
+		for(int d = 0; d < panel.slots.Length; d++)
+		//Remove all the listener from port slot's buying button
+		{panel.slots[d].buying.onClick.RemoveAllListeners();}
+		///REMOVE all the listener of closing and close button of panel
+		panel.close.onClick.RemoveAllListeners(); panel.reroll.onClick.RemoveAllListeners();
+		///Begin closing when panel click close button and reroll when panel click reroll button
+		panel.close.onClick.AddListener(Closing); panel.reroll.onClick.AddListener(Rerolling);
+		//Get new datas if haven't
 		if(!hasData)
 		{
 			//For each of the data slot need to be fill
 			for (int s = 0; s < datas.Length; s++)
 			{
+				//Create the new item data if current data is null
+				if(datas[s] == null) {datas[s] = new ItemData();}
 				//Getting the item randomly from port
 				GameObject item = Manager.i.ports.ItemDrop();
 				//Get the pickupable component of item has get
@@ -50,10 +72,15 @@ public class Port : MonoBehaviour
 			//Has get the datas
 			hasData = true;
 		}
+		//Display data onto port slot
+		DisplayPanel();
+	}
+
+	void DisplayPanel()
+	{
 		//Active the port panel
 		panel.gameObject.SetActive(true);
-		///Begin display the item data to panel's slot
-		//For each of the slot need to be display
+		//For each of the port slot need to be display
 		for(int d = 0; d < panel.slots.Length; d++)
 		{
 			//Skip the current data to display if it is null
@@ -97,6 +124,8 @@ public class Port : MonoBehaviour
 
 	void Closing()
 	{
+		//No longer interact with this port
+		interacting = false;
 		//For each of the slot are currently display
 		for(int d = 0; d < panel.slots.Length; d++)
 		{

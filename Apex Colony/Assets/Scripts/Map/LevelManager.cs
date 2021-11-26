@@ -16,10 +16,8 @@ using TMPro;
 		public List<GameObject> empty; 
 		public List<GameObject> content;
 		public List<GameObject> specials;
-		[Header("Enemies")]
 		[Tooltip("List of all the enemy spawn on this level")]
 		public List<DropData> spawns;
-		[Header("Allies")]
 		[Tooltip("List of all allies could spawn from egg")]
 		public List<DropData> egg;
 		[Tooltip("List of all the item could get from port")]

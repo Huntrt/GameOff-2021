@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6560860833740313672
+--- !u!1 &5963015635021233938
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9154252956909393935}
-  - component: {fileID: 2159262431001789791}
-  - component: {fileID: 871216908583205252}
-  - component: {fileID: -4613628408549837442}
-  - component: {fileID: 8281941809013319131}
-  - component: {fileID: -7029841020455534034}
+  - component: {fileID: 5963015635021233928}
+  - component: {fileID: 5963015635021233935}
+  - component: {fileID: 5963015635021233934}
+  - component: {fileID: 5963015635021233933}
+  - component: {fileID: 5963015635021233932}
+  - component: {fileID: 5963015635021233939}
   m_Layer: 14
-  m_Name: Speed Plus
+  m_Name: Strong Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9154252956909393935
+--- !u!4 &5963015635021233928
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560860833740313672}
+  m_GameObject: {fileID: 5963015635021233938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.502, y: 0.394, z: 0}
+  m_LocalPosition: {x: -0.7, y: 1.6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2159262431001789791
+--- !u!212 &5963015635021233935
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560860833740313672}
+  m_GameObject: {fileID: 5963015635021233938}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,63 +75,64 @@ SpriteRenderer:
   m_SortingLayerID: 1353705893
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -488721925442295091, guid: 4efeb0b56ba4c31409021ea7c2dbddbd,
+  m_Sprite: {fileID: -6099050445329199328, guid: d8c5d3752698b8e40a84c14ce37b229b,
     type: 3}
-  m_Color: {r: 0.39999998, g: 0.6599813, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.36, y: 1.06}
+  m_Size: {x: 1, y: 0.97}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &871216908583205252
+--- !u!114 &5963015635021233934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560860833740313672}
+  m_GameObject: {fileID: 5963015635021233938}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e3a73c93c0184947a9cefb9626f06f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    item: {fileID: 6560860833740313672}
-    icon: {fileID: 2159262431001789791}
-    cost: 5
-    info: Increase allies moving speed by 4
+    item: {fileID: 5963015635021233938}
+    icon: {fileID: 5963015635021233935}
+    cost: 14
+    info: An stronger type of ant leg, it will increase moving speed by <color=#00ff3c>1</color>
+      and max heath by <color=#00ff3c>2</color>.
   rb: {fileID: 0}
   isPicking: 0
---- !u!114 &-4613628408549837442
+--- !u!114 &5963015635021233933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560860833740313672}
+  m_GameObject: {fileID: 5963015635021233938}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 264e16f232686d74fb2abf23d0b6b84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 0
-  heal: 0
+  maxHeath: 2
+  heal: 2
   damage: 0
-  speed: 4
+  speed: 1
   rate: 0
   range: 0
---- !u!50 &8281941809013319131
+--- !u!50 &5963015635021233932
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560860833740313672}
+  m_GameObject: {fileID: 5963015635021233938}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -145,29 +146,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &-7029841020455534034
+--- !u!61 &5963015635021233939
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560860833740313672}
+  m_GameObject: {fileID: 5963015635021233938}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03301072, y: -0.0025515556}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.9}
-    newSize: {x: 0.36, y: 1.06}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 0.97}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.9}
+  m_Size: {x: 0.9333408, y: 0.92345333}
   m_EdgeRadius: 0

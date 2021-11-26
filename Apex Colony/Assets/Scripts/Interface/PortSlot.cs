@@ -21,7 +21,7 @@ public class PortSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		//@ Update the description with color codded name, price and info
 		description = 
 		"<b><color=#d9a52e>" + name + "</color></b>\n\n" +
-		"Cost <b><color=#4a5ccf>" + price + "</color></b> food\n\n- "+ info;
+		"Cost <b><u>" + price + "</u></b> food\n\n- "+ info;
 	}
 
 	void Update()

@@ -102,16 +102,30 @@ MonoBehaviour:
     - obj: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
       ratio: 10
     item:
-    - obj: {fileID: 1337245571904660456, guid: af798a6b11cfe994a99c80c614084866, type: 3}
-      ratio: 1
-    - obj: {fileID: 2737806022749868481, guid: 6811f3440222a064e877eae0bdc24306, type: 3}
-      ratio: 1
-    - obj: {fileID: 702048201203082806, guid: 78821e02ece2e6c45814aba8b00200eb, type: 3}
-      ratio: 1
-    - obj: {fileID: 1206420925539386996, guid: cc13f4d7c227a0a4080b9be939194f5f, type: 3}
-      ratio: 1
-    - obj: {fileID: 6560860833740313672, guid: 60a2af9b6d859e74eac33710943f023a, type: 3}
-      ratio: 1
+    - obj: {fileID: 4591540689479608821, guid: d0c876eb43a8d5d4793be90f6266e7ea, type: 3}
+      ratio: 2
+    - obj: {fileID: 7757189550037057067, guid: f71278dba99bfef44b95f45ebf98bf77, type: 3}
+      ratio: 2
+    - obj: {fileID: 3117111220243399609, guid: 946c59222035d4b46acf88b48d72bcba, type: 3}
+      ratio: 2
+    - obj: {fileID: 6169006089625487935, guid: 4a8a5a170a707f94d9468e628a6a5628, type: 3}
+      ratio: 2
+    - obj: {fileID: 5963015635021233938, guid: a2ee4b9f0e2b22f47b26c0a6c045b769, type: 3}
+      ratio: 2
+    - obj: {fileID: 4374538329472436273, guid: 5393683040a8a524cb350dcc5417ab3d, type: 3}
+      ratio: 5
+    - obj: {fileID: 683145240526129531, guid: 96a6f00f238db25428acca7328a3e06a, type: 3}
+      ratio: 15
+    - obj: {fileID: 6926325696335192417, guid: 3335158dd96964344a40c9df972d515f, type: 3}
+      ratio: 15
+    - obj: {fileID: 2885621990309619323, guid: 8aec8017f6bc07e43a9ff50947dc4a32, type: 3}
+      ratio: 15
+    - obj: {fileID: 8882736439315931880, guid: c8844365d47986f4ca967418fc4f765f, type: 3}
+      ratio: 15
+    - obj: {fileID: 8070766843239556931, guid: 52d5f87bdcbbbd64d89d4c60eaabac1e, type: 3}
+      ratio: 15
+    - obj: {fileID: 5682797640565753281, guid: 299c6792d0b091e40951944ad95cd021, type: 3}
+      ratio: 20
   - name: Cave
     backgroundColor: {r: 0.2, g: 0.21960784, b: 0.23529412, a: 0}
     border: {fileID: 6609907063505172988, guid: fe71d085b60306e439bdda1fdc3f1017,
@@ -152,17 +166,7 @@ MonoBehaviour:
       ratio: 8
     - obj: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
       ratio: 10
-    item:
-    - obj: {fileID: 1337245571904660456, guid: af798a6b11cfe994a99c80c614084866, type: 3}
-      ratio: 1
-    - obj: {fileID: 2737806022749868481, guid: 6811f3440222a064e877eae0bdc24306, type: 3}
-      ratio: 1
-    - obj: {fileID: 702048201203082806, guid: 78821e02ece2e6c45814aba8b00200eb, type: 3}
-      ratio: 1
-    - obj: {fileID: 1206420925539386996, guid: cc13f4d7c227a0a4080b9be939194f5f, type: 3}
-      ratio: 1
-    - obj: {fileID: 6560860833740313672, guid: 60a2af9b6d859e74eac33710943f023a, type: 3}
-      ratio: 1
+    item: []
   - name: Soil
     backgroundColor: {r: 0.39607844, g: 0.2509804, b: 0.19215687, a: 0}
     border: {fileID: 3782086149402872379, guid: 80b39d2a86f149941848b6286beb96dc,
@@ -203,17 +207,7 @@ MonoBehaviour:
       ratio: 7
     - obj: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
       ratio: 7
-    item:
-    - obj: {fileID: 1337245571904660456, guid: af798a6b11cfe994a99c80c614084866, type: 3}
-      ratio: 1
-    - obj: {fileID: 2737806022749868481, guid: 6811f3440222a064e877eae0bdc24306, type: 3}
-      ratio: 1
-    - obj: {fileID: 702048201203082806, guid: 78821e02ece2e6c45814aba8b00200eb, type: 3}
-      ratio: 1
-    - obj: {fileID: 1206420925539386996, guid: cc13f4d7c227a0a4080b9be939194f5f, type: 3}
-      ratio: 1
-    - obj: {fileID: 6560860833740313672, guid: 60a2af9b6d859e74eac33710943f023a, type: 3}
-      ratio: 1
+    item: []
   - name: Grass
     backgroundColor: {r: 0.15419188, g: 0.3301887, b: 0.2044767, a: 0}
     border: {fileID: 3327309088603454640, guid: c542805d51e9d1c448afbbe360ba4d1a,
@@ -256,17 +250,7 @@ MonoBehaviour:
       ratio: 5
     - obj: {fileID: 7888511573004101653, guid: c26bd3ad8760d9c4a98416019ac3c9e9, type: 3}
       ratio: 7
-    item:
-    - obj: {fileID: 1337245571904660456, guid: af798a6b11cfe994a99c80c614084866, type: 3}
-      ratio: 1
-    - obj: {fileID: 2737806022749868481, guid: 6811f3440222a064e877eae0bdc24306, type: 3}
-      ratio: 1
-    - obj: {fileID: 702048201203082806, guid: 78821e02ece2e6c45814aba8b00200eb, type: 3}
-      ratio: 1
-    - obj: {fileID: 1206420925539386996, guid: cc13f4d7c227a0a4080b9be939194f5f, type: 3}
-      ratio: 1
-    - obj: {fileID: 6560860833740313672, guid: 60a2af9b6d859e74eac33710943f023a, type: 3}
-      ratio: 1
+    item: []
   progressPanel: {fileID: 0}
   progressCount: {fileID: 0}
   progressBar: {fileID: 0}
@@ -788,7 +772,11 @@ MonoBehaviour:
   food: 100
   foodPanel: {fileID: 0}
   foodDisplay: {fileID: 0}
-  displayDuration: 3
+  foodIO: {fileID: 0}
+  displayDuration: 1.5
+  IODuration: 1.4
+  GainColor: {r: 0, g: 1, b: 0.3333335, a: 1}
+  SpendColor: {r: 1, g: 0.16666667, b: 0, a: 1}
   showFood: 0
 --- !u!114 &1167855109
 MonoBehaviour:

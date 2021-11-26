@@ -38,7 +38,7 @@ Material:
     - _OutlineTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 1, y: 1}
     m_Floats:
     - _Ambient: 0.5
     - _Bevel: 0.5
@@ -65,7 +65,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.2
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
@@ -113,11 +113,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Inconsolata Regular
+  m_Name: InputOutput TMP
   m_EditorClassIdentifier: 
-  hashCode: 2125073435
+  hashCode: -1562245504
   material: {fileID: -6563996980538980925}
-  materialHashCode: -1358937893
+  materialHashCode: -1266531808
   m_Version: 1.1.0
   m_SourceFontFileGUID: f9f03e37f2bfdff48b9f88d9a919f3bf
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: f9f03e37f2bfdff48b9f88d9a919f3bf,

@@ -6,7 +6,7 @@
 		✓ Follower break formation when engage.
 		✓ Follower chase after the target and stop when it killed.
 		✓ Follower go to an interactable when needed and stop when it opened.
-		▪ Change follower formation position by changing index in followers list.
+		X Change follower formation position by changing index in followers list.
 	Maps: 
 		✓ An frame will have 4 point on each side.
 		✓ Each side will has an 50% chance to create another frame.
@@ -36,7 +36,7 @@
 	Allies:
 		▪ Action
 			✓ Moving to formation when needed and overwrite other action.
-			▪ Picking remains and food when walk over it.
+			X Picking remains and food when walk over it.
 			✓ Go toward interactable that user click and open it when in range.
 			✓ Engage with enemy than set it at rival
 				✓ Click - set or remove the clicked enemy as rival depend on if it rival or not.
@@ -93,8 +93,8 @@
 			✓ Port - trading food for upgrade
 				✓ List of random upgrade to buy.
 				✓ Spawn the item when buy it.
-			▪ Seed - An pile of seed can be pick up by move over it @doing
-				▪ Change sprite depend on how many food it give.
+			X Seed - An pile of seed can be pick up by move over it
+				X Change sprite depend on how many food it give.
 		▪ Progression
 			X Interact with the ending point.
 			▪ Able to progress any time when kill enough enemy
@@ -173,7 +173,7 @@ Visual:
 			✓ Wall
 			✓ Border
 	Interface:
-		▪ Indication
+		▪ Indication @doing
 			▪ Show arrow? icon when hold "move key" down and fading when "move key" release.
 			▪ Rival
 				▪ Flash [sword]? icon on where "rival key" click.
@@ -200,20 +200,22 @@ Visual:
 				▪ Panel hover the eggs click
 				▪ Show stats of the ant obtain from egg
 			▪ Display food @next
-				▪ Show when in an corner when obtain food.
+				✓ Show when in an corner when obtain food.
 				▪ Show how many food are getting obatin.
-				▪ Show right next to mouse when mouse hover eggs or port.
-				▪ Hide when nothing happen.
+				▪ Show right next to mouse when mouse hover eggs or port. @doing
+				✓ Hide when nothing happen.
 			▪ Button to display or toggle camera option.
 			▪ Button to reset the camera position. @paused
-			▪ Minimap. @consider
+			X Minimap.
 
-Bug:
+Bugs:
 	✓ Map generated has an chance to fail @critical
 		Solution: Reset map generation if not generate enough frame
 	✓ Egg will spawn more than once if the the first ratio fail to spawn @caution
 		Solution: an bool to prevent egg get interact by multiple allies at once
 	✓ An small chance for an section to spawn of side of bounds @minimal
 		Solution: +1 section to the total size of map
-	✓ Allies can't detect enemy nearby if holding move key in the same position when in already at goal @caution @unstable
+	✓ Allies can't detect enemy nearby if holding move key in the same position when it already at goal @caution @unstable
 		Solution: only set goal formation to move when the mouse position are changed (record it previous position)
+	▪ Allies can't detect enemy nearby if the new goal position are too close to it previous position @minimal
+		Soltuion: ???

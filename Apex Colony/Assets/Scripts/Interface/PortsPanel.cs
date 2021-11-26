@@ -7,8 +7,8 @@ public class PortsPanel : MonoBehaviour
 	//All the port's slots
 	public PortSlot[] slots;
 	public GameObject descriptionPanel;
-	public TextMeshProUGUI descriptionText;
+	public TextMeshProUGUI descriptionText, rollCount;
 	public Image descriptionIcon;
-	public Button close;
+	public Button close, reroll;
 	public spriteState richState, poorState;
 }

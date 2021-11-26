@@ -139,19 +139,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed55011eabd0894a812c020bc4d7452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasData: 0
+  rollCost: 1
+  rollInflated: 1.5
   datas:
   - item: {fileID: 0}
     icon: {fileID: 0}
-    info: 
     cost: 0
+    info: 
   - item: {fileID: 0}
     icon: {fileID: 0}
-    info: 
     cost: 0
+    info: 
   - item: {fileID: 0}
     icon: {fileID: 0}
-    info: 
     cost: 0
+    info: 
+  hasData: 0
   interactable: {fileID: 8539091443134526261}
   panel: {fileID: 0}
