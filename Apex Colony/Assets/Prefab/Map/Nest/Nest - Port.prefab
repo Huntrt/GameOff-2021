@@ -177,6 +177,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8539091443134526261, guid: 2a653c80fc61b4c4da5382ad73d55e69,
+        type: 3}
+      propertyPath: interactName
+      value: Nest Port
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a653c80fc61b4c4da5382ad73d55e69, type: 3}
 --- !u!4 &5586543790341831049 stripped

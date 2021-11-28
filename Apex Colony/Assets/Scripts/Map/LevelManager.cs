@@ -30,13 +30,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField] int mapPerLevel; public int lv;
 	int currentMap;
 	[Tooltip("How many percent of total enemy needed \nto be kill to progress next level")]
-	public float progressRequired; public float processHold; float processCounter;
+	public int progressRequired; public float processHold; float processCounter;
 	public int killCount, killNeeded; int totalEnemy; [HideInInspector] public bool completed;
 	[Tooltip("List of the all level and their content")] 
 	public List<Level> levels;
 	[Header("Interface")]
-	public GameObject progressPanel; public GameObject processPanel;
-	public TextMeshProUGUI progressCount;
+	public GameObject progressPanel; 
+	public GameObject processPanel;
+	public TextMeshProUGUI progressCount, levelDisplay;
+	public Animator levelDisplayAnim;
 	public Image progressBar, processBar;
 	Maps map; EnemyManager enemy; Manager manager;
 	public event Action nexting;
@@ -103,6 +105,10 @@ public class LevelManager : MonoBehaviour
 		totalEnemy = enemy.enemiesObj.Count;
 		//Get amount of kill needed from total enemy using percent
 		killNeeded = (int)((progressRequired * totalEnemy)/100);
+		//Update the level dispay text by using [level name lv/req]
+		levelDisplay.text = levels[lv].name + " " + mapPerLevel + "-" + (lv+1);
+		//Play the level display animator
+		levelDisplayAnim.Play("Start Level");
 	}
 
 	public void NextMap()

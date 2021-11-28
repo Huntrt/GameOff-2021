@@ -183,22 +183,25 @@ Visual:
 				✓ Show [sword]? icon on enemy that current selecting by rival selector box.
 				✓ Fade all [sowrd]? icon that rival selector box has when relase it.
 				▪ Add outline to rivaled enemy @consider
-		▪ Hover @doing
-			▪ Allies Heath bar
-				▪ Show when mouse hover over an allies.
+		✓ Hover
+			✓ Allies Heath bar
 				✓ Show when allies in combat.
-			▪ Show stats of entity when mouse hover.
-				▪ Enemy stats
-				▪ Alies stats
-				▪ Show in the corner.
+				✓ Fade when out of combat
+			✓ Show stats of entity when mouse hover.
+				✓ Keep track of stats when click on it.
+				▪ Highlight the entity got track. @consider
+				✓ Enemy stats
+				✓ Alies stats
+				✓ Show in the corner.
 				X Show next to mouse with option.
-			▪ Show the name of interactable when hover
+			✓ Show the name of interactable when hover
 		▪ Game
+			✓ Show current level and map count when go to the next level
 			✓ Port Panel
 				✓ Update the port interact with item to buy.
 				✓ Blank spot for item that has buy.
 				✓ Hover show item info, name, cost and icon.
-			▪ Panel Eggs
+			✓ Panel Eggs
 				✓ Update the cost on info.
 				✓ Close when click button or formation moving.
 				✓ Panel hover the eggs click.

@@ -1211,6 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463c7b5ef6858944c9592278151437bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityName: Leafcutter Ant
   hp: {fileID: 3049060762151184832}
   damage: 0.5
   velocity: 0

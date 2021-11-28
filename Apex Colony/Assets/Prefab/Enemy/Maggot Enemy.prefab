@@ -9884,6 +9884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340682f3e5a5b7f40b522a4ac031a6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityName: Maggot
   foodGain: 1
   hp: {fileID: 8074848597630946494}
   damage: 2
@@ -9900,6 +9901,7 @@ MonoBehaviour:
   path: {fileID: 7360003296077934749}
   attacking: {fileID: 5703547430872442777}
   enemies: {fileID: 0}
+  indicating: {fileID: 0}
 --- !u!114 &1987101973621723471
 MonoBehaviour:
   m_ObjectHideFlags: 0

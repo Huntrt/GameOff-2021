@@ -1259,6 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340682f3e5a5b7f40b522a4ac031a6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityName: Spider
   foodGain: 3
   hp: {fileID: 664309350018893859}
   damage: 2

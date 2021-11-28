@@ -1147,6 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463c7b5ef6858944c9592278151437bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityName: Bullet Ant
   hp: {fileID: 7029879034785152397}
   damage: 10
   velocity: 0

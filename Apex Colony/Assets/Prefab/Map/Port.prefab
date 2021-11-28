@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 737783116870759115}
   - component: {fileID: 8539091443134526261}
   - component: {fileID: 3665549607802584425}
+  - component: {fileID: 141286615259447109}
   m_Layer: 12
   m_Name: Port
   m_TagString: Interactable
@@ -127,6 +128,7 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls: []
+  interactName: 
 --- !u!114 &3665549607802584425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +159,24 @@ MonoBehaviour:
   hasData: 0
   interactable: {fileID: 8539091443134526261}
   panel: {fileID: 0}
+--- !u!50 &141286615259447109
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665549607802584430}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7

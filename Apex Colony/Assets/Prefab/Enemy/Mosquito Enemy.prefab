@@ -5586,7 +5586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340682f3e5a5b7f40b522a4ac031a6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodGain: 6
+  entityName: Mosquito
+  foodGain: 5
   hp: {fileID: 7025368929926437094}
   damage: 2
   velocity: 0

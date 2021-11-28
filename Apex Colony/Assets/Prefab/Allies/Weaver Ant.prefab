@@ -10539,6 +10539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463c7b5ef6858944c9592278151437bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityName: Weaver Ant
   hp: {fileID: 1055830934319300864}
   damage: 3
   velocity: 0

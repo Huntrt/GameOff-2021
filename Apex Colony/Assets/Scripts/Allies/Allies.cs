@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Allies : MonoBehaviour
 {
+	public string entityName;
 	public Heath hp;
 	[Tooltip("Attack damage")] public float damage;
 	[HideInInspector] public float velocity;

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+	public string entityName;
 	public int foodGain;
 	public Heath hp;
 	[Tooltip("Attack damage")] public float damage;

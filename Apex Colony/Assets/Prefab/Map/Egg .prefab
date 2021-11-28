@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1061660169137476003}
   - component: {fileID: 8216278714667634781}
   - component: {fileID: -5397106490250352078}
+  - component: {fileID: -5923189714303079909}
   m_Layer: 12
   m_Name: 'Egg '
   m_TagString: Interactable
@@ -127,6 +128,7 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls: []
+  interactName: 
 --- !u!114 &-5397106490250352078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,4 +143,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: {fileID: 8216278714667634781}
   cost: 5
-  allies: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
+--- !u!50 &-5923189714303079909
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915952907495104006}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
