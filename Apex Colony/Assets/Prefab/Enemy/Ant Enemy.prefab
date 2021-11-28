@@ -5207,7 +5207,7 @@ MonoBehaviour:
   hp: {fileID: 6185526005175275170}
   damage: 2
   velocity: 0
-  speed: 2
+  speed: 0
   approach: 0
   rate: 1
   detection: 5
@@ -5219,6 +5219,7 @@ MonoBehaviour:
   path: {fileID: 4898574053081526913}
   attacking: {fileID: 7710115343373247877}
   enemies: {fileID: 0}
+  indicating: {fileID: 0}
 --- !u!114 &4488784339504468819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5263,7 +5264,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 3.4}
+  m_Size: {x: 3.5497146, y: 3.4}
   m_EdgeRadius: 0
 --- !u!50 &6521126317588701337
 Rigidbody2D:

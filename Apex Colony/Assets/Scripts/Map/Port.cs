@@ -7,7 +7,6 @@ public class Port : MonoBehaviour
 	public ItemData[] datas;
 	public bool hasData = false;
 	public Interactable interactable;
-	bool interacting = false;
 	[HideInInspector] public PortsPanel panel;
 
 	void Start()
@@ -23,10 +22,10 @@ public class Port : MonoBehaviour
 		//If able to spend food to reroll
 		if(Foods.i.Spend(rollCost))
 		{
-			//Display the roll cost onto it counter
-			panel.rollCount.text = rollCost.ToString();
 			//Increase the cost of roll
 			rollCost += (int)(rollCost * rollInflated);
+			//Update the roll cost onto it counter
+			panel.rollCount.text = rollCost.ToString();
 			//Getting new item data on this port
 			hasData = false; GetData();
 		}
@@ -36,8 +35,6 @@ public class Port : MonoBehaviour
 	{
 		//Display the roll cost onto it counter
 		panel.rollCount.text = rollCost.ToString();
-		//This port are getting interact
-		interacting = true;
 		//Stop whole formation when interact
 		Manager.i.control.StopFromation();
 		//Go through all the slots port in panel
@@ -124,8 +121,6 @@ public class Port : MonoBehaviour
 
 	void Closing()
 	{
-		//No longer interact with this port
-		interacting = false;
 		//For each of the slot are currently display
 		for(int d = 0; d < panel.slots.Length; d++)
 		{
@@ -136,8 +131,6 @@ public class Port : MonoBehaviour
 		}
 		//Stop listen to when panel close
 		panel.close.onClick.RemoveListener(Closing);
-		//Hide the food panel
-		Foods.i.showFood = false;
 		//Deactive the panel
 		panel.gameObject.SetActive(false);
 	}

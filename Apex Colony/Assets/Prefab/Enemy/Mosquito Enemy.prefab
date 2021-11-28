@@ -5602,6 +5602,7 @@ MonoBehaviour:
   path: {fileID: 8598290695702422725}
   attacking: {fileID: 6798093472330953665}
   enemies: {fileID: 0}
+  indicating: {fileID: 0}
 --- !u!114 &784511863982195991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5635,7 +5636,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.67}
+  m_Offset: {x: 0, y: -0.35083067}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5646,7 +5647,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 3.4}
+  m_Size: {x: 1.7454925, y: 4.0383387}
   m_EdgeRadius: 0
 --- !u!50 &7987073625392838365
 Rigidbody2D:

@@ -101,7 +101,7 @@
 				✓ Kill enough enemy allow to dig up to go to the next map
 				✓ Display enemy killing progression as bar and text
 				▪ Particle effect like digging up on the first allies when dig.
-				▪ Loading bar when holding digging.
+				✓ Loading bar when holding digging.
 
 	✓ Food - the game's only currency.
 
@@ -125,7 +125,8 @@ Entity:
 			An ant focus on movement speed
 		▪ Bull ant
 			An ant that has long range melee attack
-	Enemies:
+	Enemies: 
+	- rebalance
 		(both feature and visual)
 		1 = bad | 2 = weak | 3 = medium | 4 = alright | 5 = great
 		Nest:
@@ -148,65 +149,82 @@ Entity:
 				An assasin base enemy
 Visual:
 	Levels:
-		▪ Nest
+		✓ Nest
 			✓ Eggs
-			▪ Port
+			✓ Port
 			✓ Gound
 			✓ Wall
 			✓ Border
-		▪ Cave
+		✓ Cave
 			✓ Eggs
-			▪ Port
+			✓ Port
 			✓ Gound
 			✓ Wall
 			✓ Border
-		▪ Soil
+		✓ Soil
 			✓ Eggs
-			▪ Port
+			✓ Port
 			✓ Gound
 			✓ Wall
 			✓ Border
-		▪ Grass
+		✓ Grass
 			✓ Eggs
-			▪ Port
+			✓ Port
 			✓ Gound
 			✓ Wall
 			✓ Border
 	Interface:
-		▪ Indication @doing
-			▪ Show arrow? icon when hold "move key" down and fading when "move key" release.
-			▪ Rival
-				▪ Flash [sword]? icon on where "rival key" click.
-				▪ Flash [sword]? icon that snap to the enemy got rival.
-				▪ Flash [X-cut sword]? icon that snap to the enemy got un-rival.
-				▪ Show [sword]? icon on enemy that current selecting by rival selector box.
-				▪ Fade all [sowrd]? icon that rival selector box has when relase it.
-		▪ Hover
+		▪ Indication
+			✓ Show arrow? icon when hold "move key" down and fading when "move key" release.
+			✓ Rival
+				✓ Flash [sword]? icon on where "rival key" click.
+				✓ Flash [sword]? icon that snap to the enemy got rival.
+				✓ Flash [X-cut sword]? icon that snap to the enemy got un-rival.
+				✓ Show [sword]? icon on enemy that current selecting by rival selector box.
+				✓ Fade all [sowrd]? icon that rival selector box has when relase it.
+				▪ Add outline to rivaled enemy @consider
+		▪ Hover @doing
 			▪ Allies Heath bar
 				▪ Show when mouse hover over an allies.
 				✓ Show when allies in combat.
-			▪ Show stats of allies mouse hover.
+			▪ Show stats of entity when mouse hover.
+				▪ Enemy stats
+				▪ Alies stats
 				▪ Show in the corner.
-				▪ Show next to mouse with option. @consider
+				X Show next to mouse with option.
 			▪ Show the name of interactable when hover
 		▪ Game
 			✓ Port Panel
-				✓ Update the port interact with item to buy
-				✓ Blank spot for item that has buy
-				✓ Hover show item info, name, cost and icon
+				✓ Update the port interact with item to buy.
+				✓ Blank spot for item that has buy.
+				✓ Hover show item info, name, cost and icon.
 			▪ Panel Eggs
-				✓ Update the cost on info
-				✓ Close when click button or formation moving
-				▪ Panel hover the eggs click
-				▪ Show stats of the ant obtain from egg
-			▪ Display food @next
+				✓ Update the cost on info.
+				✓ Close when click button or formation moving.
+				✓ Panel hover the eggs click.
+				▪ Show stats and info of the ant obtain from egg.
+			✓ Display food
 				✓ Show when in an corner when obtain food.
-				▪ Show how many food are getting obatin.
-				▪ Show right next to mouse when mouse hover eggs or port. @doing
+				✓ Show how many food are getting obatin.
+				X Show right next to mouse when mouse hover eggs or port.
 				✓ Hide when nothing happen.
-			▪ Button to display or toggle camera option.
-			▪ Button to reset the camera position. @paused
+			▪ Button to display or toggle camera option. @next
+			▪ Button to reset the camera position. @next
 			X Minimap.
+		▪ Main
+			▪ Play.
+			▪ Tutorial.
+			▪ Key mapping.
+			▪ Quit game.
+		▪ Pause
+			▪ Pause.
+			▪ Continue.
+			▪ Restart.
+			▪ Exit.
+			▪ Keymapping. @consider
+	Game:
+		▪ Banner
+		▪ Logo
 
 Bugs:
 	✓ Map generated has an chance to fail @critical
@@ -217,5 +235,5 @@ Bugs:
 		Solution: +1 section to the total size of map
 	✓ Allies can't detect enemy nearby if holding move key in the same position when it already at goal @caution @unstable
 		Solution: only set goal formation to move when the mouse position are changed (record it previous position)
-	▪ Allies can't detect enemy nearby if the new goal position are too close to it previous position @minimal
+	X Allies can't detect enemy nearby if the new goal position are too close to it previous position @minimal
 		Soltuion: ???

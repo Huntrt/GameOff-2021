@@ -37,10 +37,16 @@ public class Heath : MonoBehaviour
 		//If heath are zero
 		if(_curHeath <= 0) 
 		{
-			//Detach the death effect from this entity
-			deathEffect.transform.parent = null;
-			//PLay the death effect
-			deathEffect.Play();
+			//Play the death effect
+			deathEffect.transform.parent = null; deathEffect.Play();
+			//If this eneity are enemy
+			if(gameObject.CompareTag("Enemy"))
+			{
+				//Gain the food of enemy
+				Foods.i.Gain(GetComponent<Enemy>().foodGain);
+				//Count this enemy has been kill
+				Manager.i.level.killCount++;
+			}
 			//Destroy this entity
 			Destroy(gameObject);
 		}

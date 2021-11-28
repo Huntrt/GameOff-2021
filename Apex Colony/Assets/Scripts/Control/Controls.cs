@@ -7,22 +7,26 @@ public class Controls : MonoBehaviour
 	public GameObject enemySelector;
 	//An enum for state of key input
 	enum Inputing {release, press, hold} [SerializeField] Inputing input;
-	Manager manager; Formator formator;
+	Manager manager; Formator formator; IndicatorManager indi;
 
-	//Get the manager and the formator
-	void Start() {manager = Manager.i; formator = Manager.i.formator;}
+	//Get the manager, the formator and the indicator
+	void Start() {manager = Manager.i; formator = manager.formator; indi = manager.indi;}
 
 	void Update()
 	{
 		//Get the mouse position
 		mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		//When press their key to stop movement 
+		//When press stop key to stop movement 
 		if(Input.GetKeyDown(KeyCode.X)) {StopFromation();}
 		///Selecting rival when click right mouse
 		Selecting();
-		///Moving or interact when click their key
+		///Create new move indicator when pressed the move key
+		if(Input.GetMouseButtonDown(0)) {indi.CreateMoveIndicator(mousePos);}
+		///Moving or interact when hold the move key
 		if(Input.GetMouseButton(0)) 
 		{
+			//Make the moving indicator follow mouse position if created it
+			if(indi.moveindi != null) {indi.moveindi.transform.position = mousePos;}
 			//Create an raycast to cast at current position that only detect the interactable layer
 			RaycastHit2D react = Physics2D.Raycast(mousePos, Vector2.zero, 0 ,manager.layer.inter);
 			//If click on any interactable
@@ -44,11 +48,13 @@ public class Controls : MonoBehaviour
 			//Update the previous mouse position
 			prevMouse = mousePos;
 		}
+		///End the current new move indicator when release the move key
+		if(Input.GetMouseButtonUp(0)) {indi.RemoveMoveIndicator();}
 	}
 
 	void Selecting()
 	{
-		//If PRESS their key
+		//If PRESS attack key
 		if(Input.GetMouseButtonDown(1))
 		{
 			//Get the mouse position upon click
@@ -56,24 +62,40 @@ public class Controls : MonoBehaviour
 			//Mouse are click
 			input = Inputing.press;
 		}
-		//If RELEASE their key
+		//If RELEASE attack key
 		if(Input.GetMouseButtonUp(1))
 		{
-			///If release while PRESSING key
+			///If release while PRESSING attack key
 			if(input == Inputing.press)
 			{
 				//If click on an enemy
 				if(clickEnemey() != null)
 				{
-					//Stop rival the click enemy if already rival
-					if(formator.HasRival(clickEnemey())) {formator.UnrivalClicked(clickEnemey());}
-					//Rival the click enemy if haven't rival
-					else {formator.RivalClicked(clickEnemey());}
+					//Get the cliked enemy
+					GameObject clicked = clickEnemey();
+					//If the enemy click on are already rival
+					if(formator.HasRival(clicked)) 
+					{
+						//Unrival the enemy click on
+						formator.UnrivalClicked(clicked);
+						//Flash an unrival indicator on the clicked enemy
+						indi.FlashAtkIndi(clicked.transform.position, false);
+					}
+					//If haven't rival the enemy click on
+					else 
+					{
+						//Rivaling the enemt click on
+						formator.RivalClicked(clicked);
+						//Flash an rival indicator on the clicked enemy
+						indi.FlashAtkIndi(clicked.transform.position, true);
+					}
 				}
 			}
-			///If release while HOLDING key
+			///If release while HOLDING attack key
 			if(input == Inputing.hold)
 			{
+				//Clear all the attack indicator of enemy
+				indi.ClearAtkIndi();
 				//Rivaling all selected enemy
 				formator.RivalSelected();
 				//Deactive the enemy selector
@@ -119,7 +141,7 @@ public class Controls : MonoBehaviour
 	public void ClosePanel()
 	{
 		//Close the egg panel if it currently open
-		if(manager.eggsPanel.gameObject.activeInHierarchy) {manager.eggsPanel.decline.onClick.Invoke();}
+		if(manager.eggsPanel.gameObject.activeInHierarchy) {manager.eggsPanel.close.onClick.Invoke();}
 		//Close the port panel if it currently open
 		if(manager.portsPanel.gameObject.activeInHierarchy) {manager.portsPanel.close.onClick.Invoke();}
 	}

@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 	public AIPath path;
 	[SerializeField] Attacking attacking;
 	public EnemyManager enemies;
+	public AtkIndicator indicating;
 
 	void Start()
 	{
@@ -84,6 +85,8 @@ public class Enemy : MonoBehaviour
 
 	void Update()
 	{
+		//Make the attack indicating of this enemy follow it 
+		if(indicating != null) {indicating.transform.position = transform.position;}
 		//Set the path velocity as enemy velocity
 		path.maxSpeed = velocity;
 		//Detecting allies
@@ -118,9 +121,7 @@ public class Enemy : MonoBehaviour
 
 	void OnDestroy()
 	{
-		//Gain the food of enemy
-		Foods.i.Gain(foodGain);
-		//Count this enemy has been kill
-		Manager.i.level.killCount++;
+		//End the indcator if the enemy got destroy
+		if(indicating != null) {indicating.EndingIndicator(true);} 
 	}
 }

@@ -17,6 +17,7 @@ public class Manager : MonoBehaviour
 	public EggsManager eggs;
 	public PortsManager ports;
 	public PortsPanel portsPanel;
+	public IndicatorManager indi;
 	///When the level start
 	public event Action starting; public bool started;
 	//All the needed layer
@@ -48,8 +49,6 @@ public class Manager : MonoBehaviour
 		cam.ResetCamera();
 		//Begin the current map progression
 		level.BeginProgression();
-		//Reset the kill counter
-		level.killCount = 0;
 		//Flash the food panel
 		Foods.i.Gain(0);
 		//Hide the generation loading when game start

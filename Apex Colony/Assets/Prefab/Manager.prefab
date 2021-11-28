@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &237069313854061064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7066827675782574}
+  - component: {fileID: 6574993438817602087}
+  m_Layer: 0
+  m_Name: Indicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7066827675782574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237069313854061064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1316110397673856996}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6574993438817602087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237069313854061064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53bb49fc9715b443b1ad282080dd220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveIndiPrefab: {fileID: 5260529773384931351, guid: 46a9d5c068511d0469e1018df8104603,
+    type: 3}
+  moveindi: {fileID: 0}
+  attackIndiPrefab: {fileID: 2540817163566022420, guid: bcfe4eb78024c9c43a1220f756cd5963,
+    type: 3}
+  attackIndis: []
 --- !u!1 &1316110397673856999
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,6 +86,7 @@ Transform:
   - {fileID: 1316110397974077475}
   - {fileID: 1316110398335215079}
   - {fileID: 47540971166251923}
+  - {fileID: 7066827675782574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55,6 +105,7 @@ MonoBehaviour:
   mapPerLevel: 1
   lv: 0
   progressRequired: 50
+  processHold: 2
   killCount: 0
   killNeeded: 0
   completed: 0
@@ -252,8 +303,10 @@ MonoBehaviour:
       ratio: 7
     item: []
   progressPanel: {fileID: 0}
+  processPanel: {fileID: 0}
   progressCount: {fileID: 0}
   progressBar: {fileID: 0}
+  processBar: {fileID: 0}
 --- !u!114 &1316110397673856993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +379,7 @@ MonoBehaviour:
   eggs: {fileID: 1167855109}
   ports: {fileID: 1316110399212080264}
   portsPanel: {fileID: 0}
+  indi: {fileID: 6574993438817602087}
   started: 0
   layer:
     allies: 0
@@ -771,13 +825,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: 100
   foodPanel: {fileID: 0}
-  foodDisplay: {fileID: 0}
+  foodCounter:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   foodIO: {fileID: 0}
   displayDuration: 1.5
-  IODuration: 1.4
   GainColor: {r: 0, g: 1, b: 0.3333335, a: 1}
   SpendColor: {r: 1, g: 0.16666667, b: 0, a: 1}
-  showFood: 0
 --- !u!114 &1167855109
 MonoBehaviour:
   m_ObjectHideFlags: 0

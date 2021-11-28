@@ -24,8 +24,8 @@ public class Egg : MonoBehaviour
 			Manager.i.control.StopFromation();
 			//Buy allies when clicked accept on panel
 			panel.accept.onClick.AddListener(BuyAllies);
-			//Begin closing when panel decline
-			panel.decline.onClick.AddListener(Closing);
+			//Begin closing when click close button on panel
+			panel.close.onClick.AddListener(Closing);
 			//Update the panel info with cost
 			panel.UpdateInfo(cost);
 			//Active the eggs panel
@@ -55,9 +55,7 @@ public class Egg : MonoBehaviour
 		interacted = false;
 		//@ Remove the buying and closing listener upon panel close
 		panel.accept.onClick.RemoveListener(BuyAllies);
-		panel.decline.onClick.RemoveListener(Closing);
-		//Hide the food panel
-		Foods.i.showFood = false;
+		panel.close.onClick.RemoveListener(Closing);
 		//Deactive the panel
 		panel.gameObject.SetActive(false);
 	}

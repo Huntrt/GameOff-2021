@@ -1,5 +1,5 @@
-using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class Foods : MonoBehaviour
 {
@@ -7,57 +7,72 @@ public class Foods : MonoBehaviour
 	///Make this into singelton
 	public static Foods i; void Awake() {i = this;}
 	public GameObject foodPanel;
-	[SerializeField] TMPro.TextMeshProUGUI foodDisplay, foodIO;
-	public float displayDuration, IODuration;
+	[SerializeField] TextMeshProUGUI[] foodCounter;
+	[SerializeField] TextMeshProUGUI foodIO;
+	public float displayDuration;
 	[SerializeField] Color GainColor, SpendColor;
-	bool flashFood; public bool showFood; 
 
 	void Update()
 	{
-		//Display the text
-		foodDisplay.text = food.ToString();
-		//Diplay food normally if it not flashing
-		if(!flashFood) {foodPanel.SetActive(showFood);}
+		//Display all the food counter text as the current food amount
+		foreach (TextMeshProUGUI display in foodCounter) {display.text = food.ToString();}
 	}
 
 	public bool Spend(int price)
 	{
-		//Display the output text when spending
-		InputOutput(SpendColor, "-" + price);
-		//Able to spend when price are lower or equal to food then take food away
-		if(price <= food) {food -= price; return true;}
+		//Show the spend text color
+		foodIO.color = SpendColor;
+		//If has enough food to spend for price
+		if(price <= food) 
+		{
+			//Update the spend text as the price
+			foodIO.text = "-" + price;
+			//Show the food panel
+			foodPanel.SetActive(true);
+			//Hide the food panel after set time
+			CancelInvoke("HideDisplay"); Invoke("HideDisplay", displayDuration);
+			//Decrease the food with price
+			food -= price; 
+			//Are able to afford the price
+			return true;
+		}
+		else
+		{
+			//Update the spend text as when can't afford price
+			foodIO.text = "Not enough food!";
+			//Show the food panel
+			foodPanel.SetActive(true);
+			//Hide the food panel after set time
+			CancelInvoke("HideDisplay"); Invoke("HideDisplay", displayDuration);
+		}
 		//Not able to spend when can't afford price
 		return false;
 	}
 
 	public void Gain(int amount)
 	{
-		//@ Only gain when there is panel (mostly to prevent error when exit playmod)
+		//% Only gain when there is panel (mostly to prevent error when exit playmod)
 		if(foodPanel == null) {return;}
-		//Display the input text when gain more than zero
-		if(amount > 0) {InputOutput(GainColor, "+" + amount);}
-		//Show the food panel
-		foodPanel.SetActive(true);
+		//Clear the gain text
+		foodIO.text = "";
+		//Display the gain text when gain more than zero
+		if(amount > 0) 
+		{
+			//Show the gain text color
+			foodIO.color = GainColor;
+			//Update the gain text
+			foodIO.text = "+" + amount;
+		}
 		//Increase the food with amount gain
 		food += amount;
-		//HIde the food panel after set time
+		//Show the food panel
+		foodPanel.SetActive(true);
+		//Hide the food panel after set time
 		CancelInvoke("HideDisplay"); Invoke("HideDisplay", displayDuration);
-		//Begin flash food panel
-		flashFood = true;
 	}
 
-	public void InputOutput(Color outlineColor, string text)
-	{
-		//Show the IO outline color as either gain or spend color
-		foodIO.color = outlineColor;
-		//Update the IO text
-		foodIO.text = text;
-		//Hide the IO display after an duartion
-		CancelInvoke("HideIO"); Invoke("HideIO", IODuration);
-	}
-
-	//Hide the display when not currently showing it and food panel stopped flash
-	public void HideDisplay() {if(!showFood) {foodPanel.SetActive(false);} flashFood = false;}
+	//Hide the display when currently showing it 
+	public void HideDisplay() {foodPanel.SetActive(false);}
 	//Clear the the IO text
 	public void HideIO() {foodIO.text = "";}
 }

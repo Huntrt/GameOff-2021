@@ -30,14 +30,14 @@ public class LevelManager : MonoBehaviour
     [SerializeField] int mapPerLevel; public int lv;
 	int currentMap;
 	[Tooltip("How many percent of total enemy needed \nto be kill to progress next level")]
-	public float progressRequired;
+	public float progressRequired; public float processHold; float processCounter;
 	public int killCount, killNeeded; int totalEnemy; [HideInInspector] public bool completed;
 	[Tooltip("List of the all level and their content")] 
 	public List<Level> levels;
 	[Header("Interface")]
-	public GameObject progressPanel;
+	public GameObject progressPanel; public GameObject processPanel;
 	public TextMeshProUGUI progressCount;
-	public Image progressBar;
+	public Image progressBar, processBar;
 	Maps map; EnemyManager enemy; Manager manager;
 	public event Action nexting;
 
@@ -57,16 +57,40 @@ public class LevelManager : MonoBehaviour
 			//Fill the bar from the percent of kill count and needed
 			progressBar.fillAmount = (float)killCount/(float)killNeeded;
 			//Display the count of enemy has been killed and enemy need to kill
-			progressCount.text = killCount + "/" + killNeeded + " kill needed";
+			progressCount.text = killCount + "/" + killNeeded + " kill needed for the next level";
 			//If has kill enough or more enemy needed
 			if(killCount >= killNeeded)
 			{
-				//Go to the next map if press the next map key 
-				if(Input.GetKeyDown(KeyCode.Return)) {NextMap();}
+				//Display new text when kill enough enemy
+				progressCount.text = "Hold [Enter] to proceed the next level";
+				//Show the process panel when PRESS the process key
+				if(Input.GetKeyDown(KeyCode.Return)) {processPanel.SetActive(true);}
+				//When HOLDING the process key
+				if(Input.GetKey(KeyCode.Return))
+				{
+					//Increase the process counter
+					processCounter += Time.deltaTime;
+					//Display the holding process
+					processBar.fillAmount = processCounter/processHold;
+					//Go to the next map, clear hold process and kill count if has hold long enough
+					if(processCounter >= processHold) {killCount = 0; ClearHoldProcess(); NextMap();}
+				}
+				//Clear the process when RELEASE the process key
+				if(Input.GetKeyUp(KeyCode.Return)) {ClearHoldProcess();}
 				//Has complete the map
 				completed = true;
 			}
 		}
+	}
+
+	void ClearHoldProcess()
+	{
+		//Hide the process panel 
+		processPanel.SetActive(false);
+		//Reset the process counter
+		processCounter -= processCounter;
+		//Reset the process bar
+		processBar.fillAmount = 0;
 	}
 
 	public void BeginProgression()
@@ -95,8 +119,14 @@ public class LevelManager : MonoBehaviour
 		Camera.main.backgroundColor = levels[lv].backgroundColor;
 		//Game has not start and map has not complete
 		manager.started = false; completed = false;
-		//Hide the progress panel and reset kill counter
+		//Hide the progress panel
 		progressPanel.SetActive(false);
+		//Hide the food panel
+		Foods.i.foodPanel.SetActive(false);
+		//Closing the egg panel if it open
+		if(manager.eggsPanel.isActiveAndEnabled) {manager.eggsPanel.close.onClick.Invoke();}
+		//Closing the port panel if it open
+		if(manager.portsPanel.isActiveAndEnabled) {manager.portsPanel.close.onClick.Invoke();}
 		//Call the event that are go to the next map
 		nexting?.Invoke();
 		//Begin map generation
