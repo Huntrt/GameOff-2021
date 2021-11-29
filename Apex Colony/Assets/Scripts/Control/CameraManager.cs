@@ -10,6 +10,8 @@ public class CameraManager : MonoBehaviour
 	[SerializeField] float bound;
 	[SerializeField] float dragSpeed, keySpeed, zoomSpeed, defaultZoom;
 	[SerializeField] FloatMinMax zoomLimit;
+	public TMPro.TextMeshProUGUI optionDisplay;
+	public GameObject cameraPanel;
 	float width, height;
 	Transform cam;
 
@@ -25,6 +27,8 @@ public class CameraManager : MonoBehaviour
 		cam.position = Manager.i.allie.FormationCenter();
 		//Reset the camera's Z axis
 		cam.position = new Vector3(cam.position.x, cam.position.y, -10);
+		//Show the camera panel
+		cameraPanel.SetActive(true);
 	}
 
 	void Update() 
@@ -116,5 +120,13 @@ public class CameraManager : MonoBehaviour
 			//Prevent the camera from zoom too far or too close
 			Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomLimit.min, zoomLimit.max);
 		}
+	}
+
+	public void ChangeOption()
+	{
+		//Cycle through all the option
+		option += 1; if((int)option > 2) {option = 0;}
+		//Update the option display when after cycle
+		optionDisplay.text = option.ToString();
 	}
 }

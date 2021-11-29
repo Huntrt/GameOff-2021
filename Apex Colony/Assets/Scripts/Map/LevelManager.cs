@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
 		//Get amount of kill needed from total enemy using percent
 		killNeeded = (int)((progressRequired * totalEnemy)/100);
 		//Update the level dispay text by using [level name lv/req]
-		levelDisplay.text = levels[lv].name + " " + mapPerLevel + "-" + (lv+1);
+		levelDisplay.text = levels[lv].name + " " + currentMap + "/" + (mapPerLevel);
 		//Play the level display animator
 		levelDisplayAnim.Play("Start Level");
 	}
@@ -127,6 +127,8 @@ public class LevelManager : MonoBehaviour
 		manager.started = false; completed = false;
 		//Hide the progress panel
 		progressPanel.SetActive(false);
+		//Hide the camera panel
+		manager.cam.cameraPanel.SetActive(false);
 		//Hide the food panel
 		Foods.i.foodPanel.SetActive(false);
 		//Closing the egg panel if it open

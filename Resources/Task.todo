@@ -102,6 +102,19 @@
 				✓ Display enemy killing progression as bar and text
 				▪ Particle effect like digging up on the first allies when dig.
 				✓ Loading bar when holding digging.
+	Interface:
+		▪ Main @next
+			▪ Play.
+			▪ Tutorial.
+			▪ Quit game.
+		▪ Pause @next
+			▪ Pause.
+			▪ Continue.
+			▪ Restart.
+			▪ Exit.
+		▪ Setting
+			▪ Keymapping.
+			▪ Camera setting/
 
 	✓ Food - the game's only currency.
 
@@ -211,20 +224,9 @@ Visual:
 				✓ Show how many food are getting obatin.
 				X Show right next to mouse when mouse hover eggs or port.
 				✓ Hide when nothing happen.
-			▪ Button to display or toggle camera option. @next
-			▪ Button to reset the camera position. @next
+			▪ Button to display or toggle camera option. @doing
+			▪ Button to reset the camera position. @doing
 			X Minimap.
-		▪ Main
-			▪ Play.
-			▪ Tutorial.
-			▪ Key mapping.
-			▪ Quit game.
-		▪ Pause
-			▪ Pause.
-			▪ Continue.
-			▪ Restart.
-			▪ Exit.
-			▪ Keymapping. @consider
 	Game:
 		▪ Banner
 		▪ Logo
