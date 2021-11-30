@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 1316110397673856997}
   - component: {fileID: 1316110397673856995}
   - component: {fileID: 1316110397673856994}
+  - component: {fileID: 1483815757}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -103,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125b718d638d57c4e967aaa14bcb2c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapPerLevel: 1
+  mapPerLevel: 3
   lv: 0
   progressRequired: 50
   processHold: 2
@@ -306,6 +307,8 @@ MonoBehaviour:
   progressPanel: {fileID: 0}
   processPanel: {fileID: 0}
   progressCount: {fileID: 0}
+  levelDisplay: {fileID: 0}
+  levelDisplayAnim: {fileID: 0}
   progressBar: {fileID: 0}
   processBar: {fileID: 0}
 --- !u!114 &1316110397673856993
@@ -388,6 +391,22 @@ MonoBehaviour:
     frame: 0
     inter: 0
     pick: 0
+--- !u!114 &1483815757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316110397673856999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c81466b2f96cc4f87e4d47b96c87c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSlider: {fileID: 0}
+  cameraSlider: {fileID: 0}
+  zoomAmount: {fileID: 0}
+  cameraAmount: {fileID: 0}
 --- !u!1 &1316110397974077474
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,14 +941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hover:
     panel: {fileID: 0}
-    heath: {fileID: 0}
-    maxHeath: {fileID: 0}
-    damage: {fileID: 0}
-    rate: {fileID: 0}
-    range: {fileID: 0}
-    speed: {fileID: 0}
-  clicked:
-    panel: {fileID: 0}
+    name: {fileID: 0}
     heath: {fileID: 0}
     maxHeath: {fileID: 0}
     damage: {fileID: 0}

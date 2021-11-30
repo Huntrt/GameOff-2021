@@ -27,7 +27,7 @@ public class HoverManager : MonoBehaviour
 		if(hovering != null)
 		{
 			//Track the entity stas when press tracking stats key
-			if(Input.GetKey(KeyCode.T) && !track) {track = true;}
+			if(Input.GetKey(Hotkeys.s.track) && !track) {track = true;}
 			//If hover over an enemy
 			if(hovering.CompareTag("Enemy"))
 			{

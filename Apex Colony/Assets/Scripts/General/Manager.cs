@@ -48,8 +48,8 @@ public class Manager : MonoBehaviour
 		//Reset the camera
 		cam.ResetCamera();
 		//Begin the current map progression
-		level.BeginProgression();;
-		//Flash the food panel
+		level.BeginProgression();
+		//Flash food displap
 		Foods.i.Gain(0);
 		//Hide the generation loading when game start
 		map.generationLoading.SetActive(false);

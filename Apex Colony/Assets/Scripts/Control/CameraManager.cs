@@ -8,10 +8,9 @@ public class CameraManager : MonoBehaviour
 	public bool lockDrag;
 	[Tooltip("The size of the section that won't drag camera")]
 	[SerializeField] float bound;
-	[SerializeField] float dragSpeed, keySpeed, zoomSpeed, defaultZoom;
+	[SerializeField] float defaultZoom;
 	[SerializeField] FloatMinMax zoomLimit;
-	public TMPro.TextMeshProUGUI optionDisplay;
-	public GameObject cameraPanel;
+	public TMPro.TextMeshProUGUI optionDisplay, zoomAmount;
 	float width, height;
 	Transform cam;
 
@@ -27,12 +26,14 @@ public class CameraManager : MonoBehaviour
 		cam.position = Manager.i.allie.FormationCenter();
 		//Reset the camera's Z axis
 		cam.position = new Vector3(cam.position.x, cam.position.y, -10);
-		//Show the camera panel
-		cameraPanel.SetActive(true);
 	}
 
 	void Update() 
 	{
+		//Display the zoom amnount
+		zoomAmount.text = (int)Camera.main.orthographicSize + "";
+		//Change camera option when press the camera option key
+		if(Input.GetKeyDown(Hotkeys.s.camOption)) {ChangeOption();}
 		//Camera are not moving
 		cameraMove = false;
 		//Zoom camera
@@ -52,19 +53,19 @@ public class CameraManager : MonoBehaviour
 		//Only able to move camera if option are free
 		if(option == CameraOption.free)
 		{	
-			//Reset the camera zoom when press key
-			if (Input.GetKey(KeyCode.T)) {Camera.main.orthographicSize = defaultZoom;}
-			//Move the camera position back to the center of formation
-			if (Input.GetKey(KeyCode.R)) {cam.position = Manager.i.allie.FormationCenter();}
+			//Reset the camera zoom when press reset zoom key
+			if (Input.GetKey(Hotkeys.s.zoomReset)) {ResetZoom();}
+			//Move the camera position back to the center of formation when press reset camera key
+			if (Input.GetKey(Hotkeys.s.camReset)) {cam.position = Manager.i.allie.FormationCenter();}
 			//The camera moving direction
 			Vector2 moveDirection = Vector3.zero;
-			//@ Changing the camera moving direction base on key input
-			if (Input.GetKey(KeyCode.UpArrow)) {moveDirection.y = 1;}
-			if (Input.GetKey(KeyCode.DownArrow)) {moveDirection.y = -1;}
-			if (Input.GetKey(KeyCode.LeftArrow)) {moveDirection.x = -1;}
-			if (Input.GetKey(KeyCode.RightArrow)) {moveDirection.x = 1;}
-			//Moving the camera with move direction with key speed
-			MoveCamera(moveDirection.normalized, keySpeed);
+			//@ Changing the camera moving direction base on it setting input
+			if (Input.GetKey(Hotkeys.s.camUp)) {moveDirection.y = 1;}
+			if (Input.GetKey(Hotkeys.s.camDown)) {moveDirection.y = -1;}
+			if (Input.GetKey(Hotkeys.s.camLeft)) {moveDirection.x = -1;}
+			if (Input.GetKey(Hotkeys.s.camRight)) {moveDirection.x = 1;}
+			//Moving the camera with move direction with camera speed
+			MoveCamera(moveDirection.normalized, GameManager.i.cameraSpeed);
 		}
 	}
 	
@@ -93,8 +94,8 @@ public class CameraManager : MonoBehaviour
 		{
 			//Get the direction from camera center to mouse
 			Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - cam.position).normalized;
-			//Move camera toward mouse using speed
-			MoveCamera((Vector2)dir, dragSpeed);
+			//Move camera toward mouse camera speed
+			MoveCamera((Vector2)dir, GameManager.i.cameraSpeed);
 		}
 	}
 
@@ -115,8 +116,8 @@ public class CameraManager : MonoBehaviour
 		//If the mouse ae scrolling
 		if(Input.mouseScrollDelta.y != 0)
 		{
-			//Increase or decrease the orthographic size with zoom amount and speed
-			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (zoomSpeed * Time.deltaTime);
+			//Increase or decrease the orthographic size with zoom amount and it speed
+			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (GameManager.i.zoomSpeed * Time.deltaTime);
 			//Prevent the camera from zoom too far or too close
 			Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomLimit.min, zoomLimit.max);
 		}
@@ -129,4 +130,7 @@ public class CameraManager : MonoBehaviour
 		//Update the option display when after cycle
 		optionDisplay.text = option.ToString();
 	}
+
+	//Reset camera size back to the default zoom
+	public void ResetZoom() {Camera.main.orthographicSize = defaultZoom;}
 }

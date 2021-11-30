@@ -17,13 +17,13 @@ public class Controls : MonoBehaviour
 		//Get the mouse position
 		mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		//When press stop key to stop movement 
-		if(Input.GetKeyDown(KeyCode.X)) {StopFromation();}
+		if(Input.GetKeyDown(Hotkeys.s.stop)) {StopFromation();}
 		///Selecting rival when click right mouse
 		Selecting();
 		///Create new move indicator when pressed the move key
-		if(Input.GetMouseButtonDown(0)) {indi.CreateMoveIndicator(mousePos);}
+		if(Input.GetKeyDown(Hotkeys.s.move)) {indi.CreateMoveIndicator(mousePos);}
 		///Moving or interact when hold the move key
-		if(Input.GetMouseButton(0)) 
+		if(Input.GetKey(Hotkeys.s.move)) 
 		{
 			//Make the moving indicator follow mouse position if created it
 			if(indi.moveindi != null) {indi.moveindi.transform.position = mousePos;}
@@ -49,13 +49,13 @@ public class Controls : MonoBehaviour
 			prevMouse = mousePos;
 		}
 		///End the current new move indicator when release the move key
-		if(Input.GetMouseButtonUp(0)) {indi.RemoveMoveIndicator();}
+		if(Input.GetKeyUp(Hotkeys.s.move)) {indi.RemoveMoveIndicator();}
 	}
 
 	void Selecting()
 	{
 		//If PRESS attack key
-		if(Input.GetMouseButtonDown(1))
+		if(Input.GetKeyDown(Hotkeys.s.attack))
 		{
 			//Get the mouse position upon click
 			clickPos = mousePos;
@@ -63,7 +63,7 @@ public class Controls : MonoBehaviour
 			input = Inputing.press;
 		}
 		//If RELEASE attack key
-		if(Input.GetMouseButtonUp(1))
+		if(Input.GetKeyUp(Hotkeys.s.attack))
 		{
 			///If release while PRESSING attack key
 			if(input == Inputing.press)

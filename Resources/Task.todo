@@ -73,7 +73,7 @@
 		▪ Content
 			✓ Each level has 3 map.
 			X Complete 3 map will fight an boss to go to next level.
-			▪ Has total of 5 map @next
+			▪ Has total of 5 map @doing
 				▪ 1. Nest 
 				▪ 2. Cave 
 				▪ 3. Soil
@@ -97,24 +97,24 @@
 				X Change sprite depend on how many food it give.
 		▪ Progression
 			X Interact with the ending point.
-			▪ Able to progress any time when kill enough enemy
+			✓ Able to progress any time when kill enough enemy
 				✓ Kill enough enemy allow to dig up to go to the next map
 				✓ Display enemy killing progression as bar and text
-				▪ Particle effect like digging up on the first allies when dig.
+				▪ Particle effect like digging up on the first allies when dig. @consider
 				✓ Loading bar when holding digging.
 	Interface:
-		▪ Main @next
-			▪ Play.
-			▪ Tutorial.
-			▪ Quit game.
-		▪ Pause @next
-			▪ Pause.
-			▪ Continue.
-			▪ Restart.
-			▪ Exit.
-		▪ Setting
-			▪ Keymapping.
-			▪ Camera setting/
+		▪ Main
+			✓ Play.
+			▪ Tutorial. @next
+			X Quit game.
+		▪ Pause
+			✓ Pause.
+			✓ Continue.
+			X Restart.
+			✓ Exit.
+		✓ Setting
+			✓ Keymapping.
+			✓ Camera setting
 
 	✓ Food - the game's only currency.
 
@@ -224,8 +224,8 @@ Visual:
 				✓ Show how many food are getting obatin.
 				X Show right next to mouse when mouse hover eggs or port.
 				✓ Hide when nothing happen.
-			▪ Button to display or toggle camera option. @doing
-			▪ Button to reset the camera position. @doing
+			✓ Button to display or toggle camera option.
+			✓ Button to reset the camera position.
 			X Minimap.
 	Game:
 		▪ Banner

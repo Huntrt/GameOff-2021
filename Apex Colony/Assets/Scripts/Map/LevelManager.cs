@@ -35,7 +35,6 @@ public class LevelManager : MonoBehaviour
 	[Tooltip("List of the all level and their content")] 
 	public List<Level> levels;
 	[Header("Interface")]
-	public GameObject progressPanel; 
 	public GameObject processPanel;
 	public TextMeshProUGUI progressCount, levelDisplay;
 	public Animator levelDisplayAnim;
@@ -64,11 +63,11 @@ public class LevelManager : MonoBehaviour
 			if(killCount >= killNeeded)
 			{
 				//Display new text when kill enough enemy
-				progressCount.text = "Hold [Enter] to proceed the next level";
-				//Show the process panel when PRESS the process key
-				if(Input.GetKeyDown(KeyCode.Return)) {processPanel.SetActive(true);}
-				//When HOLDING the process key
-				if(Input.GetKey(KeyCode.Return))
+				progressCount.text = "Hold [" + Hotkeys.s.procced + "] to proceed the next level";
+				//Show the process panel when PRESS the procced key
+				if(Input.GetKeyDown(Hotkeys.s.procced)) {processPanel.SetActive(true);}
+				//When HOLDING the procced key
+				if(Input.GetKey(Hotkeys.s.procced))
 				{
 					//Increase the process counter
 					processCounter += Time.deltaTime;
@@ -77,8 +76,8 @@ public class LevelManager : MonoBehaviour
 					//Go to the next map, clear hold process and kill count if has hold long enough
 					if(processCounter >= processHold) {killCount = 0; ClearHoldProcess(); NextMap();}
 				}
-				//Clear the process when RELEASE the process key
-				if(Input.GetKeyUp(KeyCode.Return)) {ClearHoldProcess();}
+				//Clear the process when RELEASE the procced key
+				if(Input.GetKeyUp(Hotkeys.s.procced)) {ClearHoldProcess();}
 				//Has complete the map
 				completed = true;
 			}
@@ -99,8 +98,6 @@ public class LevelManager : MonoBehaviour
 	{
 		//Print error incase of progress required are higher than 100%
 		if(progressRequired > 100) {Debug.LogError("progressRequired are now allow to go above 100%");}
-		//Show the progress panel
-		progressPanel.SetActive(true);
 		//Get the total amount of enemy 
 		totalEnemy = enemy.enemiesObj.Count;
 		//Get amount of kill needed from total enemy using percent
@@ -125,12 +122,6 @@ public class LevelManager : MonoBehaviour
 		Camera.main.backgroundColor = levels[lv].backgroundColor;
 		//Game has not start and map has not complete
 		manager.started = false; completed = false;
-		//Hide the progress panel
-		progressPanel.SetActive(false);
-		//Hide the camera panel
-		manager.cam.cameraPanel.SetActive(false);
-		//Hide the food panel
-		Foods.i.foodPanel.SetActive(false);
 		//Closing the egg panel if it open
 		if(manager.eggsPanel.isActiveAndEnabled) {manager.eggsPanel.close.onClick.Invoke();}
 		//Closing the port panel if it open
