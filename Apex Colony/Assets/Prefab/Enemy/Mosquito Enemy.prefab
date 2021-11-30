@@ -551,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2201845360941830703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.53, z: 0}
+  m_LocalPosition: {x: 0, y: 3.19, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.29999998, z: 1}
   m_Children: []
   m_Father: {fileID: 3055173846314446080}
@@ -693,7 +693,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -862,7 +862,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1944,7 +1944,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     mode: 1
     timeMode: 0
     fps: 30
@@ -2063,8 +2063,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 8208270978804853502, guid: c05909de92dc32c46802af27b94a574d,
-        type: 3}
+    - sprite: {fileID: 21300000, guid: 993262ea8acc0984e9a80b7f83253df5, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -5565,7 +5564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 5
+  maxHeath: 30
   _curHeath: 0
   heathbar: {fileID: 8151685750720335520}
   coolOff: 2
@@ -5587,15 +5586,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: Mosquito
-  foodGain: 5
+  foodGain: 10
   hp: {fileID: 7025368929926437094}
-  damage: 2
+  damage: 20
   velocity: 0
-  speed: 2
-  approach: 0
+  speed: 10
+  approach: 100
   rate: 1
-  detection: 5
-  range: 0.5
+  detection: 6
+  range: 4
   detected: {fileID: 0}
   combat: 0
   patrol: {fileID: 784511863982195991}

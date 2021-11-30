@@ -10518,7 +10518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 100
+  maxHeath: 7
   _curHeath: 0
   heathbar: {fileID: 8480725958308597600}
   coolOff: 4
@@ -10541,12 +10541,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Weaver Ant
   hp: {fileID: 1055830934319300864}
-  damage: 3
+  damage: 10
   velocity: 0
-  speed: 7
+  speed: 3
   approach: 0
-  rate: 2
-  range: 5
+  rate: 1
+  range: 4
   combat: 0
   rb: {fileID: 3010795108468208586}
   attacking: {fileID: 4964753115364402357}

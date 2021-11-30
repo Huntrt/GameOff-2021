@@ -5,12 +5,12 @@ public class Allies : MonoBehaviour
 {
 	public string entityName;
 	public Heath hp;
-	[Tooltip("Attack damage")] public float damage;
+	[Tooltip("The damage of each attack")] public float damage;
 	[HideInInspector] public float velocity;
 	[Tooltip("Moving speed to go between target")] public float speed;
 	[Tooltip("Slowdown percented when enemy in range")] public float approach;
-	[Tooltip("Attacking speed")] public float rate; float rateCount;
-	[Tooltip("Attack range")] public float range;
+	[Tooltip("How many attack perform in one second")] public float rate; float rateCount;
+	[Tooltip("How far can attack")] public float range;
 	public combating combat;
 	public Rigidbody2D rb;
 	[SerializeField] Attacking attacking;
@@ -56,5 +56,13 @@ public class Allies : MonoBehaviour
 				rateCount -= rateCount;
 			}
 		}
+	}
+
+	void OnDestroy()
+	{
+		//Remove thus allies component from manager upon death
+		Manager.i.allie.alliesComp.Remove(this);
+		//Remove thus allies object from manager upon death
+		Manager.i.allie.alliesObj.Remove(gameObject);
 	}
 }

@@ -103,7 +103,7 @@ MonoBehaviour:
     item: {fileID: 4591540689479608821}
     icon: {fileID: 4591540689479608808}
     cost: 16
-    info: Dual the claw increase attack speed by <color=#00ff3c>2</color>
+    info: Dual the claw increase attack speed by <color=#00ff3c>1</color>
   rb: {fileID: 0}
   isPicking: 0
 --- !u!114 &4591540689479608810

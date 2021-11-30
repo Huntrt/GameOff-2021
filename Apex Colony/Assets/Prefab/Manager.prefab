@@ -133,17 +133,8 @@ MonoBehaviour:
     - {fileID: 3939825339524222145, guid: 56cb195a7cc8cfb40a47f0b7403235b8, type: 3}
     specials:
     - {fileID: 3776856056022195000, guid: ce54197cbaeee464399f18713febe1de, type: 3}
-    - {fileID: 4749522328218771935, guid: 4af05494e693af54986c129810bda595, type: 3}
     - {fileID: 2111566389499483914, guid: 2829ecf06086c104fae1b9ec2f6a5ee3, type: 3}
     - {fileID: 2111566389499483914, guid: 2829ecf06086c104fae1b9ec2f6a5ee3, type: 3}
-    - {fileID: 2111566389499483914, guid: 2829ecf06086c104fae1b9ec2f6a5ee3, type: 3}
-    - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
-    - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
-    - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
-    - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
-    - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
-    - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
-    - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
     - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
     - {fileID: 2463718992106346648, guid: 718a428f97a412c4cafc14b00ca722a4, type: 3}
     spawns:
@@ -153,7 +144,7 @@ MonoBehaviour:
     - obj: {fileID: 167102005512934552, guid: 207737aaa76b0ec43b7d43a9f9b6a0b3, type: 3}
       ratio: 1
     - obj: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
-      ratio: 10
+      ratio: 15
     item:
     - obj: {fileID: 4591540689479608821, guid: d0c876eb43a8d5d4793be90f6266e7ea, type: 3}
       ratio: 2
@@ -201,12 +192,12 @@ MonoBehaviour:
     - {fileID: 7845196195179994855, guid: 288030473e49bff45933f211bbd9d798, type: 3}
     - {fileID: 7845196195179994855, guid: e484c88d1a795e7408de6629deea2d4e, type: 3}
     specials:
-    - {fileID: 9027626135019239215, guid: 57acd6e3733016649b63bcb6bfdedd13, type: 3}
-    - {fileID: 8290229763963349422, guid: c4e3a3b218399a54fa87196ee6a9b17a, type: 3}
     - {fileID: 2984298055820036790, guid: f7204ef1aaf7dab4f8bb35dc4b8cd46f, type: 3}
     - {fileID: 1478709737542413897, guid: a7bb93ab29d7ccf4aac92df469f8739a, type: 3}
     - {fileID: 1478709737542413897, guid: a7bb93ab29d7ccf4aac92df469f8739a, type: 3}
-    - {fileID: 1478709737542413897, guid: a7bb93ab29d7ccf4aac92df469f8739a, type: 3}
+    - {fileID: 8290229763963349422, guid: c4e3a3b218399a54fa87196ee6a9b17a, type: 3}
+    - {fileID: 8290229763963349422, guid: c4e3a3b218399a54fa87196ee6a9b17a, type: 3}
+    - {fileID: 8290229763963349422, guid: c4e3a3b218399a54fa87196ee6a9b17a, type: 3}
     spawns:
     - obj: {fileID: 4765140910519287239, guid: 01a42152af3b36844b13c0766babc520, type: 3}
       ratio: 10
@@ -214,17 +205,41 @@ MonoBehaviour:
       ratio: 30
     egg:
     - obj: {fileID: 553224287463361146, guid: a53d1a18470bf1642938eea7df440d9f, type: 3}
-      ratio: 2
+      ratio: 3
     - obj: {fileID: 167102005512934552, guid: 207737aaa76b0ec43b7d43a9f9b6a0b3, type: 3}
-      ratio: 8
+      ratio: 5
     - obj: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
+      ratio: 7
+    item:
+    - obj: {fileID: 4591540689479608821, guid: d0c876eb43a8d5d4793be90f6266e7ea, type: 3}
+      ratio: 8
+    - obj: {fileID: 7757189550037057067, guid: f71278dba99bfef44b95f45ebf98bf77, type: 3}
+      ratio: 8
+    - obj: {fileID: 3117111220243399609, guid: 946c59222035d4b46acf88b48d72bcba, type: 3}
+      ratio: 8
+    - obj: {fileID: 6169006089625487935, guid: 4a8a5a170a707f94d9468e628a6a5628, type: 3}
+      ratio: 8
+    - obj: {fileID: 5963015635021233938, guid: a2ee4b9f0e2b22f47b26c0a6c045b769, type: 3}
+      ratio: 8
+    - obj: {fileID: 4374538329472436273, guid: 5393683040a8a524cb350dcc5417ab3d, type: 3}
       ratio: 10
-    item: []
+    - obj: {fileID: 683145240526129531, guid: 96a6f00f238db25428acca7328a3e06a, type: 3}
+      ratio: 15
+    - obj: {fileID: 6926325696335192417, guid: 3335158dd96964344a40c9df972d515f, type: 3}
+      ratio: 15
+    - obj: {fileID: 2885621990309619323, guid: 8aec8017f6bc07e43a9ff50947dc4a32, type: 3}
+      ratio: 15
+    - obj: {fileID: 8882736439315931880, guid: c8844365d47986f4ca967418fc4f765f, type: 3}
+      ratio: 15
+    - obj: {fileID: 8070766843239556931, guid: 52d5f87bdcbbbd64d89d4c60eaabac1e, type: 3}
+      ratio: 15
+    - obj: {fileID: 5682797640565753281, guid: 299c6792d0b091e40951944ad95cd021, type: 3}
+      ratio: 20
   - name: Soil
     backgroundColor: {r: 0.39607844, g: 0.2509804, b: 0.19215687, a: 0}
     border: {fileID: 3782086149402872379, guid: 80b39d2a86f149941848b6286beb96dc,
       type: 3}
-    contentRate: 25
+    contentRate: 30
     empty:
     - {fileID: 5931782692603934389, guid: 490f32dc72c570b41a03730e01c77ef1, type: 3}
     - {fileID: 2650742742612448841, guid: a4190a52033a17248b0ddb73f2d1aa3b, type: 3}
@@ -240,17 +255,18 @@ MonoBehaviour:
     - {fileID: 4145457153236737582, guid: eef39dfb1d297a3438f460c1cc328981, type: 3}
     - {fileID: 4145457153236737582, guid: 69476f7f94e97514abab4d021be8add1, type: 3}
     specials:
-    - {fileID: 3366169327078381385, guid: 27f28cccc9c64c044880f5a30fc686f5, type: 3}
     - {fileID: 2720174398750066591, guid: d7d99e750a67d8a4ea0c996582531bdd, type: 3}
+    - {fileID: 8672297425441829310, guid: 47237d5580fcb5f49a6ea1843e007d90, type: 3}
+    - {fileID: 8672297425441829310, guid: 47237d5580fcb5f49a6ea1843e007d90, type: 3}
+    - {fileID: 8672297425441829310, guid: 47237d5580fcb5f49a6ea1843e007d90, type: 3}
     - {fileID: 5702096850759533767, guid: 9205b0b544f6c654cbf2a7990823e5bb, type: 3}
-    - {fileID: 8672297425441829310, guid: 47237d5580fcb5f49a6ea1843e007d90, type: 3}
-    - {fileID: 8672297425441829310, guid: 47237d5580fcb5f49a6ea1843e007d90, type: 3}
-    - {fileID: 8672297425441829310, guid: 47237d5580fcb5f49a6ea1843e007d90, type: 3}
+    - {fileID: 5702096850759533767, guid: 9205b0b544f6c654cbf2a7990823e5bb, type: 3}
+    - {fileID: 5702096850759533767, guid: 9205b0b544f6c654cbf2a7990823e5bb, type: 3}
     spawns:
-    - obj: {fileID: 4257757317009553754, guid: e14cb814aee10c64b83ddcbb6fc1011b, type: 3}
-      ratio: 10
     - obj: {fileID: 751235875245644700, guid: e1343ea8b0d53ae4bb69a4aa00ff47a2, type: 3}
-      ratio: 10
+      ratio: 5
+    - obj: {fileID: 4257757317009553754, guid: e14cb814aee10c64b83ddcbb6fc1011b, type: 3}
+      ratio: 20
     egg:
     - obj: {fileID: 7888511573004101653, guid: c26bd3ad8760d9c4a98416019ac3c9e9, type: 3}
       ratio: 4
@@ -260,7 +276,31 @@ MonoBehaviour:
       ratio: 7
     - obj: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
       ratio: 7
-    item: []
+    item:
+    - obj: {fileID: 4591540689479608821, guid: d0c876eb43a8d5d4793be90f6266e7ea, type: 3}
+      ratio: 8
+    - obj: {fileID: 7757189550037057067, guid: f71278dba99bfef44b95f45ebf98bf77, type: 3}
+      ratio: 8
+    - obj: {fileID: 3117111220243399609, guid: 946c59222035d4b46acf88b48d72bcba, type: 3}
+      ratio: 8
+    - obj: {fileID: 6169006089625487935, guid: 4a8a5a170a707f94d9468e628a6a5628, type: 3}
+      ratio: 8
+    - obj: {fileID: 5963015635021233938, guid: a2ee4b9f0e2b22f47b26c0a6c045b769, type: 3}
+      ratio: 8
+    - obj: {fileID: 4374538329472436273, guid: 5393683040a8a524cb350dcc5417ab3d, type: 3}
+      ratio: 10
+    - obj: {fileID: 683145240526129531, guid: 96a6f00f238db25428acca7328a3e06a, type: 3}
+      ratio: 12
+    - obj: {fileID: 6926325696335192417, guid: 3335158dd96964344a40c9df972d515f, type: 3}
+      ratio: 12
+    - obj: {fileID: 2885621990309619323, guid: 8aec8017f6bc07e43a9ff50947dc4a32, type: 3}
+      ratio: 12
+    - obj: {fileID: 8882736439315931880, guid: c8844365d47986f4ca967418fc4f765f, type: 3}
+      ratio: 12
+    - obj: {fileID: 8070766843239556931, guid: 52d5f87bdcbbbd64d89d4c60eaabac1e, type: 3}
+      ratio: 12
+    - obj: {fileID: 5682797640565753281, guid: 299c6792d0b091e40951944ad95cd021, type: 3}
+      ratio: 15
   - name: Grass
     backgroundColor: {r: 0.15419188, g: 0.3301887, b: 0.2044767, a: 0}
     border: {fileID: 3327309088603454640, guid: c542805d51e9d1c448afbbe360ba4d1a,
@@ -282,11 +322,14 @@ MonoBehaviour:
     - {fileID: 7919994139430474548, guid: d13bc0b5fecafd14590c99db1b717ded, type: 3}
     specials:
     - {fileID: 2239863372267710688, guid: a67866f45b432ac4392cf753f9c9c81c, type: 3}
+    - {fileID: 3907827626017853206, guid: 621320b4ad0fda04e8eea4d329b07349, type: 3}
+    - {fileID: 3907827626017853206, guid: 621320b4ad0fda04e8eea4d329b07349, type: 3}
+    - {fileID: 3907827626017853206, guid: 621320b4ad0fda04e8eea4d329b07349, type: 3}
+    - {fileID: 3907827626017853206, guid: 621320b4ad0fda04e8eea4d329b07349, type: 3}
     - {fileID: 6988212632463547461, guid: 785333ab0ec95ff4189c021498d4065e, type: 3}
-    - {fileID: 2952989065764652550, guid: a69e2b48961a8f04699564a05a6c24e3, type: 3}
-    - {fileID: 3907827626017853206, guid: 621320b4ad0fda04e8eea4d329b07349, type: 3}
-    - {fileID: 3907827626017853206, guid: 621320b4ad0fda04e8eea4d329b07349, type: 3}
-    - {fileID: 3907827626017853206, guid: 621320b4ad0fda04e8eea4d329b07349, type: 3}
+    - {fileID: 6988212632463547461, guid: 785333ab0ec95ff4189c021498d4065e, type: 3}
+    - {fileID: 6988212632463547461, guid: 785333ab0ec95ff4189c021498d4065e, type: 3}
+    - {fileID: 6988212632463547461, guid: 785333ab0ec95ff4189c021498d4065e, type: 3}
     spawns:
     - obj: {fileID: 751235875245644700, guid: e1343ea8b0d53ae4bb69a4aa00ff47a2, type: 3}
       ratio: 5
@@ -297,15 +340,42 @@ MonoBehaviour:
     egg:
     - obj: {fileID: 5483240936897854153, guid: ff997988661edfe49b9aeaef968a80ee, type: 3}
       ratio: 1
+    - obj: {fileID: 167102005512934552, guid: 207737aaa76b0ec43b7d43a9f9b6a0b3, type: 3}
+      ratio: 3
     - obj: {fileID: 5300454482458788053, guid: 4389514716e21624c8c166598163ed3b, type: 3}
       ratio: 5
     - obj: {fileID: 553224287463361146, guid: a53d1a18470bf1642938eea7df440d9f, type: 3}
       ratio: 5
     - obj: {fileID: 7888511573004101653, guid: c26bd3ad8760d9c4a98416019ac3c9e9, type: 3}
-      ratio: 7
-    item: []
-  progressPanel: {fileID: 0}
+      ratio: 5
+    item:
+    - obj: {fileID: 4591540689479608821, guid: d0c876eb43a8d5d4793be90f6266e7ea, type: 3}
+      ratio: 10
+    - obj: {fileID: 7757189550037057067, guid: f71278dba99bfef44b95f45ebf98bf77, type: 3}
+      ratio: 10
+    - obj: {fileID: 3117111220243399609, guid: 946c59222035d4b46acf88b48d72bcba, type: 3}
+      ratio: 10
+    - obj: {fileID: 6169006089625487935, guid: 4a8a5a170a707f94d9468e628a6a5628, type: 3}
+      ratio: 10
+    - obj: {fileID: 5963015635021233938, guid: a2ee4b9f0e2b22f47b26c0a6c045b769, type: 3}
+      ratio: 10
+    - obj: {fileID: 683145240526129531, guid: 96a6f00f238db25428acca7328a3e06a, type: 3}
+      ratio: 10
+    - obj: {fileID: 6926325696335192417, guid: 3335158dd96964344a40c9df972d515f, type: 3}
+      ratio: 10
+    - obj: {fileID: 2885621990309619323, guid: 8aec8017f6bc07e43a9ff50947dc4a32, type: 3}
+      ratio: 10
+    - obj: {fileID: 8882736439315931880, guid: c8844365d47986f4ca967418fc4f765f, type: 3}
+      ratio: 10
+    - obj: {fileID: 8070766843239556931, guid: 52d5f87bdcbbbd64d89d4c60eaabac1e, type: 3}
+      ratio: 10
+    - obj: {fileID: 5682797640565753281, guid: 299c6792d0b091e40951944ad95cd021, type: 3}
+      ratio: 13
+    - obj: {fileID: 4374538329472436273, guid: 5393683040a8a524cb350dcc5417ab3d, type: 3}
+      ratio: 13
   processPanel: {fileID: 0}
+  overPanel: {fileID: 0}
+  winPanel: {fileID: 0}
   progressCount: {fileID: 0}
   levelDisplay: {fileID: 0}
   levelDisplayAnim: {fileID: 0}
@@ -344,7 +414,6 @@ MonoBehaviour:
   - {fileID: 0}
   alliesComp:
   - {fileID: 0}
-  test: {fileID: 0}
 --- !u!114 &1316110397673856995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,10 +638,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount:
-    min: 100
-    max: 120
-    raw: 100
-  generatedRate: 50
+    min: 30
+    max: 40
+    raw: 0
+  generatedRate: 40
   nodeSize: 0.4
   nodeFill: 13
   sectionSize: 5
@@ -843,7 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981eb89e1f6f20346bcad4cd9e3ecc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: 100
+  food: 10
   foodPanel: {fileID: 0}
   foodCounter:
   - {fileID: 0}

@@ -93,6 +93,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1447107038918251336}
     m_Modifications:
+    - target: {fileID: -5397106490250352078, guid: fb37ea008e4e5a6459ff6e632c30f706,
+        type: 3}
+      propertyPath: cost
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 107640168125071943, guid: fb37ea008e4e5a6459ff6e632c30f706,
         type: 3}
       propertyPath: m_Sprite
@@ -189,6 +194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1447107038918251336}
     m_Modifications:
+    - target: {fileID: -5397106490250352078, guid: fb37ea008e4e5a6459ff6e632c30f706,
+        type: 3}
+      propertyPath: cost
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 107640168125071943, guid: fb37ea008e4e5a6459ff6e632c30f706,
         type: 3}
       propertyPath: m_Sprite
@@ -285,6 +295,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1447107038918251336}
     m_Modifications:
+    - target: {fileID: -5397106490250352078, guid: fb37ea008e4e5a6459ff6e632c30f706,
+        type: 3}
+      propertyPath: cost
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 107640168125071943, guid: fb37ea008e4e5a6459ff6e632c30f706,
         type: 3}
       propertyPath: m_Sprite

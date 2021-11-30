@@ -6,13 +6,13 @@ public class Enemy : MonoBehaviour
 	public string entityName;
 	public int foodGain;
 	public Heath hp;
-	[Tooltip("Attack damage")] public float damage;
+	[Tooltip("The damage of each attack")] public float damage;
 	[HideInInspector] public float velocity;
 	[Tooltip("Moving speed to go between target")] public float speed;
 	[Tooltip("Slowdown percented when enemy in range")] public float approach;
-	[Tooltip("Attacking speed")] public float rate; float rateCount;
+	[Tooltip("How many attack perform in one second")] public float rate; float rateCount;
 	[Tooltip("DIstance when the enemy able to detect allies")] public float detection;
-	[Tooltip("Attack range")] public float range;
+	[Tooltip("How far can attack")] public float range;
 	public Transform detected;
 	public combating combat;
 	public Patrol patrol;

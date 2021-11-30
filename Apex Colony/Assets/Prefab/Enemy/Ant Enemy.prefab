@@ -5204,15 +5204,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: Fire Ant
-  foodGain: 1
+  foodGain: 2
   hp: {fileID: 6185526005175275170}
-  damage: 2
+  damage: 1
   velocity: 0
-  speed: 2
+  speed: 3
   approach: 0
   rate: 1
-  detection: 5
-  range: 0.5
+  detection: 3
+  range: 0.3
   detected: {fileID: 0}
   combat: 0
   patrol: {fileID: 4488784339504468819}

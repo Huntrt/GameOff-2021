@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 5
+  maxHeath: 25
   _curHeath: 0
   heathbar: {fileID: 1830604415745171045}
   coolOff: 2
@@ -1260,15 +1260,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: Spider
-  foodGain: 3
+  foodGain: 5
   hp: {fileID: 664309350018893859}
-  damage: 2
+  damage: 10
   velocity: 0
-  speed: 2
+  speed: 4
   approach: 0
-  rate: 1
-  detection: 5
-  range: 0.5
+  rate: 0.4
+  detection: 6
+  range: 0.1
   detected: {fileID: 0}
   combat: 0
   patrol: {fileID: 7107845034739832274}

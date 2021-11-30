@@ -105,7 +105,7 @@ MonoBehaviour:
     icon: {fileID: 4374538329472436278}
     cost: 10
     info: An sugar cube, upon use on an allies it will heal all allies nearby by
-      <color=#00ff3c>20</color>.
+      <color=#00ff3c>12</color>.
   rb: {fileID: 0}
   isPicking: 0
 --- !u!114 &1119435445496864805
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 10
-  heal: 20
+  heal: 12
   effect: {fileID: 7672777785026564514}
 --- !u!50 &4374538329472436275
 Rigidbody2D:

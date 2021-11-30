@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 100
+  maxHeath: 10
   _curHeath: 0
   heathbar: {fileID: 5856640409912600480}
   coolOff: 4
@@ -1217,8 +1217,8 @@ MonoBehaviour:
   velocity: 0
   speed: 12
   approach: 0
-  rate: 5
-  range: 0.5
+  rate: 10
+  range: 0.2
   combat: 0
   rb: {fileID: 954514686401436426}
   attacking: {fileID: 6922376330460646517}

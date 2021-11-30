@@ -11720,7 +11720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 5
+  maxHeath: 75
   _curHeath: 0
   heathbar: {fileID: 3252267396924606822}
   coolOff: 2
@@ -11742,15 +11742,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: Beetle
-  foodGain: 7
+  foodGain: 12
   hp: {fileID: 4430938567683792672}
-  damage: 2
+  damage: 15
   velocity: 0
-  speed: 2
+  speed: 1
   approach: 0
-  rate: 1
-  detection: 5
-  range: 0.5
+  rate: 0.3
+  detection: 3
+  range: 0.3
   detected: {fileID: 0}
   combat: 0
   patrol: {fileID: 6260532988542911185}

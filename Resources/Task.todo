@@ -132,11 +132,11 @@ Entity:
 			An ant that has aoe attack
 		✓ Bullet ant
 			An ant has powerful but slow sting attack
-		▪ Dracula ant
-			An ant will heal full heath upon kill
-		▪ Eletric ant
-			An ant focus on movement speed
-		▪ Bull ant
+		X Dracula ant
+			X An ant will heal full heath upon kill
+		X Eletric ant
+			X An ant focus on movement speed
+		X Bull ant
 			An ant that has long range melee attack
 	Enemies: 
 	- rebalance
@@ -146,20 +146,20 @@ Entity:
 			✓ Pavement ant
 				An basic enemy
 		Cave:
-			▪ Spider
-				An long range attack enemy
-			▪ Cricket
-				An tanky and fast enemy
-		Soil:
-			▪ Worm
-				An enemy that some could use range attack
-			▪ Maggot
-				An enemy spawn in large quantity (create an spawner script and it will be use as magget spawn)
-		Grass:
-			▪ Bettle
-				An overall strong enemy
-			▪ Mosquito
-				An assasin base enemy
+			✓ Spider
+				✓ An long range attack enemy
+			✓ Cricket
+				✓ An tanky and fast enemy
+		✓ Soil:
+			✓ Worm
+				✓ An enemy that some could use range attack
+			✓ Maggot
+				✓ An enemy spawn in large quantity (create an spawner script and it will be use as magget spawn)
+		✓ Grass:
+			✓ Bettle
+				✓ An overall strong enemy
+			✓ Mosquito
+				✓ An assasin base enemy
 Visual:
 	Levels:
 		✓ Nest
@@ -242,3 +242,4 @@ Bugs:
 		Solution: only set goal formation to move when the mouse position are changed (record it previous position)
 	X Allies can't detect enemy nearby if the new goal position are too close to it previous position @minimal
 		Soltuion: ???
+	X Zoom not working great when in map border @minimal

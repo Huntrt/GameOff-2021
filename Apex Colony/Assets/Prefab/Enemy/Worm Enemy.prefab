@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 5
+  maxHeath: 50
   _curHeath: 0
   heathbar: {fileID: 5848590838785226814}
   coolOff: 2
@@ -79,15 +79,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: Worm
-  foodGain: 6
+  foodGain: 7
   hp: {fileID: 4716916636848615032}
-  damage: 2
+  damage: 7
   velocity: 0
-  speed: 2
-  approach: 0
-  rate: 1
-  detection: 5
-  range: 0.5
+  speed: 4
+  approach: 100
+  rate: 0.7
+  detection: 3
+  range: 0.2
   detected: {fileID: 0}
   combat: 0
   patrol: {fileID: 3092248924746167177}

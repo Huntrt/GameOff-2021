@@ -26,6 +26,7 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
+	bool endless = false;
 	[Tooltip("The amount of each map per level")] 
     [SerializeField] int mapPerLevel; public int lv;
 	int currentMap;
@@ -36,6 +37,7 @@ public class LevelManager : MonoBehaviour
 	public List<Level> levels;
 	[Header("Interface")]
 	public GameObject processPanel;
+	public GameObject overPanel, winPanel;
 	public TextMeshProUGUI progressCount, levelDisplay;
 	public Animator levelDisplayAnim;
 	public Image progressBar, processBar;
@@ -102,22 +104,28 @@ public class LevelManager : MonoBehaviour
 		totalEnemy = enemy.enemiesObj.Count;
 		//Get amount of kill needed from total enemy using percent
 		killNeeded = (int)((progressRequired * totalEnemy)/100);
-		//Update the level dispay text by using [level name lv/req]
-		levelDisplay.text = levels[lv].name + " " + currentMap + "/" + (mapPerLevel);
+		//Update the level display text by using [level name lv/req] when not in endless mode
+		if(!endless){levelDisplay.text = levels[lv].name + " " + currentMap + "/" + (mapPerLevel);}
+		//Update the level display text buy using [using level name + map count when in endless mode]
+		else {levelDisplay.text = levels[lv].name + " " + currentMap;}
 		//Play the level display animator
 		levelDisplayAnim.Play("Start Level");
+		//Hide the generation loading when game start
+		map.generationLoading.SetActive(false);
 	}
 
 	public void NextMap()
 	{
-		///Game over when current level reach the total level count
-		if(lv == levels.Count-1) {print("Game Over"); return;}
+		/// Wingame when complete all the level and map while not in endless mode
+		if(!endless) {if(currentMap == mapPerLevel && lv == levels.Count-1) {WinGame(); return;}}
 		//Deactive all the allies object in allies object manager
 		foreach (GameObject a in manager.allie.alliesObj) {a.SetActive(false);}
+		//Chose random level when in endless mode then go to the next map while in endless mode
+		if(endless) {lv = UnityEngine.Random.Range(0, levels.Count);}
 		//Go to the next map then clear enemy
 		currentMap++; enemy.ClearEnemy();
-		//Go the next level when complete the required amount of map per level
-		if(currentMap > mapPerLevel) {currentMap = 1; lv++;}
+		//Go the next level when complete the required amount of map per level when not in endless mode
+		if(!endless) {if(currentMap > mapPerLevel) {currentMap = 1; lv++;}}
 		//Update the camera background color to be the current level background color
 		Camera.main.backgroundColor = levels[lv].backgroundColor;
 		//Game has not start and map has not complete
@@ -131,4 +139,11 @@ public class LevelManager : MonoBehaviour
 		//Begin map generation
 		map.StartGeneration();
 	}
+
+	//Show over panel when game over
+	public void GameOver() {overPanel.SetActive(true);}
+	//Show win panel when game over
+	public void WinGame() {winPanel.SetActive(true);}
+	//Close win panel an entering endless mode
+	public void EndlessMode() {winPanel.SetActive(false); endless = true; currentMap = 0; NextMap();}
 }

@@ -5932,7 +5932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 5
+  maxHeath: 3
   _curHeath: 0
   heathbar: {fileID: 4225856262257357077}
   coolOff: 2
@@ -5954,14 +5954,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: Cricket
-  foodGain: 2
+  foodGain: 3
   hp: {fileID: 3097004505593407315}
-  damage: 2
+  damage: 1
   velocity: 0
-  speed: 2
+  speed: 5
   approach: 0
-  rate: 1
-  detection: 5
+  rate: 10
+  detection: 3
   range: 0.5
   detected: {fileID: 0}
   combat: 0

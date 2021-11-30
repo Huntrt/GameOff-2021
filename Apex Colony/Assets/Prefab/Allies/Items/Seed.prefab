@@ -4966,7 +4966,7 @@ MonoBehaviour:
     item: {fileID: 5682797640565753281}
     icon: {fileID: 5682797640565753308}
     cost: 7
-    info: An seed, upon use on an allies it will heal all allies nearby by <color=#00ff3c>8</color>.
+    info: An seed, upon use on an allies it will heal all allies nearby by <color=#00ff3c>4</color>.
   rb: {fileID: 0}
   isPicking: 0
 --- !u!114 &5682797640565753310
@@ -4982,7 +4982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 7
-  heal: 8
+  heal: 4
   effect: {fileID: 660067818484749996}
 --- !u!50 &5682797640565753311
 Rigidbody2D:

@@ -42,17 +42,23 @@ public class CameraManager : MonoBehaviour
 		if(option == CameraOption.locked) {return;}
 		//If cmaeraoption is follow
 		if(option == CameraOption.follow)
-		{	
-			//Get the formation center
-			Vector2 center = Manager.i.allie.FormationCenter();
-			//Camera follow the formation ceneter
-			cam.position = center;
-			//Reset the camera's Z axis
-			cam.position = new Vector3(cam.position.x, cam.position.y, -10);
+		{
+			//If there is allies
+			if(Manager.i.allie.alliesComp.Count > 0)
+			{
+				//Get the formation center
+				Vector2 center = Manager.i.allie.FormationCenter();
+				//Camera follow the formation ceneter 
+				cam.position = center;
+				//Reset the camera's Z axis
+				cam.position = new Vector3(cam.position.x, cam.position.y, -10);
+			}
 		}
 		//Only able to move camera if option are free
 		if(option == CameraOption.free)
 		{	
+			//Only able to drag camera if is not lock
+			if(!lockDrag) {DragCamera();}
 			//Reset the camera zoom when press reset zoom key
 			if (Input.GetKey(Hotkeys.s.zoomReset)) {ResetZoom();}
 			//Move the camera position back to the center of formation when press reset camera key
@@ -71,9 +77,7 @@ public class CameraManager : MonoBehaviour
 	
 	void LateUpdate()
 	{
-		//Only able to drag camera if camera is in free mode an drag is not lock
-		if(option == CameraOption.free && !lockDrag) {DragCamera();}
-		//Set the camera position
+		//Restrict the camera position
 		cam.position = new Vector3
 		(
 			//Restrict the camera X position in the map's min and max X 

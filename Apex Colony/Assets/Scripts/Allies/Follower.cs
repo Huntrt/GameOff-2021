@@ -39,10 +39,10 @@ public class Follower : MonoBehaviour
 		if(velocity == 0 && hasVelocity) {isMoving = false;}
 		//The player are NOW moving and has velocity when path velocity are not zero
 		if(velocity > 0) {isMoving = true; hasVelocity = true;}
-		//Playing the walking animation base on the path's velocity
-		if(velocity == 0) {ani.SetBool("Walk", false);}else{ani.SetBool("Walk", true);}
+		//Playing the walking animation base moving state
+		ani.SetBool("Walk", isMoving);
 		///If there is no target destination
-		if(destination.target == null) 
+		if(destination.target == null)
 		{
 			//Stop path and no longer move
 			StopMovement(); path.maxSpeed = 0;
@@ -68,7 +68,7 @@ public class Follower : MonoBehaviour
 			path.canSearch = true;
 			//Get the distance between this follower the target enemy or interactable
 			distance = Vector2.Distance(transform.position, destination.target.position);
-			//If the enemy or interactble are in the allies range
+			///If the enemy or interactble are in the allies range
 			if(distance <= allies.range)
 			{
 				//Rotate toward the destination target
@@ -86,6 +86,18 @@ public class Follower : MonoBehaviour
 				{
 					//Call the interact event of the interactable target when in range
 					destination.target.GetComponent<Interactable>().interact.Invoke();
+				}
+			}
+			///If the enemy are out of the allies range
+			else
+			{
+				///If the destination target are an ENEMY
+				if(destination.target.CompareTag("Enemy"))
+				{
+					//Reset velocity back to speed
+					allies.velocity = allies.speed;
+					//Allies are no longer fight
+					allies.combat = combating.none;
 				}
 			}
 		}

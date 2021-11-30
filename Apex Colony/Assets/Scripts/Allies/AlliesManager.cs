@@ -5,7 +5,6 @@ public class AlliesManager : MonoBehaviour
 {
     public List<GameObject> alliesObj;
 	public List<Allies> alliesComp;
-	[SerializeField] GameObject test;
 
 	///For getting the center vector of all allies
 	public Vector2 FormationCenter()
@@ -22,5 +21,11 @@ public class AlliesManager : MonoBehaviour
 		}
 		//Send the center position to be the middle of all allies
 		return total / Manager.i.allie.alliesObj.Count;
+	}
+
+	void Update()
+	{
+		//Game over if out of allies
+		if(alliesObj.Count <= 0) {Manager.i.level.GameOver();}
 	}
 }

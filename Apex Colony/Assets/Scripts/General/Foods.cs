@@ -27,10 +27,8 @@ public class Foods : MonoBehaviour
 		{
 			//Update the spend text as the price
 			foodIO.text = "-" + price;
-			//Show the food panel
-			foodPanel.SetActive(true);
-			//Hide the food panel after set time
-			CancelInvoke("HideDisplay"); Invoke("HideDisplay", displayDuration);
+			//Clear the food input and output info after set time
+			CancelInvoke("HideIO"); Invoke("HideIO", displayDuration);
 			//Decrease the food with price
 			food -= price; 
 			//Are able to afford the price
@@ -40,10 +38,8 @@ public class Foods : MonoBehaviour
 		{
 			//Update the spend text as when can't afford price
 			foodIO.text = "Not enough food!";
-			//Show the food panel
-			foodPanel.SetActive(true);
-			//Hide the food panel after set time
-			CancelInvoke("HideDisplay"); Invoke("HideDisplay", displayDuration);
+			//Clear the food input and output info after set time
+			CancelInvoke("HideIO"); Invoke("HideIO", displayDuration);
 		}
 		//Not able to spend when can't afford price
 		return false;
@@ -53,26 +49,16 @@ public class Foods : MonoBehaviour
 	{
 		//% Only gain when there is panel (mostly to prevent error when exit playmod)
 		if(foodPanel == null) {return;}
-		//Clear the gain text
-		foodIO.text = "";
-		//Display the gain text when gain more than zero
-		if(amount > 0) 
-		{
-			//Show the gain text color
-			foodIO.color = GainColor;
-			//Update the gain text
-			foodIO.text = "+" + amount;
-		}
+		//Show the gain text color
+		foodIO.color = GainColor;
+		//Update the gain text
+		foodIO.text = "+" + amount;
+		//Clear the food input and output info after set time
+		CancelInvoke("HideIO"); Invoke("HideIO", displayDuration);
 		//Increase the food with amount gain
 		food += amount;
-		//Show the food panel
-		foodPanel.SetActive(true);
-		//Hide the food panel after set time
-		CancelInvoke("HideDisplay"); Invoke("HideDisplay", displayDuration);
 	}
 
-	//Hide the display when currently showing it 
-	public void HideDisplay() {foodPanel.SetActive(false);}
 	//Clear the the IO text
 	public void HideIO() {foodIO.text = "";}
 }

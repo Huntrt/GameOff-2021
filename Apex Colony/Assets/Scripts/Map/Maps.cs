@@ -58,8 +58,6 @@ public class Maps : MonoBehaviour
 			//If haven't FAIL frame loading while generate progress has stopped when generated enough frame
 			if(!failGenerate && createFrames.Count == generateProgress && createdFrame < amount.raw)
 			{
-				//% Print an error
-				//% Debug.LogError("Fail to generated frame. Restarting...");
 				//Has failed frame loading
 				failGenerate = true;
 				//Start frame loading again
