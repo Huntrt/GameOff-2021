@@ -18,6 +18,8 @@ public class Manager : MonoBehaviour
 	public PortsManager ports;
 	public PortsPanel portsPanel;
 	public IndicatorManager indi;
+	public Transform worldCanvas;
+	public GameObject hurtPop, healPop;
 	///When the level start
 	public event Action starting; public bool started;
 	//All the needed layer

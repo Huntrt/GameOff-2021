@@ -6,6 +6,7 @@ public class Egg : MonoBehaviour
     public int cost;
 	EggsPanel panel;
 	bool interacted = false;
+	public ParticleSystem effect;
 
 	void Start()
 	{
@@ -44,6 +45,8 @@ public class Egg : MonoBehaviour
 			Closing();
 			//Open an egg at this egg position with no rotation
 			Instantiate(Manager.i.eggs.EggDrop(), transform.position, Quaternion.identity);
+			//Play the egg open effect
+			effect.transform.parent = null; effect.Play();
 			//Destroy the gameobject
 			Destroy(gameObject);
 		}

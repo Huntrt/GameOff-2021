@@ -9891,8 +9891,8 @@ MonoBehaviour:
   velocity: 0
   speed: 3
   approach: 0
-  rate: 1
-  detection: 4
+  rate: 2
+  detection: 15
   range: 0.5
   detected: {fileID: 0}
   combat: 0

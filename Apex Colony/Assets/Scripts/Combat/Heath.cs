@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Heath : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class Heath : MonoBehaviour
 	[SerializeField] Color hurtColor, healColor;
 	public ParticleSystem deathEffect;	List<SpriteRenderer> renders = new List<SpriteRenderer>();
 	List<Color> defaultColors = new List<Color>();
+	Manager manager;
 
 	void Start()
 	{
+		//Get the manger
+		manager = Manager.i;
 		//Reset heath
 		_curHeath = maxHeath;
 		//Go through all the sprite renderer of children
@@ -32,6 +36,12 @@ public class Heath : MonoBehaviour
 		inCombat = true; CancelInvoke("ExitCombat"); Invoke("ExitCombat", coolOff);
 		//Decrease current heath
 		_curHeath -= damage;
+		//Create the hurt popup at this object with no rotation and no auto activation
+		GameObject popup = Pool.get.Create(manager.hurtPop, transform.position, Quaternion.identity, false);
+		//Update the popup text display as the damage has taken
+		popup.GetComponentInChildren<TextMeshProUGUI>().text = "-" + damage;
+		//Add this popup into the world canvas and active the gameobject
+		popup.transform.SetParent(manager.worldCanvas.transform); popup.SetActive(true);
 		//Flash the hurt color
 		Flashing(hurtColor);
 		//If heath are zero
@@ -45,7 +55,7 @@ public class Heath : MonoBehaviour
 				//Gain the food of enemy
 				Foods.i.Gain(GetComponent<Enemy>().foodGain);
 				//Count this enemy has been kill
-				Manager.i.level.killCount++;
+				manager.level.killCount++;
 			}
 			//Destroy this entity
 			Destroy(gameObject);
@@ -60,6 +70,12 @@ public class Heath : MonoBehaviour
 		inCombat = true; CancelInvoke("ExitCombat"); Invoke("ExitCombat", coolOff);
 		//Increase heath when heal
 		_curHeath += heal; 
+		//Create the heal popup at this object with no rotation and no auto activation
+		GameObject popup = Pool.get.Create(manager.healPop, transform.position, Quaternion.identity, false);
+		//Update the popup text display as the healing has get
+		popup.GetComponentInChildren<TextMeshProUGUI>().text = "+" + heal;
+		//Add this popup into the world canvas and active the gameobject
+		popup.transform.SetParent(manager.worldCanvas.transform); popup.SetActive(true);
 		//Flash the geal color
 		Flashing(healColor);
 		//Claming current heath from max heath

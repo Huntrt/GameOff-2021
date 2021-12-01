@@ -453,6 +453,9 @@ MonoBehaviour:
   ports: {fileID: 1316110399212080264}
   portsPanel: {fileID: 0}
   indi: {fileID: 6574993438817602087}
+  worldCanvas: {fileID: 0}
+  hurtPop: {fileID: 0}
+  healPop: {fileID: 0}
   started: 0
   layer:
     allies: 0

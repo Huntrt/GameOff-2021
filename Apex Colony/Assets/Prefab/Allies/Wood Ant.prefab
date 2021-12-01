@@ -1230,11 +1230,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Wood Ant
   hp: {fileID: 7238407554388222831}
-  damage: 0.1
+  damage: 0.15
   velocity: 0
   speed: 5
   approach: 0
-  rate: 8
+  rate: 10
   range: 2
   combat: 0
   rb: {fileID: 4835902582521319845}

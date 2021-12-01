@@ -5956,13 +5956,13 @@ MonoBehaviour:
   entityName: Cricket
   foodGain: 3
   hp: {fileID: 3097004505593407315}
-  damage: 0.5
+  damage: 0.7
   velocity: 0
   speed: 5
   approach: 0
   rate: 10
   detection: 3
-  range: 0.3
+  range: 0.1
   detected: {fileID: 0}
   combat: 0
   patrol: {fileID: 4712735000565660322}

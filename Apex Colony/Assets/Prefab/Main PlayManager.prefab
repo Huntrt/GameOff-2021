@@ -66,7 +66,7 @@ MonoBehaviour:
     key: $procced
     info: '<b>Map</b>
 
-      The  whole game has an total of 4 level each level contain
+      The whole game has an total of 4 level, each level contain
       3 map and each map are randomly generated.
 
       After kill an required amount
@@ -81,8 +81,8 @@ MonoBehaviour:
       ants will move in an grid formation."
   - image: {fileID: 21300000, guid: d58e3dea22085874e800ad1199d703fe, type: 3}
     key: 
-    info: "<b>Enemy</b>\nEnemy are varies from bugs to insects. \nTheere will be
-      more powerful enemy the higher you go."
+    info: "<b>Enemy</b>\nEnemy are varies from bugs to insects. \nThe higher you
+      are the more powerful enemy the you will meet."
   - image: {fileID: 21300000, guid: 34f86535e54763949a9e0cebfe27a817, type: 3}
     key: $attack
     info: '<b>Attack Enemy</b>
@@ -94,10 +94,8 @@ MonoBehaviour:
       for allies attack them evenly.'
   - image: {fileID: 21300000, guid: e577b9ae61ba71f4e99fd1133d79cda1, type: 3}
     key: 
-    info: '<b>Foods</b>
-
-      The main resource of the game. You could spend food
-      on upgrade an ant by using port or recruit more ant using egg.'
+    info: "<b>Foods</b>\nThe main resource of the game. \nYou could spend food on
+      upgrade an ant by using port or recruit more ant using egg."
   - image: {fileID: 21300000, guid: df25e49686492c34cad77b1e293b0d31, type: 3}
     key: 
     info: '<b>Port</b>
@@ -108,7 +106,8 @@ MonoBehaviour:
       An port will give you 3 item that you could buy using
       food.
 
-      You are able to reroll for 3 new item by spending food.'
+      You are able to reroll for 3 new item by spending food but the
+      reroll price will increase for each time you reroll.'
   - image: {fileID: 21300000, guid: 8326e21afaf712f46b52f6aba0953a99, type: 3}
     key: $attack
     info: '<b>Item</b>
@@ -120,7 +119,10 @@ MonoBehaviour:
 
       When press
       $attack key on an allies while holding an item it will upgrade the allies stats
-      base on the item.'
+      base on the item.
+
+      You could also drop the item by click the $attack
+      key on an ground.'
   - image: {fileID: 21300000, guid: 88d7112f3f6e1f84da58e12774038c6a, type: 3}
     key: 
     info: '<b>Eggs</b>
@@ -129,13 +131,13 @@ MonoBehaviour:
       move toward it just like port.
 
       Upon interact with it you will be ask
-      if you spend food to open the egg or not.
+      if you want to spend food to open the egg or not.
 
-      Opening an egg will add an
-      ant onto your team.
+      Opening an egg will
+      add an ant onto your team.
 
-      The higher the game goes the stronger the ant you
-      could get.'
+      The higher the game goes the stronger the
+      ant you could get.'
   - image: {fileID: 21300000, guid: 7265f5adeaed1114abec32757134c373, type: 3}
     key: $camOption
     info: '<b>Camera</b>
@@ -147,7 +149,11 @@ MonoBehaviour:
       You are able to zoom buy using the mouse
       scroll.
 
-      You could change camara option using the $camOption key.'
+      You could change camara mode using the $camOption key or the
+      game UI.
+
+      You could reset camera and zoom by the key you has set in setting
+      or in the game UI.'
   displayImage: {fileID: 0}
   displayInfo: {fileID: 0}
   currentDisplay: 0

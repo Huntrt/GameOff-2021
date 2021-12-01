@@ -5564,7 +5564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec4e0596e67bd74eb526429d747be75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeath: 30
+  maxHeath: 10
   _curHeath: 0
   heathbar: {fileID: 8151685750720335520}
   coolOff: 2
@@ -5588,12 +5588,12 @@ MonoBehaviour:
   entityName: Mosquito
   foodGain: 10
   hp: {fileID: 7025368929926437094}
-  damage: 20
+  damage: 15
   velocity: 0
-  speed: 10
+  speed: 12
   approach: 100
   rate: 1
-  detection: 6
+  detection: 5
   range: 4
   detected: {fileID: 0}
   combat: 0

@@ -84,7 +84,7 @@ MonoBehaviour:
   damage: 7
   velocity: 0
   speed: 4
-  approach: 100
+  approach: 0
   rate: 0.7
   detection: 3
   range: 0.2
@@ -5403,7 +5403,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5519,8 +5519,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.2
+      scalar: 2
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:

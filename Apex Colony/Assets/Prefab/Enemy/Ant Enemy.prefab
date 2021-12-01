@@ -5210,7 +5210,7 @@ MonoBehaviour:
   velocity: 0
   speed: 3
   approach: 0
-  rate: 1
+  rate: 1.2
   detection: 3
   range: 0.3
   detected: {fileID: 0}

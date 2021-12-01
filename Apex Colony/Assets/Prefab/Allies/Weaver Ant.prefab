@@ -10541,12 +10541,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Weaver Ant
   hp: {fileID: 1055830934319300864}
-  damage: 10
+  damage: 5
   velocity: 0
   speed: 3
   approach: 0
-  rate: 1
-  range: 4
+  rate: 2.5
+  range: 5
   combat: 0
   rb: {fileID: 3010795108468208586}
   attacking: {fileID: 4964753115364402357}

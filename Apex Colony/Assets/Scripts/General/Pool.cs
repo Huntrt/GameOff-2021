@@ -41,7 +41,7 @@ public class Pool : MonoBehaviour
 			//Create the needed object witth set position and rotation
 			GameObject newObject = Instantiate(Need, Position, Rotation);
 			//Set the new object parent as this object for organize
-			newObject.transform.parent = transform;
+			newObject.transform.SetParent(transform);
 			//Add it into pool list
 			objectsPool.Add(newObject);
 			//Set the new object active state

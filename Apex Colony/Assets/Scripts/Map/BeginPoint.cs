@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BeginPoint : MonoBehaviour
 {
+	public ParticleSystem effect;
+
     void Awake()
     {
 		//Spawn formation upon populated frame with section
@@ -16,6 +18,8 @@ public class BeginPoint : MonoBehaviour
 		foreach (GameObject allie in Manager.i.allie.alliesObj)
 		//Set those allie position as begin point then active those allie with has velocity
 		{allie.transform.position = transform.position; allie.SetActive(true);}
+		//Play the spawn effect
+		effect.Play();
 	}
 
 	void OnDisable()

@@ -34,7 +34,7 @@
 		✓ Dies (may use event if onDestroy fail)
 		✓ Death effect
 	Allies:
-		▪ Action
+		✓ Action
 			✓ Moving to formation when needed and overwrite other action.
 			X Picking remains and food when walk over it.
 			✓ Go toward interactable that user click and open it when in range.
@@ -70,44 +70,44 @@
 			✓ Map and Level counter.
 			✓ List of each level content such as section variant and special.
 			✓ Assign level content into map generation base on the counter.
-		▪ Content
+		✓ Content
 			✓ Each level has 3 map.
 			X Complete 3 map will fight an boss to go to next level.
-			▪ Has total of 5 map @doing
-				▪ 1. Nest 
-				▪ 2. Cave 
-				▪ 3. Soil
-				▪ 4. Grass
+			✓ Has total of 5 map
+				✓ 1. Nest 
+				✓ 2. Cave 
+				✓ 3. Soil
+				✓ 4. Grass
 				X 5. Tree 
-		▪ Interactable 
-			▪ Begin point - where the allies formation spawn when go to between map
+		✓ Interactable 
+			✓ Begin point - where the allies formation spawn when go to between map
 				✓ Spawn allies after map has complete generation
-				▪ Run an animation with particle to display it being dug from below.
+				✓ Run an particle to display it got dug from below.
 			X Ending point - when formation open it will wait for set time to go next map 
 				X Display particle falling down when it being dug.
 				X Kill all the enemy to able to progress 
 				X Unable to dig when in combnat. 
 			✓ Eggs - feed the egg enough food will spawn an allies
 				✓ Egg will spawn an random allies with species base on the current level.
-				▪ Particle effect when egg are open
+				✓ Particle effect when egg are open
 			✓ Port - trading food for upgrade
 				✓ List of random upgrade to buy.
 				✓ Spawn the item when buy it.
 			X Seed - An pile of seed can be pick up by move over it
 				X Change sprite depend on how many food it give.
-		▪ Progression
+		✓ Progression
 			X Interact with the ending point.
 			✓ Able to progress any time when kill enough enemy
 				✓ Kill enough enemy allow to dig up to go to the next map
 				✓ Display enemy killing progression as bar and text
-				▪ Particle effect like digging up on the first allies when dig. @consider
+				X Particle effect like digging up on the first allies when dig. @consider
 				✓ Loading bar when holding digging.
 	Interface:
-		▪ Main
+		✓ Main
 			✓ Play.
-			▪ Tutorial. @next
-			X Quit game.
-		▪ Pause
+			✓ Tutorial.
+			✓ Quit game.
+		✓ Pause
 			✓ Pause.
 			✓ Continue.
 			X Restart.
@@ -133,13 +133,12 @@ Entity:
 		✓ Bullet ant
 			An ant has powerful but slow sting attack
 		X Dracula ant
-			X An ant will heal full heath upon kill
+			An ant will heal full heath upon kill
 		X Eletric ant
-			X An ant focus on movement speed
+			An ant focus on movement speed
 		X Bull ant
 			An ant that has long range melee attack
-	Enemies: 
-	- rebalance
+	Enemies:
 		(both feature and visual)
 		1 = bad | 2 = weak | 3 = medium | 4 = alright | 5 = great
 		Nest:
@@ -187,28 +186,29 @@ Visual:
 			✓ Wall
 			✓ Border
 	Interface:
-		▪ Indication
+		✓ Indication
 			✓ Show arrow? icon when hold "move key" down and fading when "move key" release.
+			✓ Damage and heal pop-up
 			✓ Rival
 				✓ Flash [sword]? icon on where "rival key" click.
 				✓ Flash [sword]? icon that snap to the enemy got rival.
 				✓ Flash [X-cut sword]? icon that snap to the enemy got un-rival.
 				✓ Show [sword]? icon on enemy that current selecting by rival selector box.
 				✓ Fade all [sowrd]? icon that rival selector box has when relase it.
-				▪ Add outline to rivaled enemy @consider
+				X Add outline to rivaled enemy
 		✓ Hover
 			✓ Allies Heath bar
 				✓ Show when allies in combat.
 				✓ Fade when out of combat
 			✓ Show stats of entity when mouse hover.
 				✓ Keep track of stats when click on it.
-				▪ Highlight the entity got track. @consider
+				X Highlight the entity got track.
 				✓ Enemy stats
 				✓ Alies stats
 				✓ Show in the corner.
 				X Show next to mouse with option.
 			✓ Show the name of interactable when hover
-		▪ Game
+		✓ Game
 			✓ Show current level and map count when go to the next level
 			✓ Port Panel
 				✓ Update the port interact with item to buy.
@@ -218,7 +218,7 @@ Visual:
 				✓ Update the cost on info.
 				✓ Close when click button or formation moving.
 				✓ Panel hover the eggs click.
-				▪ Show stats and info of the ant obtain from egg.
+				X Show stats and info of the ant obtain from egg.
 			✓ Display food
 				✓ Show when in an corner when obtain food.
 				✓ Show how many food are getting obatin.
@@ -228,8 +228,8 @@ Visual:
 			✓ Button to reset the camera position.
 			X Minimap.
 	Game:
-		▪ Banner
-		▪ Logo
+		✓ Banner
+		✓ Logo
 
 Bugs:
 	✓ Map generated has an chance to fail @critical
