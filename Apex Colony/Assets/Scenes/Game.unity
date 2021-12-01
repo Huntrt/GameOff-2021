@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMove: 0
   option: 0
-  lockDrag: 0
+  lockDrag: 1
   bound: 9
   defaultZoom: 5
   zoomLimit:
