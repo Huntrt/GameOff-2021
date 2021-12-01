@@ -388,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMove: 0
   option: 0
-  lockDrag: 1
+  lockDrag: 0
   bound: 9
   defaultZoom: 5
   zoomLimit:
@@ -855,6 +855,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1483815757, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a, type: 3}
+      propertyPath: blockInput
+      value: 
+      objectReference: {fileID: 3188126852687161673}
+    - target: {fileID: 1483815757, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a, type: 3}
       propertyPath: zoomAmount
       value: 
       objectReference: {fileID: 431200343}
@@ -1258,3 +1262,9 @@ PrefabInstance:
       objectReference: {fileID: 1483815757}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68d151623399c24bb82d3ed0e164ccc, type: 3}
+--- !u!1 &3188126852687161673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3188126853167085501, guid: e68d151623399c24bb82d3ed0e164ccc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3188126852687161672}
+  m_PrefabAsset: {fileID: 0}

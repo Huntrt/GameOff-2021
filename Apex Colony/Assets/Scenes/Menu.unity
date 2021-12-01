@@ -156737,6 +156737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 981409433951430334, guid: 932821f6cc7969f40b08c883067cc667,
         type: 3}
+      propertyPath: blockInput
+      value: 
+      objectReference: {fileID: 747373877}
+    - target: {fileID: 981409433951430334, guid: 932821f6cc7969f40b08c883067cc667,
+        type: 3}
       propertyPath: zoomAmount
       value: 
       objectReference: {fileID: 2141506238}
@@ -164319,17 +164324,17 @@ PrefabInstance:
     - target: {fileID: 8329510084874354091, guid: 0f033ea45ede97a498cc020a2ab352c0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 644.57056
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329510084874354091, guid: 0f033ea45ede97a498cc020a2ab352c0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 387.90515
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329510084874354091, guid: 0f033ea45ede97a498cc020a2ab352c0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -198.01193
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329510084874354091, guid: 0f033ea45ede97a498cc020a2ab352c0,
         type: 3}

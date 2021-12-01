@@ -1,5 +1,6 @@
-using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class Hotkeys : MonoBehaviour
 {
@@ -20,10 +21,20 @@ public class Hotkeys : MonoBehaviour
 	public KeyCode camUp, camDown, camLeft, camRight, camOption, camReset , zoomReset;
 	public KeyCode move, attack, stop, track, procced;
 
-	void Start()
+	void Start() 
 	{
-		//Find the block input object from canvas
-		blockInput = GameObject.Find("Canvas").transform.Find("BlockInput").gameObject;
+		//Setup key upon upon game start (useless parameters)
+		SetupKeys(SceneManager.GetSceneAt(0),LoadSceneMode.Additive);
+		//Setup key upon upon scene change
+		SceneManager.sceneLoaded += SetupKeys;
+	}
+
+	public void SetupKeys(Scene scene, LoadSceneMode mode)
+	{
+		//! Refresh the singleton
+		s = this;
+		//Get the block input object from canvas player manager
+		blockInput = PlayManager.i.blockInput;
 		// Print an warning if there are no block input panel (can remove if wanted)
 		if(blockInput == null) {Debug.LogWarning("There are no UI panel to blocking input for hotkey");}
 	}
@@ -63,4 +74,8 @@ public class Hotkeys : MonoBehaviour
             }
         }
 	}
+
+	
+	//Remove delegate event
+	void OnDisable() {SceneManager.sceneLoaded -= SetupKeys;}
 }

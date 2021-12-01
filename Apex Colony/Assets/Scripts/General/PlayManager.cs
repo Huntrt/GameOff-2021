@@ -4,8 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayManager : MonoBehaviour
 {
+	public GameObject blockInput;
     public Slider zoomSlider, cameraSlider;
     public TMPro.TextMeshProUGUI zoomAmount, cameraAmount;
+
+	//Turn this object into singleton
+	public static PlayManager i; void Awake() {i = this;}
 
 	void Start()
 	{
