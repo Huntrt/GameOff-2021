@@ -1,5 +1,7 @@
 ## Apex Colony
 
+<b>WARNING: THIS GAME NEED [arongranberg's a* path](arongranberg.com/astar) PACKAGE TO WORK.</b>
+
 The Source code of my Game Off 2021 Submission, Apex Colony you could play it [here.](https://huntrt.itch.io/apex-colony)
 
 An rogue-lite game where you control an lone ant that try to forming an super colony with the help various type of ant along the way.
