@@ -73,7 +73,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -133,10 +133,10 @@ TextureImporter:
       name: Nest Ground 1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 123
-        width: 100
-        height: 100
+        x: 16
+        y: 246
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: Nest Ground 2
       rect:
         serializedVersion: 2
-        x: 118
-        y: 123
-        width: 100
-        height: 100
+        x: 236
+        y: 246
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Nest Ground 3
       rect:
         serializedVersion: 2
-        x: 228
-        y: 123
-        width: 100
-        height: 100
+        x: 456
+        y: 246
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: Nest Begin
       rect:
         serializedVersion: 2
-        x: 338
-        y: 123
-        width: 100
-        height: 100
+        x: 676
+        y: 246
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: Nest Border
       rect:
         serializedVersion: 2
-        x: 8
-        y: 13
-        width: 100
-        height: 100
+        x: 16
+        y: 26
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +238,10 @@ TextureImporter:
       name: Nest Wall
       rect:
         serializedVersion: 2
-        x: 118
-        y: 13
-        width: 100
-        height: 100
+        x: 236
+        y: 26
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +259,10 @@ TextureImporter:
       name: Nest Eggs
       rect:
         serializedVersion: 2
-        x: 259
-        y: 38
-        width: 40
-        height: 50
+        x: 518
+        y: 76
+        width: 80
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,34 +277,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nest End
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 13
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fc6fd9296cd3d5e0800000000000000
-      internalID: -1885921474705920775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Nest Port
       rect:
         serializedVersion: 2
-        x: 447
-        y: 127
-        width: 102
-        height: 91
+        x: 675
+        y: 25
+        width: 201
+        height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

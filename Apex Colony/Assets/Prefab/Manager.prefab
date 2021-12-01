@@ -236,7 +236,7 @@ MonoBehaviour:
     - obj: {fileID: 5682797640565753281, guid: 299c6792d0b091e40951944ad95cd021, type: 3}
       ratio: 20
   - name: Soil
-    backgroundColor: {r: 0.39607844, g: 0.2509804, b: 0.19215687, a: 0}
+    backgroundColor: {r: 0.18039216, g: 0.14509805, b: 0.12941177, a: 0}
     border: {fileID: 3782086149402872379, guid: 80b39d2a86f149941848b6286beb96dc,
       type: 3}
     contentRate: 30
@@ -302,7 +302,7 @@ MonoBehaviour:
     - obj: {fileID: 5682797640565753281, guid: 299c6792d0b091e40951944ad95cd021, type: 3}
       ratio: 15
   - name: Grass
-    backgroundColor: {r: 0.15419188, g: 0.3301887, b: 0.2044767, a: 0}
+    backgroundColor: {r: 0.23408018, g: 0.5, b: 0.21462265, a: 0}
     border: {fileID: 3327309088603454640, guid: c542805d51e9d1c448afbbe360ba4d1a,
       type: 3}
     contentRate: 25

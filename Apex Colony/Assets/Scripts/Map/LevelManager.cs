@@ -107,7 +107,7 @@ public class LevelManager : MonoBehaviour
 		//Update the level display text by using [level name lv/req] when not in endless mode
 		if(!endless){levelDisplay.text = levels[lv].name + " " + currentMap + "/" + (mapPerLevel);}
 		//Update the level display text buy using [using level name + map count when in endless mode]
-		else {levelDisplay.text = levels[lv].name + " " + currentMap;}
+		else {levelDisplay.text = levels[lv].name + " +" + currentMap;}
 		//Play the level display animator
 		levelDisplayAnim.Play("Start Level");
 		//Hide the generation loading when game start

@@ -97,7 +97,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -157,10 +157,10 @@ TextureImporter:
       name: Cave Ground 1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 365
-        width: 100
-        height: 100
+        x: 14
+        y: 730
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: Cave Ground 2
       rect:
         serializedVersion: 2
-        x: 117
-        y: 365
-        width: 100
-        height: 100
+        x: 234
+        y: 730
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +199,10 @@ TextureImporter:
       name: Cave Ground 3
       rect:
         serializedVersion: 2
-        x: 227
-        y: 364
-        width: 100
-        height: 100
+        x: 454
+        y: 728
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +220,10 @@ TextureImporter:
       name: Cave Begin
       rect:
         serializedVersion: 2
-        x: 337
-        y: 365
-        width: 100
-        height: 100
+        x: 674
+        y: 730
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Cave Ground 4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 255
-        width: 100
-        height: 100
+        x: 12
+        y: 510
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +262,10 @@ TextureImporter:
       name: Cave Ground 5
       rect:
         serializedVersion: 2
-        x: 117
-        y: 255
-        width: 100
-        height: 100
+        x: 234
+        y: 510
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +283,10 @@ TextureImporter:
       name: Cave Eggs
       rect:
         serializedVersion: 2
-        x: 255
-        y: 282
-        width: 46
-        height: 33
+        x: 510
+        y: 565
+        width: 92
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,34 +301,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cave End
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 255
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3189ae8dfad15c20800000000000000
-      internalID: 3193574393337446716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Cave Rock 1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 148
-        width: 88
-        height: 90
+        x: 14
+        y: 297
+        width: 174
+        height: 179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +325,10 @@ TextureImporter:
       name: Cave Rock 2
       rect:
         serializedVersion: 2
-        x: 122
-        y: 139
-        width: 101
-        height: 90
+        x: 245
+        y: 278
+        width: 200
+        height: 179
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,10 +346,10 @@ TextureImporter:
       name: Cave Rock 3
       rect:
         serializedVersion: 2
-        x: 225
-        y: 138
-        width: 91
-        height: 100
+        x: 451
+        y: 276
+        width: 180
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,10 +367,10 @@ TextureImporter:
       name: Cave Rock 4
       rect:
         serializedVersion: 2
-        x: 341
-        y: 134
-        width: 98
-        height: 100
+        x: 682
+        y: 268
+        width: 196
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +388,10 @@ TextureImporter:
       name: Cave Rock 5
       rect:
         serializedVersion: 2
-        x: 10
-        y: 15
-        width: 87
-        height: 93
+        x: 21
+        y: 31
+        width: 173
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,10 +409,10 @@ TextureImporter:
       name: Cave Rock 6
       rect:
         serializedVersion: 2
-        x: 122
-        y: 15
-        width: 87
-        height: 101
+        x: 245
+        y: 31
+        width: 172
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,10 +430,10 @@ TextureImporter:
       name: Cave Rock 7
       rect:
         serializedVersion: 2
-        x: 234
-        y: 8
-        width: 96
-        height: 100
+        x: 468
+        y: 16
+        width: 191
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,10 +451,10 @@ TextureImporter:
       name: Cave Rock 8
       rect:
         serializedVersion: 2
-        x: 341
-        y: 9
-        width: 90
-        height: 100
+        x: 682
+        y: 18
+        width: 179
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,10 +472,10 @@ TextureImporter:
       name: Cave Port
       rect:
         serializedVersion: 2
-        x: 447
-        y: 368
-        width: 100
-        height: 97
+        x: 674
+        y: 510
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
