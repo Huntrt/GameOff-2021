@@ -1,0 +1,18 @@
+▪ Implement sound and ambient music.
+	▪ Player Command.
+	▪ Unit action.
+	▪ Map interaction
+	▪ Game status.
+▪ Clean up UI.
+	▪ Setting panel rework.
+	▪ Improve kill count and level progress thematic.
+	▪ Audio setting.
+▪ Graphic rework.
+	▪ Worm enemy.
+	▪ Grass map border
+	▪ Grass map use stick as obstacle.
+	▪ Egg open scattering.
+▪ Item Upgrade.
+	▪ Right click to use item.
+	▪ Show how many item allies has got.
+	▪ Improve visibility when apply upgrade.
