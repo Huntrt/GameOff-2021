@@ -9,17 +9,21 @@
 [Bb]uilds/
 [Ll]ogs/
 [Ee]ditor/
+[Ee]ditor.meta
+[Pp]lugins/
+[Pp]lugins.meta
 [Ww]ebGLTemplates/
 [Uu]ser[Ss]ettings/
-AstarPathfindingProject/
+[Aa]ssets/[Ss]treamingAssets/aa/*
+[Aa]ssets/[Ss]treamingAssets/aa.meta
 
 # MemoryCaptures are removed
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
-# Uncomment this line if you wish to ignore the asset store tools plugin
-# /[Aa]ssets/AssetStoreTools*
+# Ignore the asset store tools plugin
+/[Aa]ssets/AssetStoreTools*
 
 # Visual Studio cache directory
 .vs/
@@ -33,6 +37,7 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 *.tmp
 *.user
@@ -50,23 +55,26 @@ ExportedObj/
 *.pdb.meta
 *.mdb.meta
 
-# Unity3D generated file on crash reports
+# Crashes
 sysinfo.txt
+crashlytics-build.properties
 
 # Builds
 *.apk
 *.aab
 *.unitypackage
 
-# Crashlytics generated file
-crashlytics-build.properties
-
 # Packed Addressables
 [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
-# Temporary auto-generated Android Assets
-[Aa]ssets/[Ss]treamingAssets/aa.meta
+# TextMesh Pro Package
+**/Assets/TextMesh Pro.meta
+**/Assets/TextMesh Pro/*
 
-#Misc
-desktop.ini
-[Aa]ssets/[Ss]treamingAssets/aa/*
+# Arongranberg Astar Package
+**/Assets/Astar.meta
+**/Assets/Astar/*
+
+# VSCode settings and snippets
+.vscode
+*.code-snippets
