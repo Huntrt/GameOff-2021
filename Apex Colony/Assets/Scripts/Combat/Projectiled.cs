@@ -49,7 +49,7 @@ public class Projectiled : MonoBehaviour
 		//Deactive the projectile when travel all the range
 		if(travelled <= 0) {DeactiveProjectile();}
 		//Update the bullet velocity as the speed stats at transfrom right
-		rb.velocity = transform.up * speed;
+		rb.linearVelocity = transform.up * speed;
     }
 
 	void OnCollisionEnter2D(Collision2D other) 

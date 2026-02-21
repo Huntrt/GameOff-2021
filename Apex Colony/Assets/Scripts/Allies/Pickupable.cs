@@ -13,7 +13,7 @@ public class Pickupable : MonoBehaviour
 		//Get the rigidybody
 		rb = GetComponent<Rigidbody2D>();
 		//Update the rigidbody's drag value
-		rb.drag = Manager.i.ports.itemDrag;
+		rb.linearDamping = Manager.i.ports.itemDrag;
 		//Destroy item when go to the next level
 		Manager.i.level.nexting += DestroyItem;
 	}
