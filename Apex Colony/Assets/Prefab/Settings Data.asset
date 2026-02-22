@@ -42,6 +42,8 @@ MonoBehaviour:
       keyCode: 113
     - action: Zoom Reset
       keyCode: 122
+    - action: Zoom Reset
+      keyCode: 122
     language: 
   _pause:
     isPausing: 0
