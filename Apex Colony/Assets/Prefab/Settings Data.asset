@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad1f025bcc42f5479729a3bf6fbcd2b, type: 3}
+  m_Name: Settings Data
+  m_EditorClassIdentifier: 
+  _data:
+    vSync: 1
+    fullScreenMode: 3
+    resolution: {x: 1920, y: 1080}
+    fpsCap: -1
+    graphicQuality: 4
+    volumes: 00000000000000000000000000000000
+    binds:
+    - action: Test A
+      keyCode: 0
+    - action: Test B
+      keyCode: 0
+    - action: Test C
+      keyCode: 0
+    language: 
+  _pause:
+    isPausing: 0
+    timeScaleBeforePause: 0
