@@ -3,6 +3,8 @@ using UnityEngine;
 public class MeleeAttack : MonoBehaviour
 {
 	[SerializeField] ParticleSystem effect;
+	
+	enum AttackSFX {Light, Standard, Heavy} [SerializeField] AttackSFX attackSFX;
 
     void Start()
     {
@@ -16,5 +18,7 @@ public class MeleeAttack : MonoBehaviour
 		if(inRange != null) {inRange.Damaging(damage);}
 		//Play the melee particle effect
 		effect.Play();
+
+		SFX_Manager.PlaySFX(attackSFX.ToString() + " Attack");
 	}
 }

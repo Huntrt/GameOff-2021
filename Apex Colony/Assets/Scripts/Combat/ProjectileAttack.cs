@@ -5,6 +5,8 @@ public class ProjectileAttack : MonoBehaviour
 	public GameObject projectile;
 	public Transform firepoint;
 
+	enum AttackSFX {Light, Standard, Heavy} [SerializeField] AttackSFX attackSFX;
+
     void Start()
     {
 		//Begin melee projectiling when attack event called
@@ -23,5 +25,7 @@ public class ProjectileAttack : MonoBehaviour
 		stat.belong = transform.tag;
 		//Active the projectile
 		ins.SetActive(true);
+
+		SFX_Manager.PlaySFX(attackSFX.ToString() + " Attack");
     }
 }
