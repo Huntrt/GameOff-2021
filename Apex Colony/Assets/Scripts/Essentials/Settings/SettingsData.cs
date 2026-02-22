@@ -16,6 +16,8 @@ using UnityEngine;
 	public int[] volumes;
 	[Tooltip("Keybinding game use")]
 	public Keybind.Bind[] binds;
-	[Tooltip("Language the game use (Lean Localize)")]
-	public string language;
+	[Tooltip("How fast camera will move when press key")]
+	public float cameraMoveSpeed;
+	[Tooltip("How fast will zoom in and out with scroll wheel")]
+	public float zoomSpeed;
 }
