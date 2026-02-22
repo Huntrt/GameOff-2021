@@ -23,7 +23,7 @@ public class Controls : MonoBehaviour
 		///Create new move indicator when pressed the move key
 		if(Input.GetKeyDown(Keybind.i.GetKey("Move"))) {indi.CreateMoveIndicator(mousePos);}
 		///Moving or interact when hold the move key
-		if(Input.GetKey(Keybind.i.GetKey("Move"))) 
+		if(Input.GetKey(Keybind.i.GetKey("Move")))
 		{
 			//Make the moving indicator follow mouse position if created it
 			if(indi.moveindi != null) {indi.moveindi.transform.position = mousePos;}
@@ -43,7 +43,11 @@ public class Controls : MonoBehaviour
 				//Clear all the rival and close all the panel
 				formator.ClearRivals(); ClosePanel();
 				///Create formation of goal at mouse for followers move toward (if mouse are updated)
-				if(prevMouse != mousePos) {manager.goal.Create(mousePos);}
+				if(prevMouse != mousePos) 
+				{
+					SFX_Manager.PlaySFX("Control Move");
+					manager.goal.Create(mousePos);
+				}
 			}
 			//Update the previous mouse position
 			prevMouse = mousePos;
@@ -102,7 +106,12 @@ public class Controls : MonoBehaviour
 				enemySelector.SetActive(false);
 			}
 			//Releasing mouse and begin targeting rivals
-			if(input != Inputing.release) {input = Inputing.release; formator.TargetRivals();}
+			if(input != Inputing.release) 
+			{
+				input = Inputing.release; 
+				formator.TargetRivals();
+				SFX_Manager.PlaySFX("Control Attack");
+			}
 			//Clear selected enemy when release mouse
 			formator.ClearSelection();
 		}

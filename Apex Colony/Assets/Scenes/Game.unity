@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 17023984}
   - component: {fileID: 17023986}
   - component: {fileID: 17023985}
+  - component: {fileID: 17023987}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -204,6 +205,45 @@ MonoBehaviour:
     labelDisplay: Music
     label: {fileID: 1263729851}
     slider: {fileID: 1190332414}
+--- !u!114 &17023987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17023983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2022b3d6bce8d0e45916e45f33bdea88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxDatas:
+  - sfxName: Control Move
+    clips:
+    - {fileID: 8300000, guid: b2b65aafc5fa65b419a826c83221868b, type: 3}
+    cooldown: 0.2
+  - sfxName: Control Attack
+    clips:
+    - {fileID: 8300000, guid: 964a57e23bc36e04097a2111a4142361, type: 3}
+    cooldown: 0
+  - sfxName: Light Attack
+    clips:
+    - {fileID: 8300000, guid: d547a1c06b977e44b9c057c3e85d6e10, type: 3}
+    - {fileID: 8300000, guid: 98d766d1825b56945863a9b994026e27, type: 3}
+    - {fileID: 8300000, guid: ec60885d7511a8c4683953ec55cb2bfc, type: 3}
+    cooldown: 0
+  - sfxName: Standard Attack
+    clips:
+    - {fileID: 8300000, guid: 3f1c5f2a0e4201b4399bf01608cf405d, type: 3}
+    - {fileID: 8300000, guid: 53bb4bfa8c1a101438da813c69813ee9, type: 3}
+    - {fileID: 8300000, guid: 774487aac79104d4bba7692d96d103a6, type: 3}
+    cooldown: 0
+  - sfxName: Heavy Attack
+    clips:
+    - {fileID: 8300000, guid: c819f3426c5c9074790eebf45fcee58b, type: 3}
+    - {fileID: 8300000, guid: 1748218c05e3e0e4eb9e19fdf0d2a783, type: 3}
+    - {fileID: 8300000, guid: 66d3de4051a15554fb14f85949508002, type: 3}
+    cooldown: 0
 --- !u!1 &19665018
 GameObject:
   m_ObjectHideFlags: 0

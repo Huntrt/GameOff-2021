@@ -18,7 +18,7 @@ MonoBehaviour:
     resolution: {x: 1920, y: 1080}
     fpsCap: -1
     graphicQuality: 0
-    volumes: 00000000000000000000000000000000
+    volumes: 140000001e0000000a000000
     binds:
     - action: Move
       keyCode: 323
