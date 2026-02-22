@@ -71,7 +71,7 @@ public class CameraManager : MonoBehaviour
 			if (Input.GetKey(Keybind.i.GetKey("Camera Left"))) {moveDirection.x = -1;}
 			if (Input.GetKey(Keybind.i.GetKey("Camera Right"))) {moveDirection.x = 1;}
 			//Moving the camera with move direction with camera speed
-			MoveCamera(moveDirection.normalized, GameManager.i.cameraSpeed);
+			MoveCamera(moveDirection.normalized, SettingsManager.i.Data.cameraMoveSpeed);
 		}
 	}
 	
@@ -99,7 +99,7 @@ public class CameraManager : MonoBehaviour
 			//Get the direction from camera center to mouse
 			Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - cam.position).normalized;
 			//Move camera toward mouse camera speed
-			MoveCamera((Vector2)dir, GameManager.i.cameraSpeed);
+			MoveCamera((Vector2)dir, SettingsManager.i.Data.cameraMoveSpeed);
 		}
 	}
 
@@ -121,7 +121,7 @@ public class CameraManager : MonoBehaviour
 		if(Input.mouseScrollDelta.y != 0)
 		{
 			//Increase or decrease the orthographic size with zoom amount and it speed
-			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (GameManager.i.zoomSpeed * Time.deltaTime);
+			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (SettingsManager.i.Data.zoomSpeed * Time.deltaTime);
 			//Prevent the camera from zoom too far or too close
 			Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomLimit.min, zoomLimit.max);
 		}

@@ -10,7 +10,8 @@ public class Setting : MonoBehaviour
 		graphic_fpsCap,
 		graphic_quality,
 		audio,
-		keybind
+		keybind,
+		camera
 	}
 
 	public delegate void OnSettingChange(Category category); public OnSettingChange onSettingChange;
