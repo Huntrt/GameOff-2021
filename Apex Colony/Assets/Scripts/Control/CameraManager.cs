@@ -33,7 +33,7 @@ public class CameraManager : MonoBehaviour
 		//Display the zoom amnount
 		zoomAmount.text = (int)Camera.main.orthographicSize + "";
 		//Change camera option when press the camera option key
-		if(Input.GetKeyDown(Hotkeys.s.camOption)) {ChangeOption();}
+		if(Input.GetKeyDown(Keybind.i.GetKey("Switch Camera Mode"))) {ChangeOption();}
 		//Camera are not moving
 		cameraMove = false;
 		//Zoom camera
@@ -60,16 +60,16 @@ public class CameraManager : MonoBehaviour
 			//Only able to drag camera if is not lock
 			if(!lockDrag) {DragCamera();}
 			//Reset the camera zoom when press reset zoom key
-			if (Input.GetKey(Hotkeys.s.zoomReset)) {ResetZoom();}
+			if (Input.GetKey(Keybind.i.GetKey("Zoom Reset"))) {ResetZoom();}
 			//Move the camera position back to the center of formation when press reset camera key
-			if (Input.GetKey(Hotkeys.s.camReset)) {cam.position = Manager.i.allie.FormationCenter();}
+			if (Input.GetKey(Keybind.i.GetKey("Camera Center Formation"))) {cam.position = Manager.i.allie.FormationCenter();}
 			//The camera moving direction
 			Vector2 moveDirection = Vector3.zero;
 			//@ Changing the camera moving direction base on it setting input
-			if (Input.GetKey(Hotkeys.s.camUp)) {moveDirection.y = 1;}
-			if (Input.GetKey(Hotkeys.s.camDown)) {moveDirection.y = -1;}
-			if (Input.GetKey(Hotkeys.s.camLeft)) {moveDirection.x = -1;}
-			if (Input.GetKey(Hotkeys.s.camRight)) {moveDirection.x = 1;}
+			if (Input.GetKey(Keybind.i.GetKey("Camera Up"))) {moveDirection.y = 1;}
+			if (Input.GetKey(Keybind.i.GetKey("Camera Down"))) {moveDirection.y = -1;}
+			if (Input.GetKey(Keybind.i.GetKey("Camera Left"))) {moveDirection.x = -1;}
+			if (Input.GetKey(Keybind.i.GetKey("Camera Right"))) {moveDirection.x = 1;}
 			//Moving the camera with move direction with camera speed
 			MoveCamera(moveDirection.normalized, GameManager.i.cameraSpeed);
 		}

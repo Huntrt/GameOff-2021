@@ -48,7 +48,7 @@ public class Tutorial : MonoBehaviour
 		if(key != "")
 		{
 			//Get the hotkey has the same name as key needed to display without tag
-			string keyDisplay = Hotkeys.s.GetType().GetField(key.Replace("$", "")).GetValue(Hotkeys.s).ToString();
+			string keyDisplay = Keybind.i.GetBind(key.Replace("$", "")).keyCode.ToString();
 			//Replace the key needed to display to it keycode in info
 			info = info.Replace(key, "[" + keyDisplay + "]");
 		}

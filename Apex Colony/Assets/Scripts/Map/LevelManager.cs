@@ -65,11 +65,11 @@ public class LevelManager : MonoBehaviour
 			if(killCount >= killNeeded)
 			{
 				//Display new text when kill enough enemy
-				progressCount.text = "Hold [" + Hotkeys.s.procced + "] to proceed the next level";
+				progressCount.text = "Hold [" + Keybind.i.GetKey("Procced Next Level") + "] to proceed the next level";
 				//Show the process panel when PRESS the procced key
-				if(Input.GetKeyDown(Hotkeys.s.procced)) {processPanel.SetActive(true);}
+				if(Input.GetKeyDown(Keybind.i.GetKey("Procced Next Level"))) {processPanel.SetActive(true);}
 				//When HOLDING the procced key
-				if(Input.GetKey(Hotkeys.s.procced))
+				if(Input.GetKey(Keybind.i.GetKey("Procced Next Level")))
 				{
 					//Increase the process counter
 					processCounter += Time.deltaTime;
@@ -79,7 +79,7 @@ public class LevelManager : MonoBehaviour
 					if(processCounter >= processHold) {killCount = 0; ClearHoldProcess(); NextMap();}
 				}
 				//Clear the process when RELEASE the procced key
-				if(Input.GetKeyUp(Hotkeys.s.procced)) {ClearHoldProcess();}
+				if(Input.GetKeyUp(Keybind.i.GetKey("Procced Next Level"))) {ClearHoldProcess();}
 				//Has complete the map
 				completed = true;
 			}

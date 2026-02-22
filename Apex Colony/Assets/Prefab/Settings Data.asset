@@ -40,8 +40,8 @@ MonoBehaviour:
       keyCode: 100
     - action: Camera Center Formation
       keyCode: 113
-    - action: Zoom Reset
-      keyCode: 122
+    - action: Switch Camera Mode
+      keyCode: 101
     - action: Zoom Reset
       keyCode: 122
     language: 

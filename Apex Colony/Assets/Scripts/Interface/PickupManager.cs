@@ -7,7 +7,7 @@ public class PickupManager : MonoBehaviour
 	void Update()
 	{
 		///When click the attack key
-		if(Input.GetKeyDown(Hotkeys.s.attack)) 
+		if(Input.GetKeyDown(Keybind.i.GetKey("Attack"))) 
 		{
 			//Get the mouse position
 			Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);

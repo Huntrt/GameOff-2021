@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8329510084874354091}
   - component: {fileID: 8329510084874354093}
-  - component: {fileID: 8329510084874354090}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -25,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8329510084874354088}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 644.57056, y: 387.90515, z: -198.01193}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8329510084874354093
 MonoBehaviour:
@@ -46,31 +46,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraSpeed: 15
   zoomSpeed: 15
---- !u!114 &8329510084874354090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8329510084874354088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3f0a94c3dcffc47941f588c7160fc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockInput: {fileID: 0}
-  waitingMessage: Waiting for input...
-  assignName: 
-  areAssigning: 0
-  camUp: 273
-  camDown: 274
-  camLeft: 276
-  camRight: 275
-  camOption: 99
-  camReset: 114
-  zoomReset: 122
-  move: 323
-  attack: 324
-  stop: 115
-  track: 116
-  procced: 32
