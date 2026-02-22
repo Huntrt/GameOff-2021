@@ -13,19 +13,35 @@ MonoBehaviour:
   m_Name: Settings Data
   m_EditorClassIdentifier: 
   _data:
-    vSync: 1
+    vSync: 0
     fullScreenMode: 3
     resolution: {x: 1920, y: 1080}
     fpsCap: -1
-    graphicQuality: 4
+    graphicQuality: 0
     volumes: 00000000000000000000000000000000
     binds:
-    - action: Test A
-      keyCode: 0
-    - action: Test B
-      keyCode: 0
-    - action: Test C
-      keyCode: 0
+    - action: Move
+      keyCode: 323
+    - action: Attack
+      keyCode: 324
+    - action: Halt
+      keyCode: 325
+    - action: Tracking Unit
+      keyCode: 116
+    - action: Procced Next Level
+      keyCode: 32
+    - action: Camera Up
+      keyCode: 119
+    - action: Camera Down
+      keyCode: 115
+    - action: Camera Left
+      keyCode: 97
+    - action: Camera Right
+      keyCode: 100
+    - action: Camera Center Formation
+      keyCode: 113
+    - action: Zoom Reset
+      keyCode: 122
     language: 
   _pause:
     isPausing: 0
