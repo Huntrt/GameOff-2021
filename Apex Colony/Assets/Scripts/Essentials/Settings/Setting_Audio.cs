@@ -43,8 +43,8 @@ public class Setting_Audio : Setting
 
 		public void DisplayVolume()
 		{
-			//Display the label as "Volume: 34"
-			label.text = labelDisplay + Mathf.RoundToInt(volume);
+			//Display the label as "34"
+			label.text = Mathf.RoundToInt(volume).ToString();
 		}
 	}
 	
