@@ -44,7 +44,8 @@ MonoBehaviour:
       keyCode: 101
     - action: Zoom Reset
       keyCode: 122
-    language: 
+    cameraMoveSpeed: 20
+    zoomSpeed: 30
   _pause:
     isPausing: 0
     timeScaleBeforePause: 0

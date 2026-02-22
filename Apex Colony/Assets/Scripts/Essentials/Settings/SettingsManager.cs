@@ -32,7 +32,7 @@ public class SettingsManager : MonoBehaviour
 	void Awake()
 	{
 		//Find all the object use base 'Setting' script
-		settings = FindObjectsByType<Setting>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+		settings = FindObjectsByType<Setting>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
 	}
 
 	void Start()
