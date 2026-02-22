@@ -19,6 +19,6 @@ public class MeleeAttack : MonoBehaviour
 		//Play the melee particle effect
 		effect.Play();
 
-		SFX_Manager.PlaySFX(attackSFX.ToString() + " Attack");
+		SFX_Manager.PlaySFX("Attack " + attackSFX.ToString());
 	}
 }

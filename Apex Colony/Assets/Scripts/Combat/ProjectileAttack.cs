@@ -26,6 +26,6 @@ public class ProjectileAttack : MonoBehaviour
 		//Active the projectile
 		ins.SetActive(true);
 
-		SFX_Manager.PlaySFX(attackSFX.ToString() + " Attack");
+		SFX_Manager.PlaySFX("Attack " + attackSFX.ToString());
     }
 }

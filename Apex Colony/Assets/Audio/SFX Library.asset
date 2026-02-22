@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582e63702149d864f8ab63c66923eb33, type: 3}
+  m_Name: SFX Library
+  m_EditorClassIdentifier: 
+  sfxs:
+  - name: Control Move
+    cooldown: 0.2
+    clips:
+    - {fileID: 8300000, guid: b2b65aafc5fa65b419a826c83221868b, type: 3}
+  - name: Control Attack
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: 964a57e23bc36e04097a2111a4142361, type: 3}
+  - name: Interact Map
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: 4f72accc87834784aba928421eca2fed, type: 3}
+  - name: Open Egg
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: c7764d4b58780064191e5b2b0e5f600f, type: 3}
+    - {fileID: 8300000, guid: 771b04fca1ea87d41becfbb6f2a6425f, type: 3}
+    - {fileID: 8300000, guid: 8d5f5ad30e4a51f42af78a88bd5a9a6b, type: 3}
+  - name: Bought Item
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: 4f72accc87834784aba928421eca2fed, type: 3}
+  - name: Consume Item
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: 6cb6e0baf7e5d0d4c97979cdbe35222f, type: 3}
+  - name: Attack Light
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: d547a1c06b977e44b9c057c3e85d6e10, type: 3}
+    - {fileID: 8300000, guid: 98d766d1825b56945863a9b994026e27, type: 3}
+    - {fileID: 8300000, guid: ec60885d7511a8c4683953ec55cb2bfc, type: 3}
+  - name: Attack Standard
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: 3f1c5f2a0e4201b4399bf01608cf405d, type: 3}
+    - {fileID: 8300000, guid: 53bb4bfa8c1a101438da813c69813ee9, type: 3}
+    - {fileID: 8300000, guid: 774487aac79104d4bba7692d96d103a6, type: 3}
+  - name: Attack Heavy
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: c819f3426c5c9074790eebf45fcee58b, type: 3}
+    - {fileID: 8300000, guid: 1748218c05e3e0e4eb9e19fdf0d2a783, type: 3}
+    - {fileID: 8300000, guid: 66d3de4051a15554fb14f85949508002, type: 3}
+  - name: Allies Died
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: 2cae03992262700419454a2b531dcf9f, type: 3}
+  - name: Enemy Died
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: bf624e951caf93b4b86ede8844b6b189, type: 3}
+  - name: Game Over
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: dc3d482da01e40243899303ea8a9c574, type: 3}
+  - name: Game Win
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: fa14ed604ef3c8d42be67160e91d6469, type: 3}
+  - name: Killcount Reached
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: 5f58aff66059d2e428b892b89440ba02, type: 3}
+  - name: Next Level
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: b4578edae26a8f245b5f8faf3e576396, type: 3}

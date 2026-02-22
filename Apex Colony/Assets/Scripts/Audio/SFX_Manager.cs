@@ -21,32 +21,13 @@ public class SFX_Manager : MonoBehaviour
 	}
 	#endregion
 
-	[System.Serializable] class SfxData
-	{
-		public string sfxName;
-		public AudioClip[] clips;
-		[SerializeField] float cooldown;
-		float cooldownTimer;
-		public bool isReady {get => cooldownTimer <= 0;}
-
-		public void Timing()
-		{
-			cooldownTimer -= Time.deltaTime;
-		}
-
-		public void ResetCooldown()
-		{
-			cooldownTimer = cooldown;
-		}
-	}
-
-	[SerializeField] SfxData[] sfxDatas;
-	Dictionary<string, SfxData> sfxDataHash;
+	[SerializeField] SFX_Library library;
+	Dictionary<string, SFX_Library.SFX> sfxDataHash;
 
 	void Update()
 	{
 		//Counting down sfx cooldown
-		foreach (SfxData sfxData in sfxDatas) if(!sfxData.isReady) sfxData.Timing();
+		foreach (SFX_Library.SFX sfxData in library.Sfxs) if(!sfxData.isReady) sfxData.Timing();
 	}
 
 	public static void PlaySFX(string sfxName)
@@ -55,15 +36,15 @@ public class SFX_Manager : MonoBehaviour
 		if(i.sfxDataHash == null)
 		{
 			i.sfxDataHash = new();
-			foreach (SfxData sfxData in i.sfxDatas) i.sfxDataHash.Add(sfxData.sfxName, sfxData);
+			foreach (SFX_Library.SFX sfx in i.library.Sfxs) i.sfxDataHash.Add(sfx.name, sfx);
 		}
 
-		SfxData sfx = i.sfxDataHash[sfxName];
+		SFX_Library.SFX targetSfx = i.sfxDataHash[sfxName];
 
-		if(sfx.isReady)
+		if(targetSfx.isReady)
 		{
-			Audio_Manager.i.Play(sfx.clips[Random.Range(0, sfx.clips.Length)], "SFXVol");
-			sfx.ResetCooldown();
+			Audio_Manager.i.Play(targetSfx.clips[Random.Range(0, targetSfx.clips.Length)], "SFXVol");
+			targetSfx.ResetCooldown();
 		}
 	}
 }
