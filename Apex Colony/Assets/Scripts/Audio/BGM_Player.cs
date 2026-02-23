@@ -5,9 +5,6 @@ public class BGM_Player : MonoBehaviour
 {
 	public int defaultTransition = -1;
 	[SerializeField] List<Transition> transitions = new();
-	[SerializeField] AudioClip[] levelsBGM;
-	[SerializeField] float levelBGMTransitionSpeed;
-	bool populatedTransitionsWithLevelBGM;
 
 	[System.Serializable] public class Transition
 	{
@@ -34,24 +31,12 @@ public class BGM_Player : MonoBehaviour
 		Debug.LogWarning("There are no transition data for '" + audioClip.name + "' audio clip");
 	}
 
-	public void PlayLevelBGM()
+	public void AddTransition(AudioClip audio, float exitDuration, float enterDuration)
 	{
-		//Auto populate transition data with level bgm since it generic
-		if(!populatedTransitionsWithLevelBGM)
-		{
-			foreach (AudioClip bgm in levelsBGM)
-			{
-				Transition transition = new();
-				transition.Clip = bgm;
-				transition.exitDuration = levelBGMTransitionSpeed;
-				transition.enterDuration = levelBGMTransitionSpeed;
-				transitions.Add(transition);
-			}
-
-			populatedTransitionsWithLevelBGM = true;
-		}
-		
-		//Chose an random track for level
-		SelectTransition(levelsBGM[Random.Range(0, levelsBGM.Length)]);
+		Transition transition = new();
+		transition.Clip = audio;
+		transition.exitDuration = exitDuration;
+		transition.enterDuration = enterDuration;
+		transitions.Add(transition);
 	}
 }

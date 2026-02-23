@@ -429,8 +429,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1435512039071892276}
-  - component: {fileID: 7849566956319528674}
-  - component: {fileID: 4210940177374712057}
+  - component: {fileID: 5823037820432147847}
+  - component: {fileID: 6062111553254879209}
+  - component: {fileID: 1251472166686046564}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -453,7 +454,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5126460779784729275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7849566956319528674
+--- !u!114 &5823037820432147847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,7 +495,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     loop: 0
     playOnAwake: 0
---- !u!114 &4210940177374712057
+--- !u!114 &6062111553254879209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -512,47 +513,29 @@ MonoBehaviour:
     exitDuration: 0.6
     enterDuration: 0.6
     continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: 532acfe3823002041b12c35c5b6cbc0f, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: 869b3cc776911f142a654d7a99d676f2, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: 7918ae763bccd6646950be9d06c4839a, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: e2c7eb9928f8e5a4ead80e1322cd2616, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: b0e529d98a1810041be84cfc5b392bac, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: b0e529d98a1810041be84cfc5b392bac, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: 7ead7a6a16e4d9e46bf28f7e95f5b73d, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: f4c7702c10882004a8f5f74cb0d15d5d, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: a7245c4e2f511fd4bb56091f0bd76338, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: 6f2bbac514c75e546b2d7fbae462984f, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
-  - clip: {fileID: 8300000, guid: 8b29e2b8a2938ce44812ba09dea4a3c9, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
+--- !u!114 &1251472166686046564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874351097740253875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c1c2824b7c0a34f9d8e20c675c3638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musics:
+  - {fileID: 8300000, guid: 532acfe3823002041b12c35c5b6cbc0f, type: 3}
+  - {fileID: 8300000, guid: 869b3cc776911f142a654d7a99d676f2, type: 3}
+  - {fileID: 8300000, guid: 7918ae763bccd6646950be9d06c4839a, type: 3}
+  - {fileID: 8300000, guid: e2c7eb9928f8e5a4ead80e1322cd2616, type: 3}
+  - {fileID: 8300000, guid: b0e529d98a1810041be84cfc5b392bac, type: 3}
+  - {fileID: 8300000, guid: c79173970df00a34ab136149b96887a2, type: 3}
+  - {fileID: 8300000, guid: 7ead7a6a16e4d9e46bf28f7e95f5b73d, type: 3}
+  - {fileID: 8300000, guid: f4c7702c10882004a8f5f74cb0d15d5d, type: 3}
+  - {fileID: 8300000, guid: a7245c4e2f511fd4bb56091f0bd76338, type: 3}
+  - {fileID: 8300000, guid: 6f2bbac514c75e546b2d7fbae462984f, type: 3}
+  - {fileID: 8300000, guid: 8b29e2b8a2938ce44812ba09dea4a3c9, type: 3}
+  transitionSpeed: 0.6
+  bgm_player: {fileID: 6062111553254879209}
