@@ -123,7 +123,7 @@ public class CameraManager : MonoBehaviour
 		if(Input.mouseScrollDelta.y != 0)
 		{
 			//Increase or decrease the orthographic size with zoom amount and it speed
-			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (SettingsManager.i.Data.zoomSpeed * Time.deltaTime);
+			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (SettingsManager.i.Data.zoomSpeed * 5 * Time.deltaTime);
 			//Prevent the camera from zoom too far or too close
 			Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomLimit.min, zoomLimit.max);
 		}
