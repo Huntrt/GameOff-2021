@@ -47,7 +47,7 @@ public class Setting_FPSCap : Setting
 
 	void SetLabel(int value)
 	{
-		fpsCapSliderLabel.text = "FPS Cap: " + (value > 0 ? value : "Unlimited");
+		fpsCapSliderLabel.text = value > 0 ? value.ToString() : "INF";
 	}
 
 	public void SetFPSCap(int setFpsCap)
