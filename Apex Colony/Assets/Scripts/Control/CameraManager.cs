@@ -77,13 +77,15 @@ public class CameraManager : MonoBehaviour
 	
 	void LateUpdate()
 	{
-		//Restrict the camera position
+		//Restrict the camera position when reached the border
+		float redundant = Manager.i.map.sectionSize/2;
+
 		cam.position = new Vector3
 		(
 			//Restrict the camera X position in the map's min and max X 
-			Mathf.Clamp(cam.position.x, Manager.i.map.mapMin.x, Manager.i.map.mapMax.x),
+			Mathf.Clamp(cam.position.x, Manager.i.map.mapMin.x + redundant, Manager.i.map.mapMax.x + redundant),
 			//Restrict the camera Y position in the map's min and max Y 
-			Mathf.Clamp(cam.position.y, Manager.i.map.mapMin.y, Manager.i.map.mapMax.y),
+			Mathf.Clamp(cam.position.y, Manager.i.map.mapMin.y + redundant, Manager.i.map.mapMax.y + redundant),
 			//Reset the camera Z
 			-10
 		);
