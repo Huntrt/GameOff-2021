@@ -64,8 +64,6 @@ GameObject:
   - component: {fileID: 1316110397673856997}
   - component: {fileID: 1316110397673856995}
   - component: {fileID: 1316110397673856994}
-  - component: {fileID: 1786940801717173178}
-  - component: {fileID: 6501537738619287937}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -466,33 +464,6 @@ MonoBehaviour:
     frame: 0
     inter: 0
     pick: 0
---- !u!114 &1786940801717173178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316110397673856999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415dc73db91d16344b79be70707bf4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resumeOnObjDisable: 1
-  pauseButton: {fileID: 0}
-  resumeButton: {fileID: 0}
---- !u!114 &6501537738619287937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316110397673856999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5623e558fba7ea54c8c474711fd1d76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1316110397974077474
 GameObject:
   m_ObjectHideFlags: 0
