@@ -12,7 +12,7 @@ public class Keybind : MonoBehaviour
 	}
 
 	/// <summary>Binds store in settings data </summary>
-	public Bind[] binds {get => SettingsManager.i.Data.binds;}
+	public Bind[] binds {get {if(SettingsManager.i != null) return SettingsManager.i.Data.binds; return null;}}
 	Dictionary<string, int> bindsHash; public Dictionary<string, int> BindsHash {get => bindsHash;}
 
 	[Tooltip("Will replace key label text when binding it")]

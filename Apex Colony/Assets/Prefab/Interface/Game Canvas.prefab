@@ -15635,9 +15635,9 @@ GameObject:
   - component: {fileID: 27116473737366890}
   - component: {fileID: 6050328649692713912}
   m_Layer: 5
-  m_Name: Pause Menu
+  m_Name: Pause Panel
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 69fdfe6d8e206134a83223383472ff48, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
