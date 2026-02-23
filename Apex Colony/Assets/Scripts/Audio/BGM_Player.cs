@@ -50,5 +50,8 @@ public class BGM_Player : MonoBehaviour
 
 			populatedTransitionsWithLevelBGM = true;
 		}
+		
+		//Chose an random track for level
+		SelectTransition(levelsBGM[Random.Range(0, levelsBGM.Length)]);
 	}
 }
