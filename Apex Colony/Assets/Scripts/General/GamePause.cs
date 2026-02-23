@@ -16,20 +16,6 @@ public class GamePause : MonoBehaviour
 		if(resumeOnObjDisable) Pausing(false);
 	}
 
-	void Update()
-	{
-		///Pause hotkey are 'Esc'
-		if(Input.GetKeyDown(KeyCode.Escape))
-		{
-			//Toggle to the next pause status
-			bool togglePause = !SettingsManager.i.scriptableObj.pause.isPausing;
-			//Call the pasue button itself when about to pause
-			if(pauseButton != null && togglePause) pauseButton.onClick.Invoke();
-			//Call the resume button itself when about to resume
-			if(resumeButton != null && !togglePause) resumeButton.onClick.Invoke();
-		}
-	}
-
 	public void Pausing(bool pause)
 	{
 		//Skip if manager no longer exist
