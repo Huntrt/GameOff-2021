@@ -1,11 +1,11 @@
-- Mainmenu - Woods - axtoncrolley: https://opengameart.org/content/woods
-- Winters - Muncheybobo: https://opengameart.org/content/winter
-- fields_theme - adn_adn: https://opengameart.org/content/fieldstheme
-- drifter - cinameng: https://opengameart.org/content/drifter
-- Tsorthan Grove Collection:
-	- daydream: https://opengameart.org/content/daydream-0
-	- blue ice: https://opengameart.org/content/blue-ice
-	- barren planet: https://opengameart.org/content/barren-planet
-	- somber temple: https://opengameart.org/content/somber-temple
-	- sleepy head: https://opengameart.org/content/sleepy-head
-	- gem/refraction/shimmer: https://opengameart.org/content/crystal-caverns
+- Woods by axtoncrolley at opengameart.org/content/woods
+- Winters by Muncheybobo at opengameart.org/content/winter
+- fields_theme by adn_adn at opengameart.org/content/fieldstheme
+- drifter by cinameng at opengameart.org/content/drifter
+- daydream by Tsorthan Grove at opengameart.org/content/daydream-0
+- blue ice by Tsorthan Grove at opengameart.org/content/blue-ice
+- barren planet by Tsorthan Grove at opengameart.org/content/barren-planet
+- somber temple by Tsorthan Grove at opengameart.org/content/somber-temple
+- sleepy head by Tsorthan Grove at opengameart.org/content/sleepy-head
+- gem/refraction/shimmer by Tsorthan Grove at opengameart.org/content/crystal-caverns- CC-BY 4.0: creativecommons.org/licenses/by/4.0/
+- CC-BY 3.0: creativecommons.org/licenses/by/3.0/
