@@ -107,8 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapPerLevel: 3
   lv: 0
-  progressRequired: 0
-  processHold: 0
+  progressRequired: 50
+  processHold: 2
   killCount: 0
   killNeeded: 0
   completed: 0
