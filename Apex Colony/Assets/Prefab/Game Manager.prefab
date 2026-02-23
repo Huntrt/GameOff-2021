@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7073488205122229251}
   - component: {fileID: 7076093699068275686}
-  - component: {fileID: 3522094093609647673}
   - component: {fileID: 3169618682179008231}
   m_Layer: 0
   m_Name: Game Manager
@@ -53,21 +52,6 @@ MonoBehaviour:
   settingScriptableObj: {fileID: 11400000, guid: eb5c5d78511cc4a4ea3f3babd39b00e8,
     type: 2}
   applyGraphicAutosaveToData: 1
---- !u!114 &3522094093609647673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300319625686348147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415dc73db91d16344b79be70707bf4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resumeOnObjDisable: 1
-  pauseButton: {fileID: 0}
-  resumeButton: {fileID: 0}
 --- !u!114 &3169618682179008231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +415,6 @@ GameObject:
   - component: {fileID: 1435512039071892276}
   - component: {fileID: 5823037820432147847}
   - component: {fileID: 6062111553254879209}
-  - component: {fileID: 1251472166686046564}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -466,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9741c483e7e13ff49a07f93e7e91f5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDDOL: 0
+  isDDOL: 1
   bgmMixerGroup: {fileID: 3383600592000105985, guid: 13a3b2d21beb9364199b1eea6c6bcac4,
     type: 2}
   exitSpeaker:
@@ -507,35 +490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530f6be7c7b8ea74c9fc238a3f12d273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTransition: -1
+  defaultTransition: 0
   transitions:
   - clip: {fileID: 8300000, guid: 7b1655d783e50cf4081d638715d6cd87, type: 3}
     exitDuration: 0.6
     enterDuration: 0.6
     continueWhenExit: 0
---- !u!114 &1251472166686046564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6874351097740253875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c1c2824b7c0a34f9d8e20c675c3638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musics:
-  - {fileID: 8300000, guid: 532acfe3823002041b12c35c5b6cbc0f, type: 3}
-  - {fileID: 8300000, guid: 869b3cc776911f142a654d7a99d676f2, type: 3}
-  - {fileID: 8300000, guid: 7918ae763bccd6646950be9d06c4839a, type: 3}
-  - {fileID: 8300000, guid: e2c7eb9928f8e5a4ead80e1322cd2616, type: 3}
-  - {fileID: 8300000, guid: b0e529d98a1810041be84cfc5b392bac, type: 3}
-  - {fileID: 8300000, guid: c79173970df00a34ab136149b96887a2, type: 3}
-  - {fileID: 8300000, guid: 7ead7a6a16e4d9e46bf28f7e95f5b73d, type: 3}
-  - {fileID: 8300000, guid: f4c7702c10882004a8f5f74cb0d15d5d, type: 3}
-  - {fileID: 8300000, guid: a7245c4e2f511fd4bb56091f0bd76338, type: 3}
-  - {fileID: 8300000, guid: 6f2bbac514c75e546b2d7fbae462984f, type: 3}
-  - {fileID: 8300000, guid: 8b29e2b8a2938ce44812ba09dea4a3c9, type: 3}
-  transitionSpeed: 0.6
-  bgm_player: {fileID: 6062111553254879209}

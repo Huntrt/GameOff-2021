@@ -24,8 +24,11 @@ public class LevelBGMPlayer : MonoBehaviour
 			populatedTransitions = true;
 		}
 
+		AudioClip randomizedMusic = musics[Random.Range(0, musics.Length)];
+
 		//Chose an random track for level
-		BGM_Manager.i.PlayBGM(musics[Random.Range(0, musics.Length)], transitionSpeed, transitionSpeed, false);
+		BGM_Manager.i.PlayBGM(randomizedMusic, transitionSpeed, transitionSpeed, false);
+		print("Playing: " + randomizedMusic.name);
 	}
 
 	void OnDisable()
