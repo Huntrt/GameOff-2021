@@ -18,7 +18,7 @@ MonoBehaviour:
     resolution: {x: 1920, y: 1080}
     fpsCap: -1
     graphicQuality: 0
-    volumes: 140000001e0000000a000000
+    volumes: 1e0000001e0000000f000000
     binds:
     - action: Move
       keyCode: 323
@@ -44,7 +44,7 @@ MonoBehaviour:
       keyCode: 101
     - action: Zoom Reset
       keyCode: 122
-    cameraMoveSpeed: 20
+    cameraMoveSpeed: 31.15249
     zoomSpeed: 30
   _pause:
     isPausing: 0

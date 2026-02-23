@@ -22,7 +22,7 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 964a57e23bc36e04097a2111a4142361, type: 3}
   - name: Interact Map
-    cooldown: 0
+    cooldown: 0.5
     clips:
     - {fileID: 8300000, guid: 4f72accc87834784aba928421eca2fed, type: 3}
   - name: Open Egg
@@ -34,7 +34,9 @@ MonoBehaviour:
   - name: Bought Item
     cooldown: 0
     clips:
-    - {fileID: 8300000, guid: 4f72accc87834784aba928421eca2fed, type: 3}
+    - {fileID: 8300000, guid: 0c87b8b30375432438bd114722635e7d, type: 3}
+    - {fileID: 8300000, guid: 50b040669bfca9c469e515420511deae, type: 3}
+    - {fileID: 8300000, guid: 7dd68c273184f6a40a356c445455c765, type: 3}
   - name: Consume Item
     cooldown: 0
     clips:

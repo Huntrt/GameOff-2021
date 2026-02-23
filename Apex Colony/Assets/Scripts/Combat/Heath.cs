@@ -56,6 +56,12 @@ public class Heath : MonoBehaviour
 				Foods.i.Gain(GetComponent<Enemy>().foodGain);
 				//Count this enemy has been kill
 				manager.level.killCount++;
+
+				SFX_Manager.PlaySFX("Enemy Died");
+			}
+			else
+			{
+				SFX_Manager.PlaySFX("Allies Died");
 			}
 			//Destroy this entity
 			Destroy(gameObject);

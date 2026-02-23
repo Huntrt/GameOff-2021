@@ -29,5 +29,7 @@ public class HealItem : MonoBehaviour
 		(allie.transform.position, radius, Vector2.zero, 0, Manager.i.layer.allies);
 		//Heal all the allies got hit by the circle cast
 		foreach (RaycastHit2D hit in hits) {hit.transform.GetComponent<Heath>().Healing(heal);}
+
+		SFX_Manager.PlaySFX("Consume Item");
 	}
 }

@@ -33,6 +33,8 @@ public class Egg : MonoBehaviour
 			panel.gameObject.SetActive(true);
 			//Has interacted
 			interacted = true;
+
+			SFX_Manager.PlaySFX("Interact Map");
 		}
 	}
 
@@ -49,6 +51,8 @@ public class Egg : MonoBehaviour
 			effect.transform.parent = null; effect.Play();
 			//Destroy the gameobject
 			Destroy(gameObject);
+
+			SFX_Manager.PlaySFX("Open Egg");
 		}
 	}
 

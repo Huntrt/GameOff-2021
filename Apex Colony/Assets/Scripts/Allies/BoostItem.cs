@@ -29,5 +29,7 @@ public class BoostItem : MonoBehaviour
 		allie.speed += speed;
 		allie.rate += rate;
 		allie.range += range;
+		
+		SFX_Manager.PlaySFX("Consume Item");
 	}
 }

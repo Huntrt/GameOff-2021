@@ -99,6 +99,8 @@ public class Port : MonoBehaviour
 			//Display the slot panel
 			panel.slots[d].gameObject.SetActive(true);
 		}
+
+		SFX_Manager.PlaySFX("Interact Map");
 	}
 
 	public void SpawnItem(int slot)
@@ -116,6 +118,8 @@ public class Port : MonoBehaviour
 			panel.slots[slot].gameObject.SetActive(false);
 			//Remove the data slot of item has buy
 			datas[slot] = null;
+
+			SFX_Manager.PlaySFX("Bought Item");
 		}
 	}
 

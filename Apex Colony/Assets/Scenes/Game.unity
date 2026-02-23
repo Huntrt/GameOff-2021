@@ -1723,6 +1723,11 @@ PrefabInstance:
       objectReference: {fileID: 534420217}
     - target: {fileID: 6062251588054059327, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a,
         type: 3}
+      propertyPath: processHold
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062251588054059327, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a,
+        type: 3}
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 1539425620}
@@ -1746,6 +1751,11 @@ PrefabInstance:
       propertyPath: levelDisplayAnim
       value: 
       objectReference: {fileID: 335407291}
+    - target: {fileID: 6062251588054059327, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a,
+        type: 3}
+      propertyPath: progressRequired
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6905407336069796637, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a,
         type: 3}
       propertyPath: food

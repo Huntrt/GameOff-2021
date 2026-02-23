@@ -80,8 +80,13 @@ public class LevelManager : MonoBehaviour
 				}
 				//Clear the process when RELEASE the procced key
 				if(Input.GetKeyUp(Keybind.i.GetKey("Procced Next Level"))) {ClearHoldProcess();}
+
 				//Has complete the map
-				completed = true;
+				if(!completed)
+				{
+					completed = true;
+					SFX_Manager.PlaySFX("Killcount Reached");
+				}
 			}
 		}
 	}
@@ -116,6 +121,8 @@ public class LevelManager : MonoBehaviour
 
 	public void NextMap()
 	{
+		SFX_Manager.PlaySFX("Next Level");
+
 		/// Wingame when complete all the level and map while not in endless mode
 		if(!endless) {if(currentMap == mapPerLevel && lv == levels.Count-1) {WinGame(); return;}}
 		//Deactive all the allies object in allies object manager
@@ -141,9 +148,19 @@ public class LevelManager : MonoBehaviour
 	}
 
 	//Show over panel when game over
-	public void GameOver() {overPanel.SetActive(true);}
+	public void GameOver() 
+	{
+		overPanel.SetActive(true);
+
+		SFX_Manager.PlaySFX("Game Over");
+	}
 	//Show win panel when game over
-	public void WinGame() {winPanel.SetActive(true);}
+	public void WinGame() 
+	{
+		winPanel.SetActive(true);
+		
+		SFX_Manager.PlaySFX("Game Win");
+	}
 	//Close win panel an entering endless mode
 	public void EndlessMode() {winPanel.SetActive(false); endless = true; currentMap = 0; NextMap();}
 }
