@@ -78,3 +78,8 @@ crashlytics-build.properties
 # VSCode settings and snippets
 .vscode
 *.code-snippets
+
+# Ignore massive file for music
+**/Assets/Audio/Music/*.flac
+**/Assets/Audio/Music/*.wav
+**/Assets/Audio/Music/*.mp3
