@@ -47,6 +47,8 @@ public class Keybind : MonoBehaviour
 
 	public void RefreshHash()
 	{
+		if(SettingsManager.i == null) return;
+		
 		//Create an new hash
 		bindsHash = new Dictionary<string, int>();
 		//Hash by attach each action their list index for fast access
