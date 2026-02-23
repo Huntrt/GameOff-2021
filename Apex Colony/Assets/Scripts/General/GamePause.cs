@@ -32,6 +32,9 @@ public class GamePause : MonoBehaviour
 
 	public void Pausing(bool pause)
 	{
+		//Skip if manager no longer exist
+		if(SettingsManager.i == null) return;
+
 		//Get the pausing data store in settings
 		SettingsSO.Pause data = SettingsManager.i.scriptableObj.pause;
 		///When PAUSE

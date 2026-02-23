@@ -64,10 +64,12 @@ GameObject:
   - component: {fileID: 1316110397673856997}
   - component: {fileID: 1316110397673856995}
   - component: {fileID: 1316110397673856994}
+  - component: {fileID: 1786940801717173178}
+  - component: {fileID: 6501537738619287937}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -455,8 +457,8 @@ MonoBehaviour:
   portsPanel: {fileID: 0}
   indi: {fileID: 6574993438817602087}
   worldCanvas: {fileID: 0}
-  hurtPop: {fileID: 0}
-  healPop: {fileID: 0}
+  hurtPop: {fileID: 3226612776515145113, guid: 38e8b5c673bb9ea4bab40b87723dddf9, type: 3}
+  healPop: {fileID: 6871868407503302457, guid: 692f32a417456e941a44f102a070e674, type: 3}
   started: 0
   layer:
     allies: 0
@@ -464,6 +466,33 @@ MonoBehaviour:
     frame: 0
     inter: 0
     pick: 0
+--- !u!114 &1786940801717173178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316110397673856999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415dc73db91d16344b79be70707bf4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resumeOnObjDisable: 1
+  pauseButton: {fileID: 0}
+  resumeButton: {fileID: 0}
+--- !u!114 &6501537738619287937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316110397673856999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5623e558fba7ea54c8c474711fd1d76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316110397974077474
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981eb89e1f6f20346bcad4cd9e3ecc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: 10
+  food: 9999
   foodPanel: {fileID: 0}
   foodCounter:
   - {fileID: 0}
