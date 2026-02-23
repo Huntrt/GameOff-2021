@@ -1,19 +1,21 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
+using Game.Settings;
 
 public class Tutorial : MonoBehaviour
 {
     [System.Serializable] class Tutorialing 
 	{
 		public Sprite image;
-		public string key;
 		[TextArea(10,100)] public string info;
 	}
 	[SerializeField] Tutorialing[] tutorials;
 	[SerializeField] Image displayImage;
 	[SerializeField] TextMeshProUGUI displayInfo;
 	[SerializeField] int currentDisplay;
+	[SerializeField] TMP_Text pageCounter;
 
 	//Display the first turtorial
 	void Start() {DisplayTurtorial();}
@@ -40,18 +42,24 @@ public class Tutorial : MonoBehaviour
 
 	public void DisplayTurtorial()
 	{
+		pageCounter.text = currentDisplay+1 + "/" + tutorials.Length;
+
 		//Get the current tutorial info
 		string info = tutorials[currentDisplay].info;
-		//The key need to display
-		string key = tutorials[currentDisplay].key;
-		//If need to replace an key in info
-		if(key != "")
+
+		//Collect all the word have "$user_name" pattern
+		MatchCollection matches = Regex.Matches(info, @"\$\w+");
+
+		//Replace what in the pattern with that keybind keycode and hightlight them
+		foreach (Match match in matches)
 		{
-			//Get the hotkey has the same name as key needed to display without tag
-			string keyDisplay = Keybind.i.GetBind(key.Replace("$", "")).keyCode.ToString();
-			//Replace the key needed to display to it keycode in info
-			info = info.Replace(key, "[" + keyDisplay + "]");
+			//Prettify the keycvode will be show in info
+			string keycodeDisplay = Keybind.i.GetBind(match.Value.Replace("$","").Replace("_", " ")).keyCode.ToString();
+			keycodeDisplay = "<color=#ffff00><b>" + Keybind_Button.KeyCodeFormatting(keycodeDisplay) + "</color></b>";
+
+			info = info.Replace(match.Value, keycodeDisplay);
 		}
+
 		//Display the image of current turtorial
 		displayImage.sprite = tutorials[currentDisplay].image;
 		//Display the info has modify

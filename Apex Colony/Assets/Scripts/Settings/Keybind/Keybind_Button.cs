@@ -57,7 +57,7 @@ public class Keybind_Button : MonoBehaviour
 		else {keycodeLabel.text = customText;}
 	}
 
-	string KeyCodeFormatting(string keycodeString)
+	public static string KeyCodeFormatting(string keycodeString, bool specialCharacter = true, bool prettyKeyCode = true)
 	{
 		string formmatted = keycodeString;
 		///If wanted to display special character as themselve instead of it name
