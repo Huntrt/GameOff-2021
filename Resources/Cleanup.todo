@@ -1,12 +1,13 @@
 ▪ Implement sound and ambient music.
-	▪ Player Command.
-	▪ Unit action.
-	▪ Map interaction
-	▪ Game status.
+	✓ Player Command.
+	✓ Unit action.
+	✓ Map interaction
+	✓ Game status.
+	▪ Music for each level
 ▪ Clean up UI.
 	▪ Setting panel rework.
 	▪ Improve kill count and level progress thematic.
-	▪ Audio setting.
+	✓ Audio setting.
 ▪ Graphic rework.
 	▪ Worm enemy.
 	▪ Grass map border
