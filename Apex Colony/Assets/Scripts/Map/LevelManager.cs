@@ -147,16 +147,25 @@ public class LevelManager : MonoBehaviour
 		map.StartGeneration();
 	}
 
+	bool hasGameOver;
 	//Show over panel when game over
 	public void GameOver() 
 	{
+		if(hasGameOver) return;
+
+		hasGameOver = true;
 		overPanel.SetActive(true);
 
 		SFX_Manager.PlaySFX("Game Over");
 	}
+
+	bool hasGameWin;
 	//Show win panel when game over
 	public void WinGame() 
 	{
+		if(hasGameWin) return;
+
+		hasGameWin = true;
 		winPanel.SetActive(true);
 		
 		SFX_Manager.PlaySFX("Game Win");
