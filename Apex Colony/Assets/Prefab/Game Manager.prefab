@@ -414,7 +414,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1435512039071892276}
   - component: {fileID: 5823037820432147847}
-  - component: {fileID: 6062111553254879209}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -478,21 +477,3 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     loop: 0
     playOnAwake: 0
---- !u!114 &6062111553254879209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6874351097740253875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530f6be7c7b8ea74c9fc238a3f12d273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultTransition: 0
-  transitions:
-  - clip: {fileID: 8300000, guid: 7b1655d783e50cf4081d638715d6cd87, type: 3}
-    exitDuration: 0.6
-    enterDuration: 0.6
-    continueWhenExit: 0
