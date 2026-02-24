@@ -8,7 +8,6 @@ public class HoverManager : MonoBehaviour
 		public GameObject panel;
 		public TextMeshProUGUI name;
 		public TextMeshProUGUI heath;
-		public TextMeshProUGUI maxHeath;
 		public TextMeshProUGUI damage;
 		public TextMeshProUGUI rate;
 		public TextMeshProUGUI range;
@@ -32,49 +31,51 @@ public class HoverManager : MonoBehaviour
 			if(hovering.CompareTag("Enemy"))
 			{
 				//Display the enemy name
-				hover.name.text = enemy.entityName + " (Enemy)";
+				hover.name.text = "<color=red>" + enemy.entityName;
 				//@ Display all the enemy stats onto hover panel
-				hover.heath.text = StatFormatter(enemy.hp.curHeath);
-				hover.maxHeath.text = StatFormatter(enemy.hp.maxHeath);
-				hover.damage.text = StatFormatter(enemy.damage);
-				hover.rate.text = StatFormatter(enemy.rate);
-				hover.range.text = StatFormatter(enemy.range);
-				hover.speed.text = StatFormatter(enemy.speed);
+				hover.heath.text = StatFormatter("HP", System.Math.Round(enemy.hp.curHeath, 1) + "/" + System.Math.Round(enemy.hp.maxHeath, 1));
+				hover.damage.text = StatFormatter("DAMAGE", enemy.damage);
+				hover.rate.text = StatFormatter("RATE", enemy.rate);
+				hover.range.text = StatFormatter("RANGE", enemy.range);
+				hover.speed.text = StatFormatter("SPEED", enemy.speed);
 			}
 			//If hover over an allies
 			if(hovering.CompareTag("Allies"))
 			{
 				//Display the allies name
-				hover.name.text = allies.entityName + " (Allies)";
+				hover.name.text = "<color=green>" + allies.entityName;
 				//@ Display all the allies stats onto hover panel
-				hover.heath.text = StatFormatter(allies.hp.curHeath);
-				hover.maxHeath.text = StatFormatter(allies.hp.maxHeath);
-				hover.damage.text = StatFormatter(allies.damage);
-				hover.rate.text = StatFormatter(allies.rate);
-				hover.range.text = StatFormatter(allies.range);
-				hover.speed.text = StatFormatter(allies.speed);
+				hover.heath.text = StatFormatter("HP", System.Math.Round(allies.hp.curHeath, 1) + "/" + System.Math.Round(allies.hp.maxHeath, 1));
+				hover.damage.text = StatFormatter("DAMAGE", allies.damage);
+				hover.rate.text = StatFormatter("RATE", allies.rate);
+				hover.range.text = StatFormatter("RANGE", allies.range);
+				hover.speed.text = StatFormatter("SPEED", allies.speed);
 			}
 			//If hover over an interactable
 			if(hovering.CompareTag("Interactable"))
 			{
 				//Display the interactable name
-				hover.name.text = react.interactName;
+				hover.name.text = "<color=blue>" + react.interactName;
 				//@ N/A all the stats from hover panel
-				hover.heath.text = "N/A";
-				hover.maxHeath.text = "N/A";
-				hover.damage.text = "N/A";
-				hover.rate.text = "N/A";
-				hover.range.text = "N/A";
-				hover.speed.text = "N/A";
+				hover.heath.text = StatFormatter("HP", 0);
+				hover.damage.text = StatFormatter("DAMAGE", 0);
+				hover.rate.text = StatFormatter("RATE", 0);
+				hover.range.text = StatFormatter("RANGE", 0);
+				hover.speed.text = StatFormatter("SPEED", 0);
 			}
 			//Showing the hover panel
 			hover.panel.SetActive(true);
 		}
 	}
 
-	string StatFormatter(float stat)
+	string StatFormatter(string statName, float statValue)
 	{
-		return System.Math.Round(stat, 1).ToString();
+		return "<size=12>" + statName + ": </size><b>" + System.Math.Round(statValue, 1);
+	}
+
+	string StatFormatter(string statName, string statValueString)
+	{
+		return "<size=12>" + statName + ": </size><b>" + statValueString;
 	}
 
 	void LateUpdate()
