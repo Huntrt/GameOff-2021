@@ -34,12 +34,12 @@ public class HoverManager : MonoBehaviour
 				//Display the enemy name
 				hover.name.text = enemy.entityName + " (Enemy)";
 				//@ Display all the enemy stats onto hover panel
-				hover.heath.text = enemy.hp.curHeath.ToString();
-				hover.maxHeath.text = enemy.hp.maxHeath.ToString();
-				hover.damage.text = enemy.damage.ToString();
-				hover.rate.text = enemy.rate.ToString();
-				hover.range.text = enemy.range.ToString();
-				hover.speed.text = enemy.speed.ToString();
+				hover.heath.text = StatFormatter(enemy.hp.curHeath);
+				hover.maxHeath.text = StatFormatter(enemy.hp.maxHeath);
+				hover.damage.text = StatFormatter(enemy.damage);
+				hover.rate.text = StatFormatter(enemy.rate);
+				hover.range.text = StatFormatter(enemy.range);
+				hover.speed.text = StatFormatter(enemy.speed);
 			}
 			//If hover over an allies
 			if(hovering.CompareTag("Allies"))
@@ -47,12 +47,12 @@ public class HoverManager : MonoBehaviour
 				//Display the allies name
 				hover.name.text = allies.entityName + " (Allies)";
 				//@ Display all the allies stats onto hover panel
-				hover.heath.text = allies.hp.curHeath.ToString();
-				hover.maxHeath.text = allies.hp.maxHeath.ToString();
-				hover.damage.text = allies.damage.ToString();
-				hover.rate.text = allies.rate.ToString();
-				hover.range.text = allies.range.ToString();
-				hover.speed.text = allies.speed.ToString();
+				hover.heath.text = StatFormatter(allies.hp.curHeath);
+				hover.maxHeath.text = StatFormatter(allies.hp.maxHeath);
+				hover.damage.text = StatFormatter(allies.damage);
+				hover.rate.text = StatFormatter(allies.rate);
+				hover.range.text = StatFormatter(allies.range);
+				hover.speed.text = StatFormatter(allies.speed);
 			}
 			//If hover over an interactable
 			if(hovering.CompareTag("Interactable"))
@@ -70,6 +70,11 @@ public class HoverManager : MonoBehaviour
 			//Showing the hover panel
 			hover.panel.SetActive(true);
 		}
+	}
+
+	string StatFormatter(float stat)
+	{
+		return System.Math.Round(stat, 1).ToString();
 	}
 
 	void LateUpdate()
