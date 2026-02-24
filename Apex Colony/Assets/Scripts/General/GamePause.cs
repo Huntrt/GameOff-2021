@@ -1,4 +1,3 @@
-using UnityEngine.UI;
 using UnityEngine;
 
 public class GamePause : MonoBehaviour
@@ -23,7 +22,6 @@ public class GamePause : MonoBehaviour
 
 	public void Pausing(bool pause)
 	{
-
 		//Skip if manager no longer exist
 		if(SettingsManager.i == null) return;
 

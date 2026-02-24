@@ -10,6 +10,7 @@ public class IndicatorManager : MonoBehaviour
 
 	public void CreateMoveIndicator(Vector2 pos)
 	{
+		if(GamePause.isPausing) return;
 		//Create an move indicatior in game then get it component
 		moveindi = Instantiate(moveIndiPrefab, pos, Quaternion.identity).GetComponent<MoveIndicator>();
 	}
@@ -25,6 +26,7 @@ public class IndicatorManager : MonoBehaviour
 
 	public void FlashAtkIndi(Vector2 position, bool areRival)
 	{
+		if(GamePause.isPausing) return;
 		//Create an indicator at position has receive
 		Instantiate(Manager.i.indi.attackIndiPrefab,position, Quaternion.identity)
 		//Ending the indicator by receive rival or unrival end
