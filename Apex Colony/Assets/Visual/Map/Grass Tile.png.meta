@@ -228,10 +228,10 @@ TextureImporter:
       name: Grass Border
       rect:
         serializedVersion: 2
-        x: 15
-        y: 26
-        width: 203
-        height: 203
+        x: 5
+        y: 6
+        width: 215
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,9 +251,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 236
-        y: 22
-        width: 202
-        height: 210
+        y: 30
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,10 +272,10 @@ TextureImporter:
       name: Grass Eggs
       rect:
         serializedVersion: 2
-        x: 501
-        y: 76
-        width: 111
-        height: 99
+        x: 505
+        y: 66
+        width: 115
+        height: 109
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: Grass Port
       rect:
         serializedVersion: 2
-        x: 683
-        y: 16
-        width: 187
-        height: 167
+        x: 679
+        y: 54
+        width: 191
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
