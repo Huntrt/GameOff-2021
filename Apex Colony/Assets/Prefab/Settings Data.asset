@@ -15,7 +15,7 @@ MonoBehaviour:
   _data:
     vSync: 0
     fullScreenMode: 3
-    resolution: {x: 1920, y: 1080}
+    resolution: {x: 1366, y: 768}
     fpsCap: -1
     graphicQuality: 0
     volumes: 1e0000001e0000000f000000
@@ -44,8 +44,8 @@ MonoBehaviour:
       keyCode: 101
     - action: Zoom Reset
       keyCode: 122
-    cameraMoveSpeed: 31.15249
+    cameraMoveSpeed: 30
     zoomSpeed: 30
   _pause:
     isPausing: 0
-    timeScaleBeforePause: 0
+    timeScaleBeforePause: -1
