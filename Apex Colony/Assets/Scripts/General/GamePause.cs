@@ -8,16 +8,22 @@ public class GamePause : MonoBehaviour
 	/// <summary>
 	/// Called when this object got disable, mainly use for resume when scene got switch
 	/// </summary>
-	[SerializeField] bool resumeOnObjDisable = true;
-	[SerializeField] Button pauseButton, resumeButton;
+	[SerializeField] bool resumeOnDestroy = true;
+	[SerializeField] bool resumeOnAwake = true;
 
-	void OnDisable()
+	void Awake()
 	{
-		if(resumeOnObjDisable) Pausing(false);
+		if(resumeOnAwake) Pausing(false);
+	}
+
+	void OnDestroy()
+	{
+		if(resumeOnDestroy) Pausing(false);
 	}
 
 	public void Pausing(bool pause)
 	{
+
 		//Skip if manager no longer exist
 		if(SettingsManager.i == null) return;
 
@@ -33,11 +39,14 @@ public class GamePause : MonoBehaviour
 				data.timeScaleBeforePause = Time.timeScale;
 				//Time scale now are 0
 				Time.timeScale = 0;
+
+				print("Pause");
 			}
 		}
 		///When RESUME
 		if(!pause)
 		{
+
 			if(data.isPausing)
 			{
 				data.isPausing = false;
@@ -45,7 +54,10 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = data.timeScaleBeforePause;
 				//Null out  saved time scale
 				data.timeScaleBeforePause = -1;
+
+				print("Resume");
 			}
 		}
+
 	}
 }
