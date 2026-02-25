@@ -17,7 +17,7 @@ MonoBehaviour:
     fullScreenMode: 3
     resolution: {x: 1366, y: 768}
     fpsCap: -1
-    graphicQuality: 0
+    graphicQuality: 1
     volumes: 1e0000001e0000000f000000
     binds:
     - action: Move
@@ -44,7 +44,7 @@ MonoBehaviour:
       keyCode: 101
     - action: Zoom Reset
       keyCode: 122
-    cameraMoveSpeed: 30
+    cameraMoveSpeed: 15
     zoomSpeed: 30
   _pause:
     isPausing: 0

@@ -122,8 +122,12 @@ public class CameraManager : MonoBehaviour
 		//If the mouse ae scrolling
 		if(Input.mouseScrollDelta.y != 0)
 		{
+			float platformCompensation = 1;
+			if(Application.platform == RuntimePlatform.WindowsPlayer) platformCompensation = 20;
+			if(Application.platform == RuntimePlatform.WebGLPlayer) platformCompensation = 5;
+
 			//Increase or decrease the orthographic size with zoom amount and it speed
-			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (SettingsManager.i.Data.zoomSpeed * 5 * Time.deltaTime);
+			Camera.main.orthographicSize -= Input.mouseScrollDelta.y * (SettingsManager.i.Data.zoomSpeed * platformCompensation * Time.deltaTime);
 			//Prevent the camera from zoom too far or too close
 			Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomLimit.min, zoomLimit.max);
 		}
