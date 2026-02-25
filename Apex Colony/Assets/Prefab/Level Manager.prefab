@@ -1027,9 +1027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415dc73db91d16344b79be70707bf4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resumeOnObjDisable: 1
-  pauseButton: {fileID: 0}
-  resumeButton: {fileID: 0}
+  resumeOnDestroy: 1
+  resumeOnAwake: 1
 --- !u!1 &7197850792669722723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1140,7 @@ GameObject:
   - component: {fileID: 7735331037854763866}
   - component: {fileID: 2613064387380358776}
   - component: {fileID: 1849306449358946270}
+  - component: {fileID: 6956297586967968645}
   m_Layer: 0
   m_Name: BGM Player
   m_TagString: Untagged
@@ -1203,3 +1203,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTransition: -1
   transitions: []
+--- !u!114 &6956297586967968645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351803531921189708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec9681322fbbac4994d6517919defaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

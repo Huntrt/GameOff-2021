@@ -1218,16 +1218,6 @@ PrefabInstance:
       propertyPath: hover.damage
       value: 
       objectReference: {fileID: 1675909131}
-    - target: {fileID: 1527499595960933878, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a,
-        type: 3}
-      propertyPath: pauseButton
-      value: 
-      objectReference: {fileID: 1639046185}
-    - target: {fileID: 1527499595960933878, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a,
-        type: 3}
-      propertyPath: resumeButton
-      value: 
-      objectReference: {fileID: 365794329}
     - target: {fileID: 6062251588054059327, guid: d3cbfc3d96fc58d46b02ea9961ebbd3a,
         type: 3}
       propertyPath: winPanel

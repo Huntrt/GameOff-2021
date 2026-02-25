@@ -83,3 +83,7 @@ MonoBehaviour:
     cooldown: 0
     clips:
     - {fileID: 8300000, guid: b4578edae26a8f245b5f8faf3e576396, type: 3}
+  - name: Click
+    cooldown: 0
+    clips:
+    - {fileID: 8300000, guid: be002ce18fe70d94e9e6bec8e9f5ec0f, type: 3}
