@@ -12,9 +12,16 @@ public class MenuEntity : MonoBehaviour
 	[SerializeField] Animator animator;
 	[SerializeField] Vector2 destination;
 	[SerializeField] float speed;
+	[SerializeField] Vector2 randomSpawnArea;
 
 	void Start()
 	{
+		transform.position = new Vector2
+		(
+			Random.Range(-randomSpawnArea.x, randomSpawnArea.x),
+			Random.Range(-randomSpawnArea.y, randomSpawnArea.y)
+		);
+		
 		//The patrol center are at spawn position
 		center = transform.position;
 		//Start walking animation
